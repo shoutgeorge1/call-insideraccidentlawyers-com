@@ -459,6 +459,14 @@
             font-weight: 400;
             text-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
         }
+.hero-subtext {
+    color: #fbba00;
+    font-weight: 600;
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
         .hero-cta-group {
             display: flex;
             gap: 16px;
@@ -1159,12 +1167,13 @@
             border: 3px solid rgba(255,255,255,0.6);
         }
         @keyframes softPulse {
-            0% { transform: scale(1); box-shadow: 0 0 0 rgba(255,0,0,0.0); }
-            50% { transform: scale(1.05); box-shadow: 0 0 18px rgba(255,0,0,0.25); }
-            100% { transform: scale(1); box-shadow: 0 0 0 rgba(255,0,0,0.0); }
+            0% { transform: rotate(12deg) scale(1); box-shadow: 0 0 0 rgba(255,0,0,0.0); }
+            50% { transform: rotate(12deg) scale(1.05); box-shadow: 0 0 18px rgba(255,0,0,0.25); }
+            100% { transform: rotate(12deg) scale(1); box-shadow: 0 0 0 rgba(255,0,0,0.0); }
         }
         .stop-sign-icon {
             animation: softPulse 2.8s ease-in-out infinite;
+            transform: rotate(12deg);
         }
         .stop-sign span {
             transform: rotate(-45deg);
@@ -1229,8 +1238,28 @@
         }
         @media (max-width: 768px) {
             .hero-content {
-                grid-template-columns: 1fr;
+        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
             }
+    .hero-text {
+        display: contents;
+    }
+    .hero-text h1 {
+        order: 1;
+    }
+    .hero-content picture {
+        order: 2;
+    }
+    .hero-text .hero-subhead {
+        order: 3;
+    }
+    .hero-text .hero-cta-group {
+        order: 4;
+    }
+    .hero-text .trust-badges {
+        order: 5;
+    }
             .hero-attorney-img {
                 max-width: 100%;
                 width: 100%;
@@ -1357,8 +1386,8 @@
                     </nav>
                 </div>
                 <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
-                    <div class="header-phone" data-callrail-phone="844-467-4335">Call: <a href="tel:844-467-4335" style="color: var(--brand-blue); text-decoration: none;">844-467-4335</a></div>
-                    <a href="tel:844-467-4335" class="btn-secondary" data-callrail-phone="844-467-4335" style="padding: 10px 20px; font-size: 16px;">Call Now — Free Consultation</a>
+                    <div class="header-phone" data-callrail-phone="844-467-4335">Speak With An Attorney: <a href="tel:844-467-4335" style="color: var(--brand-blue); text-decoration: none;">844-467-4335</a></div>
+                    <a href="#contact-form" class="btn-secondary" data-callrail-phone="844-467-4335" style="padding: 10px 20px; font-size: 16px;">Call Now — Free Consultation</a>
                 </div>
             </div>
         </div>
@@ -1369,7 +1398,7 @@
             <div class="hero-content">
                 <div class="hero-text">
                     <h1>Los Angeles Car Accident Lawyer – Free Consultation</h1>
-                    <p class="hero-subhead" style="max-width: 520px; margin: 0 auto; line-height: 1.5; font-weight: 500;">Speak with a Los Angeles car accident attorney and injury lawyer for a free consultation after your crash.</p>
+                    <p class="hero-subhead hero-subtext" style="max-width: 520px; margin: 0 auto; line-height: 1.5; font-weight: 500;">Speak with a Los Angeles car accident attorney and injury lawyer for a free consultation after your crash.</p>
                     <div class="hero-cta-group">
                         <a href="tel:844-467-4335" class="btn-primary" data-callrail-phone="844-467-4335">Call Now — Free Consultation</a>
                     </div>
