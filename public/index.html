@@ -462,10 +462,22 @@
 .hero-subtext {
     color: #fbba00;
     font-weight: 600;
-    max-width: 620px;
+    max-width: 640px;
+    line-height: 1.4;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+}
+@media (min-width: 1024px) {
+    .hero-subtext {
+        text-align: left;
+        margin-left: 0;
+        margin-right: auto;
+    }
+}
+.hero-highlight {
+    font-weight: 700;
+    color: #fbba00;
 }
 @media (min-width: 1024px) {
     .hero-subtext {
@@ -1264,6 +1276,10 @@
         display: flex;
         flex-direction: column;
             }
+    .hero-section {
+        padding-top: 12px;
+        padding-bottom: 18px;
+    }
     .hero-text {
         display: contents;
     }
@@ -1276,8 +1292,15 @@
     .hero-text .hero-subhead {
         order: 3;
     }
+    .hero-subtext {
+        margin-top: 8px;
+        margin-bottom: 12px;
+    }
     .hero-text .hero-cta-group {
         order: 4;
+    }
+    .hero-cta {
+        margin-top: 10px;
     }
     .hero-text .trust-badges {
         order: 5;
@@ -1415,13 +1438,13 @@
         </div>
     </header>
 
-    <section class="hero">
+    <section class="hero hero-section">
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
                     <h1>Los Angeles Car Accident Lawyer – Free Consultation</h1>
-                    <p class="hero-subhead hero-subtext" style="max-width: 520px; margin: 0 auto; line-height: 1.5; font-weight: 500;">Speak with a Los Angeles car accident attorney and injury lawyer for a free consultation after your crash.</p>
-                    <div class="hero-cta-group">
+                    <p class="hero-subhead hero-subtext" style="max-width: 640px; margin: 0 auto; line-height: 1.4; font-weight: 500;"><span class="hero-highlight">Speak with a Los Angeles car accident attorney</span> and injury lawyer for a free consultation after your crash.</p>
+                    <div class="hero-cta-group hero-cta">
                         <a href="tel:844-467-4335" class="btn-primary" data-callrail-phone="844-467-4335">Call Now — Free Consultation</a>
                     </div>
                     <div class="trust-badges">
