@@ -38,6 +38,9 @@
             padding: 0;
             box-sizing: border-box;
         }
+        html, body {
+            overflow-x: hidden;
+        }
         html {
             scroll-behavior: smooth;
         }
@@ -301,14 +304,16 @@
             stroke: currentColor;
         }
         .sticky-header {
+            position: -webkit-sticky;
             position: sticky;
             top: 0;
+            left: 0;
+            width: 100%;
             background: var(--brand-white);
             border-bottom: 2px solid var(--brand-border);
             padding: 12px 0;
-            z-index: 1000;
+            z-index: 9999;
             box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            backdrop-filter: blur(10px);
         }
         @media (min-width: 769px) {
             .sticky-header {
@@ -405,7 +410,13 @@
         }
         @media (max-width: 768px) {
             .sticky-header {
+                position: fixed;
+                top: 0;
+                width: 100%;
                 padding: 8px 0;
+            }
+            body {
+                padding-top: 72px;
             }
             .header-content {
                 flex-direction: row;
@@ -462,7 +473,7 @@
             align-items: center;
             color: var(--brand-white);
             position: relative;
-            background-attachment: fixed;
+            background-attachment: scroll;
         }
         .section-with-bg {
             position: relative;
@@ -476,7 +487,7 @@
             right: 0;
             bottom: 0;
             background: url('images/la/hero-bg.jpg') center center/cover;
-            background-attachment: fixed;
+            background-attachment: scroll;
             opacity: 0.04;
             z-index: 0;
             pointer-events: none;
@@ -1448,31 +1459,7 @@
             color: rgba(255,255,255,0.7);
             line-height: 1.6;
         }
-        .mobile-sticky-cta {
-            position: fixed;
-            left: 16px;
-            right: 16px;
-            bottom: 12px;
-            z-index: 1200;
-            display: none;
-            text-align: center;
-        }
-        .mobile-sticky-cta .btn-primary {
-            width: 100%;
-            display: block;
-        }
         @media (max-width: 768px) {
-            .mobile-sticky-cta .btn-primary {
-                font-size: 18px !important;
-                font-weight: 700 !important;
-                padding: 14px 20px !important;
-            }
-            .mobile-sticky-cta {
-                display: block;
-            }
-            body {
-                padding-bottom: 84px;
-            }
             .hero-cta-group {
                 display: none;
             }
@@ -1503,7 +1490,8 @@
     .hero-text h1 {
         order: 1;
     }
-    .hero-content picture {
+    .hero-content picture,
+    .hero-content .hero-attorney-wrap {
         order: 2;
     }
     .hero-text .hero-subhead {
@@ -1614,6 +1602,14 @@
                         }
                     }, { once: true });
                 });
+                form.addEventListener('submit', function() {
+                    if(typeof dataLayer !== 'undefined') {
+                        dataLayer.push({
+                            event: 'form_submit',
+                            form_name: 'case_evaluation'
+                        });
+                    }
+                });
             }
             
             // Engaged 30s timer
@@ -1673,7 +1669,12 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1>Los Angeles Car Accident Lawyer – Free Consultation</h1>
+                    <h1>Los Angeles Car Accident Lawyer — Speak With an Attorney Today</h1>
+                    <div class="hero-trust-badge-above" style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
+                        <img src="images/la/google-rating.png" alt="Google 4.9 Rating" style="height:36px;width:auto;">
+                        <span style="font-size:18px;font-weight:700;color:var(--brand-white);">4.9</span>
+                        <span style="color:var(--brand-accent-yellow);letter-spacing:1px;">★★★★★</span>
+                    </div>
                     <p class="hero-subhead hero-subtext" style="max-width: 640px; margin: 0 auto; line-height: 1.4; font-weight: 500;"><span class="hero-highlight">Speak with a Los Angeles car accident attorney</span> and injury lawyer for a free consultation after your crash.</p>
                     <div class="hero-cta-group hero-cta">
                         <a href="tel:844-467-4335" class="btn-primary" data-callrail-phone="844-467-4335"><svg class="call-btn-icon" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call Now — Free Consultation</a>
@@ -1696,10 +1697,13 @@
                         </div>
                     </div>
                 </div>
+                <div class="hero-attorney-wrap">
                 <picture>
                     <source media="(max-width: 768px)" srcset="images/la/attorney-mobile.webp">
                     <img src="images/la/attorney-hero.webp" alt="Shawn and Partners" class="hero-attorney-img">
                 </picture>
+                <p class="hero-attorney-caption" style="margin-top:8px;font-size:14px;color:rgba(255,255,255,0.9);font-weight:500;">Trial Attorneys Serving Los Angeles Accident Victims</p>
+                </div>
             </div>
             <div class="see-through-bar trust-bar-overlay trust-bar">
                 <div class="see-through-inner">
@@ -2212,9 +2216,6 @@
             </div>
         </div>
     </footer>
-    <div class="mobile-sticky-cta">
-        <a href="tel:844-467-4335" class="btn-primary" data-callrail-phone="844-467-4335"><svg class="call-btn-icon" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call Now</a>
-    </div>
 <script>
 document.addEventListener('DOMContentLoaded',function(){
   const phoneInput=document.querySelector('input[name="phone"]');
