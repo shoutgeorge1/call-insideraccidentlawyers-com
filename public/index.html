@@ -785,8 +785,10 @@
             color: var(--brand-white);
             font-weight: 700;
             font-size: 42px;
+            line-height: 1;
             flex-shrink: 0;
             box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+            font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Android Emoji", sans-serif;
         }
         .accident-item-text {
             font-size: 18px;
@@ -801,6 +803,12 @@
             }
         }
         @media (max-width: 768px) {
+            .accident-types.section-with-bg {
+                overflow: visible;
+            }
+            .accident-types .container {
+                overflow: visible;
+            }
             .accident-grid {
                 grid-template-columns: 1fr;
             }
@@ -812,6 +820,8 @@
                 height: 84px;
                 min-width: 84px;
                 font-size: 36px;
+                line-height: 1;
+                flex-shrink: 0;
             }
         }
         .core-trust {
