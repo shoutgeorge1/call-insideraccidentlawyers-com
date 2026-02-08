@@ -540,6 +540,7 @@
             color: var(--brand-accent-yellow);
             text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
             letter-spacing: 1px;
+            opacity: 0.75;
         }
         .trust-bar-text {
             font-size: 18px;
@@ -616,7 +617,7 @@
 }
 .hero-highlight {
     font-weight: 700;
-    color: #fbba00;
+    color: #ffd24a;
 }
 @media (min-width: 1024px) {
     .hero-subtext {
@@ -1228,6 +1229,7 @@
             font-size: 22px;
             margin-bottom: 14px;
             letter-spacing: 1px;
+            opacity: 0.7;
         }
         .value-proposition {
             background: linear-gradient(135deg, rgba(1, 54, 108, 0.08), rgba(12, 35, 52, 0.06));
@@ -1456,10 +1458,16 @@
             z-index: 9999;
             display: none;
             text-align: center;
+            backdrop-filter: blur(6px);
         }
         .mobile-sticky-cta .btn-primary {
             width: 100%;
             display: block;
+            background: #ffbf00;
+            color: #01366c;
+            font-weight: 800;
+            border-radius: 14px;
+            box-shadow: 0 6px 0 #cc9900, 0 14px 28px rgba(0,0,0,0.35);
         }
         @media (max-width: 768px) {
             .mobile-sticky-cta {
