@@ -1,0 +1,10 @@
+---
+description: Scope for this project — single live URL; only work on what the user asks.
+globs: 
+alwaysApply: true
+---
+
+# Insider Accident Lawyers — Vercel (single URL)
+
+- **The only URL that matters for this project:** https://insideraccidentlawyers.vercel.app/
+- Only work on tasks the user explicitly asks for. Do not add features, refactors, or changes they have not requested.
