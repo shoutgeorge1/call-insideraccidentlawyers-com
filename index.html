@@ -125,18 +125,18 @@
         }
         @media (max-width: 768px) {
             body {
-                font-size: 19px;
-                line-height: 1.65;
-                font-weight: 500;
+                font-size: 16px;
+                line-height: 1.6;
+                font-weight: 400;
             }
             p {
-                font-size: 18px;
-                line-height: 1.7;
-                font-weight: 500;
+                font-size: 16px;
+                line-height: 1.65;
+                font-weight: 400;
             }
             h1 {
-                font-size: 32px;
-                line-height: 1.2;
+                font-size: 28px;
+                line-height: 1.25;
                 font-weight: 800;
             }
             h2 {
@@ -152,38 +152,38 @@
                 font-weight: 700;
             }
             .hero-subhead {
-                font-size: 20px;
-                line-height: 1.6;
-                margin-bottom: 24px;
-                font-weight: 600;
-            }
-            .hero-content {
-                padding-top: 24px !important;
-            }
-            .hero-subhead {
-                margin-bottom: 16px !important;
-            }
-            .lead-text {
-                font-size: 20px;
-                font-weight: 600;
-            }
-            .subtext-muted {
-                font-size: 18px;
+                font-size: 17px;
+                line-height: 1.5;
+                margin-bottom: 16px;
                 font-weight: 500;
             }
+            .hero-content {
+                padding-top: 16px !important;
+            }
+            .hero-subhead {
+                margin-bottom: 12px !important;
+            }
+            .lead-text {
+                font-size: 17px;
+                font-weight: 500;
+            }
+            .subtext-muted {
+                font-size: 16px;
+                font-weight: 400;
+            }
             .btn-primary {
-                margin-top: 12px !important;
-                font-size: 20px !important;
+                margin-top: 10px !important;
+                font-size: 18px !important;
                 font-weight: 700 !important;
-                padding: 20px 28px !important;
+                padding: 16px 24px !important;
             }
             .hero-cta-group {
-                margin-bottom: 24px;
+                margin-bottom: 16px;
             }
             .btn-primary,
             .btn-secondary {
-                padding: 20px 28px !important;
-                font-size: 20px !important;
+                padding: 16px 24px !important;
+                font-size: 18px !important;
                 font-weight: 700 !important;
             }
             .btn-primary,
@@ -191,63 +191,63 @@
                 letter-spacing: 0.02em;
             }
             .form-label {
-                font-size: 16px;
-                font-weight: 700;
+                font-size: 15px;
+                font-weight: 600;
             }
             .form-input,
             .form-select,
             .form-textarea {
-                font-size: 18px;
-                padding: 14px 16px;
+                font-size: 16px;
+                padding: 12px 14px;
             }
             .accident-item {
-                padding: 32px;
+                padding: 24px;
             }
             .case-card {
-                padding: 36px 32px !important;
+                padding: 28px 20px !important;
             }
             .trust-card,
             .process-step {
-                padding: 44px 32px;
+                padding: 32px 24px;
             }
             .trust-card h3,
             .case-card h4,
             .process-step h3 {
                 font-weight: 700;
-                font-size: 22px;
+                font-size: 20px;
             }
             .trust-card p,
             .process-step p {
-                font-size: 19px;
-                line-height: 1.7;
-                font-weight: 500;
+                font-size: 16px;
+                line-height: 1.6;
+                font-weight: 400;
             }
             .case-card p {
-                font-size: 18px;
-                line-height: 1.7;
-                font-weight: 500;
+                font-size: 16px;
+                line-height: 1.6;
+                font-weight: 400;
             }
             .attorney-details p {
-                font-size: 19px;
-                line-height: 1.7;
+                font-size: 16px;
+                line-height: 1.65;
                 max-width: 65ch;
-                font-weight: 500;
+                font-weight: 400;
             }
             .attorney-details p + p {
                 margin-top: 16px;
             }
             p[style*="font-size: 14px"],
             p[style*="font-size: 15px"] {
-                font-size: 17px !important;
-                line-height: 1.7;
-                font-weight: 500;
+                font-size: 15px !important;
+                line-height: 1.6;
+                font-weight: 400;
             }
             section h2 {
-                font-size: 28px;
+                font-size: 24px;
                 font-weight: 700;
             }
             section h3 {
-                font-size: 22px;
+                font-size: 20px;
                 font-weight: 700;
             }
             section h4 {
@@ -935,16 +935,22 @@
         @media (max-width: 768px) {
             .our-attorneys-grid {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 20px;
+                gap: 16px;
             }
             .our-attorneys-photo-wrap {
-                width: 100px;
-                height: 100px;
-                min-width: 100px;
-                max-width: 100px;
-                margin-bottom: 14px;
+                width: 88px;
+                height: 88px;
+                min-width: 88px;
+                max-width: 88px;
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 10px;
             }
-            .our-attorneys-name { font-size: 15px; }
+            .our-attorneys-photo-wrap img {
+                object-fit: cover;
+            }
+            .our-attorneys-name { font-size: 14px; }
+            .our-attorneys-title { font-size: 11px; }
         }
         .reviews-section.section-with-bg {
             background: var(--brand-white);
@@ -1126,12 +1132,14 @@
         @media (max-width: 768px) {
             .trust-badges-row {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
-                gap: 20px;
-                padding: 24px;
+                gap: 16px;
+                padding: 20px 16px;
             }
             .trust-badge-img {
-                height: 88px !important;
-                max-width: 160px;
+                height: 56px !important;
+                max-width: 120px;
+                width: auto;
+                object-fit: contain;
             }
         }
         .lp-stats {
@@ -1798,20 +1806,27 @@
             }
         }
         @media (max-width: 768px) {
+            .hero {
+                min-height: 380px;
+                background-size: cover;
+                background-position: center;
+            }
             .hero-content {
         grid-template-columns: 1fr;
         display: flex;
         flex-direction: column;
             }
     .hero-section {
-        padding-top: 12px;
-        padding-bottom: 18px;
+        padding-top: 24px;
+        padding-bottom: 32px;
     }
     .hero-text {
         display: contents;
     }
     .hero-text h1 {
         order: 1;
+        line-height: 1.25;
+        margin-bottom: 12px;
     }
     .hero-content picture,
     .hero-content .hero-attorney-wrap {
@@ -1835,7 +1850,7 @@
         margin-bottom: 0;
     }
     .hero-cta {
-        margin-top: 10px;
+        margin-top: 12px;
     }
     .service-areas {
         margin-top: 8px;
@@ -1846,10 +1861,15 @@
     .hero-text .trust-badges {
         order: 6;
     }
-            .hero-attorney-img {
-                max-width: 100%;
+            .hero-attorney-wrap {
                 width: 100%;
-        margin: 10px auto 0;
+                text-align: center;
+            }
+            .hero-attorney-img {
+                max-width: 260px;
+                width: auto;
+                height: auto;
+        margin: 12px auto 0;
                 display: block;
             }
             .attorney-bio-content {
