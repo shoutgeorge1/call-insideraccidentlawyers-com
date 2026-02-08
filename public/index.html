@@ -932,24 +932,42 @@
             color: rgba(255, 255, 255, 0.85);
         }
         @media (max-width: 768px) {
+            .our-attorneys-section .container {
+                padding-left: 8px;
+                padding-right: 8px;
+            }
             .our-attorneys-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 16px;
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+            .our-attorneys-card {
+                padding: 0 0 20px;
+                border-radius: 0;
+                border: none;
+                background: transparent;
+                align-items: stretch;
+            }
+            .our-attorneys-card:hover {
+                background: transparent;
+                border-color: transparent;
             }
             .our-attorneys-photo-wrap {
-                width: 88px;
-                height: 88px;
-                min-width: 88px;
-                max-width: 88px;
-                margin-left: auto;
-                margin-right: auto;
-                margin-bottom: 10px;
+                width: 100%;
+                height: auto;
+                min-width: 0;
+                aspect-ratio: 4/5;
+                margin: 0 0 12px;
+                border-radius: 0;
+                border: none;
+                padding: 0;
+                box-sizing: border-box;
             }
             .our-attorneys-photo-wrap img {
                 object-fit: cover;
+                object-position: center top;
             }
-            .our-attorneys-name { font-size: 14px; }
-            .our-attorneys-title { font-size: 11px; }
+            .our-attorneys-name { font-size: 18px; text-align: center; }
+            .our-attorneys-title { font-size: 13px; text-align: center; }
         }
         .reviews-section.section-with-bg {
             background: var(--brand-white);
@@ -1135,8 +1153,8 @@
                 padding: 20px 16px;
             }
             .trust-badge-img {
-                height: 56px !important;
-                max-width: 120px;
+                height: 80px !important;
+                max-width: 160px;
                 width: auto;
                 object-fit: contain;
             }
@@ -1868,8 +1886,8 @@
                 text-align: center;
             }
             .hero-attorney-img {
-                max-width: 260px;
-                width: auto;
+                max-width: 360px;
+                width: 85%;
                 height: auto;
         margin: 12px auto 0;
                 display: block;
