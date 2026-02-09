@@ -3,5 +3,12 @@
     { "source": "/", "destination": "/index.html" },
     { "source": "/car-accident", "destination": "/car-accident/index.html" },
     { "source": "/car-accident/", "destination": "/car-accident/index.html" }
+  ],
+  "redirects": [
+    {
+      "source": "/images/la/shawn-rokni.jpg",
+      "destination": "/images/la/attorney-hero.webp",
+      "permanent": true
+    }
   ]
 }
