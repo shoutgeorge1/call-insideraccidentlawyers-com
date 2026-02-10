@@ -347,6 +347,22 @@
             .reviews-section .call-cta-wrap .call-btn {
                 display: inline-block;
             }
+            a.call-btn.btn-primary {
+                box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+                border: 1px solid rgba(0,0,0,0.08);
+            }
+            a.call-btn.btn-primary:hover {
+                box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+                transform: none;
+            }
+            a.call-btn.btn-secondary {
+                box-shadow: 0 2px 8px rgba(1,70,138,0.2);
+                border: 1px solid rgba(0,0,0,0.08);
+            }
+            a.call-btn.btn-secondary:hover {
+                box-shadow: 0 4px 12px rgba(1,70,138,0.3);
+                transform: none;
+            }
             .call-btn-num {
                 font-size: 2.1em;
                 font-weight: 800;
@@ -1890,8 +1906,8 @@
         }
         .mobile-sticky-cta {
             position: fixed;
-            left: 8px;
-            right: 8px;
+            left: 12px;
+            right: 12px;
             bottom: 12px;
             z-index: 9999;
             display: none;
@@ -1901,8 +1917,6 @@
         .mobile-sticky-cta .btn-primary {
             width: 100%;
             display: block;
-            padding: 20px 24px !important;
-            font-size: 22px !important;
             background: #ffbf00;
             color: #01366c;
             font-weight: 800;
