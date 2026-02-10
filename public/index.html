@@ -2204,6 +2204,64 @@
       margin-bottom: 24px !important;
     }
   }
+  /* Move inline styles for hero subhead to CSS */
+  .hero-subhead.hero-subtext {
+    max-width: 640px;
+    margin: 0 auto;
+    line-height: 1.4;
+    font-weight: 500;
+  }
+
+  @media (max-width: 768px) {
+    /* Fix 1: Make image full width on mobile */
+    img.hero-attorney-img {
+      max-width: 100% !important;
+      width: 100% !important;
+      height: auto !important;
+    }
+
+    /* Fix 2: Ensure picture element is block-level on mobile */
+    picture {
+      display: block !important;
+    }
+
+    /* Fix 3: Make .container within hero-section full width and remove its padding on mobile */
+    section.hero.hero-section > .container {
+      max-width: 100% !important;
+      width: 100% !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+
+    /* Fix 4: Add margin below h1 for spacing on mobile */
+    .hero-text h1 {
+      margin-bottom: 12px !important;
+    }
+
+    /* Fix 5: Add horizontal padding to .hero-text for content spacing on mobile */
+    .hero-text {
+      padding-left: 20px !important;
+      padding-right: 20px !important;
+    }
+
+    /* Fix 6: Center text within .hero-text on mobile */
+    .hero-text {
+      text-align: center !important;
+    }
+  }
+  @media (max-width: 768px) {
+    /* Shorten hero call subtext on mobile */
+    .hero-cta-group .call-btn-sub {
+      font-size: 0 !important;
+      line-height: 0 !important;
+    }
+    .hero-cta-group .call-btn-sub::after {
+      content: "Free Consultation";
+      font-size: 14px;
+      line-height: 1.2;
+      display: inline-block;
+    }
+  }
 </style>
     <!-- GTM injected at top of head -->
     <!-- Google Tag Manager -->
@@ -2321,11 +2379,11 @@
             <div class="hero-content">
                 <div class="hero-text">
                     <h1>Los Angeles Car Accident Lawyer — Speak With an Attorney Today</h1>
-                    <p class="hero-subhead hero-subtext" style="max-width: 640px; margin: 0 auto; line-height: 1.4; font-weight: 500;"><span class="hero-highlight">Speak with a Los Angeles car accident attorney</span> and injury lawyer for a free consultation after your crash.</p>
+                    <p class="hero-subhead hero-subtext"><span class="hero-highlight">Speak with a Los Angeles car accident attorney</span> and injury lawyer for a free consultation after your crash.</p>
                     <div class="hero-cta-group hero-cta">
                         <div class="call-cta-wrap">
                             <a href="tel:844-467-4335" class="btn-primary call-btn" data-callrail-phone="844-467-4335"><span class="call-btn-num">844-467-4335</span><span class="call-btn-sub">Free Consultation | Hablamos Español</span></a>
-                            <p class="call-cta-below">Free Consultation | Hablamos Español</p>
+                            
                         </div>
                     </div>
                     <div class="service-areas">
