@@ -461,6 +461,21 @@
                 display: none;
             }
         }
+  @media (max-width: 768px) {
+    /* Trust Badges Row Layout */
+    .trust-badges-row {
+      grid-template-columns: repeat(2, 1fr) !important;
+      gap: 20px !important;
+      justify-items: center !important;
+      padding: 10px !important;
+    }
+    /* Individual Trust Badge Image Sizing */
+    .trust-badges-row .trust-badge-img {
+      height: 220px !important;
+      width: auto !important;
+      max-width: 100% !important;
+    }
+  }
 </style>
     <script type="text/javascript" src="//cdn.callrail.com/companies/328698587/a8e768ec751936e4d680/12/swap.js"></script>
 </head>
