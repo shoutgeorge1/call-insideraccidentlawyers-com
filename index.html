@@ -2389,6 +2389,10 @@
     </script>
 </head>
 <body>
+    <script>
+    (function(){ var k=['gclid','gbraid','wbraid','utm_source','utm_medium','utm_campaign','utm_term','utm_content']; var q=window.location.search?new URLSearchParams(window.location.search):null; if(q){ for(var i=0;i<k.length;i++){ var v=q.get(k[i]); if(v) try{ localStorage.setItem('ial_'+k[i],v); }catch(e){} } }
+    })();
+    </script>
     <!-- GTM noscript injected after opening body -->
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WS8XT5FC"
@@ -2992,6 +2996,17 @@ document.addEventListener('DOMContentLoaded',function(){
       data._subject=form.querySelector('input[name="_subject"]').value;
       data._template=form.querySelector('input[name="_template"]').value;
       data._captcha=form.querySelector('input[name="_captcha"]').value;
+      try {
+        var trackKeys=['gclid','gbraid','wbraid','utm_source','utm_medium','utm_campaign','utm_term','utm_content'];
+        var parts=[];
+        for(var k=0;k<trackKeys.length;k++){
+          var key=trackKeys[k];
+          var v=localStorage.getItem('ial_'+key);
+          if(v){ data[key]=v; parts.push(key+'='+encodeURIComponent(v)); }
+        }
+        if(parts.length) data.tracking=parts.join(' | ');
+        delete data.website_url;
+      } catch(err) {}
       fetch('https://formsubmit.co/ajax/ial.leads.2024@gmail.com',{
         method:'POST',
         headers:{ 'Content-Type':'application/json', 'Accept':'application/json' },
@@ -3061,12 +3076,13 @@ document.addEventListener('DOMContentLoaded',function(){
 
 <script>
 (function() {
+  var SMS_POPUP_ENABLED = false; /* set true after A2P approval */
   var popup = document.getElementById("smsPopup");
   if (!popup) return;
 
   function isMobile() { return window.matchMedia("(max-width: 768px)").matches; }
 
-  if (!sessionStorage.getItem("smsPopupShown") && isMobile()) {
+  if (SMS_POPUP_ENABLED && !sessionStorage.getItem("smsPopupShown") && isMobile()) {
     setTimeout(function() {
       if (isMobile()) {
         popup.classList.add("show");
@@ -3082,6 +3098,7 @@ document.addEventListener('DOMContentLoaded',function(){
   });
 })();
 </script>
+<script src="/js/utm-gclid-tracking.js"></script>
 </body>
 </html>
 
