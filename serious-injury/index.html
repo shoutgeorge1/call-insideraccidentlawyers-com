@@ -314,11 +314,14 @@
             border-radius: 999px;
             background: rgba(255, 255, 255, 0.08);
             box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+            overflow: visible;
         }
         .trust-bar-logo {
             height: 40px;
             width: auto;
+            min-width: 40px;
             object-fit: contain;
+            flex-shrink: 0;
             filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.35));
         }
         .trust-bar-logo.yelp-logo {
@@ -1542,7 +1545,7 @@
                 <div class="see-through-inner">
                     <div class="trust-bar-items">
                         <div class="trust-bar-item">
-                            <img src="/images/la/google-rating.png" alt="Google 5 Star Rating" class="trust-bar-logo">
+                            <img src="/images/la/google-g-logo-500.png" alt="Google 5 Star Rating" class="trust-bar-logo">
                             <div class="trust-bar-rating">
                                 <div class="trust-bar-text">Top Rated</div>
                                 <div class="trust-bar-stars">★★★★★</div>
