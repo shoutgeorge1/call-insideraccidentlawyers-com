@@ -3,7 +3,9 @@
   "rewrites": [
     { "source": "/", "destination": "/index.html" },
     { "source": "/car-accident", "destination": "/car-accident/index.html" },
-    { "source": "/car-accident/", "destination": "/car-accident/index.html" }
+    { "source": "/car-accident/", "destination": "/car-accident/index.html" },
+    { "source": "/serious-injury", "destination": "/serious-injury/index.html" },
+    { "source": "/serious-injury/", "destination": "/serious-injury/index.html" }
   ],
   "redirects": [
     {
