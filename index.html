@@ -397,11 +397,11 @@
             width: 100%;
             background: var(--brand-white);
             border-bottom: 2px solid var(--brand-border);
-            padding: 12px 0;
+            padding: 8px 0;
         }
         @media (min-width: 769px) {
             body {
-                padding-top: 72px;
+                padding-top: 56px;
             }
             .sticky-header {
                 position: fixed;
@@ -409,7 +409,7 @@
                 left: 0;
                 right: 0;
                 z-index: 1000;
-                padding: 12px 0;
+                padding: 6px 0;
             }
         }
         .header-content {
@@ -505,6 +505,12 @@
         @media (max-width: 768px) {
             .sticky-header {
                 padding: 8px 0;
+                transition: transform 0.3s ease, opacity 0.3s ease;
+            }
+            .sticky-header.header--hidden {
+                transform: translateY(-100%);
+                opacity: 0;
+                pointer-events: none;
             }
             .header-content {
                 flex-direction: row;
@@ -3033,6 +3039,26 @@ document.addEventListener('DOMContentLoaded',function(){
   },{ threshold:0.2, rootMargin: '0px 0px -40px 0px' });
   obs.observe(statsEl);
 });
+(function() {
+  var header = document.querySelector('header.sticky-header');
+  var lastScrollY = 0;
+  var threshold = 60;
+  if (!header) return;
+  window.addEventListener('scroll', function() {
+    if (window.innerWidth > 768) {
+      header.classList.remove('header--hidden');
+      return;
+    }
+    var y = window.scrollY;
+    if (y > threshold) {
+      if (y > lastScrollY) header.classList.add('header--hidden');
+      else header.classList.remove('header--hidden');
+    } else {
+      header.classList.remove('header--hidden');
+    }
+    lastScrollY = y;
+  }, { passive: true });
+})();
 </script></body>
 </html>
 
