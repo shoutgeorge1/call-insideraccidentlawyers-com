@@ -2395,6 +2395,10 @@
     </script>
 </head>
 <body>
+    <script>
+    (function(){ var k=['gclid','gbraid','wbraid','utm_source','utm_medium','utm_campaign','utm_term','utm_content']; var q=window.location.search?new URLSearchParams(window.location.search):null; if(q){ for(var i=0;i<k.length;i++){ var v=q.get(k[i]); if(v) try{ localStorage.setItem('ial_'+k[i],v); }catch(e){} } }
+    })();
+    </script>
     <!-- GTM noscript injected after opening body -->
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WS8XT5FC"
@@ -2533,12 +2537,7 @@
                         <label class="form-label">Tell us about your accident *</label>
                         <textarea class="form-input" name="accident_reason" rows="3" required></textarea>
                     </div>
-                    <div class="form-group">
-                        <div class="form-checkbox">
-                            <input type="checkbox" name="text_consent" id="text_consent">
-                            <label for="text_consent">I agree to receive text messages. Message and data rates may apply. Reply STOP to opt out.</label>
-                        </div>
-                    </div>
+                    <label style="display:flex; align-items:flex-start; gap:8px; font-size:12px; line-height:1.4; margin-top:10px;"> <input type="checkbox" name="sms_opt_in" required style="margin-top:3px;"> <span> By checking this box, I am agreeing to receive transactional/informational text messages from Insider Accident Lawyers. Message frequency will vary. Msg & data rates may apply. Reply HELP for help or STOP to opt-out. </span> </label>
                     <button type="submit" class="btn-primary" style="width: 100%; margin-top: 24px;">Get My Free Review</button>
                 </form>
             </div>
@@ -2951,8 +2950,9 @@
             <div class="footer-disclaimer">
                 <p>This website is attorney advertising. Prior results do not guarantee a similar outcome. The information on this website is for general information purposes only. Nothing on this site should be taken as legal advice for any individual case or situation. This information is not intended to create, and receipt or viewing does not constitute, an attorney-client relationship.</p>
             <p style="margin-top: 16px;">Countrywide Trial Lawyers A Professional Law Corporation DBA Insider Accident Lawyers. California Entity Number: 4851715. 3435 Wilshire Blvd Suite 1620, Los Angeles, CA 90010.</p>
-            <p style="margin-top: 8px;">All Rights Reserved | <a href="https://www.insideraccidentlawyers.com/privacy-policy" style="color: inherit; text-decoration: underline;">Privacy Policy</a></p>
+            <p style="margin-top: 8px;">All Rights Reserved | <a href="/privacy-policy.html" style="color: inherit; text-decoration: underline;">Privacy Policy</a> | <a href="/terms-conditions.html" style="color: inherit; text-decoration: underline;">Terms & Conditions</a></p>
             <p style="margin-top: 8px;">© 2026</p>
+            <p style="font-size:12px;color:#666;text-align:center;margin-top:20px;line-height:1.4;">By texting 213-636-8571, you agree to receive messages from Insider Accident Lawyers. Message & data rates may apply. Reply STOP to opt out.</p>
             </div>
         </div>
     </footer>
@@ -2997,6 +2997,17 @@ document.addEventListener('DOMContentLoaded',function(){
       data._subject=form.querySelector('input[name="_subject"]').value;
       data._template=form.querySelector('input[name="_template"]').value;
       data._captcha=form.querySelector('input[name="_captcha"]').value;
+      try {
+        var trackKeys=['gclid','gbraid','wbraid','utm_source','utm_medium','utm_campaign','utm_term','utm_content'];
+        var parts=[];
+        for(var k=0;k<trackKeys.length;k++){
+          var key=trackKeys[k];
+          var v=localStorage.getItem('ial_'+key);
+          if(v){ data[key]=v; parts.push(key+'='+encodeURIComponent(v)); }
+        }
+        if(parts.length) data.tracking=parts.join(' | ');
+        delete data.website_url;
+      } catch(err) {}
       fetch('https://formsubmit.co/ajax/ial.leads.2024@gmail.com',{
         method:'POST',
         headers:{ 'Content-Type':'application/json', 'Accept':'application/json' },
@@ -3059,7 +3070,57 @@ document.addEventListener('DOMContentLoaded',function(){
     lastScrollY = y;
   }, { passive: true });
 })();
-</script></body>
+</script>
+
+<style id="sms-popup-styles">
+#smsPopup{position:fixed;bottom:20px;right:20px;width:340px;background:#fff;border-radius:14px;box-shadow:0 18px 40px rgba(0,0,0,.18);z-index:9999;opacity:0;transform:translateY(20px);transition:all .3s ease;pointer-events:none;}
+#smsPopup.show{opacity:1;transform:translateY(0);pointer-events:auto;}
+#smsPopup .sms-popup-content{padding:24px;text-align:center;position:relative;}
+#smsPopup .sms-image{width:90px;height:90px;border-radius:50%;object-fit:cover;margin-bottom:14px;}
+#smsPopup h3{margin:0 0 8px;font-size:18px;font-weight:600;}
+#smsPopup p{font-size:14px;margin-bottom:16px;color:#555;}
+#smsPopup .sms-button{display:inline-block;background:#0b4dbb;color:#fff;padding:12px 18px;border-radius:8px;text-decoration:none;font-weight:600;}
+#smsPopup .sms-footer{font-size:12px;margin-top:12px;color:#777;}
+#smsPopup .sms-close{position:absolute;top:12px;right:14px;background:none;border:none;font-size:18px;cursor:pointer;}
+@media(max-width:768px){#smsPopup{left:12px;right:12px;width:auto;bottom:12px;}}
+</style>
+<div id="smsPopup" class="sms-popup">
+  <div class="sms-popup-content">
+    <button class="sms-close" aria-label="Close popup">&times;</button>
+    <img src="https://www.insiderlawyers.com/images/shawn-rokni-popup.webp" alt="Shawn Rokni" class="sms-image" width="90" height="90" loading="lazy" />
+    <h3>Prefer to text instead?</h3>
+    <p>Message our intake team directly. We're available 24/7.</p>
+    <a href="sms:2136368571" class="sms-button">Text Our Team Now</a>
+    <div class="sms-footer">No Fee Unless We Win</div>
+  </div>
+</div>
+
+<script>
+(function() {
+  var SMS_POPUP_ENABLED = false; /* set true after A2P approval */
+  var popup = document.getElementById("smsPopup");
+  if (!popup) return;
+
+  function isMobile() { return window.matchMedia("(max-width: 768px)").matches; }
+
+  if (SMS_POPUP_ENABLED && !sessionStorage.getItem("smsPopupShown") && isMobile()) {
+    setTimeout(function() {
+      if (isMobile()) {
+        popup.classList.add("show");
+        sessionStorage.setItem("smsPopupShown", "true");
+      }
+    }, 20000);
+  }
+
+  document.addEventListener("click", function(e) {
+    if (e.target && e.target.classList && e.target.classList.contains("sms-close")) {
+      popup.classList.remove("show");
+    }
+  });
+})();
+</script>
+<script src="/js/utm-gclid-tracking.js"></script>
+</body>
 </html>
 
 
