@@ -5,7 +5,9 @@
     { "source": "/car-accident", "destination": "/car-accident/index.html" },
     { "source": "/car-accident/", "destination": "/car-accident/index.html" },
     { "source": "/serious-injury", "destination": "/serious-injury/index.html" },
-    { "source": "/serious-injury/", "destination": "/serious-injury/index.html" }
+    { "source": "/serious-injury/", "destination": "/serious-injury/index.html" },
+    { "source": "/slip-and-fall", "destination": "/slip-and-fall/index.html" },
+    { "source": "/slip-and-fall/", "destination": "/slip-and-fall/index.html" }
   ],
   "redirects": [
     {
