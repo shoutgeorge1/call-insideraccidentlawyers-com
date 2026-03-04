@@ -2321,19 +2321,53 @@
       display: block;
       margin-bottom: 4px;
     }
-    .hero-section .hero-subhead .hero-reframe {
+    .hero-section .hero-reframe-line {
       font-size: 22px;
-      display: block;
-      margin-top: 8px;
       line-height: 1.5;
+      color: var(--brand-white);
+      text-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+      margin-top: 16px;
+      margin-bottom: 0;
     }
   }
   @media (max-width: 768px) {
     .hero-section .hero-text .hero-subhead.hero-subtext {
       order: 3 !important;
     }
-    .hero-section .hero-text .hero-review-badges {
+    .hero-section .hero-text .hero-reframe-line {
       order: 4 !important;
+    }
+    .hero-section .hero-text .hero-review-badges {
+      order: 5 !important;
+    }
+    .hero-section .hero-text .hero-cta-group {
+      order: 6 !important;
+    }
+    .hero-section .hero-text .service-areas {
+      order: 7 !important;
+    }
+    .hero-section .hero-text .trust-badges {
+      order: 8 !important;
+    }
+    .hero-section .hero-reframe-line {
+      font-size: 18px;
+      text-align: center;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    /* Mobile: hero subhead spacing so phrases aren’t smashed */
+    .hero-section .hero-subhead.hero-subtext {
+      line-height: 1.6;
+      padding: 0 16px;
+      margin-bottom: 20px;
+    }
+    .hero-section .hero-subhead .hero-tagline {
+      display: block;
+      margin-bottom: 12px;
+    }
+    .hero-section .hero-subhead .hero-highlight {
+      display: block;
+      margin-bottom: 10px;
     }
   }
 </style>
@@ -2457,13 +2491,14 @@
             <div class="hero-content">
                 <div class="hero-text">
                     <h1>Los Angeles Slip and Fall Lawyer</h1>
-                    <p class="hero-subhead hero-subtext"><span class="hero-tagline">Free Consultation • No Fee Unless We Win.</span> <span class="hero-highlight">Injured in a slip and fall accident?</span> Speak with a Los Angeles premises liability attorney today. <span class="hero-reframe">Many people believe a fall was their fault. Unsafe property conditions are often the real cause.</span></p>
+                    <p class="hero-subhead hero-subtext"><span class="hero-tagline">Free Consultation • No Fee Unless We Win.</span> <span class="hero-highlight">Injured in a slip and fall accident?</span> Speak with a Los Angeles premises liability attorney today.</p>
                     <div class="hero-cta-group hero-cta">
                         <div class="call-cta-wrap">
                             <a href="tel:844-467-4335" class="btn-primary call-btn" data-callrail-phone="844-467-4335"><span class="call-btn-num">844-467-4335</span><span class="call-btn-sub">Call Now — Free Case Review</span></a>
                             
                         </div>
                     </div>
+                    <p class="hero-reframe-line">Many people believe a fall was their fault. Unsafe property conditions are often the real cause.</p>
                     <div class="service-areas">
                         <strong>Serving:</strong> Los Angeles County
                     </div>
