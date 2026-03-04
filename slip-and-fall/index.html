@@ -2308,6 +2308,34 @@
       width: auto !important;
     }
   }
+  /* Slip-and-fall hero: tagline bold on desktop, full subhead below image on mobile */
+  @media (min-width: 769px) {
+    .hero-section .hero-subhead {
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      line-height: 1.5;
+    }
+    .hero-section .hero-subhead .hero-tagline {
+      font-weight: 700;
+      color: #FFD700;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .hero-section .hero-subhead .hero-reframe {
+      font-size: 22px;
+      display: block;
+      margin-top: 8px;
+      line-height: 1.5;
+    }
+  }
+  @media (max-width: 768px) {
+    .hero-section .hero-text .hero-subhead.hero-subtext {
+      order: 3 !important;
+    }
+    .hero-section .hero-text .hero-review-badges {
+      order: 4 !important;
+    }
+  }
 </style>
     <!-- GTM injected at top of head -->
     <!-- Google Tag Manager -->
@@ -2429,15 +2457,13 @@
             <div class="hero-content">
                 <div class="hero-text">
                     <h1>Los Angeles Slip and Fall Lawyer</h1>
-                    <p class="hero-subhead hero-subtext">Free Consultation • No Fee Unless We Win</p>
-                    <p class="hero-subtext" style="margin-bottom: 12px; font-size: 20px; line-height: 1.5;">Injured in a slip and fall accident? Speak with a Los Angeles premises liability attorney today.</p>
+                    <p class="hero-subhead hero-subtext"><span class="hero-tagline">Free Consultation • No Fee Unless We Win.</span> <span class="hero-highlight">Injured in a slip and fall accident?</span> Speak with a Los Angeles premises liability attorney today. <span class="hero-reframe">Many people believe a fall was their fault. Unsafe property conditions are often the real cause.</span></p>
                     <div class="hero-cta-group hero-cta">
                         <div class="call-cta-wrap">
                             <a href="tel:844-467-4335" class="btn-primary call-btn" data-callrail-phone="844-467-4335"><span class="call-btn-num">844-467-4335</span><span class="call-btn-sub">Call Now — Free Case Review</span></a>
                             
                         </div>
                     </div>
-                    <p class="hero-subtext" style="font-size: 18px; opacity: 0.95; line-height: 1.5;">Many people believe a fall was their fault. Unsafe property conditions are often the real cause.</p>
                     <div class="service-areas">
                         <strong>Serving:</strong> Los Angeles County
                     </div>
