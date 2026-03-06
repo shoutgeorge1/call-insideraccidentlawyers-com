@@ -310,9 +310,9 @@
         }
         .stop-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
         .go-stop-sign {
-            width: 72px;
-            height: 72px;
-            margin-bottom: 20px;
+            width: 200px;
+            height: 200px;
+            margin-bottom: 24px;
             border-radius: 50%;
             overflow: hidden;
             display: flex;
@@ -322,7 +322,13 @@
         }
         .go-card .go-stop-sign { background: var(--green-fit); }
         .stop-card .go-stop-sign { background: var(--red-stop); }
-        .go-stop-sign img { width: 100%; height: 100%; object-fit: contain; padding: 14px; }
+        .go-stop-sign img { width: 100%; height: 100%; object-fit: contain; padding: 20px; }
+        .go-card .go-stop-sign img { mix-blend-mode: multiply; }
+        .stop-card .go-stop-sign img { mix-blend-mode: multiply; }
+        @media (max-width: 600px) {
+            .go-stop-sign { width: 160px; height: 160px; }
+            .go-stop-sign img { padding: 14px; }
+        }
         .go-card h2 { color: var(--green-fit); font-size: 26px; font-weight: 800; margin-bottom: 20px; letter-spacing: -0.02em; }
         .stop-card h2 { color: var(--red-stop); font-size: 26px; font-weight: 800; margin-bottom: 20px; letter-spacing: -0.02em; }
         .go-list, .stop-list { list-style: none; }
