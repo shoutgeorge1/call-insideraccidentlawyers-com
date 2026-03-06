@@ -73,7 +73,7 @@
         }
         .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
         section { padding: 96px 0; }
-        @media (max-width: 768px) { section { padding: 64px 0; } }
+        @media (max-width: 768px) { section { padding: 72px 0; } }
 
         h1, h2, h3, h4 {
             font-weight: 700;
@@ -209,17 +209,21 @@
             .hero-grid { grid-template-columns: 1fr; display: flex; flex-direction: column; }
             .hero-text { display: contents; }
             .hero-head { display: contents; }
+            .hero-trust-line { display: block; }
             .hero-head h1 { order: 0; margin-bottom: 12px; font-size: clamp(26px, 6vw, 32px); text-align: center; }
             .hero-image-col { order: 1; max-width: 260px; margin: 0 auto 16px; }
             .hero-image-col img { max-height: 50vh; }
             .hero-sub { order: 2; margin-bottom: 14px; font-size: 17px; font-weight: 600; color: rgba(255,255,255,0.98); line-height: 1.5; }
-            .hero-ctas { order: 3; margin-bottom: 16px; gap: 12px; }
-            .hero-trust-list { order: 4; gap: 6px; }
+            .hero-ctas { order: 3; margin-bottom: 12px; gap: 12px; }
+            .hero-trust-line { order: 4; margin-bottom: 12px; }
+            .hero-trust-list { order: 5; gap: 6px; }
         }
-        .hero h1 { color: var(--white); margin-bottom: 20px; line-height: 1.2; }
+        .hero h1 { color: var(--white); margin-bottom: 24px; line-height: 1.2; }
         .hero h1 .gold { color: var(--gold); }
-        .hero-sub { font-size: 18px; line-height: 1.6; color: rgba(255,255,255,0.92); margin-bottom: 24px; max-width: 500px; }
-        .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 20px; }
+        .hero-sub { font-size: 18px; line-height: 1.6; color: rgba(255,255,255,0.92); margin-bottom: 28px; max-width: 500px; }
+        .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 16px; }
+        .hero-trust-line { font-size: 16px; font-weight: 600; color: rgba(255,255,255,0.95); margin-bottom: 14px; }
+        .hero-ctas + .hero-trust-line { margin-top: 0; }
         .hero-ctas .btn-primary { background: var(--gold); color: var(--navy); }
         .hero-ctas .btn-secondary { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,0.9); }
         .hero-ctas .btn-secondary:hover { background: var(--white); color: var(--navy); border-color: var(--white); }
@@ -229,6 +233,9 @@
             flex-direction: column;
             gap: 8px;
             margin-bottom: 0;
+        }
+        @media (max-width: 900px) {
+            .hero-trust-line { text-align: center; }
         }
         .hero-trust-list li {
             display: flex;
@@ -781,7 +788,7 @@
 
         .trust-badges-section {
             background: linear-gradient(180deg, var(--blue-light) 0%, var(--white) 30%, var(--white) 100%);
-            padding: 56px 0 64px;
+            padding: 64px 0 80px;
             position: relative;
         }
         .trust-badges-section::before {
@@ -796,7 +803,7 @@
             border-radius: 2px;
         }
         .trust-badges-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        .trust-badges-section .section-head { margin-bottom: 32px; }
+        .trust-badges-section .section-head { margin-bottom: 40px; }
         .trust-badges-section .section-head h2 {
             font-size: 1.85rem;
             font-weight: 700;
@@ -815,18 +822,18 @@
             text-align: center;
             font-size: 18px;
             color: var(--gray-700);
-            margin-bottom: 24px;
+            margin-bottom: 28px;
             font-weight: 600;
             letter-spacing: 0.05em;
         }
         .trust-badges-row {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: 24px 28px;
+            gap: 28px 32px;
             align-items: center;
             justify-items: center;
             background: var(--white);
-            padding: 40px 24px;
+            padding: 48px 28px;
             border-radius: var(--radius);
             box-shadow: var(--shadow);
             border: 1px solid rgba(14, 58, 102, 0.08);
@@ -836,9 +843,9 @@
         .lp-stats {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
+            gap: 24px;
             max-width: 1000px;
-            margin: 0 auto 28px;
+            margin: 0 auto 40px;
             padding: 0 20px;
         }
         .lp-stat-item {
@@ -1004,10 +1011,9 @@
                         <a href="#case-evaluation" class="btn-primary">See If My Case Fits</a>
                         <a href="tel:844-467-4335" class="btn-secondary btn-outline-white" data-callrail-phone="844-467-4335">Call To Speak With an Attorney</a>
                     </div>
+                    <p class="hero-trust-line">Cases reviewed by a lawyer within minutes.</p>
                     <ul class="hero-trust-list">
-                        <li><span class="icon" aria-hidden="true">✓</span> Cases reviewed by a lawyer within minutes.</li>
-                        <li><span class="icon" aria-hidden="true">✓</span> Serious injury cases only.</li>
-                        <li><span class="icon" aria-hidden="true">✓</span> Direct access to a real attorney.</li>
+                        <li><span class="icon" aria-hidden="true">✓</span> Direct access to a real attorney</li>
                         <li><span class="icon" aria-hidden="true">✓</span> Free consultation</li>
                         <li><span class="icon" aria-hidden="true">✓</span> No fee unless we win</li>
                     </ul>
@@ -1250,6 +1256,13 @@
                     <div class="icon-wrap">
                         <svg class="icon-line" viewBox="0 0 24 24" stroke="currentColor"><path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
                     </div>
+                    <h4>Avoid Early Insurance Settlement Offers</h4>
+                    <p>Insurance companies often offer fast settlements that undervalue serious injuries. Speak with a lawyer before accepting any offer.</p>
+                </div>
+                <div class="after-accident-card">
+                    <div class="icon-wrap">
+                        <svg class="icon-line" viewBox="0 0 24 24" stroke="currentColor"><path d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/></svg>
+                    </div>
                     <h4>Do not accept early settlement offers</h4>
                     <p>Insurance may offer a quick check before you know the full value of your claim.</p>
                 </div>
@@ -1425,7 +1438,7 @@
     <section class="our-attorneys-section section-with-bg">
         <div class="container">
             <div class="section-head">
-                <p class="our-attorneys-eyebrow">Trial Attorneys, Not Settlement Mills</p>
+                <p class="our-attorneys-eyebrow">Trial Attorneys. Not Settlement Mills.</p>
                 <h2>Our Attorneys</h2>
                 <p class="section-sub">Insider Accident Lawyers</p>
             </div>
