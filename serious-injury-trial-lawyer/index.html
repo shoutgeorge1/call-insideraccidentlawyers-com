@@ -1510,63 +1510,118 @@
             }
         }
         .go-stop-section {
-            background: var(--brand-white);
+            background: linear-gradient(180deg, rgba(12, 35, 52, 0.02) 0%, transparent 100%);
         }
         .go-stop-card {
             display: grid;
-            grid-template-columns: 140px 1fr;
+            grid-template-columns: 72px 1fr;
             gap: 28px;
-            align-items: center;
+            align-items: start;
             background: var(--brand-white);
-            border-radius: var(--card-radius);
-            padding: 40px;
-            box-shadow: var(--card-shadow);
-            border: 2px solid var(--brand-border);
+            border-radius: 14px;
+            padding: 36px 40px;
+            box-shadow: 0 4px 24px rgba(12, 35, 52, 0.08);
+            border: 1px solid rgba(1, 54, 108, 0.1);
             text-align: left;
         }
         .go-stop-icon {
-            display: grid;
-            place-items: center;
-            background: #ffffff;
-            border-radius: 16px;
-            padding: 8px;
-            border: 2px solid var(--brand-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            flex-shrink: 0;
         }
-        .go-stop-icon img {
-            width: 120px;
-            height: 120px;
-            object-fit: contain;
-            display: block;
+        .go-stop-icon svg {
+            width: 28px;
+            height: 28px;
+        }
+        .go-card .go-stop-icon {
+            background: rgba(22, 163, 52, 0.12);
+            color: #15803d;
+        }
+        .go-card .go-stop-icon svg {
+            fill: currentColor;
+        }
+        .stop-card .go-stop-icon {
+            background: rgba(185, 28, 28, 0.08);
+            color: #b91c1c;
+        }
+        .stop-card .go-stop-icon svg {
+            fill: currentColor;
         }
         .go-title {
-            color: #166534;
-            font-size: 36px;
-            margin-bottom: 8px;
+            color: var(--brand-navy);
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 14px;
+            letter-spacing: -0.02em;
+        }
+        .go-title .go-accent {
+            color: #15803d;
+            font-weight: 600;
         }
         .stop-title {
+            color: var(--brand-navy);
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 14px;
+            letter-spacing: -0.02em;
+        }
+        .stop-title .stop-accent {
             color: #b91c1c;
-            font-size: 36px;
-            margin-bottom: 8px;
+            font-weight: 600;
         }
         .go-list,
         .stop-list {
-            margin-top: 8px;
+            margin-top: 0;
+            list-style: none;
+            padding-left: 0;
         }
         .go-list li,
         .stop-list li {
-            font-size: 20px;
-            margin-bottom: 10px;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 8px;
+            padding-left: 24px;
+            position: relative;
+            color: var(--brand-gray-700);
+        }
+        .go-list li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.5em;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #15803d;
+        }
+        .stop-list li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.5em;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: rgba(185, 28, 28, 0.6);
         }
         .stop-list li {
-            font-weight: 600;
+            font-weight: 400;
+        }
+        .go-card .qualify-note,
+        .stop-card .qualify-note {
+            margin-top: 16px;
+            font-size: 14px;
+            color: var(--brand-gray-500);
         }
         .stop-card {
-            background: #fff5f5;
-            border-left: 6px solid #dc2626;
+            border-left: 3px solid rgba(185, 28, 28, 0.25);
         }
         .go-card {
-            background: #f0fdf4;
-            border-left: 6px solid #16a34a;
+            border-left: 3px solid rgba(22, 163, 52, 0.3);
         }
         .authority-section {
             background: linear-gradient(135deg, #0c2334 0%, #0b2b5a 55%, #123a75 100%);
@@ -1591,11 +1646,17 @@
         }
         @media (max-width: 768px) {
             .go-stop-card {
-                grid-template-columns: 1fr;
+                grid-template-columns: 56px 1fr;
+                gap: 20px;
+                padding: 28px 24px;
             }
-            .go-stop-icon img {
-                width: 96px;
-                height: 96px;
+            .go-title,
+            .stop-title {
+                font-size: 19px;
+            }
+            .go-list li,
+            .stop-list li {
+                font-size: 15px;
             }
         }
         .sticky-mobile-cta {
@@ -1811,11 +1872,11 @@
     <section id="your-case" class="core-trust section-with-bg go-stop-section">
         <div class="container">
             <div class="go-stop-card go-card">
-                <div class="go-stop-icon">
-                    <img src="/images/ppc/go-icon.jpg" alt="Go icon">
+                <div class="go-stop-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
                 </div>
                 <div>
-                    <h2 class="go-title">GO — THESE CASES ARE A FIT</h2>
+                    <h2 class="go-title"><span class="go-accent">Cases we take</span></h2>
                     <ul class="go-list">
                         <li><strong>Serious physical injuries</strong></li>
                         <li><strong>Medical treatment already started</strong></li>
@@ -1831,11 +1892,11 @@
     <section class="core-trust section-with-bg go-stop-section">
         <div class="container">
             <div class="go-stop-card stop-card">
-                <div class="go-stop-icon">
-                    <img src="/images/ppc/stop-sign.png" alt="Stop sign">
+                <div class="go-stop-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
                 </div>
                 <div>
-                    <h2 class="stop-title">STOP — DO NOT CALL FOR THESE</h2>
+                    <h2 class="stop-title"><span class="stop-accent">Cases we don’t handle</span></h2>
                     <ul class="stop-list">
                         <li>Minor fender benders</li>
                         <li>No-injury accidents</li>
