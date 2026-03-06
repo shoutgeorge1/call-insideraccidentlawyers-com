@@ -311,15 +311,19 @@
         .stop-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
         .go-stop-sign {
             margin-bottom: 24px;
-            display: block;
+            display: inline-block;
             flex-shrink: 0;
+            background: var(--green-soft);
         }
+        .stop-card .go-stop-sign { background: var(--red-soft); }
         .go-stop-sign img {
             width: auto;
             height: 200px;
             object-fit: contain;
             display: block;
         }
+        .go-card .go-stop-sign img { mix-blend-mode: multiply; }
+        .stop-card .go-stop-sign img { mix-blend-mode: multiply; }
         @media (max-width: 600px) {
             .go-stop-sign img { height: 160px; }
         }
