@@ -1316,6 +1316,19 @@
             .hero-text {
                 order: -1;
             }
+            .hero-image-wrap--after-h1 {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 8px;
+                margin-bottom: 16px;
+            }
+            .hero-image-wrap--after-h1 .hero-attorney-img {
+                margin: 0 auto 0;
+            }
+            .hero-content > .hero-image-wrap {
+                display: none;
+            }
             .hero-image-wrap {
                 order: 1;
             }
@@ -1375,6 +1388,14 @@
                 display: none;
             }
             .hero-subhead-mobile {
+                display: none;
+            }
+            .hero-image-wrap--after-h1 {
+                display: none;
+            }
+        }
+        @media (max-width: 768px) {
+            .hero-content > .hero-image-wrap:not(.hero-image-wrap--after-h1) {
                 display: none;
             }
         }
@@ -1710,6 +1731,15 @@
             <div class="hero-content">
                 <div class="hero-text">
                     <h1><span class="hero-headline-desktop">Serious Accident?<br>Speak With a <span class="highlight">Trial-Ready</span> Los Angeles Injury Lawyer Today.</span><span class="hero-headline-mobile">Serious Accident? <span class="highlight">Trial-Ready</span> LA Lawyer. Call Now.</span></h1>
+                    <div class="hero-image-wrap hero-image-wrap--after-h1" aria-hidden="true">
+                        <picture>
+                            <source media="(max-width: 768px)" srcset="/images/la/attorney-mobile.webp">
+                            <img src="/images/la/attorney-hero.webp" alt="" class="hero-attorney-img">
+                        </picture>
+                        <div class="hero-logo-badge">
+                            <img src="/images/la/insider-badge.png" alt="">
+                        </div>
+                    </div>
                     <p class="hero-subhead"><span class="hero-subhead-desktop">Most injury firms push cases to quick settlements.<br>Insider Accident Lawyers prepares every serious injury case as if it will go to trial.</span><span class="hero-subhead-mobile">Trial-ready. No settlement mills. Real attorneys. Free consult.</span></p>
                     <div class="hero-cta-group">
                         <a href="#case-evaluation" class="btn-primary">Get My Free Case Review</a>
