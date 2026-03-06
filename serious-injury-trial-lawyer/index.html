@@ -81,6 +81,53 @@
             box-shadow: var(--card-shadow);
             margin-bottom: 32px;
         }
+        .trial-prep-section {
+            background: linear-gradient(135deg, #0c2334 0%, #01366c 50%, #01468a 100%);
+            color: var(--brand-white);
+            padding: 56px 48px;
+            border-radius: var(--card-radius);
+            box-shadow: 0 16px 48px rgba(12, 35, 52, 0.25);
+            border: 2px solid rgba(255, 255, 255, 0.12);
+        }
+        .trial-prep-section h2 {
+            color: var(--brand-white);
+            font-size: 32px;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 28px;
+            text-align: center;
+        }
+        .trial-prep-section .trial-prep-lead {
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 1.6;
+            text-align: center;
+            max-width: 680px;
+            margin: 0 auto 20px;
+            color: rgba(255, 255, 255, 0.95);
+        }
+        .trial-prep-section .trial-prep-close {
+            font-size: 19px;
+            font-weight: 700;
+            line-height: 1.6;
+            text-align: center;
+            max-width: 560px;
+            margin: 0 auto;
+            color: var(--brand-accent-yellow);
+        }
+        @media (max-width: 768px) {
+            .trial-prep-section {
+                padding: 40px 24px;
+            }
+            .trial-prep-section h2 {
+                font-size: 26px;
+                margin-bottom: 20px;
+            }
+            .trial-prep-section .trial-prep-lead,
+            .trial-prep-section .trial-prep-close {
+                font-size: 17px;
+            }
+        }
         @media (max-width: 768px) {
             section {
                 padding: 40px 0;
@@ -284,81 +331,99 @@
         }
         .see-through-bar {
             position: relative;
-            padding: 16px 0;
-            background: rgba(12, 35, 52, 0.4);
+            padding: 20px 0;
+            background: rgba(12, 35, 52, 0.45);
             color: var(--brand-white);
             text-align: center;
         }
         .see-through-bar .see-through-inner {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 10px 20px;
-            border-radius: 999px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-            backdrop-filter: blur(6px);
+            padding: 18px 28px;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
         }
         .trust-bar-items {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 24px;
+            gap: 32px;
             flex-wrap: wrap;
         }
         .trust-bar-item {
             display: inline-flex;
             align-items: center;
-            gap: 12px;
-            padding: 6px 12px;
-            border-radius: 999px;
-            background: rgba(255, 255, 255, 0.08);
-            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+            gap: 14px;
+            padding: 12px 20px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
             overflow: visible;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .trust-bar-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.16);
         }
         .trust-bar-logo {
-            height: 40px;
+            height: 52px;
             width: auto;
-            min-width: 40px;
+            min-width: 52px;
             object-fit: contain;
             flex-shrink: 0;
-            filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.35));
+            filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
         }
         .trust-bar-logo.yelp-logo {
-            height: 38px;
+            height: 48px;
             background: #ffffff;
-            padding: 2px 6px;
-            border-radius: 8px;
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+            padding: 4px 8px;
+            border-radius: 10px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
         }
         .trust-bar-rating {
             display: flex;
             flex-direction: column;
-            line-height: 1.1;
+            line-height: 1.2;
+            align-items: flex-start;
         }
         .trust-bar-stars {
-            font-size: 14px;
+            font-size: 18px;
             color: var(--brand-accent-yellow);
             text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
-            letter-spacing: 1px;
+            letter-spacing: 2px;
         }
         .trust-bar-text {
-            font-size: 14px;
-            font-weight: 600;
-            letter-spacing: 0.4px;
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
         }
         @media (max-width: 768px) {
             .see-through-bar .see-through-inner {
                 border-radius: 16px;
+                padding: 14px 18px;
             }
             .trust-bar-logo {
-                height: 32px;
+                height: 44px;
+                min-width: 44px;
+            }
+            .trust-bar-logo.yelp-logo {
+                height: 40px;
             }
             .trust-bar-item {
-                padding: 6px 10px;
+                padding: 10px 16px;
+                gap: 12px;
             }
             .trust-bar-stars {
-                font-size: 12px;
+                font-size: 16px;
+            }
+            .trust-bar-text {
+                font-size: 14px;
             }
         }
         .case-card:hover {
@@ -937,42 +1002,66 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 20px;
+            gap: 28px;
             flex-wrap: wrap;
-            margin: 20px 0 8px;
+            margin: 28px 0 12px;
         }
         .review-badge {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            padding: 8px 14px;
-            border-radius: 999px;
-            background: rgba(1, 54, 108, 0.08);
-            border: 1px solid rgba(1, 54, 108, 0.18);
+            gap: 14px;
+            padding: 16px 24px;
+            border-radius: 14px;
+            background: var(--brand-white);
+            border: 2px solid rgba(1, 54, 108, 0.12);
+            box-shadow: 0 8px 24px rgba(12, 35, 52, 0.1);
             overflow: visible;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .review-badge:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(12, 35, 52, 0.15);
+            border-color: rgba(1, 54, 108, 0.2);
         }
         .review-badge img {
-            height: 40px;
+            height: 56px;
             width: auto;
-            min-width: 40px;
+            min-width: 56px;
             object-fit: contain;
             flex-shrink: 0;
         }
         .review-badge img.yelp-logo {
-            height: 34px;
+            height: 48px;
             background: #ffffff;
-            padding: 2px 6px;
-            border-radius: 8px;
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
-        }
-        .review-badge {
-            padding: 10px 18px;
+            padding: 4px 8px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
         .review-badge-stars {
             color: var(--brand-accent-yellow);
-            letter-spacing: 2px;
-            font-size: 14px;
+            letter-spacing: 3px;
+            font-size: 20px;
             font-weight: 700;
+        }
+        @media (max-width: 768px) {
+            .review-badges {
+                gap: 16px;
+                margin: 20px 0 10px;
+            }
+            .review-badge {
+                padding: 12px 18px;
+                gap: 12px;
+            }
+            .review-badge img {
+                height: 44px;
+                min-width: 44px;
+            }
+            .review-badge img.yelp-logo {
+                height: 40px;
+            }
+            .review-badge-stars {
+                font-size: 16px;
+            }
         }
         .rating-display {
             font-size: 48px;
@@ -1681,10 +1770,10 @@
 
     <section class="process-section section-with-bg" style="padding-top: 48px; padding-bottom: 48px;">
         <div class="container">
-            <div class="section-content">
-                <h2 style="text-align: center; margin-bottom: 20px;">Why Trial Preparation Matters</h2>
-                <p style="text-align: center; font-size: 18px; line-height: 1.7; color: var(--brand-gray-700); max-width: 720px; margin: 0 auto 16px;">Insurance companies track which law firms are willing to take cases to trial. When a firm prepares every case with litigation in mind, insurers often negotiate more seriously.</p>
-                <p style="text-align: center; font-size: 18px; line-height: 1.7; color: var(--brand-gray-700); max-width: 720px; margin: 0 auto;">Insider Accident Lawyers builds serious injury cases with trial preparation from the beginning.</p>
+            <div class="section-content trial-prep-section">
+                <h2>Why Trial Preparation Matters</h2>
+                <p class="trial-prep-lead">Insurance companies track which law firms are willing to take cases to trial. When a firm prepares every case with litigation in mind, insurers often negotiate more seriously.</p>
+                <p class="trial-prep-close">Insider Accident Lawyers builds serious injury cases with trial preparation from the beginning.</p>
             </div>
         </div>
     </section>
