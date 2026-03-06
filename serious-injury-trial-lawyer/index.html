@@ -313,18 +313,20 @@
             margin-bottom: 24px;
             display: inline-block;
             flex-shrink: 0;
-            background: var(--green-soft);
+            background: var(--white);
+            padding: 16px;
+            border-radius: var(--radius);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(0, 0, 0, 0.06);
         }
-        .stop-card .go-stop-sign { background: var(--red-soft); }
         .go-stop-sign img {
             width: auto;
             height: 200px;
             object-fit: contain;
             display: block;
         }
-        .go-card .go-stop-sign img { mix-blend-mode: multiply; }
-        .stop-card .go-stop-sign img { mix-blend-mode: multiply; }
         @media (max-width: 600px) {
+            .go-stop-sign { padding: 12px; }
             .go-stop-sign img { height: 160px; }
         }
         .go-card h2 { color: var(--green-fit); font-size: 26px; font-weight: 800; margin-bottom: 20px; letter-spacing: -0.02em; }
