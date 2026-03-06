@@ -36,9 +36,11 @@
     <meta name="description" content="Los Angeles serious injury trial lawyers. Clear fault, active insurance. Real trial lawyers for serious injury cases—not a lead mill. Free fit check.">
     <title>Serious Injury Trial Lawyers | Los Angeles | Clear Fault. Active Insurance.</title>
     <link rel="canonical" href="https://call.insideraccidentlawyers.com/serious-injury-trial-lawyer">
+    <link rel="preload" as="image" href="/images/la/shawn-hero.webp">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap"></noscript>
     <style>
         :root {
             --navy: #0e3a66;
@@ -86,7 +88,6 @@
         .section-sub, .section-intro, .trial-lead { line-height: 1.65; }
         .font-serif { font-family: "Libre Baskerville", Georgia, serif; }
 
-        /* Buttons — soft shadow, hover lift */
         .btn-primary {
             display: inline-flex;
             align-items: center;
@@ -137,7 +138,6 @@
         }
         .btn-outline-white:hover { background: var(--white); color: var(--navy); }
 
-        /* ========== HEADER ========== */
         .site-header {
             position: sticky;
             top: 0;
@@ -192,7 +192,6 @@
             .header-phone-num { width: 100%; text-align: right; }
         }
 
-        /* ========== HERO ========== */
         .hero {
             background: linear-gradient(rgba(14,58,102,0.92), rgba(14,58,102,0.85)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"/>') center/cover;
             background-color: var(--navy);
@@ -267,7 +266,6 @@
         }
         @media (max-width: 900px) { .hero-image-caption { text-align: center; } }
 
-        /* ========== TRUST STRIP ========== */
         .trust-strip {
             background: var(--blue-light);
             padding: 28px 0 24px;
@@ -315,7 +313,6 @@
             .trust-strip-review img.yelp { height: 32px; }
         }
 
-        /* ========== GO / STOP CARDS ========== */
         .go-stop-section {
             background: #f8fafc;
             border-top: 6px solid var(--navy);
@@ -420,7 +417,6 @@
         }
         .qualify-icon { display: none; }
 
-        /* ========== PROCESS (What Happens Next) ========== */
         .process-section { background: var(--blue-light); position: relative; }
         .process-accent-image {
             margin-bottom: 40px;
@@ -473,7 +469,6 @@
         .process-card h3 { font-size: 18px; margin-bottom: 8px; }
         .process-card p { font-size: 15px; color: var(--gray-700); line-height: 1.5; }
 
-        /* ========== AUTHORITY (Why Us) ========== */
         .authority-section {
             background: linear-gradient(180deg, var(--navy) 0%, var(--navy-mid) 100%);
             color: var(--white);
@@ -497,7 +492,6 @@
         .authority-card .icon-wrap { margin-bottom: 16px; }
         .authority-card .icon-wrap svg { width: 40px; height: 40px; stroke: var(--gold); }
 
-        /* ========== WHAT TO DO AFTER ACCIDENT ========== */
         .after-accident { background: var(--white); border-top: 1px solid var(--gray-200); }
         .after-accident-grid {
             display: grid;
@@ -520,7 +514,6 @@
         .after-accident-card .icon-wrap { margin-bottom: 12px; }
         .after-accident-card .icon-wrap svg { width: 36px; height: 36px; stroke: var(--blue); }
 
-        /* ========== CASE TYPES GRID ========== */
         .case-types-section { background: var(--blue-light); }
         .case-types-grid {
             display: grid;
@@ -549,7 +542,6 @@
         .case-type-card .icon-wrap { margin-bottom: 12px; }
         .case-type-card .icon-wrap svg { width: 40px; height: 40px; stroke: var(--navy); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
         .case-type-card .icon-wrap svg.icon-gold { stroke: var(--gold); }
-        /* Trial Authority section with image */
         .trial-authority-section {
             background: linear-gradient(180deg, var(--navy) 0%, var(--navy-mid) 100%);
             color: var(--white);
@@ -566,7 +558,6 @@
         }
         .trial-authority-image-wrap img { width: 100%; height: auto; display: block; }
 
-        /* ========== FORM SECTION ========== */
         .form-section {
             background: linear-gradient(180deg, var(--navy) 0%, var(--navy-mid) 100%);
             padding: 96px 0;
@@ -632,7 +623,6 @@
         .form-checkbox label { font-size: 13px; color: var(--gray-700); }
         .form-radio-group { display: flex; gap: 20px; margin-top: 8px; }
 
-        /* ========== REVIEWS ========== */
         .reviews-section { background: var(--white); }
         .reviews-header { text-align: center; margin-bottom: 28px; }
         .reviews-badges { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-top: 12px; }
@@ -667,12 +657,10 @@
             .reviews-section .review-card .author { font-size: 15px; }
         }
 
-        /* ========== TRIAL READINESS ========== */
         .trial-readiness { background: var(--blue-light); }
         .trial-readiness .inner { max-width: 720px; margin: 0 auto; text-align: center; }
         .trial-readiness p { font-size: 17px; color: var(--gray-700); line-height: 1.7; }
 
-        /* ========== FINAL CTA ========== */
         .final-cta {
             background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
             color: var(--white);
@@ -745,7 +733,6 @@
             .our-attorneys-title { font-size: 13px; text-align: center; }
         }
 
-        /* ========== FOOTER ========== */
         footer {
             background: var(--navy);
             color: var(--white);
@@ -772,7 +759,6 @@
             line-height: 1.6;
         }
 
-        /* ========== STICKY MOBILE CTA ========== */
         .sticky-mobile-cta {
             display: none;
             position: fixed;
@@ -792,10 +778,8 @@
         @media (max-width: 768px) { .sticky-mobile-cta { display: flex; } }
         .sticky-mobile-cta svg { width: 26px; height: 26px; }
 
-        /* Icon set: simple line, consistent */
         .icon-line { stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; fill: none; }
 
-        /* ========== TRUST BADGES / STATS ========== */
         .trust-badges-section {
             background: linear-gradient(180deg, var(--blue-light) 0%, var(--white) 30%, var(--white) 100%);
             padding: 56px 0 64px;
@@ -922,7 +906,7 @@
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-WS8XT5FC');</script>
-    <script type="text/javascript" src="//cdn.callrail.com/companies/328698587/a8e768ec751936e4d680/12/swap.js"></script>
+    <script type="text/javascript" src="//cdn.callrail.com/companies/328698587/a8e768ec751936e4d680/12/swap.js" defer></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         document.addEventListener('DOMContentLoaded', function() {
@@ -991,7 +975,7 @@
             <div class="header-inner">
                 <div style="display: flex; align-items: center; gap: 28px; flex-wrap: wrap;">
                     <a href="/" aria-label="Insider Accident Lawyers home">
-                        <img src="/images/la/logo.png" alt="Insider Accident Lawyers" class="header-logo" style="filter: brightness(0);">
+                        <img src="/images/la/logo.png" alt="Insider Accident Lawyers" class="header-logo" width="160" height="40" loading="lazy" decoding="async" style="filter: brightness(0);">
                     </a>
                     <nav class="header-nav" aria-label="Main">
                         <a href="#your-case">Your Case</a>
@@ -1030,7 +1014,7 @@
                     </ul>
                 </div>
                 <div class="hero-image-col">
-                    <img src="https://tpc.googlesyndication.com/simgad/621724734200271614" alt="Shawn Rokni — Owner, Insider Accident Lawyers" onerror="this.src='/images/la/attorney-trial.png'; this.alt='Serious injury trial attorney';">
+                    <img src="/images/la/shawn-hero.webp" width="420" height="420" fetchpriority="high" decoding="async" alt="Shawn Rokni — Owner, Insider Accident Lawyers" onerror="this.src='/images/la/attorney-trial.png';this.onerror=null;">
                     <p class="hero-image-caption">Shawn Rokni — Owner, Insider Accident Lawyers</p>
                 </div>
             </div>
@@ -1042,12 +1026,12 @@
             <div class="trust-strip-inner">
                 <div class="trust-strip-reviews">
                     <div class="trust-strip-review">
-                        <img src="/images/la/google-g-logo-500.png" alt="Google">
+                        <img src="/images/la/google-g-logo-500.png" alt="Google" width="44" height="44" loading="lazy" decoding="async">
                         <span class="stars">★★★★★</span>
                         <span>Google</span>
                     </div>
                     <div class="trust-strip-review">
-                        <img src="/images/la/yelp-logo.jpg" alt="Yelp" class="yelp">
+                        <img src="/images/la/yelp-logo.jpg" alt="Yelp" class="yelp" width="44" height="44" loading="lazy" decoding="async">
                         <span class="stars">★★★★★</span>
                         <span>Yelp</span>
                     </div>
@@ -1076,12 +1060,12 @@
             <p class="lp-stats-tagline">Former insurance attorneys who know how to get you maximum compensation.</p>
             <div class="trust-badges-headline">Trusted &amp; Recognized By</div>
             <div class="trust-badges-row">
-                <img src="/images/la/ucla-ww-ps-logo.png" alt="UCLA" class="trust-badge-img" style="height: 80px; width: auto; object-fit: contain;" width="130" height="100" loading="lazy">
-                <img src="/images/la/superlawyers-stacked.png" alt="Super Lawyers" class="trust-badge-img" style="height: 80px; width: auto; object-fit: contain;" width="130" height="100" loading="lazy">
-                <img src="/images/la/trust-badge-1.webp" alt="Trust Badge" class="trust-badge-img" width="130" height="100" loading="lazy" style="height: 80px; width: auto; object-fit: contain;">
-                <img src="/images/la/lacba-featured-59015-255.jpg" alt="LACBA" class="trust-badge-img" style="height: 80px; width: auto; object-fit: contain;" width="130" height="100" loading="lazy">
-                <img src="/images/la/google-badge.png" alt="Google Reviews" class="trust-badge-img" style="height: 80px; width: auto; object-fit: contain;" width="130" height="100" loading="lazy">
-                <img src="/images/la/trust-badge-4.webp" alt="Trust Badge" class="trust-badge-img" width="130" height="100" loading="lazy" style="height: 80px; width: auto; object-fit: contain;">
+                <img src="/images/la/ucla-ww-ps-logo.png" alt="UCLA" class="trust-badge-img" width="130" height="80" loading="lazy" decoding="async">
+                <img src="/images/la/superlawyers-stacked.png" alt="Super Lawyers" class="trust-badge-img" width="130" height="80" loading="lazy" decoding="async">
+                <img src="/images/la/trust-badge-1.webp" alt="Trust Badge" class="trust-badge-img" width="130" height="80" loading="lazy" decoding="async">
+                <img src="/images/la/lacba-featured-59015-255.jpg" alt="LACBA" class="trust-badge-img" width="130" height="80" loading="lazy" decoding="async">
+                <img src="/images/la/google-badge.png" alt="Google Reviews" class="trust-badge-img" width="130" height="80" loading="lazy" decoding="async">
+                <img src="/images/la/trust-badge-4.webp" alt="Trust Badge" class="trust-badge-img" width="130" height="80" loading="lazy" decoding="async">
             </div>
         </div>
     </section>
@@ -1093,7 +1077,7 @@
             <div class="go-stop-wrap">
                 <div class="go-card">
                     <div class="go-stop-sign" aria-hidden="true">
-                        <img src="/images/ppc/go-icon.jpg" alt="">
+                        <img src="/images/ppc/go-icon.jpg" alt="" width="120" height="120" loading="lazy" decoding="async">
                     </div>
                     <h2>These Cases Fit</h2>
                     <ul class="go-list">
@@ -1105,7 +1089,7 @@
                 </div>
                 <div class="stop-card">
                     <div class="go-stop-sign" aria-hidden="true">
-                        <img src="/images/ppc/stop-sign.png" alt="">
+                        <img src="/images/ppc/stop-sign.png" alt="" width="120" height="120" loading="lazy" decoding="async">
                     </div>
                     <h2>These Cases Do Not Fit</h2>
                     <ul class="stop-list">
@@ -1124,7 +1108,7 @@
             <h2 style="text-align: center;">What Happens Next</h2>
             <p style="text-align: center; max-width: 600px; margin: 0 auto 32px; color: var(--gray-700);">For clear liability cases, the process can begin immediately.</p>
             <div class="process-accent-image" aria-hidden="true">
-                <img src="/images/la/Male-Attorney-Reviewing-Paperwork-with-injured-male-client.png" alt="Attorney reviewing paperwork with injured client — consultation">
+                <img src="/images/la/Male-Attorney-Reviewing-Paperwork-with-injured-male-client.png" alt="Attorney reviewing paperwork with injured client — consultation" width="560" height="373" loading="lazy" decoding="async">
             </div>
             <div class="process-grid">
                 <div class="process-card">
@@ -1225,7 +1209,7 @@
             <h2>Serious Injury Cases Require Trial Lawyers</h2>
             <p class="trial-lead">Insurance companies evaluate every case based on trial risk. When lawyers prepare cases for court, insurance companies take the claim seriously.</p>
             <div class="trial-authority-image-wrap">
-                <img src="/images/la/attorney-trial.png" alt="Serious injury trial attorney — litigation authority">
+                <img src="/images/la/attorney-trial.png" alt="Serious injury trial attorney — litigation authority" width="720" height="480" loading="lazy" decoding="async">
             </div>
         </div>
     </section>
@@ -1279,7 +1263,7 @@
             <div class="form-outer">
                 <div class="form-intro">
                     <div class="form-intro-image" aria-hidden="true">
-                        <img src="/images/la/attorney-reviewing-desk.png" alt="">
+                        <img src="/images/la/attorney-reviewing-desk.png" alt="" width="280" height="210" loading="lazy" decoding="async">
                     </div>
                     <h2>Speak With a Lawyer Now</h2>
                     <p>Most serious cases are evaluated within minutes.</p>
@@ -1409,8 +1393,8 @@
                 <h2>Real Client Reviews</h2>
                 <p style="color: var(--gray-700);">Real clients. Real outcomes.</p>
                 <div class="reviews-badges">
-                    <img src="/images/la/google-g-logo-500.png" alt="Google" style="height: 32px;">
-                    <img src="/images/la/yelp-logo.jpg" alt="Yelp" style="height: 28px; background: #fff; padding: 2px 6px; border-radius: 4px;">
+                    <img src="/images/la/google-g-logo-500.png" alt="Google" width="32" height="32" loading="lazy" decoding="async">
+                    <img src="/images/la/yelp-logo.jpg" alt="Yelp" width="28" height="28" loading="lazy" decoding="async" style="background: #fff; padding: 2px 6px; border-radius: 4px;">
                     <span class="stars" style="color: var(--gold);">★★★★★</span>
                 </div>
             </div>
@@ -1448,32 +1432,32 @@
             </div>
             <div class="our-attorneys-grid">
                 <div class="our-attorneys-card">
-                    <div class="our-attorneys-photo-wrap"><img src="/images/la/harvey-goldhammer.webp" alt="Harvey Goldhammer" width="132" height="132" loading="lazy"></div>
+                    <div class="our-attorneys-photo-wrap"><img src="/images/la/harvey-goldhammer.webp" alt="Harvey Goldhammer" width="132" height="132" loading="lazy" decoding="async"></div>
                     <div class="our-attorneys-name">Harvey Goldhammer</div>
                     <div class="our-attorneys-title">Senior Litigation Attorney</div>
                 </div>
                 <div class="our-attorneys-card">
-                    <div class="our-attorneys-photo-wrap"><img src="/images/la/nathaniel-clark.png" alt="Nathaniel Clark" width="132" height="132" loading="lazy"></div>
+                    <div class="our-attorneys-photo-wrap"><img src="/images/la/nathaniel-clark.png" alt="Nathaniel Clark" width="132" height="132" loading="lazy" decoding="async"></div>
                     <div class="our-attorneys-name">Nathaniel Clark</div>
                     <div class="our-attorneys-title">Senior Litigation Attorney</div>
                 </div>
                 <div class="our-attorneys-card">
-                    <div class="our-attorneys-photo-wrap"><img src="/images/la/edward-yim.webp" alt="Edward C. Yim" width="132" height="132" loading="lazy"></div>
+                    <div class="our-attorneys-photo-wrap"><img src="/images/la/edward-yim.webp" alt="Edward C. Yim" width="132" height="132" loading="lazy" decoding="async"></div>
                     <div class="our-attorneys-name">Edward C. Yim</div>
                     <div class="our-attorneys-title">Senior Litigation Attorney</div>
                 </div>
                 <div class="our-attorneys-card">
-                    <div class="our-attorneys-photo-wrap"><img src="/images/la/steven-salazar.png" alt="Steven Salazar" width="132" height="132" loading="lazy"></div>
+                    <div class="our-attorneys-photo-wrap"><img src="/images/la/steven-salazar.png" alt="Steven Salazar" width="132" height="132" loading="lazy" decoding="async"></div>
                     <div class="our-attorneys-name">Steven Salazar</div>
                     <div class="our-attorneys-title">Associate Attorney</div>
                 </div>
                 <div class="our-attorneys-card">
-                    <div class="our-attorneys-photo-wrap"><img src="/images/la/donn-christensen.webp" alt="Donn W. Christensen, Esq." width="132" height="132" loading="lazy"></div>
+                    <div class="our-attorneys-photo-wrap"><img src="/images/la/donn-christensen.webp" alt="Donn W. Christensen, Esq." width="132" height="132" loading="lazy" decoding="async"></div>
                     <div class="our-attorneys-name">Donn W. Christensen, Esq.</div>
                     <div class="our-attorneys-title">Managing Attorney</div>
                 </div>
                 <div class="our-attorneys-card">
-                    <div class="our-attorneys-photo-wrap"><img src="/images/la/artur-mheryan.webp" alt="Artur Mheryan" width="132" height="132" loading="lazy"></div>
+                    <div class="our-attorneys-photo-wrap"><img src="/images/la/artur-mheryan.webp" alt="Artur Mheryan" width="132" height="132" loading="lazy" decoding="async"></div>
                     <div class="our-attorneys-name">Artur Mheryan</div>
                     <div class="our-attorneys-title">Associate Attorney</div>
                 </div>
@@ -1550,6 +1534,6 @@
         }
     })();
     </script>
-    <script src="/js/utm-gclid-tracking.js"></script>
+    <script src="/js/utm-gclid-tracking.js" defer></script>
 </body>
 </html>
