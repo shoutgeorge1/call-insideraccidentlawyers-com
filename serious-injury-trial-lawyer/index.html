@@ -41,12 +41,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --navy: #0c2334;
-            --navy-mid: #01366c;
-            --blue: #01468a;
+            --navy: #0e3a66;
+            --navy-mid: #0c3357;
+            --blue: #0e3a66;
             --blue-light: #f3f6fa;
-            --gold: #c9a227;
-            --gold-soft: rgba(201, 162, 39, 0.15);
+            --gold: #f4b400;
+            --gold-soft: rgba(244, 180, 0, 0.15);
             --white: #ffffff;
             --gray-900: #1f2937;
             --gray-700: #374151;
@@ -71,8 +71,8 @@
             background: var(--white);
         }
         .container { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
-        section { padding: 80px 0; }
-        @media (max-width: 768px) { section { padding: 56px 0; } }
+        section { padding: 96px 0; }
+        @media (max-width: 768px) { section { padding: 64px 0; } }
 
         h1, h2, h3, h4 {
             font-weight: 700;
@@ -84,7 +84,7 @@
         h3 { font-size: 20px; line-height: 1.35; margin-bottom: 12px; font-weight: 600; }
         .font-serif { font-family: "Libre Baskerville", Georgia, serif; }
 
-        /* Buttons */
+        /* Buttons — soft shadow, hover lift */
         .btn-primary {
             display: inline-flex;
             align-items: center;
@@ -92,18 +92,18 @@
             background: var(--gold);
             color: var(--navy);
             font-weight: 600;
-            padding: 16px 28px;
+            padding: 18px 32px;
             border-radius: var(--radius-sm);
             text-decoration: none;
             border: none;
             cursor: pointer;
             font-size: 17px;
-            transition: transform 0.2s, box-shadow 0.2s;
-            box-shadow: 0 4px 14px rgba(201, 162, 39, 0.35);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            box-shadow: 0 4px 16px rgba(244, 180, 0, 0.35);
         }
         .btn-primary:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 6px 20px rgba(201, 162, 39, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(244, 180, 0, 0.45);
         }
         .btn-secondary {
             display: inline-flex;
@@ -112,15 +112,22 @@
             background: var(--blue);
             color: var(--white);
             font-weight: 600;
-            padding: 16px 28px;
+            padding: 18px 32px;
             border-radius: var(--radius-sm);
             text-decoration: none;
             border: none;
             cursor: pointer;
             font-size: 17px;
-            transition: transform 0.2s, box-shadow 0.2s;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            box-shadow: 0 4px 16px rgba(14, 58, 102, 0.25);
         }
-        .btn-secondary:hover { transform: translateY(-1px); }
+        .btn-secondary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(14, 58, 102, 0.35);
+        }
+        @media (max-width: 768px) {
+            .btn-primary, .btn-secondary { padding: 20px 28px; font-size: 18px; min-height: 52px; }
+        }
         .btn-outline-white {
             background: transparent;
             color: var(--white);
@@ -172,52 +179,60 @@
 
         /* ========== HERO ========== */
         .hero {
-            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 50%, var(--blue) 100%);
+            background: linear-gradient(rgba(14,58,102,0.92), rgba(14,58,102,0.85)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"/>') center/cover;
+            background-color: var(--navy);
             color: var(--white);
-            padding: 72px 0 64px;
+            padding: 80px 0 72px;
             position: relative;
         }
         .hero-grid {
             display: grid;
-            grid-template-columns: 1fr 380px;
-            gap: 56px;
+            grid-template-columns: 1fr 400px;
+            gap: 48px;
             align-items: center;
         }
         @media (max-width: 900px) {
             .hero-grid { grid-template-columns: 1fr; }
-            .hero-image-col { order: -1; max-width: 320px; margin: 0 auto 32px; }
+            .hero-image-col { order: 1; max-width: 320px; margin: 40px auto 0; }
         }
         .hero h1 { color: var(--white); margin-bottom: 20px; line-height: 1.2; }
         .hero h1 .gold { color: var(--gold); }
-        .hero-sub { font-size: 18px; line-height: 1.65; color: rgba(255,255,255,0.92); margin-bottom: 32px; max-width: 500px; }
-        .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 24px; }
-        .hero-ctas .btn-secondary { background: var(--gold); color: var(--navy); }
-        .hero-ctas .btn-secondary:hover { background: #d4af2a; color: var(--navy); }
+        .hero-sub { font-size: 18px; line-height: 1.65; color: rgba(255,255,255,0.92); margin-bottom: 28px; max-width: 500px; }
+        .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 28px; }
+        .hero-ctas .btn-primary { background: var(--gold); color: var(--navy); }
+        .hero-ctas .btn-secondary { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,0.9); }
+        .hero-ctas .btn-secondary:hover { background: var(--white); color: var(--navy); border-color: var(--white); }
         .hero-trust-list {
             list-style: none;
             display: flex;
             flex-direction: column;
             gap: 10px;
-            margin-bottom: 20px;
+            margin-bottom: 0;
         }
         .hero-trust-list li {
             display: flex;
             align-items: center;
             gap: 10px;
             font-size: 15px;
-            color: rgba(255,255,255,0.9);
+            color: rgba(255,255,255,0.92);
         }
         .hero-trust-list .icon { flex-shrink: 0; color: var(--gold); }
-        .hero-meta { font-size: 14px; color: rgba(255,255,255,0.8); }
+        .hero-image-col {
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-end;
+        }
         .hero-image-col img {
             width: 100%;
+            max-width: 360px;
             height: auto;
-            min-height: 280px;
-            object-fit: cover;
-            object-position: right center;
+            max-height: 78vh;
+            object-fit: contain;
+            object-position: right bottom;
             border-radius: var(--radius);
-            box-shadow: var(--shadow-lg);
-            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+            border: 1px solid rgba(255,255,255,0.08);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.35), 0 0 0 1px rgba(255,255,255,0.06);
         }
 
         /* ========== TRUST STRIP ========== */
@@ -253,21 +268,23 @@
         }
         @media (max-width: 768px) { .go-stop-wrap { grid-template-columns: 1fr; } }
         .go-card {
-            background: var(--white);
+            background: var(--green-soft);
             border-radius: var(--radius);
             padding: 32px;
             border-left: 4px solid var(--green-fit);
             box-shadow: var(--shadow);
-            background: var(--green-soft);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
         }
+        .go-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
         .stop-card {
-            background: var(--white);
+            background: var(--red-soft);
             border-radius: var(--radius);
             padding: 32px;
             border-left: 4px solid var(--red-stop);
             box-shadow: var(--shadow);
-            background: var(--red-soft);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
         }
+        .stop-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
         .go-card h2 { color: var(--green-fit); font-size: 22px; margin-bottom: 16px; }
         .stop-card h2 { color: var(--red-stop); font-size: 22px; margin-bottom: 16px; }
         .go-list, .stop-list { list-style: none; }
@@ -322,8 +339,13 @@
             border-radius: var(--radius);
             padding: 28px;
             box-shadow: var(--shadow);
-            border: 1px solid rgba(1, 70, 138, 0.1);
+            border: 1px solid rgba(14, 58, 102, 0.1);
             text-align: center;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        .process-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
         }
         .process-card .num {
             width: 44px;
@@ -379,8 +401,10 @@
             background: var(--blue-light);
             border-radius: var(--radius-sm);
             padding: 24px;
-            border: 1px solid rgba(1, 70, 138, 0.12);
+            border: 1px solid rgba(14, 58, 102, 0.12);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
         }
+        .after-accident-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
         .after-accident-card h4 { font-size: 17px; margin-bottom: 8px; color: var(--navy); }
         .after-accident-card p { font-size: 14px; color: var(--gray-700); line-height: 1.5; }
         .after-accident-card .icon-wrap { margin-bottom: 12px; }
@@ -405,7 +429,11 @@
             border: 1px solid var(--gray-200);
             transition: box-shadow 0.2s;
         }
-        .case-type-card:hover { box-shadow: var(--shadow-lg); }
+        .case-type-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+        }
+        .case-type-card { transition: transform 0.25s ease, box-shadow 0.25s ease; }
         .case-type-card h3 { font-size: 18px; margin-bottom: 8px; }
         .case-type-card p { font-size: 14px; color: var(--gray-700); line-height: 1.5; }
         .case-type-card .icon-wrap { margin-bottom: 12px; }
@@ -417,28 +445,19 @@
             color: var(--white);
         }
         .trial-authority-section h2 { color: var(--white); text-align: center; }
-        .trial-authority-section .trial-lead { text-align: center; max-width: 640px; margin: 0 auto 40px; color: rgba(255,255,255,0.9); font-size: 18px; line-height: 1.7; }
-        .trial-authority-image-wrap {
-            max-width: 720px;
-            margin: 0 auto;
-            border-radius: var(--radius);
-            overflow: hidden;
-            box-shadow: var(--shadow-lg);
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-        .trial-authority-image-wrap img { width: 100%; height: auto; display: block; }
+        .trial-authority-section .trial-lead { text-align: center; max-width: 640px; margin: 0 auto; color: rgba(255,255,255,0.9); font-size: 18px; line-height: 1.7; }
 
         /* ========== FORM SECTION ========== */
         .form-section {
             background: linear-gradient(180deg, var(--navy) 0%, var(--navy-mid) 100%);
-            padding: 64px 0;
+            padding: 96px 0;
         }
         .form-outer {
             display: grid;
-            grid-template-columns: 1fr 380px;
-            gap: 40px;
+            grid-template-columns: 1fr 400px;
+            gap: 48px;
             align-items: start;
-            max-width: 960px;
+            max-width: 1000px;
             margin: 0 auto;
         }
         @media (max-width: 900px) { .form-outer { grid-template-columns: 1fr; } }
@@ -450,10 +469,11 @@
         .form-box {
             background: var(--white);
             border-radius: var(--radius);
-            padding: 36px;
+            padding: 40px;
             box-shadow: var(--shadow-lg);
         }
-        .form-box h3 { margin-bottom: 20px; font-size: 20px; }
+        .form-box h3 { margin-bottom: 24px; font-size: 22px; }
+        .form-group { margin-bottom: 22px; }
         .form-trust-side {
             background: rgba(255,255,255,0.06);
             border-radius: var(--radius-sm);
@@ -470,7 +490,6 @@
             margin-bottom: 8px;
         }
         .form-trust-side li::before { content: "✓"; position: absolute; left: 0; color: var(--gold); font-weight: 700; }
-        .form-group { margin-bottom: 20px; }
         .form-label { display: block; font-weight: 600; margin-bottom: 6px; color: var(--gray-900); font-size: 14px; }
         .form-input, .form-select, .form-textarea {
             width: 100%;
@@ -505,8 +524,10 @@
             background: var(--blue-light);
             border-radius: var(--radius);
             padding: 24px;
-            border-left: 4px solid var(--blue);
+            border-left: 4px solid var(--navy);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
         }
+        .review-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
         .review-card .stars { color: var(--gold); font-size: 16px; margin-bottom: 10px; }
         .review-card blockquote { font-style: italic; font-size: 15px; line-height: 1.6; color: var(--gray-700); margin-bottom: 12px; }
         .review-card .author { font-weight: 600; font-size: 14px; color: var(--gray-900); }
@@ -648,20 +669,19 @@
             <div class="hero-grid">
                 <div class="hero-text">
                     <h1>Serious Accident? <span class="gold">Get Clear Fault. Get Medical Care. Get Paid.</span></h1>
-                    <p class="hero-sub">We handle serious injury cases with clear liability and insurance coverage. Real trial lawyers—not a lead mill. Fast case review so you know where you stand.</p>
+                    <p class="hero-sub">Serious injury cases deserve serious lawyers. We handle cases with clear liability and strong insurance coverage.</p>
                     <div class="hero-ctas">
-                        <a href="tel:844-467-4335" class="btn-primary" data-callrail-phone="844-467-4335">Call to Speak With an Attorney</a>
-                        <a href="#case-evaluation" class="btn-secondary btn-outline-white">See If Your Case Fits</a>
+                        <a href="#case-evaluation" class="btn-primary">See If My Case Fits</a>
+                        <a href="tel:844-467-4335" class="btn-secondary btn-outline-white" data-callrail-phone="844-467-4335">Call To Speak With an Attorney</a>
                     </div>
                     <ul class="hero-trust-list">
-                        <li><span class="icon" aria-hidden="true">✓</span> No upfront cost for qualified cases</li>
-                        <li><span class="icon" aria-hidden="true">✓</span> Trial-ready when needed</li>
-                        <li><span class="icon" aria-hidden="true">✓</span> Serious injury focus — we may not be right for minor claims</li>
+                        <li><span class="icon" aria-hidden="true">✓</span> Direct access to a real attorney</li>
+                        <li><span class="icon" aria-hidden="true">✓</span> Free consultation</li>
+                        <li><span class="icon" aria-hidden="true">✓</span> No fee unless we win</li>
                     </ul>
-                    <p class="hero-meta">Serving Los Angeles County and nearby communities.</p>
                 </div>
                 <div class="hero-image-col">
-                    <img src="/images/la/hero-consultation.png" alt="Attorney consulting with injured client — serious injury case review" onerror="this.src='/images/la/attorney-hero.webp'; this.alt='Insider Accident Lawyers';">
+                    <img src="https://tpc.googlesyndication.com/simgad/621724734200271614" alt="Shawn — Los Angeles serious injury trial attorney" onerror="this.style.display='none'">
                 </div>
             </div>
         </div>
@@ -697,12 +717,11 @@
                     </div>
                     <h2>These Cases Fit</h2>
                     <ul class="go-list">
-                        <li>Insurance involved, delayed, or denied</li>
-                        <li>Another party clearly at fault</li>
-                        <li>Medical treatment already started</li>
-                        <li>Serious physical injuries</li>
+                        <li>Clear liability</li>
+                        <li>Another party caused the injury</li>
+                        <li>Serious injuries requiring medical care</li>
+                        <li>Insurance coverage available</li>
                     </ul>
-                    <p class="go-note">If this doesn’t describe your situation, we may not be the right firm.</p>
                 </div>
                 <div class="stop-card">
                     <div class="qualify-icon" aria-hidden="true">
@@ -710,11 +729,10 @@
                     </div>
                     <h2>These Cases Do Not Fit</h2>
                     <ul class="stop-list">
-                        <li>Referrals, vendors, or marketing calls</li>
-                        <li>General insurance questions</li>
+                        <li>Minor injuries only</li>
                         <li>Property damage only</li>
-                        <li>No-injury accidents</li>
-                        <li>Minor fender benders</li>
+                        <li>No injury accidents</li>
+                        <li>Already settled cases</li>
                     </ul>
                 </div>
             </div>
@@ -724,30 +742,30 @@
     <section class="process-section">
         <div class="container">
             <h2 style="text-align: center;">What Happens Next</h2>
-            <p style="text-align: center; max-width: 600px; margin: 0 auto 24px; color: var(--gray-700);">Four clear steps so you know what to expect.</p>
+            <p style="text-align: center; max-width: 600px; margin: 0 auto 32px; color: var(--gray-700);">Four clear steps so you know what to expect.</p>
             <div class="process-image-wrap">
-                <img src="/images/la/attorney-paperwork.png" alt="Attorney reviewing case paperwork — thorough case analysis and preparation">
+                <img src="https://tpc.googlesyndication.com/simgad/16871212929501305052" alt="Client with neck brace and arm sling — serious injury case" onerror="this.style.display='none'">
             </div>
             <div class="process-grid">
                 <div class="process-card">
                     <div class="num">1</div>
                     <h3>Tell Us What Happened</h3>
-                    <p>We listen and determine the next steps.</p>
+                    <p>We review the details of your accident.</p>
                 </div>
                 <div class="process-card">
                     <div class="num">2</div>
                     <h3>We Review Liability and Insurance</h3>
-                    <p>To confirm the case qualifies.</p>
+                    <p>Our team evaluates coverage and fault.</p>
                 </div>
                 <div class="process-card">
                     <div class="num">3</div>
                     <h3>We Activate the Case</h3>
-                    <p>We handle insurance and documentation so you don’t say the wrong thing.</p>
+                    <p>Medical care coordination and legal strategy begin.</p>
                 </div>
                 <div class="process-card">
                     <div class="num">4</div>
                     <h3>You Focus on Recovery</h3>
-                    <p>While we manage the claim.</p>
+                    <p>We handle the insurance companies and legal process.</p>
                 </div>
             </div>
         </div>
@@ -755,7 +773,7 @@
 
     <section class="case-types-section">
         <div class="container">
-            <h2 style="text-align: center;">Serious Injury Case Types</h2>
+            <h2 style="text-align: center;">Serious Injury Cases We Handle</h2>
             <p style="text-align: center; color: var(--gray-700); margin-bottom: 0;">Our trial attorneys help injured people in Los Angeles County recover compensation.</p>
             <div class="case-types-grid">
                 <div class="case-type-card">
@@ -810,7 +828,7 @@
                 </div>
                 <div class="case-type-card">
                     <div class="icon-wrap"><svg class="icon-line" viewBox="0 0 24 24" stroke="currentColor"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="4"/></svg></div>
-                    <h3>Pool / Drowning Accidents</h3>
+                    <h3>Drowning Accidents</h3>
                     <p>Drowning, near-drowning, and pool-related serious injury.</p>
                 </div>
             </div>
@@ -819,11 +837,8 @@
 
     <section id="about-us" class="trial-authority-section">
         <div class="container">
-            <h2>Serious Injury Cases Require Real Trial Lawyers</h2>
-            <p class="trial-lead">Insurance companies evaluate risk. When your lawyer prepares every case as if it could go to trial—not just settle quickly—that changes the leverage. Serious cases require serious lawyers who are ready to fight in court.</p>
-            <div class="trial-authority-image-wrap">
-                <img src="/images/la/attorney-trial.png" alt="Trial-ready attorney in courtroom — litigation authority and insurance pressure">
-            </div>
+            <h2>Serious Injury Cases Require Trial Lawyers</h2>
+            <p class="trial-lead">Insurance companies evaluate every claim based on trial risk. When lawyers prepare cases for court, insurance companies take the case seriously.</p>
         </div>
     </section>
 
@@ -836,7 +851,7 @@
                     <div class="icon-wrap">
                         <svg class="icon-line" viewBox="0 0 24 24" stroke="currentColor"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
                     </div>
-                    <h4>Get medical care immediately</h4>
+                    <h4>Get medical care</h4>
                     <p>Your health comes first. Document treatment and follow doctor’s orders.</p>
                 </div>
                 <div class="after-accident-card">
@@ -850,15 +865,15 @@
                     <div class="icon-wrap">
                         <svg class="icon-line" viewBox="0 0 24 24" stroke="currentColor"><path d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/></svg>
                     </div>
-                    <h4>Avoid giving recorded statements to insurers</h4>
-                    <p>Do not give the insurance company a recorded statement before you speak with a lawyer.</p>
+                    <h4>Avoid early insurance settlement offers</h4>
+                    <p>Do not accept a quick settlement before speaking with an attorney about your full damages.</p>
                 </div>
                 <div class="after-accident-card">
                     <div class="icon-wrap">
                         <svg class="icon-line" viewBox="0 0 24 24" stroke="currentColor"><path d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"/></svg>
                     </div>
-                    <h4>Speak with a lawyer before signing anything</h4>
-                    <p>Do not sign releases or settle until you’ve had a case evaluation.</p>
+                    <h4>Speak with an attorney</h4>
+                    <p>Get a case evaluation before signing anything or settling with insurance.</p>
                 </div>
             </div>
         </div>
@@ -868,18 +883,18 @@
         <div class="container">
             <div class="form-outer">
                 <div class="form-intro">
-                    <h2>Call now for fastest response</h2>
-                    <p>Or submit case details for review. We focus on serious injury cases with clear fault and active medical treatment.</p>
+                    <h2>Speak With a Lawyer Now</h2>
+                    <p>Serious injury cases are evaluated quickly. Call now to see if your case qualifies.</p>
                     <div class="form-cta-row">
-                        <a href="tel:844-467-4335" class="btn-primary" data-callrail-phone="844-467-4335">Call to Speak With an Attorney</a>
-                        <a href="#case-evaluation" class="btn-secondary btn-outline-white" style="padding: 16px 28px;">Submit case details for review</a>
+                        <a href="tel:844-467-4335" class="btn-primary" data-callrail-phone="844-467-4335">Call To Speak With an Attorney</a>
+                        <a href="#case-evaluation" class="btn-secondary btn-outline-white" style="padding: 18px 32px;">Submit Case Details For Review</a>
                     </div>
                     <div class="form-trust-side">
-                        <h4>Confidential review</h4>
+                        <h4>Confidential Case Review</h4>
                         <ul>
-                            <li>Serious injury cases only</li>
-                            <li>No upfront cost for qualified cases</li>
-                            <li>Trial-ready lawyers</li>
+                            <li>No obligation consultation</li>
+                            <li>Direct attorney access</li>
+                            <li>No fee unless we win</li>
                         </ul>
                     </div>
                 </div>
@@ -988,7 +1003,7 @@
     <section id="reviews" class="reviews-section">
         <div class="container">
             <div class="reviews-header">
-                <h2>Reviews</h2>
+                <h2>Real Client Reviews</h2>
                 <p style="color: var(--gray-700);">Real clients. Real outcomes.</p>
                 <div class="reviews-badges">
                     <img src="/images/la/google-g-logo-500.png" alt="Google" style="height: 32px;">
@@ -1024,10 +1039,10 @@
     <section class="final-cta">
         <div class="container">
             <h2>You Focus on Recovery. We Handle the Legal Fight.</h2>
-            <p class="support">If the injury is serious and another party is responsible, call now to see if your case fits.</p>
+            <p class="support">If your injury is serious and someone else caused it, call now to see if your case fits.</p>
             <div class="btns">
                 <a href="tel:844-467-4335" class="btn-primary" data-callrail-phone="844-467-4335">Speak With a Lawyer Now</a>
-                <a href="#case-evaluation" class="btn-secondary btn-outline-white">See If Your Case Fits</a>
+                <a href="#case-evaluation" class="btn-secondary btn-outline-white">See If My Case Fits</a>
             </div>
             <div class="trust-row">
                 <span>Serious injury focus</span>
