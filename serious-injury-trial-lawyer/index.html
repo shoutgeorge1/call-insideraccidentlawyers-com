@@ -238,26 +238,50 @@
         /* ========== TRUST STRIP ========== */
         .trust-strip {
             background: var(--blue-light);
-            padding: 20px 0;
+            padding: 36px 0 32px;
             border-bottom: 1px solid var(--gray-200);
         }
         .trust-strip-inner {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: center;
-            gap: 32px;
-            flex-wrap: wrap;
+            gap: 28px;
         }
-        .trust-strip-item {
+        .trust-strip-reviews {
             display: flex;
             align-items: center;
-            gap: 10px;
-            font-size: 14px;
+            justify-content: center;
+            gap: 48px;
+            flex-wrap: wrap;
+        }
+        .trust-strip-review {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-size: 18px;
+            color: var(--gray-700);
+            font-weight: 600;
+        }
+        .trust-strip-review .stars { color: var(--gold); font-size: 28px; letter-spacing: 2px; }
+        .trust-strip-review img { height: 44px; width: auto; }
+        .trust-strip-review img.yelp { height: 40px; background: #fff; padding: 4px 6px; border-radius: 6px; }
+        .trust-strip-tagline {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 28px;
+            flex-wrap: wrap;
+            font-size: 15px;
             color: var(--gray-700);
             font-weight: 500;
         }
-        .trust-strip-item .stars { color: var(--gold); letter-spacing: 1px; }
-        .trust-strip-item img { height: 28px; width: auto; }
+        .trust-strip-tagline .trust-strip-item { display: inline-flex; align-items: center; gap: 8px; }
+        @media (max-width: 600px) {
+            .trust-strip-reviews { gap: 28px; }
+            .trust-strip-review .stars { font-size: 22px; }
+            .trust-strip-review img { height: 36px; }
+            .trust-strip-review img.yelp { height: 32px; }
+        }
 
         /* ========== GO / STOP CARDS ========== */
         .go-stop-wrap {
@@ -699,19 +723,23 @@
     <div class="trust-strip">
         <div class="container">
             <div class="trust-strip-inner">
-                <div class="trust-strip-item">
-                    <img src="/images/la/google-g-logo-500.png" alt="Google">
-                    <span class="stars">★★★★★</span>
-                    <span>Google</span>
+                <div class="trust-strip-reviews">
+                    <div class="trust-strip-review">
+                        <img src="/images/la/google-g-logo-500.png" alt="Google">
+                        <span class="stars">★★★★★</span>
+                        <span>Google</span>
+                    </div>
+                    <div class="trust-strip-review">
+                        <img src="/images/la/yelp-logo.jpg" alt="Yelp" class="yelp">
+                        <span class="stars">★★★★★</span>
+                        <span>Yelp</span>
+                    </div>
                 </div>
-                <div class="trust-strip-item">
-                    <img src="/images/la/yelp-logo.jpg" alt="Yelp" style="height: 24px; background: #fff; padding: 2px 4px; border-radius: 4px;">
-                    <span class="stars">★★★★★</span>
-                    <span>Yelp</span>
+                <div class="trust-strip-tagline">
+                    <span class="trust-strip-item">Real trial lawyers</span>
+                    <span class="trust-strip-item">Serving Los Angeles County</span>
+                    <span class="trust-strip-item">Serious cases only</span>
                 </div>
-                <span class="trust-strip-item">Real trial lawyers</span>
-                <span class="trust-strip-item">Serving Los Angeles County</span>
-                <span class="trust-strip-item">Serious cases only</span>
             </div>
         </div>
     </div>
