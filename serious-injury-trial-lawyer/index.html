@@ -284,7 +284,26 @@
         }
 
         /* ========== GO / STOP CARDS ========== */
-        .go-stop-section .section-intro { text-align: center; max-width: 640px; margin: 0 auto 40px; font-size: 18px; font-weight: 500; color: var(--gray-700); line-height: 1.6; }
+        .go-stop-section {
+            background: var(--white);
+            border-top: 4px solid var(--navy);
+        }
+        .go-stop-section > .container > h2 {
+            font-size: clamp(28px, 4vw, 36px);
+            font-weight: 800;
+            letter-spacing: 0.04em;
+            color: var(--gray-900);
+            text-transform: uppercase;
+        }
+        .go-stop-section .section-intro {
+            text-align: center;
+            max-width: 640px;
+            margin: 0 auto 40px;
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--gray-900);
+            line-height: 1.6;
+        }
         .go-stop-wrap {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -301,12 +320,12 @@
         }
         .go-card {
             background: var(--green-soft);
-            border: 2px solid rgba(22, 101, 52, 0.2);
+            border: 2px solid rgba(22, 101, 52, 0.25);
         }
         .go-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
         .stop-card {
             background: var(--red-soft);
-            border: 2px solid rgba(153, 27, 27, 0.2);
+            border: 2px solid rgba(153, 27, 27, 0.25);
         }
         .stop-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
         .go-stop-sign {
@@ -329,15 +348,22 @@
             .go-stop-sign { padding: 12px; }
             .go-stop-sign img { height: 160px; }
         }
-        .go-card h2 { color: var(--green-fit); font-size: 26px; font-weight: 800; margin-bottom: 20px; letter-spacing: -0.02em; }
-        .stop-card h2 { color: var(--red-stop); font-size: 26px; font-weight: 800; margin-bottom: 20px; letter-spacing: -0.02em; }
+        .go-card h2, .stop-card h2 {
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 22px;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+        .go-card h2 { color: var(--green-fit); }
+        .stop-card h2 { color: var(--red-stop); }
         .go-list, .stop-list { list-style: none; }
         .go-list li, .stop-list li {
             position: relative;
             padding-left: 28px;
             margin-bottom: 14px;
             font-size: 17px;
-            font-weight: 600;
+            font-weight: 700;
             line-height: 1.5;
             color: var(--gray-900);
         }
