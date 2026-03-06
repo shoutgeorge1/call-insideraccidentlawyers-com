@@ -285,14 +285,16 @@
 
         /* ========== GO / STOP CARDS ========== */
         .go-stop-section {
-            background: var(--white);
-            border-top: 4px solid var(--navy);
+            background: #f8fafc;
+            border-top: 6px solid var(--navy);
         }
-        .go-stop-section > .container > h2 {
-            font-size: clamp(28px, 4vw, 36px);
-            font-weight: 800;
-            letter-spacing: 0.04em;
-            color: var(--gray-900);
+        .go-stop-title {
+            text-align: center;
+            margin-bottom: 12px;
+            font-size: clamp(30px, 4.5vw, 40px) !important;
+            font-weight: 800 !important;
+            letter-spacing: 0.08em;
+            color: var(--navy) !important;
             text-transform: uppercase;
         }
         .go-stop-section .section-intro {
@@ -349,10 +351,10 @@
             .go-stop-sign img { height: 160px; }
         }
         .go-card h2, .stop-card h2 {
-            font-size: 22px;
+            font-size: 24px;
             font-weight: 800;
             margin-bottom: 22px;
-            letter-spacing: 0.06em;
+            letter-spacing: 0.08em;
             text-transform: uppercase;
         }
         .go-card h2 { color: var(--green-fit); }
@@ -798,7 +800,7 @@
 
     <section id="your-case" class="go-stop-section">
         <div class="container">
-            <h2 style="text-align: center; margin-bottom: 16px; font-size: 32px; font-weight: 800;">Is Your Case a Fit?</h2>
+            <h2 class="go-stop-title">Is Your Case a Fit?</h2>
             <p class="section-intro">We focus on serious injury cases with clear fault and real insurance. If your situation matches the left column, we want to talk. If it matches the right, we’re not the right fit—and we’ll tell you so.</p>
             <div class="go-stop-wrap">
                 <div class="go-card">
