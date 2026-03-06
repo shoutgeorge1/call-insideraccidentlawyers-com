@@ -445,7 +445,16 @@
             color: var(--white);
         }
         .trial-authority-section h2 { color: var(--white); text-align: center; }
-        .trial-authority-section .trial-lead { text-align: center; max-width: 640px; margin: 0 auto; color: rgba(255,255,255,0.9); font-size: 18px; line-height: 1.7; }
+        .trial-authority-section .trial-lead { text-align: center; max-width: 640px; margin: 0 auto 40px; color: rgba(255,255,255,0.9); font-size: 18px; line-height: 1.7; }
+        .trial-authority-image-wrap {
+            max-width: 720px;
+            margin: 0 auto;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .trial-authority-image-wrap img { width: 100%; height: auto; display: block; }
 
         /* ========== FORM SECTION ========== */
         .form-section {
@@ -681,7 +690,7 @@
                     </ul>
                 </div>
                 <div class="hero-image-col">
-                    <img src="https://tpc.googlesyndication.com/simgad/621724734200271614" alt="Shawn — Los Angeles serious injury trial attorney" onerror="this.style.display='none'">
+                    <img src="https://tpc.googlesyndication.com/simgad/621724734200271614" alt="Shawn — Los Angeles serious injury trial attorney" onerror="this.src='/images/la/attorney-paperwork.png'; this.alt='Attorney — serious injury case review';">
                 </div>
             </div>
         </div>
@@ -744,7 +753,7 @@
             <h2 style="text-align: center;">What Happens Next</h2>
             <p style="text-align: center; max-width: 600px; margin: 0 auto 32px; color: var(--gray-700);">Four clear steps so you know what to expect.</p>
             <div class="process-image-wrap">
-                <img src="https://tpc.googlesyndication.com/simgad/16871212929501305052" alt="Client with neck brace and arm sling — serious injury case" onerror="this.style.display='none'">
+                <img src="https://tpc.googlesyndication.com/simgad/16871212929501305052" alt="Client with neck brace and arm sling — serious injury case" onerror="this.src='/images/la/attorney-paperwork.png'; this.alt='Attorney reviewing case paperwork — thorough case analysis';">
             </div>
             <div class="process-grid">
                 <div class="process-card">
@@ -839,6 +848,9 @@
         <div class="container">
             <h2>Serious Injury Cases Require Trial Lawyers</h2>
             <p class="trial-lead">Insurance companies evaluate every claim based on trial risk. When lawyers prepare cases for court, insurance companies take the case seriously.</p>
+            <div class="trial-authority-image-wrap">
+                <img src="/images/la/attorney-trial.png" alt="Trial-ready attorney in courtroom — litigation authority and insurance pressure">
+            </div>
         </div>
     </section>
 
