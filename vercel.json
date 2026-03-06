@@ -6,6 +6,8 @@
     { "source": "/car-accident/", "destination": "/car-accident/index.html" },
     { "source": "/serious-injury", "destination": "/serious-injury/index.html" },
     { "source": "/serious-injury/", "destination": "/serious-injury/index.html" },
+    { "source": "/serious-injury-trial-lawyer", "destination": "/serious-injury-trial-lawyer/index.html" },
+    { "source": "/serious-injury-trial-lawyer/", "destination": "/serious-injury-trial-lawyer/index.html" },
     { "source": "/slip-and-fall", "destination": "/slip-and-fall/index.html" },
     { "source": "/slip-and-fall/", "destination": "/slip-and-fall/index.html" }
   ],
