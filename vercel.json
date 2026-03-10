@@ -9,7 +9,9 @@
     { "source": "/serious-injury-trial-lawyer", "destination": "/serious-injury-trial-lawyer/index.html" },
     { "source": "/serious-injury-trial-lawyer/", "destination": "/serious-injury-trial-lawyer/index.html" },
     { "source": "/slip-and-fall", "destination": "/slip-and-fall/index.html" },
-    { "source": "/slip-and-fall/", "destination": "/slip-and-fall/index.html" }
+    { "source": "/slip-and-fall/", "destination": "/slip-and-fall/index.html" },
+    { "source": "/med-spa-injury-lawyer-los-angeles", "destination": "/med-spa-injury-lawyer-los-angeles/index.html" },
+    { "source": "/med-spa-injury-lawyer-los-angeles/", "destination": "/med-spa-injury-lawyer-los-angeles/index.html" }
   ],
   "redirects": [
     {
