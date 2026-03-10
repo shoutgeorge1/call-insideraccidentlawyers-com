@@ -950,6 +950,139 @@
                 flex-shrink: 0;
             }
         }
+        .hazard-images-row {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            max-width: 900px;
+            margin: 0 auto 40px;
+        }
+        .hazard-images-row img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: var(--card-radius);
+            box-shadow: var(--card-shadow);
+        }
+        .hazard-images-row figcaption {
+            font-size: 14px;
+            color: var(--brand-gray-600);
+            margin-top: 8px;
+            font-weight: 500;
+        }
+        @media (max-width: 768px) {
+            .hazard-images-row {
+                grid-template-columns: 1fr;
+                margin-bottom: 32px;
+            }
+            .hazard-images-row img {
+                height: 200px;
+            }
+        }
+        .your-case-inner {
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 48px;
+            align-items: start;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .your-case-inner .your-case-checklist {
+            max-width: none;
+        }
+        .your-case-images {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .your-case-images img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: var(--card-radius);
+            box-shadow: var(--card-shadow);
+        }
+        .your-case-images figcaption {
+            font-size: 13px;
+            color: var(--brand-gray-600);
+            margin-top: 6px;
+        }
+        @media (max-width: 900px) {
+            .your-case-inner {
+                grid-template-columns: 1fr;
+            }
+            .your-case-images {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .your-case-images figure {
+                flex: 1 1 200px;
+                max-width: 280px;
+            }
+        }
+        @media (max-width: 768px) {
+            .your-case-images {
+                flex-direction: column;
+            }
+            .your-case-images figure {
+                max-width: none;
+            }
+        }
+        .injury-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 24px;
+        }
+        .injury-card {
+            background: var(--brand-white);
+            border-radius: var(--card-radius);
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+        }
+        .injury-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        .injury-card-text {
+            padding: 20px;
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--brand-gray-900);
+        }
+        .injury-list-remaining {
+            list-style: none;
+            max-width: 560px;
+            margin: 24px auto 0;
+            padding: 0;
+        }
+        .injury-list-remaining li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 12px;
+            font-size: 17px;
+            color: var(--brand-gray-700);
+        }
+        .injury-list-remaining li span:first-child {
+            color: var(--brand-blue);
+            font-weight: 700;
+        }
+        @media (max-width: 900px) {
+            .injury-cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 600px) {
+            .injury-cards {
+                grid-template-columns: 1fr;
+            }
+            .injury-card img {
+                height: 220px;
+            }
+        }
         .core-trust {
             background: linear-gradient(135deg, rgba(12, 35, 52, 0.04), rgba(1, 54, 108, 0.03));
         }
@@ -2677,6 +2810,16 @@
         <div class="container">
             <h2>Common Hazards</h2>
             <p class="lead-text subtext-muted" style="text-align: center; margin-bottom: 32px; max-width: 700px; margin-left: auto; margin-right: auto;">Property owners may be responsible when these conditions cause injuries.</p>
+            <div class="hazard-images-row">
+                <figure>
+                    <img src="/images/la/wet-floor-grocery-store.png" alt="Wet floor in a grocery store aisle—a common slip hazard" width="450" height="220" loading="lazy">
+                    <figcaption>Wet floors without warning signs</figcaption>
+                </figure>
+                <figure>
+                    <img src="/images/la/parking-lot-pothole.png" alt="Cracked pavement and pothole in a parking lot" width="450" height="220" loading="lazy">
+                    <figcaption>Uneven sidewalks or cracked pavement</figcaption>
+                </figure>
+            </div>
             <div class="accident-grid">
                 <div class="accident-item">
                     <div class="accident-icon">💧</div>
@@ -2710,14 +2853,26 @@
         <div class="container">
             <h2 style="text-align: center; margin-bottom: 16px; font-size: 42px;">Do I Have a Case?</h2>
             <p class="lead-text subtext-muted" style="text-align: center; margin-bottom: 32px; max-width: 700px; margin-left: auto; margin-right: auto; font-size: 20px;">You may have a premises liability case if:</p>
-            <div style="max-width: 700px; margin: 0 auto;">
-                <ul style="list-style: none; padding: 0; margin: 0 0 24px 0;">
-                    <li style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px; font-size: 17px; line-height: 1.5; color: var(--brand-gray-700);"><span style="color: var(--brand-blue); font-weight: 700;">✓</span> You were injured on someone else's property</li>
-                    <li style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px; font-size: 17px; line-height: 1.5; color: var(--brand-gray-700);"><span style="color: var(--brand-blue); font-weight: 700;">✓</span> There was a dangerous condition present</li>
-                    <li style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px; font-size: 17px; line-height: 1.5; color: var(--brand-gray-700);"><span style="color: var(--brand-blue); font-weight: 700;">✓</span> The property owner failed to address the hazard</li>
-                    <li style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px; font-size: 17px; line-height: 1.5; color: var(--brand-gray-700);"><span style="color: var(--brand-blue); font-weight: 700;">✓</span> You required medical treatment or suffered financial losses</li>
-                </ul>
-                <p style="text-align: center; font-size: 14px; color: var(--brand-gray-500);">Every situation is different. Speaking with an attorney can help determine whether you may have a case.</p>
+            <div class="your-case-inner">
+                <div class="your-case-checklist">
+                    <ul style="list-style: none; padding: 0; margin: 0 0 24px 0;">
+                        <li style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px; font-size: 17px; line-height: 1.5; color: var(--brand-gray-700);"><span style="color: var(--brand-blue); font-weight: 700;">✓</span> You were injured on someone else's property</li>
+                        <li style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px; font-size: 17px; line-height: 1.5; color: var(--brand-gray-700);"><span style="color: var(--brand-blue); font-weight: 700;">✓</span> There was a dangerous condition present</li>
+                        <li style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px; font-size: 17px; line-height: 1.5; color: var(--brand-gray-700);"><span style="color: var(--brand-blue); font-weight: 700;">✓</span> The property owner failed to address the hazard</li>
+                        <li style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px; font-size: 17px; line-height: 1.5; color: var(--brand-gray-700);"><span style="color: var(--brand-blue); font-weight: 700;">✓</span> You required medical treatment or suffered financial losses</li>
+                    </ul>
+                    <p style="text-align: center; font-size: 14px; color: var(--brand-gray-500);">Every situation is different. Speaking with an attorney can help determine whether you may have a case.</p>
+                </div>
+                <div class="your-case-images">
+                    <figure>
+                        <img src="/images/la/parking-lot-pothole.png" alt="Dangerous condition: cracked pavement and pothole" width="340" height="200" loading="lazy">
+                        <figcaption>Dangerous conditions like this can support your case.</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="/images/la/back-injury-er.png" alt="Seeking medical treatment after a fall" width="340" height="200" loading="lazy">
+                        <figcaption>Medical treatment documents your injuries and losses.</figcaption>
+                    </figure>
+                </div>
             </div>
         </div>
     </section>
@@ -2726,12 +2881,23 @@
         <div class="container">
             <div class="section-content">
                 <h2 style="text-align: center;">Common Injuries</h2>
-                <ul style="list-style: none; max-width: 560px; margin: 24px auto 0; padding: 0;">
-                    <li style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px; font-size: 17px; color: var(--brand-gray-700);"><span style="color: var(--brand-blue); font-weight: 700;">•</span> Broken wrists or arms</li>
-                    <li style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px; font-size: 17px; color: var(--brand-gray-700);"><span style="color: var(--brand-blue); font-weight: 700;">•</span> Hip fractures</li>
-                    <li style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px; font-size: 17px; color: var(--brand-gray-700);"><span style="color: var(--brand-blue); font-weight: 700;">•</span> Head injuries or concussions</li>
-                    <li style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px; font-size: 17px; color: var(--brand-gray-700);"><span style="color: var(--brand-blue); font-weight: 700;">•</span> Back and spine injuries</li>
-                    <li style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px; font-size: 17px; color: var(--brand-gray-700);"><span style="color: var(--brand-blue); font-weight: 700;">•</span> Torn ligaments or soft tissue damage</li>
+                <div class="injury-cards">
+                    <div class="injury-card">
+                        <img src="/images/la/broken-arm-hospital.png" alt="Broken wrist or arm from a slip and fall" width="400" height="180" loading="lazy">
+                        <div class="injury-card-text">Broken wrists or arms</div>
+                    </div>
+                    <div class="injury-card">
+                        <img src="/images/la/head-injury-er.png" alt="Head injury or concussion treatment" width="400" height="180" loading="lazy">
+                        <div class="injury-card-text">Head injuries or concussions</div>
+                    </div>
+                    <div class="injury-card">
+                        <img src="/images/la/back-injury-er.png" alt="Back and spine injury from a fall" width="400" height="180" loading="lazy">
+                        <div class="injury-card-text">Back and spine injuries</div>
+                    </div>
+                </div>
+                <ul class="injury-list-remaining">
+                    <li><span>•</span> Hip fractures</li>
+                    <li><span>•</span> Torn ligaments or soft tissue damage</li>
                 </ul>
             </div>
         </div>
