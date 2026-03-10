@@ -1576,6 +1576,18 @@
         .form-group {
             margin-bottom: 24px;
         }
+        .form-hint {
+            display: block;
+            font-size: 13px;
+            margin-top: 6px;
+            min-height: 1.2em;
+            transition: opacity 0.2s ease;
+        }
+        .form-hint.form-hint--success { color: #059669; }
+        .form-hint.form-hint--error { color: #dc2626; }
+        .form-input:not(:placeholder-shown):valid,
+        .form-select:valid { border-color: rgba(1, 70, 138, 0.35); }
+        .form-select { cursor: pointer; appearance: auto; }
         .form-label {
             display: block;
             font-weight: 600;
@@ -2706,15 +2718,32 @@
                     <input type="hidden" name="_next" value="https://call.insideraccidentlawyers.com/thank-you.html">
                     <div class="form-group">
                         <label class="form-label">Full Name *</label>
-                        <input type="text" class="form-input" name="full_name" placeholder="Your Full Name" required>
+                        <input type="text" class="form-input" name="full_name" placeholder="Your full name" required aria-describedby="name-hint">
+                        <span class="form-hint" id="name-hint" aria-live="polite"></span>
                     </div>
                     <div class="form-group">
                         <label class="form-label">Phone Number *</label>
-                        <input type="tel" class="form-input" name="phone" required>
+                        <input type="tel" class="form-input" name="phone" placeholder="(555) 555-5555" required aria-describedby="phone-hint">
+                        <span class="form-hint" id="phone-hint" aria-live="polite"></span>
                     </div>
                     <div class="form-group">
-                        <label class="form-label">Tell Us About Your Situation *</label>
-                        <textarea class="form-input" name="accident_reason" rows="3" placeholder="Describe what happened to your loved one (e.g. bed sores, falls, neglect)" required></textarea>
+                        <label class="form-label">What best describes your situation? *</label>
+                        <select class="form-input form-select" name="situation_type" id="situation_type" required aria-describedby="situation-hint">
+                            <option value="">— Select one —</option>
+                            <option value="Bed sores / pressure ulcers">Bed sores / pressure ulcers</option>
+                            <option value="Fall in facility">Fall in facility</option>
+                            <option value="Suspected neglect">Suspected neglect</option>
+                            <option value="Malnutrition or dehydration">Malnutrition or dehydration</option>
+                            <option value="Medication error">Medication error</option>
+                            <option value="Wrongful death">Wrongful death</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <span class="form-hint" id="situation-hint" aria-live="polite"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Tell us more *</label>
+                        <textarea class="form-input" name="accident_reason" id="accident_reason" rows="3" placeholder="Describe what happened to your loved one (e.g. when you noticed, facility name, current condition)" required aria-describedby="details-hint"></textarea>
+                        <span class="form-hint" id="details-hint" aria-live="polite"></span>
                     </div>
                     <label style="display:flex; align-items:flex-start; gap:8px; font-size:12px; line-height:1.4; margin-top:10px;"> <input type="checkbox" name="sms_opt_in" required style="margin-top:3px;"> <span> By checking this box, I am agreeing to receive transactional/informational text messages from Insider Accident Lawyers. Message frequency will vary. Msg & data rates may apply. Reply HELP for help or STOP to opt-out. </span> </label>
                     <button type="submit" class="btn-primary" style="width: 100%; margin-top: 24px;">Get My Free Review</button>
@@ -3039,42 +3068,43 @@
         </div>
     </section>
 
-    <section class="case-results section-with-bg section-alt">
+    <section id="case-results-section" class="case-results section-with-bg section-alt">
         <div class="container">
             <h2 style="text-align: center; font-size: 42px; margin-bottom: 16px;">Case Results</h2>
-            <p class="subtext-muted" style="text-align: center; font-size: 20px; color: var(--brand-gray-700); margin-bottom: 56px; line-height: 1.7;">Millions Recovered for Injury Victims</p>
+            <p class="subtext-muted" style="text-align: center; font-size: 20px; color: var(--brand-gray-700); margin-bottom: 24px; line-height: 1.7;">Representative results obtained by attorneys at Insider Accident Lawyers.</p>
+            <p class="subtext-muted" style="text-align: center; font-size: 14px; color: var(--brand-gray-500); margin-bottom: 56px;">Past verdicts and settlements. Results depend on the facts of each case. No guarantee of similar outcome.</p>
             <div class="results-grid">
                 <div class="result-card">
                     <div class="result-label">Settlement</div>
-                    <div class="result-amount">$6,000,000</div>
-                    <div class="result-type">Car Accident</div>
-                    <div class="result-meta">Results depend on the facts of each case.</div>
-                </div>
-                <div class="result-card">
-                    <div class="result-label">Settlement</div>
-                    <div class="result-amount">$2,400,000</div>
-                    <div class="result-type">Bicycle Accident</div>
-                    <div class="result-meta">Results depend on the facts of each case.</div>
-                </div>
-                <div class="result-card">
-                    <div class="result-label">Settlement</div>
-                    <div class="result-amount">$2,500,000</div>
+                    <div class="result-amount" data-count="2500000" data-prefix="$">$0</div>
                     <div class="result-type">Wrongful Death</div>
                     <div class="result-meta">Results depend on the facts of each case.</div>
                 </div>
                 <div class="result-card">
                     <div class="result-label">Settlement</div>
-                    <div class="result-amount">$1,200,000</div>
-                    <div class="result-type">Nursing Home Neglect</div>
+                    <div class="result-amount" data-count="6000000" data-prefix="$">$0</div>
+                    <div class="result-type">Serious Injury</div>
+                    <div class="result-meta">Results depend on the facts of each case.</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-label">Settlement</div>
+                    <div class="result-amount" data-count="2400000" data-prefix="$">$0</div>
+                    <div class="result-type">Bicycle Accident</div>
+                    <div class="result-meta">Results depend on the facts of each case.</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-label">Settlement</div>
+                    <div class="result-amount" data-count="1200000" data-prefix="$">$0</div>
+                    <div class="result-type">Slip and Fall</div>
                     <div class="result-meta">Results depend on the facts of each case.</div>
                 </div>
             </div>
-            <div class="settlement-strip" aria-label="Additional settlements">
-                <div class="settlement-card">Settlement — $12,000,000 (Pedestrian Accident)</div>
-                <div class="settlement-card">Settlement — $1,125,000 (Pedestrian Accident)</div>
-                <div class="settlement-card">Settlement — $1,100,000 (Personal Injury)</div>
-                <div class="settlement-card">Settlement — $1,000,000 (Car Accident)</div>
-                <div class="settlement-card">Settlement — $815,000 (Car Accident)</div>
+            <div class="settlement-strip" aria-label="Additional representative results">
+                <div class="settlement-card">Settlement — <span class="settlement-amount" data-count="12000000" data-prefix="$">$0</span> (Pedestrian Accident)</div>
+                <div class="settlement-card">Settlement — <span class="settlement-amount" data-count="1125000" data-prefix="$">$0</span> (Pedestrian Accident)</div>
+                <div class="settlement-card">Settlement — <span class="settlement-amount" data-count="1100000" data-prefix="$">$0</span> (Personal Injury)</div>
+                <div class="settlement-card">Settlement — <span class="settlement-amount" data-count="1000000" data-prefix="$">$0</span> (Car Accident)</div>
+                <div class="settlement-card">Settlement — <span class="settlement-amount" data-count="815000" data-prefix="$">$0</span> (Car Accident)</div>
             </div>
         </div>
     </section>
@@ -3189,6 +3219,43 @@ document.addEventListener('DOMContentLoaded',function(){
       else if(v.length>=3){ e.target.value='('+v.slice(0,3)+') '+v.slice(3); }
     });
   }
+  var situationSelect=document.getElementById('situation_type');
+  var detailsTextarea=document.getElementById('accident_reason');
+  var placeholders={
+    'Bed sores / pressure ulcers':'e.g. Stage of wound, when you noticed, facility name',
+    'Fall in facility':'e.g. Where and when, injuries, witnesses',
+    'Suspected neglect':'e.g. What you observed, decline in condition',
+    'Malnutrition or dehydration':'e.g. Weight loss, when you noticed, facility response',
+    'Medication error':'e.g. What happened, harm caused',
+    'Wrongful death':'e.g. Timeline, cause of death, facility name',
+    'Other':'Describe what happened to your loved one'
+  };
+  if(situationSelect&&detailsTextarea){
+    situationSelect.addEventListener('change',function(){
+      var val=this.value;
+      detailsTextarea.placeholder=placeholders[val]||'Describe what happened to your loved one';
+    });
+  }
+  function setHint(el,hintEl,valid,message){
+    if(!hintEl) return;
+    hintEl.textContent=message||'';
+    hintEl.className='form-hint'+(valid ? ' form-hint--success' : message ? ' form-hint--error' : '');
+  }
+  function validateName(el){ return el.value.trim().length>=2; }
+  function validatePhone(el){ return el.value.replace(/\D/g,'').length>=10; }
+  var form=document.getElementById('case-evaluation-form');
+  if(form){
+    form.querySelectorAll('input[name="full_name"], input[name="phone"], select[name="situation_type"], #accident_reason').forEach(function(field){
+      field.addEventListener('blur',function(){
+        var hintId=field.getAttribute('aria-describedby');
+        var hint=hintId ? document.getElementById(hintId) : null;
+        if(field.name==='full_name'){ setHint(field,hint,validateName(field),field.value.trim().length&&!validateName(field)?'Please enter your full name':(validateName(field)?'\u2713':'')); }
+        else if(field.name==='phone'){ setHint(field,hint,validatePhone(field),field.value&&!validatePhone(field)?'Please enter a valid 10-digit number':(validatePhone(field)?'\u2713':'')); }
+        else if(field.name==='situation_type'){ setHint(field,hint,!!field.value,field.value?'\u2713':''); }
+        else if(field.id==='accident_reason'){ setHint(field,hint,field.value.trim().length>=5,field.value.trim().length&&field.value.trim().length<5?'A few more details help us respond':(field.value.trim().length>=5?'\u2713':'')); }
+      });
+    });
+  }
   var caseForm=document.getElementById('case-evaluation-form');
   if(caseForm){
     caseForm.addEventListener('submit',function(e){
@@ -3267,6 +3334,38 @@ document.addEventListener('DOMContentLoaded',function(){
   },{ threshold:0.2, rootMargin: '0px 0px -40px 0px' });
   obs.observe(statsEl);
 });
+
+(function() {
+  var section = document.getElementById('case-results-section');
+  if (!section) return;
+  function formatNum(n) { return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','); }
+  function countUpDollar(el, duration) {
+    var end = parseInt(el.getAttribute('data-count'), 10);
+    var prefix = el.getAttribute('data-prefix') || '';
+    var start = 0;
+    var startTime = null;
+    function step(timestamp) {
+      if (!startTime) startTime = timestamp;
+      var progress = Math.min((timestamp - startTime) / duration, 1);
+      var easeOut = 1 - Math.pow(1 - progress, 2);
+      var current = Math.round(start + (end - start) * easeOut);
+      el.textContent = prefix + formatNum(current);
+      if (progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  var obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (!entry.isIntersecting) return;
+      obs.disconnect();
+      var amounts = section.querySelectorAll('.result-amount[data-count], .settlement-amount[data-count]');
+      amounts.forEach(function(el, i) {
+        setTimeout(function() { countUpDollar(el, 2200); }, i * 80);
+      });
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+  obs.observe(section);
+})();
 (function() {
   var header = document.querySelector('header.sticky-header');
   var lastScrollY = 0;
