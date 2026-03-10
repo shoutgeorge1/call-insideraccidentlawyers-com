@@ -1853,33 +1853,36 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label class="form-label">What type of accident occurred?</label>
+                        <label class="form-label">What type of injury occurred?</label>
                         <select class="form-select" name="accident_type" required>
                             <option value="">Select an option</option>
-                            <option value="med_spa">Med Spa / Cosmetic Clinic Injury</option>
-                            <option value="car">Car Accident</option>
-                            <option value="motorcycle">Motorcycle Accident</option>
-                            <option value="bicycle">Bicycle Accident</option>
-                            <option value="truck">Truck Accident</option>
-                            <option value="slip">Slip and Fall</option>
-                            <option value="workplace">Workplace Injury</option>
-                            <option value="wrongful_death">Wrongful Death</option>
-                            <option value="other">Other</option>
+                            <option value="laser_burn">Laser burn injury</option>
+                            <option value="botched_filler">Botched lip or dermal filler</option>
+                            <option value="botox">Botox complications</option>
+                            <option value="chemical_peel">Chemical peel burn</option>
+                            <option value="scarring">Permanent scarring or skin damage</option>
+                            <option value="infection">Infection from procedure</option>
+                            <option value="nerve_damage">Nerve damage from injection</option>
+                            <option value="other">Other med spa / cosmetic injury</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label class="form-label">Did you or the injured person receive hospital care?</label>
+                        <label class="form-label">Did you or the injured person receive medical or dermatology care?</label>
                         <div class="form-radio-group">
                             <label><input type="radio" name="hospital_care" value="yes" required> Yes</label>
                             <label><input type="radio" name="hospital_care" value="no" required> No</label>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="form-label">What type of medical care was received? (Check all that apply)</label>
+                        <label class="form-label">What type of care was received? (Check all that apply)</label>
                         <div class="form-checkbox-group">
                             <div class="form-checkbox">
                                 <input type="checkbox" name="care_type[]" value="doctor">
-                                <label>Doctor/Emergency Visit</label>
+                                <label>Doctor / Emergency Visit</label>
+                            </div>
+                            <div class="form-checkbox">
+                                <input type="checkbox" name="care_type[]" value="dermatologist">
+                                <label>Dermatologist</label>
                             </div>
                             <div class="form-checkbox">
                                 <input type="checkbox" name="care_type[]" value="hospitalization">
@@ -1887,7 +1890,7 @@
                             </div>
                             <div class="form-checkbox">
                                 <input type="checkbox" name="care_type[]" value="surgery">
-                                <label>Surgery</label>
+                                <label>Surgery / Reconstructive</label>
                             </div>
                             <div class="form-checkbox">
                                 <input type="checkbox" name="care_type[]" value="other">
@@ -1896,7 +1899,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="form-label">When did the accident occur?</label>
+                        <label class="form-label">When did the injury occur?</label>
                         <select class="form-select" name="accident_date" required>
                             <option value="">Select an option</option>
                             <option value="today">Today</option>
