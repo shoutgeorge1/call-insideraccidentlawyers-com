@@ -11,7 +11,9 @@
     { "source": "/slip-and-fall", "destination": "/slip-and-fall/index.html" },
     { "source": "/slip-and-fall/", "destination": "/slip-and-fall/index.html" },
     { "source": "/med-spa-injury-lawyer-los-angeles", "destination": "/med-spa-injury-lawyer-los-angeles/index.html" },
-    { "source": "/med-spa-injury-lawyer-los-angeles/", "destination": "/med-spa-injury-lawyer-los-angeles/index.html" }
+    { "source": "/med-spa-injury-lawyer-los-angeles/", "destination": "/med-spa-injury-lawyer-los-angeles/index.html" },
+    { "source": "/second-opinion", "destination": "/second-opinion/index.html" },
+    { "source": "/second-opinion/", "destination": "/second-opinion/index.html" }
   ],
   "redirects": [
     {
