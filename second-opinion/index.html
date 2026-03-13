@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Already hired a lawyer but something feels off? Get a free second opinion from trial-ready LA accident attorneys. No fee unless we win. Call now.">
     <link rel="canonical" href="https://call.insideraccidentlawyers.com/second-opinion" />
-    <link rel="preload" as="image" href="/images/la/attorney-hero.webp">
+    <link rel="preload" as="image" href="../images/la/attorney-hero.webp">
     <title>Second Opinion | Switch Lawyers | LA Accident Attorneys | Free Case Review</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -562,16 +562,16 @@
         }
         .hero {
             position: relative;
-            background: linear-gradient(rgba(12, 35, 52, 0.88), rgba(1, 54, 108, 0.82)), url('/images/la/hero-bg.jpg') center center/cover;
+            background: linear-gradient(rgba(12, 35, 52, 0.88), rgba(1, 54, 108, 0.82)), url('../images/la/hero-bg.jpg') center center/cover;
             min-height: 520px;
             display: flex;
             align-items: center;
             color: var(--brand-white);
             background-attachment: scroll;
         }
-        /* Second-opinion: hero with IMAGE_1 (injured woman in car), stronger overlay for readability */
+        /* Second-opinion: hero with IMAGE_1 (injured woman in car); fallback to hero-bg if so-hero-car missing */
         .hero.hero-so {
-            background-image: linear-gradient(rgba(12, 35, 52, 0.78), rgba(1, 54, 108, 0.85)), url('/images/la/so-hero-car.png');
+            background-image: linear-gradient(rgba(12, 35, 52, 0.78), rgba(1, 54, 108, 0.85)), url('../images/la/so-hero-car.png'), url('../images/la/hero-bg.jpg');
             background-size: cover;
             background-position: center;
         }
@@ -602,7 +602,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('/images/la/hero-bg.jpg') center center/cover;
+            background: url('../images/la/hero-bg.jpg') center center/cover;
             background-attachment: scroll;
             opacity: 0.04;
             z-index: 0;
@@ -1328,13 +1328,6 @@
             color: var(--brand-navy);
             margin-bottom: 32px;
         }
-        .so-infographic-wrap {
-            margin-bottom: 32px;
-            border-radius: var(--card-radius);
-            overflow: hidden;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-        }
-        .so-infographic-wrap img { width: 100%; height: auto; display: block; }
         .so-checklist { list-style: none; padding: 0; margin: 0; max-width: 480px; margin-left: auto; margin-right: auto; }
         .so-checklist li { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; font-size: 17px; line-height: 1.5; color: var(--brand-navy); }
         .so-checklist li::before { content: "✔"; color: var(--brand-blue); font-weight: 700; }
@@ -1345,7 +1338,7 @@
             align-items: center;
             justify-content: center;
             background: center center/cover no-repeat;
-            background-image: url('/images/la/so-outcome-leaving.png');
+            background-image: url('../images/la/so-outcome-leaving.png'), url('../images/la/hero-bg.jpg');
             color: var(--brand-white);
             text-align: center;
             padding: 80px 20px;
@@ -2216,7 +2209,7 @@
             filter: drop-shadow(0 6px 16px rgba(12, 35, 52, 0.2));
         }
             @media (min-width: 769px) {
-            .trust-badges-row img[src="/images/la/trust-badge-4.webp"] {
+            .trust-badges-row img[src="../images/la/trust-badge-4.webp"] {
                 display: none;
             }
         }
@@ -2670,7 +2663,7 @@
     <header class="sticky-header">
         <div class="container">
             <div class="header-content">
-                <img src="/images/la/logo.png" alt="Insider Accident Lawyers" class="header-logo" style="filter: brightness(0);" width="180" height="48">
+                <img src="../images/la/logo.png" alt="Insider Accident Lawyers" class="header-logo" style="filter: brightness(0);" width="180" height="48">
                 <div class="header-center-group">
                     <nav class="header-nav">
                         <a href="#case-evaluation">Free Review</a>
@@ -2718,7 +2711,7 @@
                     </div>
                     <div class="hero-review-badges">
                         <div class="hero-review-badge-item">
-                            <img src="/images/la/google-g-logo.png" alt="Google" width="32" height="32" style="width: 32px; height: 32px; object-fit: contain;">
+                            <img src="../images/la/google-g-logo.png" alt="Google" width="32" height="32" style="width: 32px; height: 32px; object-fit: contain;">
                             <div class="hero-review-badge-rating">
                                 <span class="rating-num">4.9</span>
                                 <span class="rating-stars">★★★★★</span>
@@ -2726,7 +2719,7 @@
                             </div>
                         </div>
                         <div class="hero-review-badge-item hero-review-badge-item--yelp">
-                            <span class="hero-yelp-badge-wrap"><img src="/images/la/yelp-logo-aug2021.jpg" alt="Yelp" width="56" height="56"></span>
+                            <span class="hero-yelp-badge-wrap"><img src="../images/la/yelp-logo-aug2021.jpg" alt="Yelp" width="56" height="56"></span>
                             <div class="hero-review-badge-rating">
                                 <span class="rating-num">4.8</span>
                                 <span class="rating-stars">★★★★★</span>
@@ -2736,8 +2729,8 @@
                 </div>
                 <div class="hero-attorney-wrap">
                 <picture>
-                    <source media="(max-width: 768px)" srcset="/images/la/attorney-mobile.webp">
-                    <img src="/images/la/attorney-hero.webp" alt="Shawn and Partners" class="hero-attorney-img" width="400" height="500" fetchpriority="high">
+                    <source media="(max-width: 768px)" srcset="../images/la/attorney-mobile.webp">
+                    <img src="../images/la/attorney-hero.webp" alt="Shawn and Partners" class="hero-attorney-img" width="400" height="500" fetchpriority="high">
                 </picture>
                 <p class="hero-attorney-caption" style="margin-top:8px;font-size:14px;color:rgba(255,255,255,0.9);font-weight:500;">Trial-Ready Los Angeles Accident Attorneys</p>
                 </div>
@@ -2750,7 +2743,7 @@
         <div class="container">
             <div class="so-problem-grid">
                 <div class="so-image-wrap">
-                    <img src="/images/la/so-problem-bills.png" alt="Injured person stressed reviewing bills at home" width="540" height="360" loading="lazy">
+                    <img src="../images/la/so-problem-bills.png" alt="Injured person stressed reviewing bills at home" width="540" height="360" loading="lazy" onerror="this.onerror=null;this.src='../images/la/woman-bed-dark-sad.png';">
                 </div>
                 <div>
                     <h2>Not Getting Clear Answers From Your Current Lawyer?</h2>
@@ -2781,12 +2774,12 @@
             <p class="lp-stats-tagline">Former insurance attorneys who know how to get you maximum compensation.</p>
             <div class="trust-badges-headline">Trusted &amp; Recognized By</div>
             <div class="trust-badges-row">
-                <img src="/images/la/ucla-ww-ps-logo.png" alt="UCLA" class="trust-badge-img" style="height: 100px; width: auto; object-fit: contain;" width="130" height="100" loading="lazy">
-                <img src="/images/la/superlawyers-stacked.png" alt="Super Lawyers" class="trust-badge-img" style="height: 100px; width: auto; object-fit: contain;" width="130" height="100" loading="lazy">
-                <img src="/images/la/trust-badge-1.webp" alt="Trust Badge" class="trust-badge-img" width="130" height="100" loading="lazy" style="height: 100px; width: auto; object-fit: contain;">
-                <img src="/images/la/lacba-featured-59015-255.jpg" alt="LACBA" class="trust-badge-img" style="height: 100px; width: auto; object-fit: contain;" width="130" height="100" loading="lazy">
-                <img src="/images/la/google-badge.png" alt="Google Reviews" class="trust-badge-img" style="height: 100px; width: auto; object-fit: contain;" width="130" height="100" loading="lazy">
-                <img src="/images/la/trust-badge-4.webp" alt="Trust Badge" class="trust-badge-img" width="130" height="100" loading="lazy" style="height: 100px; width: auto; object-fit: contain;">
+                <img src="../images/la/ucla-ww-ps-logo.png" alt="UCLA" class="trust-badge-img" style="height: 100px; width: auto; object-fit: contain;" width="130" height="100" loading="lazy">
+                <img src="../images/la/superlawyers-stacked.png" alt="Super Lawyers" class="trust-badge-img" style="height: 100px; width: auto; object-fit: contain;" width="130" height="100" loading="lazy">
+                <img src="../images/la/trust-badge-1.webp" alt="Trust Badge" class="trust-badge-img" width="130" height="100" loading="lazy" style="height: 100px; width: auto; object-fit: contain;">
+                <img src="../images/la/lacba-featured-59015-255.jpg" alt="LACBA" class="trust-badge-img" style="height: 100px; width: auto; object-fit: contain;" width="130" height="100" loading="lazy">
+                <img src="../images/la/google-badge.png" alt="Google Reviews" class="trust-badge-img" style="height: 100px; width: auto; object-fit: contain;" width="130" height="100" loading="lazy">
+                <img src="../images/la/trust-badge-4.webp" alt="Trust Badge" class="trust-badge-img" width="130" height="100" loading="lazy" style="height: 100px; width: auto; object-fit: contain;">
             </div>
         </div>
     </section>
@@ -2841,13 +2834,13 @@
                 <p class="subtext-muted reviews-intro" style="font-size: 20px; color: var(--brand-gray-700); margin-bottom: 24px; line-height: 1.6;">Real reviews from real clients across Los Angeles County</p>
                 <div class="review-badges">
                     <div class="review-badge">
-                        <img src="/images/la/google-g-logo.png" alt="Google 4.9 Rating" width="32" height="32" style="width: 32px; height: 32px; object-fit: contain;" loading="lazy">
+                        <img src="../images/la/google-g-logo.png" alt="Google 4.9 Rating" width="32" height="32" style="width: 32px; height: 32px; object-fit: contain;" loading="lazy">
                         <span class="review-badge-rating">4.9</span>
                         <div class="review-badge-stars">★★★★★</div>
                         <div style="font-size: 14px; line-height: 1.2; opacity: 0.85;">350+ Reviews</div>
                     </div>
                     <div class="review-badge">
-                        <img src="/images/la/yelp-logo.jpg" alt="Yelp 4.8 Rating" width="100" height="48" loading="lazy">
+                        <img src="../images/la/yelp-logo.jpg" alt="Yelp 4.8 Rating" width="100" height="48" loading="lazy">
                         <span class="review-badge-rating">4.8</span>
                         <div class="review-badge-stars">★★★★★</div>
                     </div>
@@ -2939,9 +2932,6 @@
     <section id="switching" class="so-switching-section">
         <div class="container">
             <h2>Switching Lawyers Is Easier Than You Think</h2>
-            <div class="so-infographic-wrap">
-                <img src="/images/la/so-infographic-switching.png" alt="Client transition to new legal partnership" width="800" height="auto" loading="lazy">
-            </div>
             <ul class="so-checklist">
                 <li>We handle paperwork</li>
                 <li>No upfront costs</li>
@@ -2973,7 +2963,7 @@
                     <p style="font-size: 17px; line-height: 1.6; color: var(--brand-gray-700); margin-bottom: 0;">We evaluate strategy, insurance exposure, and settlement value. Get a real assessment from attorneys who try cases.</p>
                 </div>
                 <div class="so-image-wrap">
-                    <img src="/images/la/so-authority-meeting.png" alt="Attorney meeting emotional client" width="540" height="360" loading="lazy">
+                    <img src="../images/la/so-authority-meeting.png" alt="Attorney meeting emotional client" width="540" height="360" loading="lazy" onerror="this.onerror=null;this.src='../images/la/Male-Attorney-Reviewing-Paperwork-with-injured-male-client.png';">
                 </div>
             </div>
             <div class="testimonial-carousel-wrap" style="margin-top: 48px;">
@@ -3299,7 +3289,7 @@ document.addEventListener('DOMContentLoaded',function(){
   });
 })();
 </script>
-<script src="/js/utm-gclid-tracking.js"></script>
+<script src="../js/utm-gclid-tracking.js"></script>
 </body>
 </html>
 
