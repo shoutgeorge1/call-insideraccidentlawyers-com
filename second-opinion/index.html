@@ -570,16 +570,13 @@
             color: var(--brand-white);
             background-attachment: scroll;
         }
-        /* Second-opinion: hero with IMAGE_1 (injured woman in car); fallback to hero-bg if so-hero-car missing */
+        /* Second-opinion: no hero image — gradient only; Shawn (desktop) + three attorneys (mobile) provide the face */
         .hero.hero-so {
-            background-image: linear-gradient(rgba(12, 35, 52, 0.78), rgba(1, 54, 108, 0.85)), url('../images/la/tall-mobile-image-stressed-woman-looking-phone.png'), url('../images/la/hero-bg.jpg');
-            background-size: cover;
-            background-position: center;
+            background: linear-gradient(135deg, #0c2334 0%, #01366c 50%, #022a52 100%);
         }
         .hero.hero-so::before {
-            background: linear-gradient(to right, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.25) 50%, transparent 100%);
+            background: transparent;
         }
-        .hero.hero-so .hero-attorney-wrap { display: none; }
         .hero::before {
             content: "";
             position: absolute;
