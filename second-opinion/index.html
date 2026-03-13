@@ -1454,32 +1454,6 @@
             .so-results-grid { grid-template-columns: 1fr; }
             .so-result-card .result-amount { font-size: 1.75rem; }
         }
-        /* Mid-scroll sticky CTA — appears after 40% scroll, hides near footer */
-        .mid-scroll-cta {
-            position: fixed;
-            bottom: 24px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 9990;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
-        }
-        .mid-scroll-cta.visible { opacity: 1; visibility: visible; }
-        .mid-scroll-cta a {
-            display: inline-block;
-            padding: 14px 28px;
-            background: #ffbf00;
-            color: #01366c;
-            font-weight: 800;
-            border-radius: 10px;
-            text-decoration: none;
-            font-size: 1rem;
-            box-shadow: 0 6px 0 #cc9900, 0 10px 24px rgba(0,0,0,0.25);
-        }
-        @media (max-width: 768px) {
-            .mid-scroll-cta { display: none !important; }
-        }
         @media (max-width: 768px) {
             .trust-badges-row {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2908,12 +2882,7 @@
                     <div class="cta-badge">Free & Confidential</div>
                 </div>
                 <h2 class="cta-heading" style="text-align: center;">Free Second Opinion From Litigation Team</h2>
-                <p style="text-align: center; font-size: 18px; color: var(--brand-gray-700); margin-bottom: 20px;">A few details and we'll have an attorney follow up.</p>
-                <ul style="list-style: none; padding: 0; margin: 0 0 28px 0; text-align: center; font-size: 16px; color: var(--brand-gray-700);">
-                    <li style="margin-bottom: 8px;">✔ No obligation</li>
-                    <li style="margin-bottom: 8px;">✔ Confidential review</li>
-                    <li style="margin-bottom: 8px;">✔ No fee unless we win</li>
-                </ul>
+                <p style="text-align: center; font-size: 18px; color: var(--brand-gray-700); margin-bottom: 32px;">A few details and we'll have an attorney follow up.</p>
                 <form action="https://formsubmit.co/ial.leads.2024@gmail.com" method="POST" id="case-evaluation-form">
                     <input type="hidden" name="_subject" value="Second Opinion / Switch Lawyer Lead">
                     <input type="hidden" name="_captcha" value="false">
@@ -3267,10 +3236,6 @@
         </div>
     </section>
 
-    <div class="mid-scroll-cta" id="mid-scroll-cta" aria-hidden="true">
-        <a href="tel:844-467-4335" data-callrail-phone="844-467-4335">Talk To Litigation Attorney</a>
-    </div>
-
     <!-- SECTION 10: Footer — CTA, phone, address, trust only (no blog/nav/outbound) -->
     <footer id="footer-contact">
         <div class="container">
@@ -3361,28 +3326,6 @@ document.addEventListener('DOMContentLoaded',function(){
       });
     });
   }
-  /* Mid-scroll CTA: show after 40% scroll, hide near footer or when form in view */
-  (function(){
-    var el = document.getElementById('mid-scroll-cta');
-    var formEl = document.getElementById('case-evaluation');
-    var footerEl = document.getElementById('footer-contact');
-    if(!el || !formEl || !footerEl) return;
-    function update(){
-      var scrollY = window.pageYOffset || document.documentElement.scrollTop;
-      var docH = document.documentElement.scrollHeight - window.innerHeight;
-      var scrollPct = docH > 0 ? scrollY / docH : 0;
-      var formRect = formEl.getBoundingClientRect();
-      var footerRect = footerEl.getBoundingClientRect();
-      var formInView = formRect.top < window.innerHeight && formRect.bottom > 0;
-      var footerNear = footerRect.top < window.innerHeight * 0.5;
-      if(scrollPct >= 0.4 && !formInView && !footerNear) el.classList.add('visible');
-      else el.classList.remove('visible');
-    }
-    window.addEventListener('scroll', update, { passive: true });
-    window.addEventListener('resize', update);
-    update();
-  })();
-
   /* FAQ accordion */
   document.querySelectorAll('.faq-item-so').forEach(function(item){
     var btn=item.querySelector('.faq-q');
