@@ -569,6 +569,16 @@
             color: var(--brand-white);
             background-attachment: scroll;
         }
+        /* Second-opinion: hero with IMAGE_1 (injured woman in car), stronger overlay for readability */
+        .hero.hero-so {
+            background-image: linear-gradient(rgba(12, 35, 52, 0.78), rgba(1, 54, 108, 0.85)), url('/images/la/so-hero-car.png');
+            background-size: cover;
+            background-position: center;
+        }
+        .hero.hero-so::before {
+            background: linear-gradient(to right, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.25) 50%, transparent 100%);
+        }
+        .hero.hero-so .hero-attorney-wrap { display: none; }
         .hero::before {
             content: "";
             position: absolute;
@@ -1272,6 +1282,91 @@
         }
         .trust-badge-img:hover {
             transform: scale(1.06);
+        }
+        /* Second-opinion narrative sections */
+        .so-problem-section, .so-authority-section {
+            padding: 64px 0;
+            background: var(--brand-white);
+        }
+        .so-problem-section .container, .so-authority-section .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        .so-problem-grid, .so-authority-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+        .so-problem-section .so-image-wrap, .so-authority-section .so-image-wrap {
+            border-radius: var(--card-radius);
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+        }
+        .so-problem-section .so-image-wrap img, .so-authority-section .so-image-wrap img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+        .so-problem-section h2, .so-authority-section h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--brand-navy);
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+        .so-problem-bullets { list-style: none; padding: 0; margin: 0 0 24px 0; }
+        .so-problem-bullets li { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px; font-size: 17px; line-height: 1.5; color: var(--brand-gray-700); }
+        .so-problem-bullets li::before { content: "•"; color: var(--brand-blue); font-weight: 700; }
+        .so-switching-section {
+            padding: 64px 0;
+            background: linear-gradient(135deg, rgba(12, 35, 52, 0.04), rgba(1, 54, 108, 0.03));
+        }
+        .so-switching-section .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+        .so-switching-section h2 {
+            text-align: center;
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--brand-navy);
+            margin-bottom: 32px;
+        }
+        .so-infographic-wrap {
+            margin-bottom: 32px;
+            border-radius: var(--card-radius);
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+        }
+        .so-infographic-wrap img { width: 100%; height: auto; display: block; }
+        .so-checklist { list-style: none; padding: 0; margin: 0; max-width: 480px; margin-left: auto; margin-right: auto; }
+        .so-checklist li { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; font-size: 17px; line-height: 1.5; color: var(--brand-navy); }
+        .so-checklist li::before { content: "✔"; color: var(--brand-blue); font-weight: 700; }
+        .so-outcome-section {
+            position: relative;
+            min-height: 420px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: center center/cover no-repeat;
+            background-image: url('/images/la/so-outcome-leaving.png');
+            color: var(--brand-white);
+            text-align: center;
+            padding: 80px 20px;
+        }
+        .so-outcome-section::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(12, 35, 52, 0.75), rgba(1, 54, 108, 0.7));
+            pointer-events: none;
+        }
+        .so-outcome-section .so-outcome-inner { position: relative; z-index: 1; max-width: 640px; }
+        .so-outcome-section h2 { font-size: 1.85rem; font-weight: 700; margin-bottom: 24px; text-shadow: 0 4px 12px rgba(0,0,0,0.4); }
+        .so-outcome-section .btn-primary { margin-top: 16px; }
+        @media (max-width: 768px) {
+            .so-problem-grid, .so-authority-grid { grid-template-columns: 1fr; gap: 32px; }
+            .so-problem-section .so-image-wrap { order: -1; }
+            .so-authority-section .so-image-wrap { order: 1; }
+            .so-problem-section h2, .so-authority-section h2 { font-size: 1.5rem; }
+            .so-outcome-section { min-height: 360px; padding: 60px 16px; }
+            .so-outcome-section h2 { font-size: 1.5rem; }
         }
         @media (max-width: 768px) {
             .trust-badges-row {
@@ -2592,7 +2687,7 @@
         </div>
     </header>
 
-    <section class="hero hero-section">
+    <section class="hero hero-section hero-so">
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
@@ -2645,6 +2740,27 @@
                     <img src="/images/la/attorney-hero.webp" alt="Shawn and Partners" class="hero-attorney-img" width="400" height="500" fetchpriority="high">
                 </picture>
                 <p class="hero-attorney-caption" style="margin-top:8px;font-size:14px;color:rgba(255,255,255,0.9);font-weight:500;">Trial-Ready Los Angeles Accident Attorneys</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Problem Validation (image left, text right) -->
+    <section id="problem-validation" class="so-problem-section">
+        <div class="container">
+            <div class="so-problem-grid">
+                <div class="so-image-wrap">
+                    <img src="/images/la/so-problem-bills.png" alt="Injured person stressed reviewing bills at home" width="540" height="360" loading="lazy">
+                </div>
+                <div>
+                    <h2>Not Getting Clear Answers From Your Current Lawyer?</h2>
+                    <ul class="so-problem-bullets">
+                        <li>Case updates delayed</li>
+                        <li>Settlement pressure</li>
+                        <li>Medical bills adding up</li>
+                        <li>Confusion about liability or next steps</li>
+                    </ul>
+                    <a href="#case-evaluation" class="btn-primary">Get A Confidential Second Opinion</a>
                 </div>
             </div>
         </div>
@@ -2819,29 +2935,21 @@
         </div>
     </section>
 
-    <section id="switching" class="section-with-bg" style="padding-top: 48px;">
+    <!-- Section 3: Switching process (infographic + checklist) -->
+    <section id="switching" class="so-switching-section">
         <div class="container">
-            <h2 style="text-align: center; margin-bottom: 24px;">You Don't Have To Stay With The Wrong Firm</h2>
-            <p class="process-timeline-so-note">In many situations, clients may change representation without restarting their case.</p>
-            <!-- SECTION 7: Case Transfer Process Timeline -->
-            <div class="process-timeline-so">
-                <div class="step"><div class="step-num">1</div><div class="step-title">Free Case Review</div></div>
-                <div class="step"><div class="step-num">2</div><div class="step-title">File Transfer Coordination</div></div>
-                <div class="step"><div class="step-num">3</div><div class="step-title">Strategy Evaluation</div></div>
-                <div class="step"><div class="step-num">4</div><div class="step-title">Negotiation or Litigation</div></div>
-                <div class="step"><div class="step-num">5</div><div class="step-title">Resolution</div></div>
+            <h2>Switching Lawyers Is Easier Than You Think</h2>
+            <div class="so-infographic-wrap">
+                <img src="/images/la/so-infographic-switching.png" alt="Client transition to new legal partnership" width="800" height="auto" loading="lazy">
             </div>
-            <div class="section-content" style="max-width: 700px; margin-left: auto; margin-right: auto;">
-                <ul style="list-style: none; padding: 0; margin: 0 0 32px 0;">
-                    <li style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 20px; font-size: 17px; line-height: 1.5;"><span style="color: var(--brand-blue); font-weight: 700;">✓</span> No upfront cost to switch</li>
-                    <li style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 20px; font-size: 17px; line-height: 1.5;"><span style="color: var(--brand-blue); font-weight: 700;">✓</span> We handle all transfer paperwork</li>
-                    <li style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 20px; font-size: 17px; line-height: 1.5;"><span style="color: var(--brand-blue); font-weight: 700;">✓</span> Your treatment continues uninterrupted</li>
-                    <li style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 20px; font-size: 17px; line-height: 1.5;"><span style="color: var(--brand-blue); font-weight: 700;">✓</span> Insurance negotiations stay active</li>
-                    <li style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 0; font-size: 17px; line-height: 1.5;"><span style="color: var(--brand-blue); font-weight: 700;">✓</span> Litigation strategy review immediately</li>
-                </ul>
-                <div style="text-align: center;">
-                    <a href="#case-evaluation" class="btn-secondary">Start Confidential Review →</a>
-                </div>
+            <ul class="so-checklist">
+                <li>We handle paperwork</li>
+                <li>No upfront costs</li>
+                <li>Medical treatment continues</li>
+                <li>You stay in control</li>
+            </ul>
+            <div style="text-align: center; margin-top: 28px;">
+                <a href="#case-evaluation" class="btn-secondary">Start Confidential Review →</a>
             </div>
         </div>
     </section>
@@ -2856,32 +2964,40 @@
         </div>
     </section>
 
-    <!-- SECTION 8: Litigation Authority Block -->
-    <section id="authority" class="attorney-bio section-with-bg" style="padding-top: 56px;">
+    <!-- Section 4: Human trust / litigation authority (text left, image right) + carousel -->
+    <section id="authority" class="so-authority-section">
         <div class="container">
-            <div class="attorney-bio-content">
-                <div class="attorney-photo-wrap"><img src="/images/la/attorney-hero.webp" alt="Shawn Rokni" class="attorney-photo" width="300" height="300" loading="lazy"></div>
-                <div class="attorney-details">
-                    <h2>Trial-Ready Personal Injury Representation</h2>
-                    <div class="attorney-name">Shawn Rokni</div>
-                    <div class="attorney-title">Attorney at Law</div>
-                    <ul style="list-style: none; padding: 0; margin: 0 0 24px 0;">
-                        <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 14px; font-size: 16px; line-height: 1.5;"><span style="color: var(--brand-accent-yellow);">✓</span> Strategic case evaluation</li>
-                        <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 14px; font-size: 16px; line-height: 1.5;"><span style="color: var(--brand-accent-yellow);">✓</span> Willingness to litigate when necessary</li>
-                        <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 14px; font-size: 16px; line-height: 1.5;"><span style="color: var(--brand-accent-yellow);">✓</span> Insurance negotiation experience</li>
-                        <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 0; font-size: 16px; line-height: 1.5;"><span style="color: var(--brand-accent-yellow);">✓</span> Local courtroom familiarity</li>
-                    </ul>
-                    <p>Results depend on the facts of each case. We provide experienced representation for clients seeking a second opinion in Los Angeles County.</p>
-                    <h3 style="margin-top: 24px;">Education</h3>
-                    <ul class="education-list">
-                        <li>J.D., Chapman University School of Law</li>
-                        <li>B.A., University of California - Los Angeles</li>
-                    </ul>
-                    <div class="associations" style="margin-top: 24px;">
-                        <div class="association-badge">Los Angeles County Bar Association</div>
-                        <div class="association-badge">Consumer Attorneys of California</div>
-                        <div class="association-badge">Trial Lawyers University</div>
+            <div class="so-authority-grid">
+                <div>
+                    <h2>Speak Directly With Litigation Attorneys — Not Case Managers</h2>
+                    <p style="font-size: 17px; line-height: 1.6; color: var(--brand-gray-700); margin-bottom: 0;">We evaluate strategy, insurance exposure, and settlement value. Get a real assessment from attorneys who try cases.</p>
+                </div>
+                <div class="so-image-wrap">
+                    <img src="/images/la/so-authority-meeting.png" alt="Attorney meeting emotional client" width="540" height="360" loading="lazy">
+                </div>
+            </div>
+            <div class="testimonial-carousel-wrap" style="margin-top: 48px;">
+                <div class="testimonial-carousel" id="authority-carousel">
+                    <div class="testimonial-slide active">
+                        <div class="stars">★★★★★</div>
+                        <p class="quote">Couldn't reach my original lawyer. I switched to Insider—they got my case moving and my settlement was significantly higher than the first firm suggested.</p>
+                        <p class="testimonial-micro">— Client switched firms</p>
                     </div>
+                    <div class="testimonial-slide">
+                        <div class="stars">★★★★★</div>
+                        <p class="quote">Insurance denied liability. My previous attorney was ready to walk. Insider filed suit and recovered compensation I didn't think was possible.</p>
+                        <p class="testimonial-micro">— Liability dispute resolved</p>
+                    </div>
+                    <div class="testimonial-slide">
+                        <div class="stars">★★★★★</div>
+                        <p class="quote">My first firm kept delaying. After I switched, Insider accelerated everything and secured the medical coverage and settlement I needed.</p>
+                        <p class="testimonial-micro">— Case accelerated, coverage secured</p>
+                    </div>
+                </div>
+                <div class="testimonial-carousel-nav" aria-label="Carousel navigation">
+                    <button type="button" class="active" aria-pressed="true" data-index="0">1</button>
+                    <button type="button" aria-pressed="false" data-index="1">2</button>
+                    <button type="button" aria-pressed="false" data-index="2">3</button>
                 </div>
             </div>
         </div>
@@ -2910,6 +3026,14 @@
             <div style="text-align: center; margin-top: 40px;">
                 <a href="#case-evaluation" class="btn-primary">See If We Can Help →</a>
             </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Outcome visualization (full-width image + overlay CTA) -->
+    <section class="so-outcome-section" aria-label="You don't have to stay with the wrong firm">
+        <div class="so-outcome-inner">
+            <h2>You Don't Have To Stay With The Wrong Firm</h2>
+            <a href="#case-evaluation" class="btn-primary">Free Case Review</a>
         </div>
     </section>
 
@@ -3057,6 +3181,25 @@ document.addEventListener('DOMContentLoaded',function(){
       btn.setAttribute('aria-expanded',open);
     });
   });
+  /* Authority testimonial carousel */
+  (function(){
+    var wrap=document.querySelector('#authority-carousel');
+    if(!wrap) return;
+    var carousel=wrap.closest('.testimonial-carousel-wrap');
+    if(!carousel) return;
+    var slides=carousel.querySelectorAll('.testimonial-slide');
+    var nav=carousel.querySelector('.testimonial-carousel-nav');
+    if(!nav||slides.length===0) return;
+    var buttons=nav.querySelectorAll('button[data-index]');
+    function goTo(i){
+      i=(i+slides.length)%slides.length;
+      slides.forEach(function(s,j){ s.classList.toggle('active',j===i); });
+      buttons.forEach(function(b,j){ b.classList.toggle('active',j===i); b.setAttribute('aria-pressed',j===i); });
+    }
+    buttons.forEach(function(btn){
+      btn.addEventListener('click',function(){ goTo(parseInt(btn.getAttribute('data-index'),10)); });
+    });
+  })();
   var statsEl=document.getElementById('lp-stats');
   if(!statsEl) return;
   function formatNum(n){ return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g,','); }
