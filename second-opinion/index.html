@@ -1343,16 +1343,55 @@
         .so-outcome-section::before {
             display: none;
         }
-        .so-outcome-section .so-outcome-inner { position: relative; z-index: 1; max-width: 640px; }
-        .so-outcome-section h2 { font-size: 1.85rem; font-weight: 700; margin-bottom: 24px; text-shadow: 0 4px 12px rgba(0,0,0,0.4); }
-        .so-outcome-section .btn-primary { margin-top: 16px; }
+        .so-outcome-section .so-outcome-inner {
+            position: relative; z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            max-width: 960px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        .so-outcome-section .so-outcome-image {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 12px 32px rgba(0,0,0,0.3);
+        }
+        .so-outcome-section .so-outcome-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+        .so-outcome-section .so-outcome-copy h2 { font-size: 1.85rem; font-weight: 700; margin-bottom: 16px; color: var(--brand-white); }
+        .so-outcome-section .so-outcome-p { font-size: 1.1rem; line-height: 1.6; margin-bottom: 24px; color: rgba(255,255,255,0.95); }
+        .so-outcome-section .so-outcome-copy .btn-primary { margin-top: 0; }
+        .so-outcome-attorneys {
+            margin-top: 28px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255,255,255,0.25);
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .so-outcome-attorneys img {
+            width: 80px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 8px;
+            flex-shrink: 0;
+        }
+        .so-outcome-attorneys p { font-size: 14px; color: rgba(255,255,255,0.9); margin: 0; line-height: 1.4; }
         @media (max-width: 768px) {
             .so-problem-grid, .so-authority-grid { grid-template-columns: 1fr; gap: 32px; }
             .so-problem-section .so-image-wrap { order: -1; }
             .so-authority-section .so-image-wrap { order: 1; }
             .so-problem-section h2, .so-authority-section h2 { font-size: 1.5rem; }
-            .so-outcome-section { min-height: 360px; padding: 60px 16px; }
-            .so-outcome-section h2 { font-size: 1.5rem; }
+            .so-outcome-section { min-height: auto; padding: 48px 16px; }
+            .so-outcome-section .so-outcome-inner { grid-template-columns: 1fr; gap: 28px; text-align: center; }
+            .so-outcome-section .so-outcome-copy h2 { font-size: 1.5rem; }
+            .so-outcome-attorneys { flex-direction: column; justify-content: center; border-top: 1px solid rgba(255,255,255,0.25); }
         }
         @media (max-width: 768px) {
             .trust-badges-row {
@@ -3026,11 +3065,21 @@
         </div>
     </section>
 
-    <!-- Section 5: Outcome visualization (full-width image + overlay CTA) -->
+    <!-- Section 5: Outcome — picture, message, CTA, attorneys -->
     <section class="so-outcome-section" aria-label="You don't have to stay with the wrong firm">
         <div class="so-outcome-inner">
-            <h2>You Don't Have To Stay With The Wrong Firm</h2>
-            <a href="#case-evaluation" class="btn-primary">Free Case Review</a>
+            <div class="so-outcome-image">
+                <img src="../images/la/tall-mobile-image-happy-injured-woman-leaving-law-office.png" alt="Client leaving our office after a positive outcome" width="480" height="360" loading="lazy">
+            </div>
+            <div class="so-outcome-copy">
+                <h2>You Don't Have To Stay With The Wrong Firm</h2>
+                <p class="so-outcome-p">Switching is easier than many people think. We handle the paperwork and work to get your case moving again—so you can focus on what matters.</p>
+                <a href="#case-evaluation" class="btn-primary">Free Case Review</a>
+                <div class="so-outcome-attorneys">
+                    <img src="../images/la/attorney-mobile.webp" alt="Insider Accident Lawyers attorneys" width="120" height="90" loading="lazy">
+                    <p>Speak with trial-ready attorneys who will evaluate your case and your options.</p>
+                </div>
+            </div>
         </div>
     </section>
 
