@@ -1335,18 +1335,13 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: center center/cover no-repeat;
-            background-image: url('../images/la/tall-mobile-image-happy-injured-woman-leaving-law-office.png'), url('../images/la/hero-bg.jpg');
+            background: linear-gradient(135deg, #0c2334 0%, #01366c 50%, #022a52 100%);
             color: var(--brand-white);
             text-align: center;
             padding: 80px 20px;
         }
         .so-outcome-section::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(12, 35, 52, 0.75), rgba(1, 54, 108, 0.7));
-            pointer-events: none;
+            display: none;
         }
         .so-outcome-section .so-outcome-inner { position: relative; z-index: 1; max-width: 640px; }
         .so-outcome-section h2 { font-size: 1.85rem; font-weight: 700; margin-bottom: 24px; text-shadow: 0 4px 12px rgba(0,0,0,0.4); }
@@ -2751,7 +2746,7 @@
                         <li>Medical bills adding up</li>
                         <li>Confusion about liability or next steps</li>
                     </ul>
-                    <a href="#case-evaluation" class="btn-primary">Get A Confidential Second Opinion</a>
+                    <a href="#case-evaluation" class="btn-primary" style="text-align: center;">Get A Confidential Second Opinion</a>
                 </div>
             </div>
         </div>
@@ -2811,12 +2806,25 @@
                             <option value="Want a second opinion">Want a second opinion</option>
                             <option value="Considering switching lawyers">Considering switching lawyers</option>
                             <option value="Current lawyer not responsive">Current lawyer not responsive</option>
+                            <option value="Unhappy with settlement offer">Unhappy with settlement offer</option>
+                            <option value="Case not moving forward">Case not moving forward</option>
+                            <option value="Need clarity on my options">Need clarity on my options</option>
                             <option value="Other">Other</option>
                         </select>
                     </div>
                     <div class="form-group">
+                        <label class="form-label">Best time to call?</label>
+                        <select class="form-input" name="best_time">
+                            <option value="">Select one</option>
+                            <option value="Morning (8am–12pm)">Morning (8am–12pm)</option>
+                            <option value="Afternoon (12pm–5pm)">Afternoon (12pm–5pm)</option>
+                            <option value="Evening (5pm–8pm)">Evening (5pm–8pm)</option>
+                            <option value="As soon as possible">As soon as possible</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
                         <label class="form-label">Brief message (optional)</label>
-                        <textarea class="form-input" name="accident_reason" rows="2" placeholder="Current lawyer, concerns, or question"></textarea>
+                        <textarea class="form-input" name="accident_reason" rows="3" placeholder="Current lawyer name, main concerns, or question"></textarea>
                     </div>
                     <label style="display:flex; align-items:flex-start; gap:8px; font-size:12px; line-height:1.4; margin-top:10px;"> <input type="checkbox" name="sms_opt_in" required style="margin-top:3px;"> <span> By checking this box, I agree to receive transactional text messages. Msg &amp; data rates may apply. Reply STOP to opt-out. </span> </label>
                     <button type="submit" class="btn-primary" style="width: 100%; margin-top: 24px;">Get My Free Review</button>
@@ -3011,6 +3019,7 @@
                     <p style="font-weight: 600; color: var(--brand-gray-700);">— Case accelerated, coverage secured</p>
                 </div>
             </div>
+            <p style="text-align: center; font-size: 13px; color: var(--brand-gray-600); margin-top: 24px; font-style: italic;">Outcomes based on real client experiences. Results vary; prior results do not guarantee a similar outcome.</p>
             <div style="text-align: center; margin-top: 40px;">
                 <a href="#case-evaluation" class="btn-primary">See If We Can Help →</a>
             </div>
@@ -3054,9 +3063,13 @@
         </div>
     </section>
 
-    <!-- SECTION 11: Final Urgency Close -->
+    <!-- SECTION 11: Final Urgency Close — stop sign so they pause and consider second opinion -->
     <section id="final-cta" class="final-cta stop-section">
         <div class="container">
+            <div class="stop-sign stop-sign-icon" aria-hidden="true">
+                <img src="../images/la/stop-sign.jpg" alt="" width="104" height="104" loading="lazy" decoding="async">
+            </div>
+            <p style="text-align: center; font-size: 1.1rem; font-weight: 600; color: var(--brand-gray-800); margin-bottom: 8px;">Stop and consider a second opinion.</p>
             <h2>Consider a Second Opinion Before Making Final Decisions</h2>
             <p>Speak with a litigation attorney today—free and confidential.</p>
             <div class="stop-section-cta">
@@ -3083,7 +3096,7 @@
                     <div class="footer-phone" data-callrail-phone="844-467-4335"><a href="tel:844-467-4335" style="color: var(--brand-white); text-decoration: none; font-weight: 800; font-size: 1.15em; letter-spacing: 0.03em;">844-467-4335</a></div>
                     <p>Available 24/7 · Hablamos Español</p>
                     <p style="margin-top: 8px;">No Fee Unless We Win</p>
-                    <a href="#case-evaluation" class="btn-primary" style="margin-top: 16px; display: inline-block;">Get My Free Review</a>
+                    <a href="#case-evaluation" class="btn-secondary" style="margin-top: 16px; display: inline-block;">Get My Free Review</a>
                 </div>
             </div>
             <div class="footer-disclaimer">
