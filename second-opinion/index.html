@@ -2320,6 +2320,162 @@
       width: auto !important;
     }
   }
+  /* Second-opinion: verified case results strip (CMS-editable content) */
+  .case-results-strip-wrap {
+    overflow: hidden;
+    padding: 20px 0 28px;
+    background: linear-gradient(135deg, rgba(12, 35, 52, 0.06), rgba(1, 54, 108, 0.04));
+  }
+  .case-results-strip {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 12px 20px 16px;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .case-results-strip::-webkit-scrollbar { display: none; }
+  .case-result-item {
+    flex: 0 0 auto;
+    min-width: 180px;
+    padding: 16px 20px;
+    background: var(--brand-white);
+    border-radius: var(--card-radius);
+    border: 2px solid rgba(1, 54, 108, 0.12);
+    box-shadow: var(--card-shadow);
+    font-weight: 700;
+    color: var(--brand-navy);
+    font-size: 18px;
+    line-height: 1.3;
+  }
+  .case-result-item .result-desc { font-size: 13px; font-weight: 600; color: var(--brand-gray-700); margin-top: 4px; }
+  .case-results-strip-disclaimer {
+    text-align: center;
+    font-size: 12px;
+    color: var(--brand-gray-500);
+    margin-top: 12px;
+    padding: 0 20px;
+  }
+  @keyframes so-strip-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .case-results-strip.auto-scroll {
+    animation: so-strip-scroll 45s linear infinite;
+  }
+  @media (max-width: 768px) {
+    .case-result-item { min-width: 160px; font-size: 16px; }
+    .case-results-strip.auto-scroll { animation: none; }
+  }
+  /* Trust badge band (toggleable via data-show, grayscale) */
+  .trust-badge-band {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    padding: 20px 24px;
+    margin-bottom: 24px;
+    background: var(--brand-white);
+    border-radius: var(--card-radius);
+    border: 1px solid var(--brand-border);
+  }
+  .trust-badge-band[data-show="false"] { display: none; }
+  .trust-badge-band .tb-item {
+    filter: grayscale(100%);
+    opacity: 0.85;
+    height: 36px;
+    width: auto;
+    object-fit: contain;
+  }
+  .trust-badge-band .tb-text { font-size: 13px; font-weight: 600; color: var(--brand-gray-600); }
+  /* Testimonial carousel */
+  .testimonial-carousel-wrap { position: relative; max-width: 800px; margin: 0 auto; }
+  .testimonial-carousel {
+    overflow: hidden;
+    border-radius: var(--card-radius);
+    box-shadow: var(--card-shadow);
+  }
+  .testimonial-slide {
+    padding: 32px 40px;
+    background: var(--brand-white);
+    border-left: 4px solid var(--brand-blue);
+    min-height: 140px;
+    display: none;
+  }
+  .testimonial-slide.active { display: block; }
+  .testimonial-slide .stars { color: var(--brand-accent-yellow); font-size: 20px; margin-bottom: 12px; }
+  .testimonial-slide .quote { font-style: italic; font-size: 17px; line-height: 1.6; color: var(--brand-gray-900); }
+  .testimonial-carousel-nav { text-align: center; margin-top: 16px; }
+  .testimonial-carousel-nav button {
+    background: var(--brand-border);
+    border: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 0 6px;
+    cursor: pointer;
+    padding: 0;
+  }
+  .testimonial-carousel-nav button.active { background: var(--brand-blue); }
+  .testimonial-micro { text-align: center; font-size: 12px; color: var(--brand-gray-500); margin-top: 12px; }
+  /* Form: concerns checklist (multi-select, visual highlight) */
+  .form-concerns-label { display: block; font-weight: 600; margin-bottom: 12px; color: var(--brand-gray-900); }
+  .form-concerns-list { display: flex; flex-direction: column; gap: 10px; }
+  .form-concern-opt {
+    display: flex; align-items: center; gap: 12px; padding: 14px 16px;
+    background: var(--brand-light-blue); border: 2px solid var(--brand-border); border-radius: 8px;
+    cursor: pointer; transition: all 0.2s ease; font-size: 15px; color: var(--brand-gray-800);
+  }
+  .form-concern-opt:hover { border-color: var(--brand-blue); }
+  .form-concern-opt.selected { border-color: var(--brand-blue); background: rgba(1, 70, 138, 0.08); }
+  .form-concern-opt input { margin: 0; }
+  /* Injury severity slider (informational only) */
+  .form-severity-label { display: block; font-weight: 600; margin-bottom: 12px; color: var(--brand-gray-900); }
+  .form-severity-slider { width: 100%; height: 8px; margin: 16px 0; -webkit-appearance: none; appearance: none; background: var(--brand-border); border-radius: 4px; }
+  .form-severity-slider::-webkit-slider-thumb { -webkit-appearance: none; width: 22px; height: 22px; border-radius: 50%; background: var(--brand-blue); cursor: pointer; }
+  .form-severity-slider::-moz-range-thumb { width: 22px; height: 22px; border-radius: 50%; background: var(--brand-blue); cursor: pointer; border: none; }
+  .form-severity-labels { display: flex; justify-content: space-between; font-size: 12px; color: var(--brand-gray-600); margin-top: 4px; }
+  /* Case timeline selector */
+  .form-timeline-label { display: block; font-weight: 600; margin-bottom: 12px; color: var(--brand-gray-900); }
+  .form-timeline-segmented {
+    display: flex; flex-wrap: wrap; gap: 8px;
+  }
+  .form-timeline-opt {
+    padding: 10px 16px; border: 2px solid var(--brand-border); border-radius: 8px; background: var(--brand-white);
+    cursor: pointer; font-size: 14px; color: var(--brand-gray-700); transition: all 0.2s ease;
+  }
+  .form-timeline-opt:hover { border-color: var(--brand-blue); }
+  .form-timeline-opt.selected { border-color: var(--brand-blue); background: rgba(1, 70, 138, 0.08); color: var(--brand-navy); }
+  .form-timeline-opt input { position: absolute; opacity: 0; pointer-events: none; }
+  /* Process timeline 5 steps */
+  .process-timeline-so {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; margin: 32px 0 24px;
+  }
+  .process-timeline-so .step {
+    flex: 1 1 140px; max-width: 180px; text-align: center; padding: 24px 16px;
+    background: var(--brand-white); border-radius: var(--card-radius); border: 2px solid rgba(1, 54, 108, 0.12);
+    box-shadow: var(--card-shadow);
+  }
+  .process-timeline-so .step-num { font-size: 14px; font-weight: 800; color: var(--brand-blue); margin-bottom: 8px; }
+  .process-timeline-so .step-title { font-size: 15px; font-weight: 700; color: var(--brand-navy); }
+  .process-timeline-so-note { text-align: center; font-size: 14px; color: var(--brand-gray-700); max-width: 640px; margin: 0 auto 24px; line-height: 1.6; }
+  @media (max-width: 768px) {
+    .process-timeline-so { flex-direction: column; align-items: center; }
+    .process-timeline-so .step { max-width: 100%; }
+  }
+  /* FAQ accordion */
+  .faq-accordion-so { max-width: 720px; margin: 0 auto; }
+  .faq-item-so { border-bottom: 1px solid var(--brand-border); }
+  .faq-item-so .faq-q {
+    width: 100%; padding: 18px 20px; text-align: left; background: none; border: none;
+    font-size: 17px; font-weight: 600; color: var(--brand-navy); cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+  }
+  .faq-item-so .faq-q::after { content: '+'; font-size: 22px; color: var(--brand-blue); }
+  .faq-item-so.open .faq-q::after { content: '−'; }
+  .faq-item-so .faq-a { padding: 0 20px 18px; font-size: 15px; line-height: 1.65; color: var(--brand-gray-700); display: none; }
+  .faq-item-so.open .faq-a { display: block; }
 </style>
     <!-- GTM injected at top of head -->
     <!-- Google Tag Manager -->
@@ -2494,8 +2650,28 @@
         </div>
     </section>
 
+    <!-- SECTION 1: Verified Case Results Strip (CMS-editable: data-amount, data-desc per item) -->
+    <section class="case-results-strip-wrap" aria-label="Case results">
+        <div class="case-results-strip auto-scroll" id="case-results-strip">
+            <div class="case-result-item" data-amount="$1.2M" data-desc="Motor Vehicle Collision"><span class="result-amount">$1.2M</span><div class="result-desc">Motor Vehicle Collision</div></div>
+            <div class="case-result-item" data-amount="$850K" data-desc="Liability Dispute Injury Case"><span class="result-amount">$850K</span><div class="result-desc">Liability Dispute Injury Case</div></div>
+            <div class="case-result-item" data-amount="$675K" data-desc="Rear-End Accident Recovery"><span class="result-amount">$675K</span><div class="result-desc">Rear-End Accident Recovery</div></div>
+            <div class="case-result-item" data-amount="$2.4M" data-desc="Litigation Settlement"><span class="result-amount">$2.4M</span><div class="result-desc">Litigation Settlement</div></div>
+            <div class="case-result-item" data-amount="$1.1M" data-desc="Pedestrian Accident"><span class="result-amount">$1.1M</span><div class="result-desc">Pedestrian Accident</div></div>
+            <div class="case-result-item" data-amount="$1.2M" data-desc="Motor Vehicle Collision"><span class="result-amount">$1.2M</span><div class="result-desc">Motor Vehicle Collision</div></div>
+            <div class="case-result-item" data-amount="$850K" data-desc="Liability Dispute Injury Case"><span class="result-amount">$850K</span><div class="result-desc">Liability Dispute Injury Case</div></div>
+            <div class="case-result-item" data-amount="$675K" data-desc="Rear-End Accident Recovery"><span class="result-amount">$675K</span><div class="result-desc">Rear-End Accident Recovery</div></div>
+        </div>
+        <p class="case-results-strip-disclaimer">Past results do not guarantee future outcomes. Every case is different.</p>
+    </section>
+
     <section id="case-evaluation" class="case-form" style="padding-top: 56px;">
         <div class="container">
+            <!-- SECTION 2: Trust Badge Block (toggle data-show="true" per badge / band) -->
+            <div class="trust-badge-band" data-show="true">
+                <img class="tb-item" src="/images/la/google-badge.png" alt="Google Reviews" width="80" height="36">
+                <span class="tb-text">State Bar · Trial Lawyers · Verified Reviews</span>
+            </div>
             <div class="form-container">
                 <div style="text-align: center; margin-bottom: 16px;">
                     <div class="cta-badge">Free & Confidential</div>
@@ -2516,6 +2692,39 @@
                         <label class="form-label">Phone Number *</label>
                         <input type="tel" class="form-input" name="phone" required>
                     </div>
+                    <!-- SECTION 4: What concerns you most (multi-select, visual highlight) -->
+                    <div class="form-group">
+                        <label class="form-concerns-label">What concerns you most about your case?</label>
+                        <div class="form-concerns-list">
+                            <label class="form-concern-opt"><input type="checkbox" name="concerns[]" value="cannot_reach_attorney"> I cannot reach my attorney</label>
+                            <label class="form-concern-opt"><input type="checkbox" name="concerns[]" value="settlement_seems_low"> My settlement seems low</label>
+                            <label class="form-concern-opt"><input type="checkbox" name="concerns[]" value="case_taking_too_long"> Case taking too long</label>
+                            <label class="form-concern-opt"><input type="checkbox" name="concerns[]" value="insurance_disputing_fault"> Insurance is disputing fault</label>
+                            <label class="form-concern-opt"><input type="checkbox" name="concerns[]" value="want_second_opinion"> I want a second opinion</label>
+                        </div>
+                    </div>
+                    <!-- SECTION 5: Injury severity (informational only, no valuation) -->
+                    <div class="form-group">
+                        <label class="form-severity-label">How serious are your injuries?</label>
+                        <input type="range" class="form-severity-slider" name="injury_severity" min="0" max="3" value="1" aria-label="Injury severity" data-labels="Minor treatment,Ongoing care,Surgery involved,Long-term impact">
+                        <input type="hidden" name="injury_severity_label" id="injury-severity-label" value="Ongoing care">
+                        <div class="form-severity-labels">
+                            <span>Minor treatment</span>
+                            <span>Ongoing care</span>
+                            <span>Surgery involved</span>
+                            <span>Long-term impact</span>
+                        </div>
+                    </div>
+                    <!-- SECTION 6: Case timeline selector -->
+                    <div class="form-group">
+                        <label class="form-timeline-label">When did your accident happen?</label>
+                        <div class="form-timeline-segmented">
+                            <label class="form-timeline-opt"><input type="radio" name="accident_when" value="last_7_days"> Last 7 days</label>
+                            <label class="form-timeline-opt"><input type="radio" name="accident_when" value="last_month"> Last month</label>
+                            <label class="form-timeline-opt"><input type="radio" name="accident_when" value="3_6_months"> 3–6 months</label>
+                            <label class="form-timeline-opt"><input type="radio" name="accident_when" value="over_year"> Over a year</label>
+                        </div>
+                    </div>
                     <div class="form-group">
                         <label class="form-label">Tell us about your case *</label>
                         <textarea class="form-input" name="accident_reason" rows="3" placeholder="Current lawyer, concerns, settlement offer, etc." required></textarea>
@@ -2523,6 +2732,31 @@
                     <label style="display:flex; align-items:flex-start; gap:8px; font-size:12px; line-height:1.4; margin-top:10px;"> <input type="checkbox" name="sms_opt_in" required style="margin-top:3px;"> <span> By checking this box, I am agreeing to receive transactional/informational text messages from Insider Accident Lawyers. Message frequency will vary. Msg & data rates may apply. Reply HELP for help or STOP to opt-out. </span> </label>
                     <button type="submit" class="btn-primary" style="width: 100%; margin-top: 24px;">Get My Free Review</button>
                 </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: Verified Testimonial Carousel -->
+    <section class="section-with-bg section-alt" style="padding: 48px 0;">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 28px;">What Clients Say</h2>
+            <div class="testimonial-carousel-wrap">
+                <div class="testimonial-carousel">
+                    <div class="testimonial-slide active">
+                        <div class="stars">★★★★★</div>
+                        <p class="quote">"They reviewed my case after months of no updates."</p>
+                    </div>
+                    <div class="testimonial-slide">
+                        <div class="stars">★★★★★</div>
+                        <p class="quote">"I felt more informed after speaking with their team."</p>
+                    </div>
+                    <div class="testimonial-slide">
+                        <div class="stars">★★★★★</div>
+                        <p class="quote">"Switching was easier than I thought. They handled everything."</p>
+                    </div>
+                </div>
+                <div class="testimonial-carousel-nav" aria-label="Testimonial navigation"></div>
+                <p class="testimonial-micro">Client experience may vary.</p>
             </div>
         </div>
     </section>
@@ -2565,6 +2799,15 @@
     <section id="switching" class="section-with-bg" style="padding-top: 48px;">
         <div class="container">
             <h2 style="text-align: center; margin-bottom: 24px;">You Don't Have To Stay With The Wrong Firm</h2>
+            <p class="process-timeline-so-note">In many situations, clients may change representation without restarting their case.</p>
+            <!-- SECTION 7: Case Transfer Process Timeline -->
+            <div class="process-timeline-so">
+                <div class="step"><div class="step-num">1</div><div class="step-title">Free Case Review</div></div>
+                <div class="step"><div class="step-num">2</div><div class="step-title">File Transfer Coordination</div></div>
+                <div class="step"><div class="step-num">3</div><div class="step-title">Strategy Evaluation</div></div>
+                <div class="step"><div class="step-num">4</div><div class="step-title">Negotiation or Litigation</div></div>
+                <div class="step"><div class="step-num">5</div><div class="step-title">Resolution</div></div>
+            </div>
             <div class="section-content" style="max-width: 700px; margin-left: auto; margin-right: auto;">
                 <ul style="list-style: none; padding: 0; margin: 0 0 32px 0;">
                     <li style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 20px; font-size: 17px; line-height: 1.5;"><span style="color: var(--brand-blue); font-weight: 700;">✓</span> No upfront cost to switch</li>
@@ -2590,16 +2833,22 @@
         </div>
     </section>
 
+    <!-- SECTION 8: Litigation Authority Block -->
     <section id="authority" class="attorney-bio section-with-bg" style="padding-top: 56px;">
         <div class="container">
             <div class="attorney-bio-content">
                 <div class="attorney-photo-wrap"><img src="/images/la/attorney-hero.webp" alt="Shawn Rokni" class="attorney-photo" width="300" height="300" loading="lazy"></div>
                 <div class="attorney-details">
-                    <h2>Trial-Ready Los Angeles Accident Attorneys</h2>
+                    <h2>Trial-Ready Personal Injury Representation</h2>
                     <div class="attorney-name">Shawn Rokni</div>
                     <div class="attorney-title">Attorney at Law</div>
-                    <p>Litigation-focused firm serving Los Angeles County. We try cases when insurers won't pay what you deserve. Former insurance-side experience means we know how they think—and how to beat them.</p>
-                    <p style="margin-top: 16px;">Millions recovered for injury victims. 120+ years combined experience. No fee unless we win. Get a real second opinion from attorneys who are ready to fight.</p>
+                    <ul style="list-style: none; padding: 0; margin: 0 0 24px 0;">
+                        <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 14px; font-size: 16px; line-height: 1.5;"><span style="color: var(--brand-accent-yellow);">✓</span> Strategic case evaluation</li>
+                        <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 14px; font-size: 16px; line-height: 1.5;"><span style="color: var(--brand-accent-yellow);">✓</span> Willingness to litigate when necessary</li>
+                        <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 14px; font-size: 16px; line-height: 1.5;"><span style="color: var(--brand-accent-yellow);">✓</span> Insurance negotiation experience</li>
+                        <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 0; font-size: 16px; line-height: 1.5;"><span style="color: var(--brand-accent-yellow);">✓</span> Local courtroom familiarity</li>
+                    </ul>
+                    <p>Results depend on the facts of each case. We provide experienced representation for clients seeking a second opinion in Los Angeles County.</p>
                     <h3 style="margin-top: 24px;">Education</h3>
                     <ul class="education-list">
                         <li>J.D., Chapman University School of Law</li>
@@ -2641,55 +2890,65 @@
         </div>
     </section>
 
+    <!-- SECTION 9: FAQ Accordion -->
+    <section class="section-with-bg section-alt" style="padding: 48px 0;">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 32px;">Frequently Asked Questions</h2>
+            <div class="faq-accordion-so">
+                <div class="faq-item-so">
+                    <button type="button" class="faq-q" aria-expanded="false">Can I change personal injury lawyers?</button>
+                    <div class="faq-a">Yes. In most situations you have the right to change legal representation. Your new attorney can typically coordinate the transfer of your file from your current lawyer.</div>
+                </div>
+                <div class="faq-item-so">
+                    <button type="button" class="faq-q" aria-expanded="false">Will switching cost money?</button>
+                    <div class="faq-a">Many firms, including ours, work on a contingency basis. There is typically no upfront cost to switch. Fee arrangements are discussed during your initial consultation.</div>
+                </div>
+                <div class="faq-item-so">
+                    <button type="button" class="faq-q" aria-expanded="false">Will my case restart?</button>
+                    <div class="faq-a">In many situations, clients may change representation without restarting their case. Work already done on your case may be transferred. Your new attorney can explain how this applies to your situation.</div>
+                </div>
+                <div class="faq-item-so">
+                    <button type="button" class="faq-q" aria-expanded="false">How long can transfer take?</button>
+                    <div class="faq-a">File transfer timing varies. Your new attorney can request your file from your current lawyer and coordinate the transition. We can give you a general timeline during your free case review.</div>
+                </div>
+                <div class="faq-item-so">
+                    <button type="button" class="faq-q" aria-expanded="false">Will insurance be notified?</button>
+                    <div class="faq-a">When representation changes, the insurance company is typically notified of your new counsel. This is a standard part of the transfer process.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 11: Final Urgency Close -->
     <section id="final-cta" class="final-cta stop-section">
         <div class="container">
-            <h2>Get A Second Opinion Before It's Too Late</h2>
-            <p>Don't stay with the wrong firm. Speak with a litigation attorney today—free and confidential.</p>
+            <h2>Consider a Second Opinion Before Making Final Decisions</h2>
+            <p>Speak with a litigation attorney today—free and confidential.</p>
             <div class="stop-section-cta">
-                <a href="tel:844-467-4335" class="btn-primary call-btn" data-callrail-phone="844-467-4335">Speak With An Attorney Now</a>
+                <a href="tel:844-467-4335" class="btn-primary call-btn" data-callrail-phone="844-467-4335">Speak With An Attorney Today</a>
                 <div class="call-cta-wrap">
                     <a href="tel:844-467-4335" class="btn-secondary call-btn" data-callrail-phone="844-467-4335"><span class="call-btn-num">844-467-4335</span><span class="call-btn-sub">Free Consultation | Hablamos Español</span></a>
-                <p class="call-cta-below">Free Consultation | Hablamos Español</p>
-            </div>
+                    <p class="call-cta-below">Free Consultation | Hablamos Español</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="section-alt" style="padding: 48px 0;">
-        <div class="container">
-            <h2 style="font-size: 22px; margin-bottom: 20px; font-weight: 600;">Related Information</h2>
-            <p class="subtext-muted" style="margin-bottom: 16px; font-size: 15px;">If you're researching your options, you may find these topics helpful:</p>
-            <ul style="list-style: none; padding: 0; margin: 0;">
-                <li style="margin-bottom: 10px;"><a href="/" style="color: var(--brand-blue); font-weight: 600;">Can you switch personal injury lawyer</a> — Yes. We handle the transfer.</li>
-                <li style="margin-bottom: 10px;"><a href="/" style="color: var(--brand-blue); font-weight: 600;">Settlement too low what to do</a> — Get a second opinion before accepting.</li>
-                <li style="margin-bottom: 10px;"><a href="/" style="color: var(--brand-blue); font-weight: 600;">Accident fault dispute lawyer</a> — We fight liability denials.</li>
-                <li style="margin-bottom: 0;"><a href="/" style="color: var(--brand-blue); font-weight: 600;">How long injury case takes</a> — Depends on your case; we'll give you a straight answer.</li>
-            </ul>
-        </div>
-    </section>
-
+    <!-- SECTION 10: Footer — CTA, phone, address, trust only (no blog/nav/outbound) -->
     <footer id="footer-contact">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Insider Accident Lawyers</h3>
                     <p>Experienced personal injury attorneys serving Los Angeles County.</p>
+                    <p style="margin-top: 12px;">3435 Wilshire Blvd., Suite 1620<br>Los Angeles, CA 90010</p>
                 </div>
                 <div class="footer-section">
-                    <h3>Contact Us</h3>
-                    <p>Call Now for a Free Consultation</p>
+                    <h3>Call for a Free Consultation</h3>
                     <div class="footer-phone" data-callrail-phone="844-467-4335"><a href="tel:844-467-4335" style="color: var(--brand-white); text-decoration: none; font-weight: 800; font-size: 1.15em; letter-spacing: 0.03em;">844-467-4335</a></div>
                     <p>Available 24/7 · Hablamos Español</p>
                     <p style="margin-top: 8px;">No Fee Unless We Win</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <p><a href="#case-evaluation" style="color: var(--brand-white); text-decoration: none;">Free Review</a></p>
-                    <p><a href="#why-call" style="color: var(--brand-white); text-decoration: none;">Why Clients Call</a></p>
-                    <p><a href="#switching" style="color: var(--brand-white); text-decoration: none;">Switching Lawyers</a></p>
-                    <p><a href="#authority" style="color: var(--brand-white); text-decoration: none;">Our Attorneys</a></p>
-                    <p><a href="#footer-contact" style="color: var(--brand-white); text-decoration: none;">Contact Us</a></p>
-                    <p style="margin-top: 16px;"><a href="tel:844-467-4335" style="color: var(--brand-white); text-decoration: none; font-weight: 800; font-size: 1.25em; letter-spacing: 0.02em;" data-callrail-phone="844-467-4335">844-467-4335</a></p>
+                    <a href="#case-evaluation" class="btn-primary" style="margin-top: 16px; display: inline-block;">Get My Free Review</a>
                 </div>
             </div>
             <div class="footer-disclaimer">
@@ -2764,6 +3023,63 @@ document.addEventListener('DOMContentLoaded',function(){
         form.submit();
       });
     });
+  }
+  /* Injury severity label sync (informational only) */
+  var sevSlider=document.querySelector('.form-severity-slider');
+  var sevLabel=document.getElementById('injury-severity-label');
+  if(sevSlider&&sevLabel){
+    var labels=(sevSlider.getAttribute('data-labels')||'').split(',');
+    function updateSevLabel(){ var v=parseInt(sevSlider.value,10); sevLabel.value=labels[v]||''; }
+    sevSlider.addEventListener('input',updateSevLabel);
+    updateSevLabel();
+  }
+  /* Second-opinion: form concern opt visual */
+  document.querySelectorAll('.form-concern-opt').forEach(function(label){
+    var cb=label.querySelector('input[type="checkbox"]');
+    if(!cb) return;
+    function update(){ label.classList.toggle('selected',cb.checked); }
+    update();
+    label.addEventListener('click',function(){ setTimeout(update,0); });
+  });
+  /* Timeline selector visual */
+  document.querySelectorAll('.form-timeline-opt').forEach(function(label){
+    var radio=label.querySelector('input[type="radio"]');
+    if(!radio) return;
+    function update(){ document.querySelectorAll('.form-timeline-opt').forEach(function(l){ l.classList.remove('selected'); }); if(radio.checked) label.classList.add('selected'); }
+    document.querySelectorAll('input[name="accident_when"]').forEach(function(r){ r.addEventListener('change',update); });
+    update();
+  });
+  /* FAQ accordion */
+  document.querySelectorAll('.faq-item-so').forEach(function(item){
+    var btn=item.querySelector('.faq-q');
+    var ans=item.querySelector('.faq-a');
+    if(!btn||!ans) return;
+    btn.addEventListener('click',function(){
+      var open=item.classList.toggle('open');
+      btn.setAttribute('aria-expanded',open);
+    });
+  });
+  /* Testimonial carousel */
+  var carousel=document.querySelector('.testimonial-carousel');
+  if(carousel){
+    var slides=carousel.querySelectorAll('.testimonial-slide');
+    var nav=document.querySelector('.testimonial-carousel-nav');
+    var idx=0;
+    if(nav&&slides.length){
+      for(var i=0;i<slides.length;i++){
+        var b=document.createElement('button');
+        b.type='button';
+        b.setAttribute('aria-label','Slide '+(i+1));
+        if(i===0) b.classList.add('active');
+        (function(j){ b.addEventListener('click',function(){ idx=j; go(); }); })(i);
+        nav.appendChild(b);
+      }
+    }
+    function go(){
+      slides.forEach(function(s,i){ s.classList.toggle('active',i===idx); });
+      if(nav){ var btns=nav.querySelectorAll('button'); btns.forEach(function(b,i){ b.classList.toggle('active',i===idx); }); }
+    }
+    setInterval(function(){ idx=(idx+1)%slides.length; go(); },5000);
   }
   var statsEl=document.getElementById('lp-stats');
   if(!statsEl) return;
