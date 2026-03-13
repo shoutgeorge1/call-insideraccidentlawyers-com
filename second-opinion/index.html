@@ -1262,12 +1262,12 @@
             gap: 32px 36px;
             align-items: center;
             justify-items: center;
-            align-content: center;
-            background: var(--brand-white);
-            padding: 48px;
-            border-radius: var(--card-radius);
-            box-shadow: var(--card-shadow);
-            border: 1px solid rgba(1, 54, 108, 0.08);
+        }
+        .so-badges-four {
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px 48px;
+            max-width: 720px;
+            margin: 0 auto;
         }
                 .trust-badge-img.pop {
             opacity: 1;
@@ -1392,6 +1392,93 @@
             .so-outcome-section .so-outcome-inner { grid-template-columns: 1fr; gap: 28px; text-align: center; }
             .so-outcome-section .so-outcome-copy h2 { font-size: 1.5rem; }
             .so-outcome-attorneys { flex-direction: column; justify-content: center; border-top: 1px solid rgba(255,255,255,0.25); }
+        }
+        /* Case Results (settlement proof) — after insurance stress */
+        .so-case-results { padding: 56px 0; background: linear-gradient(135deg, rgba(12, 35, 52, 0.04), rgba(1, 54, 108, 0.06)); }
+        .so-case-results .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        .so-case-results h2 { text-align: center; font-size: 1.85rem; font-weight: 700; margin-bottom: 12px; color: var(--brand-navy); }
+        .so-case-results .so-results-sub { text-align: center; font-size: 1.1rem; color: var(--brand-gray-700); margin-bottom: 40px; }
+        .so-results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-bottom: 32px; }
+        .so-result-card {
+            background: var(--brand-white);
+            padding: 28px 24px;
+            border-radius: 12px;
+            border: 2px solid rgba(1, 54, 108, 0.12);
+            text-align: center;
+            box-shadow: 0 6px 20px rgba(1, 54, 108, 0.1), 0 2px 6px rgba(0,0,0,0.06);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        .so-result-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(1, 54, 108, 0.15), 0 4px 12px rgba(0,0,0,0.08);
+        }
+        .so-result-card .result-label { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--brand-gray-500); margin-bottom: 8px; }
+        .so-result-card .result-amount { font-size: 2rem; font-weight: 800; color: var(--brand-blue); line-height: 1.2; margin-bottom: 8px; }
+        .so-result-card .result-type { font-size: 1rem; color: var(--brand-gray-700); font-weight: 600; }
+        .so-result-card .result-meta { margin-top: 12px; font-size: 12px; color: var(--brand-gray-500); }
+        .so-case-results .so-results-cta { text-align: center; margin-top: 24px; margin-bottom: 32px; }
+        .settlement-ticker-wrap {
+            overflow: hidden;
+            margin-top: 24px;
+            min-height: 52px;
+            -webkit-overflow-scrolling: touch;
+        }
+        .settlement-ticker-wrap:hover .settlement-ticker-inner { animation-play-state: paused; }
+        .settlement-ticker-inner {
+            display: flex;
+            gap: 16px;
+            width: max-content;
+            animation: so-ticker-scroll 45s linear infinite;
+        }
+        @media (max-width: 768px) {
+            .settlement-ticker-wrap { overflow-x: auto; overflow-y: hidden; }
+            .settlement-ticker-inner { animation: none; }
+        }
+        .settlement-ticker-inner .ticker-card {
+            flex-shrink: 0;
+            padding: 10px 16px;
+            border-radius: 8px;
+            background: var(--brand-white);
+            font-weight: 800;
+            color: var(--brand-navy);
+            font-size: 15px;
+            border: 1px solid rgba(1, 54, 108, 0.15);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        .ticker-disclaimer { text-align: center; font-size: 12px; color: var(--brand-gray-500); margin-top: 16px; }
+        @keyframes so-ticker-scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        @media (max-width: 768px) {
+            .so-results-grid { grid-template-columns: 1fr; }
+            .so-result-card .result-amount { font-size: 1.75rem; }
+        }
+        /* Mid-scroll sticky CTA — appears after 40% scroll, hides near footer */
+        .mid-scroll-cta {
+            position: fixed;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 9990;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        .mid-scroll-cta.visible { opacity: 1; visibility: visible; }
+        .mid-scroll-cta a {
+            display: inline-block;
+            padding: 14px 28px;
+            background: #ffbf00;
+            color: #01366c;
+            font-weight: 800;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 1rem;
+            box-shadow: 0 6px 0 #cc9900, 0 10px 24px rgba(0,0,0,0.25);
+        }
+        @media (max-width: 768px) {
+            .mid-scroll-cta { display: none !important; }
         }
         @media (max-width: 768px) {
             .trust-badges-row {
@@ -2804,14 +2891,12 @@
                 <div class="lp-stat-item"><span class="lp-stat-value lp-stat-text" data-text="Harvard Law">Harvard Law</span><span class="lp-stat-label">Certified in Valuations</span></div>
             </div>
             <p class="lp-stats-tagline">Former insurance attorneys who know how to get you maximum compensation.</p>
-            <div class="trust-badges-headline">Trusted &amp; Recognized By</div>
-            <div class="trust-badges-row">
+            <div class="trust-badges-headline" style="margin-bottom: 28px;">Trusted &amp; Recognized By</div>
+            <div class="trust-badges-row so-badges-four">
                 <img src="../images/la/ucla-ww-ps-logo.png" alt="UCLA" class="trust-badge-img" style="height: 100px; width: auto; object-fit: contain;" width="130" height="100" loading="lazy">
                 <img src="../images/la/superlawyers-stacked.png" alt="Super Lawyers" class="trust-badge-img" style="height: 100px; width: auto; object-fit: contain;" width="130" height="100" loading="lazy">
-                <img src="../images/la/trust-badge-1.webp" alt="Trust Badge" class="trust-badge-img" width="130" height="100" loading="lazy" style="height: 100px; width: auto; object-fit: contain;">
-                <img src="../images/la/lacba-featured-59015-255.jpg" alt="LACBA" class="trust-badge-img" style="height: 100px; width: auto; object-fit: contain;" width="130" height="100" loading="lazy">
-                <img src="../images/la/google-badge.png" alt="Google Reviews" class="trust-badge-img" style="height: 100px; width: auto; object-fit: contain;" width="130" height="100" loading="lazy">
-                <img src="../images/la/trust-badge-4.webp" alt="Trust Badge" class="trust-badge-img" width="130" height="100" loading="lazy" style="height: 100px; width: auto; object-fit: contain;">
+                <img src="../images/la/lacba-featured-59015-255.jpg" alt="Bar Association" class="trust-badge-img" style="height: 100px; width: auto; object-fit: contain;" width="130" height="100" loading="lazy">
+                <img src="../images/la/trust-badge-1.webp" alt="Trial Association" class="trust-badge-img" width="130" height="100" loading="lazy" style="height: 100px; width: auto; object-fit: contain;">
             </div>
         </div>
     </section>
@@ -2822,8 +2907,13 @@
                 <div style="text-align: center; margin-bottom: 16px;">
                     <div class="cta-badge">Free & Confidential</div>
                 </div>
-                <h2 class="cta-heading" style="text-align: center;">Get Your Free Case Review</h2>
-                <p style="text-align: center; font-size: 18px; color: var(--brand-gray-700); margin-bottom: 32px;">A few details and we'll have an attorney follow up.</p>
+                <h2 class="cta-heading" style="text-align: center;">Free Second Opinion From Litigation Team</h2>
+                <p style="text-align: center; font-size: 18px; color: var(--brand-gray-700); margin-bottom: 20px;">A few details and we'll have an attorney follow up.</p>
+                <ul style="list-style: none; padding: 0; margin: 0 0 28px 0; text-align: center; font-size: 16px; color: var(--brand-gray-700);">
+                    <li style="margin-bottom: 8px;">✔ No obligation</li>
+                    <li style="margin-bottom: 8px;">✔ Confidential review</li>
+                    <li style="margin-bottom: 8px;">✔ No fee unless we win</li>
+                </ul>
                 <form action="https://formsubmit.co/ial.leads.2024@gmail.com" method="POST" id="case-evaluation-form">
                     <input type="hidden" name="_subject" value="Second Opinion / Switch Lawyer Lead">
                     <input type="hidden" name="_captcha" value="false">
@@ -2999,6 +3089,52 @@
         </div>
     </section>
 
+    <!-- Case Results (settlement proof) — high authority -->
+    <section id="so-case-results" class="so-case-results section-with-bg">
+        <div class="container">
+            <h2>Real Results For Injury Victims Who Needed Stronger Representation</h2>
+            <p class="so-results-sub">Millions recovered across serious injury and wrongful death cases.</p>
+            <div class="so-results-grid">
+                <div class="so-result-card">
+                    <div class="result-label">Settlement</div>
+                    <div class="result-amount">$6,000,000</div>
+                    <div class="result-type">Car Accident</div>
+                    <div class="result-meta">Results depend on the facts of each case.</div>
+                </div>
+                <div class="so-result-card">
+                    <div class="result-label">Settlement</div>
+                    <div class="result-amount">$2,400,000</div>
+                    <div class="result-type">Bicycle Accident</div>
+                    <div class="result-meta">Results depend on the facts of each case.</div>
+                </div>
+                <div class="so-result-card">
+                    <div class="result-label">Settlement</div>
+                    <div class="result-amount">$2,500,000</div>
+                    <div class="result-type">Wrongful Death</div>
+                    <div class="result-meta">Results depend on the facts of each case.</div>
+                </div>
+            </div>
+            <div class="settlement-ticker-wrap" aria-label="Additional case results">
+                <div class="settlement-ticker-inner">
+                    <span class="ticker-card">$12,000,000 — Pedestrian</span>
+                    <span class="ticker-card">$1,125,000 — Pedestrian</span>
+                    <span class="ticker-card">$1,100,000 — Personal Injury</span>
+                    <span class="ticker-card">$1,000,000 — Car Accident</span>
+                    <span class="ticker-card">$815,000 — Car Accident</span>
+                    <span class="ticker-card">$12,000,000 — Pedestrian</span>
+                    <span class="ticker-card">$1,125,000 — Pedestrian</span>
+                    <span class="ticker-card">$1,100,000 — Personal Injury</span>
+                    <span class="ticker-card">$1,000,000 — Car Accident</span>
+                    <span class="ticker-card">$815,000 — Car Accident</span>
+                </div>
+            </div>
+            <p class="ticker-disclaimer">Results depend on the facts of each case.</p>
+            <div class="so-results-cta">
+                <a href="#case-evaluation" class="btn-primary">Get A Confidential Case Review</a>
+            </div>
+        </div>
+    </section>
+
     <!-- Section 4: Human trust / litigation authority (text left, image right) + carousel -->
     <section id="authority" class="so-authority-section">
         <div class="container">
@@ -3058,7 +3194,7 @@
                     <p style="font-weight: 600; color: var(--brand-gray-700);">— Case accelerated, coverage secured</p>
                 </div>
             </div>
-            <p style="text-align: center; font-size: 13px; color: var(--brand-gray-600); margin-top: 24px; font-style: italic;">Outcomes based on real client experiences. Results vary; prior results do not guarantee a similar outcome.</p>
+            <p style="text-align: center; font-size: 12px; color: var(--brand-gray-600); margin-top: 28px; line-height: 1.5; max-width: 640px; margin-left: auto; margin-right: auto;">These narratives are illustrative of the types of outcomes and feedback we seek for our clients. They are not necessarily actual client testimonials or verbatim quotes. Prior results do not guarantee a similar outcome.</p>
             <div style="text-align: center; margin-top: 40px;">
                 <a href="#case-evaluation" class="btn-primary">See If We Can Help →</a>
             </div>
@@ -3074,7 +3210,7 @@
             <div class="so-outcome-copy">
                 <h2>You Don't Have To Stay With The Wrong Firm</h2>
                 <p class="so-outcome-p">Switching is easier than many people think. We handle the paperwork and work to get your case moving again—so you can focus on what matters.</p>
-                <a href="#case-evaluation" class="btn-primary">Free Case Review</a>
+                <a href="#case-evaluation" class="btn-primary">I'm Ready To Review My Case</a>
                 <div class="so-outcome-attorneys">
                     <img src="../images/la/attorney-mobile.webp" alt="Insider Accident Lawyers attorneys" width="120" height="90" loading="lazy">
                     <p>Speak with trial-ready attorneys who will evaluate your case and your options.</p>
@@ -3130,6 +3266,10 @@
             </div>
         </div>
     </section>
+
+    <div class="mid-scroll-cta" id="mid-scroll-cta" aria-hidden="true">
+        <a href="tel:844-467-4335" data-callrail-phone="844-467-4335">Talk To Litigation Attorney</a>
+    </div>
 
     <!-- SECTION 10: Footer — CTA, phone, address, trust only (no blog/nav/outbound) -->
     <footer id="footer-contact">
@@ -3221,6 +3361,28 @@ document.addEventListener('DOMContentLoaded',function(){
       });
     });
   }
+  /* Mid-scroll CTA: show after 40% scroll, hide near footer or when form in view */
+  (function(){
+    var el = document.getElementById('mid-scroll-cta');
+    var formEl = document.getElementById('case-evaluation');
+    var footerEl = document.getElementById('footer-contact');
+    if(!el || !formEl || !footerEl) return;
+    function update(){
+      var scrollY = window.pageYOffset || document.documentElement.scrollTop;
+      var docH = document.documentElement.scrollHeight - window.innerHeight;
+      var scrollPct = docH > 0 ? scrollY / docH : 0;
+      var formRect = formEl.getBoundingClientRect();
+      var footerRect = footerEl.getBoundingClientRect();
+      var formInView = formRect.top < window.innerHeight && formRect.bottom > 0;
+      var footerNear = footerRect.top < window.innerHeight * 0.5;
+      if(scrollPct >= 0.4 && !formInView && !footerNear) el.classList.add('visible');
+      else el.classList.remove('visible');
+    }
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  })();
+
   /* FAQ accordion */
   document.querySelectorAll('.faq-item-so').forEach(function(item){
     var btn=item.querySelector('.faq-q');
