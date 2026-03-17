@@ -789,7 +789,7 @@
                     <img src="/images/la/woman-mirror-neck-pain.png" alt="Person touching neck and shoulder in mirror after an accident—pain realization" class="hero-attorney-img" width="300" height="375" loading="eager">
                 </div>
             </div>
-            <div class="hero-form-row">
+            <div id="case-evaluation" class="hero-form-row">
                 <div class="hero-form-box" style="max-width: 420px; margin: 0 auto;">
                     <h3>Get a Free Case Review</h3>
                     <form action="https://formsubmit.co/ial.leads.2024@gmail.com" method="POST" id="case-evaluation-form">
@@ -1104,80 +1104,6 @@
         </div>
     </section>
 
-    <section id="case-evaluation" class="case-form" style="padding: 64px 0; background: linear-gradient(135deg, rgba(12, 35, 52, 0.06), rgba(1, 54, 108, 0.05));">
-        <div class="container">
-            <div class="hero-form-box" style="max-width: 520px; margin: 0 auto;">
-                <h3 style="font-size: 22px;">Get a Free Case Review</h3>
-                <p style="text-align: center; color: var(--brand-gray-700); margin-bottom: 20px; font-size: 16px;">Same form—submit here or use the one at the top.</p>
-                <form action="https://formsubmit.co/ial.leads.2024@gmail.com" method="POST" id="case-evaluation-form-inline">
-                    <input type="hidden" name="_subject" value="Serious Injury LA - Free Case Review (inline)">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_template" value="table">
-                    <input type="hidden" name="_next" value="https://call.insideraccidentlawyers.com/thank-you.html">
-                    <div class="form-group">
-                        <label class="form-label">Full Name *</label>
-                        <input type="text" class="form-input" name="full_name" required>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Phone *</label>
-                        <input type="tel" class="form-input" name="phone" id="inline-phone" inputmode="numeric" required>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">What happened *</label>
-                        <textarea class="form-textarea" name="what_happened" required></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Type of case / practice area</label>
-                        <select class="form-select" name="accident_type">
-                            <option value="">Select</option>
-                            <option value="auto_catastrophic">Auto accidents (catastrophic injury / wrongful death)</option>
-                            <option value="premises">Premises liability (retail, construction, dangerous property)</option>
-                            <option value="elder_abuse">Elder abuse (bed sores / pressure ulcers)</option>
-                            <option value="nursing_home">Nursing home / facility negligence</option>
-                            <option value="burn">Burn injuries</option>
-                            <option value="product">Product liability</option>
-                            <option value="med_spa">Med spa / cosmetic procedure injury</option>
-                            <option value="mass_tort_glp1">Mass torts (GLP-1 / Ozempic, Wegovy)</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">When did it happen?</label>
-                        <select class="form-select" name="when_happened">
-                            <option value="">Select</option>
-                            <option value="today">Today</option>
-                            <option value="this_week">This week</option>
-                            <option value="this_month">This month</option>
-                            <option value="1_3_months">1–3 months ago</option>
-                            <option value="3_6_months">3–6 months ago</option>
-                            <option value="over_6_months">Over 6 months ago</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Were you treated at ER or hospital? (optional)</label>
-                        <select class="form-select" name="er_hospital">
-                            <option value="">Select</option>
-                            <option value="yes_er">Yes, ER</option>
-                            <option value="yes_hospital">Yes, hospital</option>
-                            <option value="both">Both</option>
-                            <option value="no">No</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Best time to call? (optional)</label>
-                        <select class="form-select" name="best_time">
-                            <option value="">Any</option>
-                            <option value="morning">Morning</option>
-                            <option value="afternoon">Afternoon</option>
-                            <option value="evening">Evening</option>
-                        </select>
-                    </div>
-                    <button type="submit" class="btn-primary" style="width: 100%; margin-top: 8px;">Free Case Review</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
     <section class="final-cta">
         <div class="container">
             <h2>Hurt Badly In An Accident? Get Answers Today.</h2>
@@ -1227,7 +1153,7 @@
 
     <script>
     (function() {
-        var phoneInputs = document.querySelectorAll('#hero-phone, #inline-phone');
+        var phoneInputs = document.querySelectorAll('#hero-phone');
         phoneInputs.forEach(function(phoneInput) {
             if (!phoneInput) return;
             phoneInput.addEventListener('input', function(e) {
@@ -1243,30 +1169,6 @@
         var form = document.getElementById('case-evaluation-form');
         if (form) {
             form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                var f = this;
-                var btn = f.querySelector('button[type="submit"]');
-                if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
-                var data = {};
-                f.querySelectorAll('input, select, textarea').forEach(function(el) {
-                    if (!el.name || el.name.indexOf('_') === 0) return;
-                    if (el.type === 'radio' || el.type === 'checkbox') { if (!el.checked) return; }
-                    data[el.name] = el.value;
-                });
-                data._subject = f.querySelector('input[name="_subject"]').value;
-                data._template = f.querySelector('input[name="_template"]').value;
-                data._captcha = f.querySelector('input[name="_captcha"]').value;
-                data._next = f.querySelector('input[name="_next"]').value;
-                try { ['gclid','utm_source','utm_medium','utm_campaign'].forEach(function(k){ var v = localStorage.getItem('ial_'+k); if(v) data[k] = v; }); } catch(err) {}
-                fetch('https://formsubmit.co/ajax/ial.leads.2024@gmail.com', { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(data) })
-                    .then(function(r) { return r.json(); })
-                    .then(function() { window.location.href = 'https://call.insideraccidentlawyers.com/thank-you.html'; })
-                    .catch(function() { if (btn) { btn.disabled = false; btn.textContent = 'Free Case Review'; } f.submit(); });
-            });
-        }
-        var formInline = document.getElementById('case-evaluation-form-inline');
-        if (formInline) {
-            formInline.addEventListener('submit', function(e) {
                 e.preventDefault();
                 var f = this;
                 var btn = f.querySelector('button[type="submit"]');
