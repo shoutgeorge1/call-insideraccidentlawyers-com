@@ -175,6 +175,10 @@
             border: 1px solid rgba(255, 255, 255, 0.2);
             backdrop-filter: blur(6px);
         }
+        .trust-bar-left { align-self: flex-start; }
+        @media (min-width: 901px) {
+            .trust-bar-left .trust-bar-items { justify-content: flex-start; }
+        }
         .see-through-bar .see-through-inner {
             padding: 8px 12px;
             border-radius: 999px;
@@ -760,13 +764,7 @@
                         <div class="trust-badge">✓ Free consultation</div>
                         <div class="trust-badge">✓ Los Angeles injury focus</div>
                     </div>
-                </div>
-                <div class="hero-visual-wrap">
-                    <img src="/images/la/woman-mirror-neck-pain.png" alt="Person touching neck and shoulder in mirror after an accident—pain realization" class="hero-attorney-img" width="300" height="375" loading="eager">
-                    <div class="hero-logo-badge">
-                        <img src="/images/la/insider-badge.png" alt="The Insider">
-                    </div>
-                    <div class="see-through-bar trust-bar-overlay">
+                    <div class="see-through-bar trust-bar-overlay trust-bar-left">
                         <div class="see-through-inner">
                             <div class="trust-bar-items">
                                 <div class="trust-bar-item">
@@ -786,6 +784,9 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="hero-visual-wrap">
+                    <img src="/images/la/woman-mirror-neck-pain.png" alt="Person touching neck and shoulder in mirror after an accident—pain realization" class="hero-attorney-img" width="300" height="375" loading="eager">
                 </div>
             </div>
             <div class="hero-form-row">
@@ -809,15 +810,17 @@
                             <textarea class="form-textarea" name="what_happened" placeholder="Brief description of your accident and injuries" required></textarea>
                         </div>
                         <div class="form-group">
-                            <label class="form-label">Type of accident</label>
+                            <label class="form-label">Type of case / practice area</label>
                             <select class="form-select" name="accident_type">
                                 <option value="">Select</option>
-                                <option value="car">Car accident</option>
-                                <option value="truck">Truck / commercial vehicle</option>
-                                <option value="motorcycle">Motorcycle</option>
-                                <option value="pedestrian">Pedestrian</option>
-                                <option value="slip_fall">Slip and fall</option>
-                                <option value="premises">Dangerous property</option>
+                                <option value="auto_catastrophic">Auto accidents (catastrophic injury / wrongful death)</option>
+                                <option value="premises">Premises liability (retail, construction, dangerous property)</option>
+                                <option value="elder_abuse">Elder abuse (bed sores / pressure ulcers)</option>
+                                <option value="nursing_home">Nursing home / facility negligence</option>
+                                <option value="burn">Burn injuries</option>
+                                <option value="product">Product liability</option>
+                                <option value="med_spa">Med spa / cosmetic procedure injury</option>
+                                <option value="mass_tort_glp1">Mass torts (GLP-1 / Ozempic, Wegovy)</option>
                                 <option value="other">Other</option>
                             </select>
                         </div>
@@ -867,7 +870,7 @@
         <div class="trust-badges-container">
             <div class="section-head">
                 <h2 style="text-align: center;">Experienced Serious Injury Attorneys in Los Angeles</h2>
-                <p class="section-sub" style="text-align: center;">We help people who were seriously hurt in car, truck, motorcycle, pedestrian, and other accidents get the compensation they deserve.</p>
+                <p class="section-sub" style="text-align: center;">We handle auto accidents (including catastrophic injury and wrongful death), premises liability, elder abuse, nursing home negligence, burn injuries, product liability, med spa injuries, mass torts, and other serious injury cases.</p>
             </div>
             <div class="lp-stats" id="lp-stats">
                 <div class="lp-stat-item"><span class="lp-stat-value" data-count="100000000" data-prefix="$" data-suffix="+">0</span><span class="lp-stat-label">Won for Clients</span></div>
@@ -927,22 +930,22 @@
 
     <section id="types" class="section-alt">
         <div class="container">
-            <h2 style="text-align: center;">Types of Serious Injury Accidents We Handle</h2>
-            <p style="text-align: center; max-width: 640px; margin: 0 auto 24px; color: var(--brand-gray-700); font-size: 17px;">We help people in Los Angeles who were seriously hurt in a range of accidents caused by others.</p>
+            <h2 style="text-align: center;">Practice Areas We Handle</h2>
+            <p style="text-align: center; max-width: 640px; margin: 0 auto 24px; color: var(--brand-gray-700); font-size: 17px;">We help people in Los Angeles across these case types. If your situation fits, we can evaluate your case.</p>
             <div class="types-with-img">
                 <div class="types-img-wrap">
                     <img src="/images/la/injured-woman-healing-walking.png" alt="Person in recovery walking with arm sling, Southern California" class="section-img" width="480" height="360" loading="lazy">
                 </div>
                 <div class="types-content">
             <div class="types-grid">
-                <div class="type-card"><div class="type-icon">🚗</div><div class="type-label">Major car accidents</div></div>
-                <div class="type-card"><div class="type-icon">🚚</div><div class="type-label">Truck and commercial vehicle crashes</div></div>
-                <div class="type-card"><div class="type-icon">🚶</div><div class="type-label">Pedestrian injuries</div></div>
-                <div class="type-card"><div class="type-icon">🏍️</div><div class="type-label">Motorcycle crashes</div></div>
-                <div class="type-card"><div class="type-icon">🏢</div><div class="type-label">Dangerous property injuries</div></div>
-                <div class="type-card"><div class="type-icon">⚠️</div><div class="type-label">Slip and fall cases with serious injury</div></div>
-                <div class="type-card"><div class="type-icon">🏗️</div><div class="type-label">Falling object / construction hazards</div></div>
-                <div class="type-card"><div class="type-icon">🔥</div><div class="type-label">Burn and catastrophic injuries</div></div>
+                <div class="type-card"><div class="type-icon">🚗</div><div class="type-label">Auto accidents (catastrophic injury, wrongful death)</div></div>
+                <div class="type-card"><div class="type-icon">🏢</div><div class="type-label">Premises liability (retail, construction, dangerous property)</div></div>
+                <div class="type-card"><div class="type-icon">👴</div><div class="type-label">Elder abuse (bed sores, pressure ulcers)</div></div>
+                <div class="type-card"><div class="type-icon">🏥</div><div class="type-label">Nursing home / facility negligence</div></div>
+                <div class="type-card"><div class="type-icon">🔥</div><div class="type-label">Burn injuries</div></div>
+                <div class="type-card"><div class="type-icon">📦</div><div class="type-label">Product liability</div></div>
+                <div class="type-card"><div class="type-icon">💉</div><div class="type-label">Med spa / cosmetic procedure injury</div></div>
+                <div class="type-card"><div class="type-icon">💊</div><div class="type-label">Mass torts (GLP-1 / Ozempic, Wegovy)</div></div>
             </div>
             <p style="text-align: center; margin-top: 28px;"><a href="tel:844-467-4335" class="btn-primary" data-callrail-phone="844-467-4335">Call for a Free Consultation</a> <a href="#case-evaluation" class="btn-secondary" style="margin-left: 12px;">Free Case Review</a></p>
                 </div>
@@ -1124,15 +1127,17 @@
                         <textarea class="form-textarea" name="what_happened" required></textarea>
                     </div>
                     <div class="form-group">
-                        <label class="form-label">Type of accident</label>
+                        <label class="form-label">Type of case / practice area</label>
                         <select class="form-select" name="accident_type">
                             <option value="">Select</option>
-                            <option value="car">Car accident</option>
-                            <option value="truck">Truck / commercial vehicle</option>
-                            <option value="motorcycle">Motorcycle</option>
-                            <option value="pedestrian">Pedestrian</option>
-                            <option value="slip_fall">Slip and fall</option>
-                            <option value="premises">Dangerous property</option>
+                            <option value="auto_catastrophic">Auto accidents (catastrophic injury / wrongful death)</option>
+                            <option value="premises">Premises liability (retail, construction, dangerous property)</option>
+                            <option value="elder_abuse">Elder abuse (bed sores / pressure ulcers)</option>
+                            <option value="nursing_home">Nursing home / facility negligence</option>
+                            <option value="burn">Burn injuries</option>
+                            <option value="product">Product liability</option>
+                            <option value="med_spa">Med spa / cosmetic procedure injury</option>
+                            <option value="mass_tort_glp1">Mass torts (GLP-1 / Ozempic, Wegovy)</option>
                             <option value="other">Other</option>
                         </select>
                     </div>
