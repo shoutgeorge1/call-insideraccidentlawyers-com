@@ -690,6 +690,40 @@
             display: none;
         }
         .faq-item.open .faq-a { display: block; }
+        .final-cta .stop-sign {
+            width: 96px;
+            height: 96px;
+            margin: 0 auto 20px;
+            background: #dc2626;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--brand-white);
+            font-weight: 800;
+            letter-spacing: 3px;
+            transform: rotate(45deg);
+            position: relative;
+            box-shadow: 0 14px 30px rgba(220, 38, 38, 0.45), 0 0 20px rgba(220, 38, 38, 0.35);
+            border: 4px solid rgba(255,255,255,0.85);
+            animation: stopPulse 1.4s ease-in-out infinite;
+        }
+        .final-cta .stop-sign span {
+            transform: rotate(-45deg);
+            display: block;
+            font-size: 18px;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+        }
+        @keyframes stopPulse {
+            0%, 100% {
+                transform: rotate(45deg) scale(1);
+                box-shadow: 0 14px 30px rgba(220, 38, 38, 0.4), 0 0 18px rgba(220, 38, 38, 0.25);
+            }
+            50% {
+                transform: rotate(45deg) scale(1.08);
+                box-shadow: 0 18px 36px rgba(220, 38, 38, 0.6), 0 0 26px rgba(220, 38, 38, 0.45);
+            }
+        }
         .final-cta {
             background: linear-gradient(135deg, rgba(12, 35, 52, 0.95), rgba(1, 54, 108, 0.92));
             color: var(--brand-white);
@@ -1072,7 +1106,7 @@
                 <div class="type-card"><div class="type-icon">💉</div><div class="type-label">Med spa / cosmetic procedure injury</div></div>
                 <div class="type-card"><div class="type-icon">💊</div><div class="type-label">Mass torts (GLP-1 / Ozempic, Wegovy)</div></div>
             </div>
-            <p style="text-align: center; margin-top: 28px;"><a href="tel:844-467-4335" class="btn-primary" data-callrail-phone="844-467-4335">Call for a Free Consultation</a> <a href="#case-evaluation" class="btn-secondary" style="margin-left: 12px;">Free Case Review</a></p>
+            <p style="text-align: center; margin-top: 28px;"><a href="tel:213-267-7190" class="btn-primary" data-callrail-phone="844-467-4335">Call for a Free Consultation</a> <a href="#case-evaluation" class="btn-secondary" style="margin-left: 20px;">Free Case Review</a></p>
                 </div>
             </div>
         </div>
@@ -1225,17 +1259,18 @@
                     <div class="faq-a">If you were seriously injured on someone else’s property—a store, parking lot, construction site, or other premises—the owner or operator may be responsible if their negligence led to your injury. Slip and falls, falling objects, and unsafe conditions can all support a claim. We can review the facts and explain your options.</div>
                 </div>
             </div>
-            <p style="text-align: center; margin-top: 24px; font-size: 17px;"><a href="tel:844-467-4335" data-callrail-phone="844-467-4335">Call for a free consultation</a></p>
+            <p style="text-align: center; margin-top: 24px;"><a href="tel:213-267-7190" class="btn-primary" data-callrail-phone="844-467-4335">Call for a Free Consultation</a></p>
         </div>
     </section>
 
     <section class="final-cta">
         <div class="container">
+            <div class="stop-sign" aria-hidden="true"><span>STOP</span></div>
             <h2>Hurt Badly In An Accident? Get Answers Today.</h2>
             <p>If you were taken to the hospital, are dealing with pain, or insurance has already contacted you, speak with our Los Angeles injury team now.</p>
             <div class="cta-buttons">
                 <a href="#case-evaluation" class="btn-primary">Free Case Review</a>
-                <a href="tel:844-467-4335" class="btn-secondary" data-callrail-phone="844-467-4335">Call Now</a>
+                <a href="tel:213-267-7190" class="btn-secondary" data-callrail-phone="844-467-4335">Call Now</a>
             </div>
         </div>
     </section>
