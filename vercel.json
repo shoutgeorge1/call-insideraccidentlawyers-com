@@ -15,7 +15,9 @@
     { "source": "/second-opinion", "destination": "/second-opinion/index.html" },
     { "source": "/second-opinion/", "destination": "/second-opinion/index.html" },
     { "source": "/serious-injury-after-accident-los-angeles", "destination": "/serious-injury-after-accident-los-angeles/index.html" },
-    { "source": "/serious-injury-after-accident-los-angeles/", "destination": "/serious-injury-after-accident-los-angeles/index.html" }
+    { "source": "/serious-injury-after-accident-los-angeles/", "destination": "/serious-injury-after-accident-los-angeles/index.html" },
+    { "source": "/fall-injury-lawyer-los-angeles", "destination": "/fall-injury-lawyer-los-angeles/index.html" },
+    { "source": "/fall-injury-lawyer-los-angeles/", "destination": "/fall-injury-lawyer-los-angeles/index.html" }
   ],
   "redirects": [
     {
