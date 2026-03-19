@@ -5,11 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Los Angeles nursing home neglect lawyer. Elder abuse and bed sore attorney. Free consultation, no fee unless we win. Call now.">
     <link rel="canonical" href="https://call.insideraccidentlawyers.com/nursing-home-neglect" />
-    <link rel="preload" as="image" href="/images/la/attorney-hero.webp">
+    <link rel="preload" as="image" href="/images/la/attorney-hero-400.webp" imagesrcset="/images/la/attorney-hero-300.webp 300w, /images/la/attorney-hero-400.webp 400w" imagesizes="(max-width: 768px) 95vw, 300px" fetchpriority="high">
+    <link rel="preload" as="image" href="/images/la/hero-bg.webp">
     <title>Nursing Home Neglect Lawyer Los Angeles | Elder Abuse & Bed Sore Attorney | Free Consultation</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Inter:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Inter:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Inter:wght@400;600;700&display=swap"></noscript>
     <style>
         :root {
             --color_1: rgba(0, 0, 0, 1);
@@ -562,7 +565,13 @@
         }
         .hero {
             position: relative;
-            background: linear-gradient(rgba(12, 35, 52, 0.88), rgba(1, 54, 108, 0.82)), url('/images/la/hero-bg.jpg') center center/cover;
+            background-image: linear-gradient(rgba(12, 35, 52, 0.88), rgba(1, 54, 108, 0.82)), image-set(
+                url('/images/la/hero-bg.webp') type('image/webp'),
+                url('/images/la/hero-bg.jpg') type('image/jpeg')
+            );
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
             min-height: 520px;
             display: flex;
             align-items: center;
@@ -592,7 +601,13 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('/images/la/hero-bg.jpg') center center/cover;
+            background-image: image-set(
+                url('/images/la/hero-bg.webp') type('image/webp'),
+                url('/images/la/hero-bg.jpg') type('image/jpeg')
+            );
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
             background-attachment: scroll;
             opacity: 0.04;
             z-index: 0;
@@ -674,6 +689,7 @@
             gap: 28px;
             flex-wrap: wrap;
             margin-top: 20px;
+            min-height: 72px;
         }
         .hero-review-badge-item {
             display: flex;
@@ -737,6 +753,7 @@
             .hero-review-badges {
                 gap: 14px;
                 margin-top: 12px;
+                min-height: 40px;
             }
             .hero-review-badges .hero-review-badge-item img {
                 height: 32px;
@@ -808,6 +825,7 @@
     margin-right: auto;
     margin-top: 8px;
     margin-bottom: 18px;
+    min-height: 2.8em;
     text-align: center;
 }
 @media (min-width: 1024px) {
@@ -1698,6 +1716,7 @@
             margin-top: 6px;
             min-height: 1.2em;
             transition: opacity 0.2s ease;
+            color: #374151;
         }
         .form-hint.form-hint--success { color: #059669; }
         .form-hint.form-hint--error { color: #dc2626; }
@@ -2246,6 +2265,7 @@
     .hero-subtext {
         margin-top: 6px;
         margin-bottom: 2px;
+        min-height: 3.8em;
     }
     .hero-text h1 {
         margin-bottom: 20px;
@@ -2353,7 +2373,7 @@
             filter: drop-shadow(0 6px 16px rgba(12, 35, 52, 0.2));
         }
             @media (min-width: 769px) {
-            .trust-badges-row img[src="/images/la/trust-badge-4.webp"] {
+            .trust-badges-row img[src="/images/la/trust-badge-4-260.webp"] {
                 display: none;
             }
         }
@@ -2713,7 +2733,7 @@
     <header class="sticky-header">
         <div class="container">
             <div class="header-content">
-                <img src="/images/la/logo.png" alt="Insider Accident Lawyers" class="header-logo" style="filter: brightness(0);" width="180" height="48">
+                <img src="/images/la/logo.webp" alt="Insider Accident Lawyers" class="header-logo" style="filter: brightness(0);" width="180" height="48" decoding="async">
                 <div class="header-center-group">
                     <nav class="header-nav">
                         <a href="#your-case">Your Case</a>
@@ -2730,6 +2750,7 @@
         </div>
     </header>
 
+    <main id="main-content">
     <section class="hero hero-section">
         <div class="container">
             <div class="hero-content">
@@ -2762,7 +2783,7 @@
                     </div>
                     <div class="hero-review-badges">
                         <div class="hero-review-badge-item">
-                            <img src="/images/la/google-g-logo.png" alt="Google" width="32" height="32" style="width: 32px; height: 32px; object-fit: contain;">
+                            <img src="/images/la/google-g-logo-64.webp" alt="Google" width="32" height="32" style="width: 32px; height: 32px; object-fit: contain;" decoding="async">
                             <div class="hero-review-badge-rating">
                                 <span class="rating-num">4.9</span>
                                 <span class="rating-stars">★★★★★</span>
@@ -2770,7 +2791,7 @@
                             </div>
                         </div>
                         <div class="hero-review-badge-item hero-review-badge-item--yelp">
-                            <span class="hero-yelp-badge-wrap"><img src="/images/la/yelp-logo-aug2021.jpg" alt="Yelp" width="56" height="56"></span>
+                            <span class="hero-yelp-badge-wrap"><img src="/images/la/yelp-logo-aug2021-112.webp" alt="Yelp" width="112" height="63" decoding="async"></span>
                             <div class="hero-review-badge-rating">
                                 <span class="rating-num">4.8</span>
                                 <span class="rating-stars">★★★★★</span>
@@ -2780,8 +2801,8 @@
                 </div>
                 <div class="hero-attorney-wrap">
                 <picture>
-                    <source media="(max-width: 768px)" srcset="/images/la/attorney-mobile.webp">
-                    <img src="/images/la/attorney-hero.webp" alt="Nursing Home Neglect & Elder Abuse Attorneys" class="hero-attorney-img" width="400" height="500" fetchpriority="high">
+                    <source media="(max-width: 768px)" srcset="/images/la/attorney-hero-300.webp">
+                    <img src="/images/la/attorney-hero-400.webp" srcset="/images/la/attorney-hero-300.webp 300w, /images/la/attorney-hero-400.webp 400w" sizes="(max-width: 768px) 95vw, 300px" alt="Nursing Home Neglect & Elder Abuse Attorneys" class="hero-attorney-img" width="400" height="606" fetchpriority="high" decoding="async">
                 </picture>
                 <p class="hero-attorney-caption" style="margin-top:8px;font-size:14px;color:rgba(255,255,255,0.9);font-weight:500;">Nursing Home Neglect & Elder Abuse Attorneys</p>
                 </div>
@@ -2804,16 +2825,16 @@
             <p class="lp-stats-tagline">Former insurance attorneys who know how to get you maximum compensation.</p>
             <div class="trust-badges-headline">Trusted & Recognized By</div>
             <div class="trust-badges-row">
-                <img src="/images/la/ucla-ww-ps-logo.png" alt="UCLA" class="trust-badge-img" style="height: 100px; width: auto; object-fit: contain;" width="130" height="100" loading="lazy">
+                <img src="/images/la/ucla-ww-ps-logo-260.webp" alt="UCLA" class="trust-badge-img" style="height: 100px; width: auto; object-fit: contain;" width="130" height="100" loading="lazy" decoding="async">
                 <img src="/images/la/superlawyers-stacked.png" alt="Super Lawyers" class="trust-badge-img" style="height: 100px; width: auto; object-fit: contain;" width="130" height="100" loading="lazy">
-                <img src="/images/la/trust-badge-1.webp" alt="Trust Badge" class="trust-badge-img" width="130" height="100" loading="lazy" style="height: 100px; width: auto; object-fit: contain;">
+                <img src="/images/la/trust-badge-1-260.webp" alt="Trust Badge" class="trust-badge-img" width="130" height="100" loading="lazy" style="height: 100px; width: auto; object-fit: contain;" decoding="async">
                 
                 
                 <img src="/images/la/lacba-featured-59015-255.jpg" alt="LACBA" class="trust-badge-img" style="height: 100px; width: auto; object-fit: contain;" width="130" height="100" loading="lazy">
-                <img src="/images/la/google-badge.png" alt="Google Reviews" class="trust-badge-img" style="height: 100px; width: auto; object-fit: contain;" width="130" height="100" loading="lazy">
+                <img src="/images/la/google-badge-160.webp" alt="Google Reviews" class="trust-badge-img" style="height: 100px; width: auto; object-fit: contain;" width="130" height="100" loading="lazy" decoding="async">
                 
                 
-                <img src="/images/la/trust-badge-4.webp" alt="Trust Badge" class="trust-badge-img" width="130" height="100" loading="lazy" style="height: 100px; width: auto; object-fit: contain;">
+                <img src="/images/la/trust-badge-4-260.webp" alt="Trust Badge" class="trust-badge-img" width="130" height="100" loading="lazy" style="height: 100px; width: auto; object-fit: contain;" decoding="async">
             </div>
         </div>
     </section>
@@ -2843,7 +2864,7 @@
                         <span class="form-hint" id="phone-hint" aria-live="polite"></span>
                     </div>
                     <div class="form-group">
-                        <label class="form-label">What best describes your situation? *</label>
+                        <label class="form-label" for="situation_type">What best describes your situation? *</label>
                         <select class="form-input form-select" name="situation_type" id="situation_type" required aria-describedby="situation-hint">
                             <option value="">— Select one —</option>
                             <option value="Bed sores / pressure ulcers">Bed sores / pressure ulcers</option>
@@ -2861,7 +2882,7 @@
                         <textarea class="form-input" name="accident_reason" id="accident_reason" rows="3" placeholder="Describe what happened to your loved one (e.g. when you noticed, facility name, current condition)" required aria-describedby="details-hint"></textarea>
                         <span class="form-hint" id="details-hint" aria-live="polite"></span>
                     </div>
-                    <label style="display:flex; align-items:flex-start; gap:8px; font-size:12px; line-height:1.4; margin-top:10px;"> <input type="checkbox" name="sms_opt_in" required style="margin-top:3px;"> <span> By checking this box, I am agreeing to receive transactional/informational text messages from Insider Accident Lawyers. Message frequency will vary. Msg & data rates may apply. Reply HELP for help or STOP to opt-out. </span> </label>
+                    <label style="display:flex; align-items:flex-start; gap:8px; font-size:12px; line-height:1.4; margin-top:10px;"> <input type="checkbox" name="sms_opt_in" required style="margin-top:3px;"> <span style="color:#374151;"> By checking this box, I am agreeing to receive transactional/informational text messages from Insider Accident Lawyers. Message frequency will vary. Msg & data rates may apply. Reply HELP for help or STOP to opt-out. </span> </label>
                     <button type="submit" class="btn-primary" style="width: 100%; margin-top: 24px;">Get My Free Review</button>
                 </form>
             </div>
@@ -2875,7 +2896,7 @@
                 <p class="subtext-muted reviews-intro" style="font-size: 20px; color: var(--brand-gray-700); margin-bottom: 24px; line-height: 1.6;">Real reviews from real clients across Los Angeles County</p>
                 <div class="review-badges">
                     <div class="review-badge">
-                        <img src="/images/la/google-g-logo.png" alt="Google 4.9 Rating" width="32" height="32" style="width: 32px; height: 32px; object-fit: contain;" loading="lazy">
+                        <img src="/images/la/google-g-logo-64.webp" alt="Google 4.9 Rating" width="32" height="32" style="width: 32px; height: 32px; object-fit: contain;" loading="lazy" decoding="async">
                         <span class="review-badge-rating">4.9</span>
                         <div class="review-badge-stars">★★★★★</div>
                         <div style="font-size: 14px; line-height: 1.2; opacity: 0.85;">350+ Reviews</div>
@@ -2974,7 +2995,10 @@
                 <p class="lead-text subtext-muted" style="text-align: center; max-width: 720px; margin: 0 auto 24px;">Pressure ulcers develop when residents are <strong>not repositioned regularly</strong>. Poor blood flow leads to skin breakdown, deep wounds, and infection.</p>
                 <p style="text-align: center; color: var(--brand-gray-700); max-width: 720px; margin: 0 auto 16px;">Four stages: Stage 1 (redness, skin intact) → Stage 2 (partial-thickness loss) → Stage 3 and Stage 4 (full-thickness loss; may expose tissue or bone). <strong>Stage 3 and Stage 4 ulcers are often strong evidence of neglect.</strong></p>
                 <figure style="max-width: 800px; margin: 24px auto 0;">
-                    <img src="/images/la/pressure-ulcer-stages.png" alt="Pressure ulcer stages 1 through 4 — from non-blanchable redness to full thickness tissue loss" width="800" height="auto" loading="lazy" style="width: 100%; height: auto; border-radius: var(--card-radius);">
+                    <picture>
+                        <source srcset="/images/la/pressure-ulcer-stages-800.webp" type="image/webp">
+                        <img src="/images/la/pressure-ulcer-stages.png" alt="Pressure ulcer stages 1 through 4 — from non-blanchable redness to full thickness tissue loss" width="1024" height="682" loading="lazy" decoding="async" style="width: 100%; height: auto; border-radius: var(--card-radius);">
+                    </picture>
                 </figure>
             </div>
         </div>
@@ -2985,20 +3009,20 @@
             <h2 style="text-align: center; margin-bottom: 16px; font-size: 42px;">Do You Have a Nursing Home Neglect Case?</h2>
             <p class="lead-text subtext-muted" style="text-align: center; margin-bottom: 40px; max-width: 620px; margin-left: auto; margin-right: auto; font-size: 18px;">Tap each item that applies. If several apply, the facility may be liable.</p>
             <div class="case-checklist-wrap">
-                <ul class="case-checklist" id="case-checklist" role="list">
-                    <li class="case-checklist-item" role="button" tabindex="0" data-checked="false" aria-pressed="false">
+                <ul class="case-checklist" id="case-checklist">
+                    <li class="case-checklist-item" role="checkbox" tabindex="0" data-checked="false" aria-checked="false">
                         <span class="case-checklist-box" aria-hidden="true"></span>
                         <span class="case-checklist-label">Your loved one developed bed sores in a nursing home</span>
                     </li>
-                    <li class="case-checklist-item" role="button" tabindex="0" data-checked="false" aria-pressed="false">
+                    <li class="case-checklist-item" role="checkbox" tabindex="0" data-checked="false" aria-checked="false">
                         <span class="case-checklist-box" aria-hidden="true"></span>
                         <span class="case-checklist-label">The wound progressed to Stage 3 or Stage 4</span>
                     </li>
-                    <li class="case-checklist-item" role="button" tabindex="0" data-checked="false" aria-pressed="false">
+                    <li class="case-checklist-item" role="checkbox" tabindex="0" data-checked="false" aria-checked="false">
                         <span class="case-checklist-box" aria-hidden="true"></span>
                         <span class="case-checklist-label">Staff ignored infections or declining health</span>
                     </li>
-                    <li class="case-checklist-item" role="button" tabindex="0" data-checked="false" aria-pressed="false">
+                    <li class="case-checklist-item" role="checkbox" tabindex="0" data-checked="false" aria-checked="false">
                         <span class="case-checklist-box" aria-hidden="true"></span>
                         <span class="case-checklist-label">Hospital treatment became necessary</span>
                     </li>
@@ -3128,7 +3152,7 @@
     <section id="about-us" class="attorney-bio section-with-bg" style="padding-top: 100px;">
         <div class="container">
             <div class="attorney-bio-content">
-                <div class="attorney-photo-wrap"><img src="/images/la/attorney-hero.webp" alt="Shawn Rokni" class="attorney-photo" width="300" height="300" loading="lazy"></div>
+                <div class="attorney-photo-wrap"><img src="/images/la/attorney-hero-300.webp" alt="Shawn Rokni" class="attorney-photo" width="300" height="454" loading="lazy" decoding="async"></div>
                 <div class="attorney-details">
                     <h2>Meet Your Attorney</h2>
                     <div class="attorney-name">Shawn Rokni</div>
@@ -3271,7 +3295,7 @@
         <div class="container">
             <h2 style="text-align: center;">Our Office Location</h2>
             <div class="map-container">
-                <iframe src="https://www.google.com/maps?q=Insider%20Accident%20Lawyers%20Los%20Angeles%20CA&output=embed" class="map-embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps?q=Insider%20Accident%20Lawyers%20Los%20Angeles%20CA&output=embed" class="map-embed" title="Map showing Insider Accident Lawyers office in Los Angeles" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             <div class="office-info">
                 <h3>Insider Accident Lawyers</h3>
@@ -3283,7 +3307,7 @@
 
     <section class="final-cta stop-section">
         <div class="container">
-            <div class="stop-sign stop-sign-icon"><img src="/images/la/stop-sign.jpg" alt="Stop" width="104" height="104"></div>
+            <div class="stop-sign stop-sign-icon"><img src="/images/la/stop-sign-208.webp" alt="Stop" width="104" height="104" decoding="async"></div>
             <h2>Speak With a Los Angeles Nursing Home Neglect Lawyer Today</h2>
             <p>If your loved one suffered serious injuries due to nursing home neglect, legal action can help protect your family and hold the facility accountable. Before signing anything or accepting a settlement offer, it is important to understand your options.</p>
             <p style="margin-top: 12px;">Free Consultation • No Fee Unless We Win</p>
@@ -3297,6 +3321,7 @@
         </div>
     </section>
 
+    </main>
     <footer id="footer-contact">
         <div class="container">
             <div class="footer-content">
@@ -3326,7 +3351,7 @@
             <p style="margin-top: 16px;">Countrywide Trial Lawyers A Professional Law Corporation DBA Insider Accident Lawyers. California Entity Number: 4851715. 3435 Wilshire Blvd Suite 1620, Los Angeles, CA 90010.</p>
             <p style="margin-top: 8px;">All Rights Reserved | <a href="/privacy-policy.html" style="color: inherit; text-decoration: underline;">Privacy Policy</a> | <a href="/terms-conditions.html" style="color: inherit; text-decoration: underline;">Terms & Conditions</a></p>
             <p style="margin-top: 8px;">© 2026</p>
-            <p style="font-size:12px;color:#666;text-align:center;margin-top:20px;line-height:1.4;">By texting 213-636-8571, you agree to receive messages from Insider Accident Lawyers. Message & data rates may apply. Reply STOP to opt out.</p>
+            <p style="font-size:12px;color:#cbd5e1;text-align:center;margin-top:20px;line-height:1.4;">By texting 213-636-8571, you agree to receive messages from Insider Accident Lawyers. Message & data rates may apply. Reply STOP to opt out.</p>
             </div>
         </div>
     </footer>
@@ -3406,7 +3431,7 @@ document.addEventListener('DOMContentLoaded',function(){
       function toggle(){
         var checked=item.getAttribute('data-checked')==='true';
         item.setAttribute('data-checked',!checked);
-        item.setAttribute('aria-pressed',!checked);
+        item.setAttribute('aria-checked',!checked);
         item.classList.toggle('checked',!checked);
         updateChecklistUI();
       }
