@@ -908,6 +908,149 @@
         @media (max-width: 900px) {
             .hero-speed-signals { font-size: 13px; margin-bottom: 12px; }
         }
+        /* CRO: mobile readability, modules, sticky call bar */
+        .cro-emotional-validation {
+            background: var(--brand-light-blue);
+            padding: 48px 0;
+        }
+        .cro-emotional-validation .cro-validation-inner {
+            max-width: 720px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .cro-emotional-validation h2 { margin-bottom: 16px; }
+        .cro-validation-intro {
+            color: var(--brand-gray-700);
+            margin-bottom: 24px;
+            font-size: 17px;
+            line-height: 1.65;
+        }
+        .cro-validation-list {
+            list-style: none;
+            text-align: left;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .cro-validation-list li {
+            position: relative;
+            padding: 14px 16px 14px 46px;
+            margin-bottom: 12px;
+            background: var(--brand-white);
+            border-radius: 10px;
+            box-shadow: 0 2px 12px rgba(1, 54, 108, 0.07);
+            color: var(--brand-gray-700);
+            line-height: 1.55;
+            font-size: 16px;
+        }
+        .cro-validation-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 22px;
+            height: 22px;
+            background: var(--brand-blue);
+            color: var(--brand-white);
+            border-radius: 50%;
+            font-size: 11px;
+            font-weight: 700;
+            line-height: 22px;
+            text-align: center;
+        }
+        .cro-call-permission {
+            background: linear-gradient(135deg, rgba(1, 54, 108, 0.07), rgba(12, 35, 52, 0.05));
+            padding: 40px 0;
+            text-align: center;
+        }
+        .cro-call-permission h2 {
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+        .cro-call-permission p {
+            max-width: 560px;
+            margin: 0 auto 16px;
+            color: var(--brand-gray-700);
+        }
+        .cro-density-subhead {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--brand-navy);
+            margin: 20px 0 8px;
+            text-align: left;
+        }
+        .cro-density-subhead:first-child { margin-top: 0; }
+        @media (max-width: 768px) {
+            section { padding: 44px 0; }
+            .trust-badges-section { padding: 44px 0 52px; }
+            .hero h1 { font-size: 40px !important; line-height: 1.12 !important; margin-bottom: 10px !important; }
+            body { font-size: 21px; }
+            section p,
+            .section-sub,
+            .not-overreacting-content p,
+            .after-accident-block p,
+            .why-call-list li,
+            .comp-list li,
+            .consequences-list li,
+            .why-us-card p,
+            .review-card p,
+            .faq-item .faq-a,
+            .urgency-block p,
+            .final-cta p { font-size: 21px; }
+            .footer-section p { font-size: 15px !important; line-height: 1.6 !important; }
+            .footer-disclaimer,
+            .footer-disclaimer p { font-size: 12px !important; line-height: 1.6 !important; }
+            .trust-bar-text { font-size: 12px !important; }
+            .form-label { font-size: 14px !important; }
+            .form-optional { font-size: 13px !important; }
+            .hero .hero-subhead { font-size: 18px; }
+            .hero .hero-severity-line { font-size: 15px; }
+            .hero .hero-urgency-block { font-size: 16px; }
+            .hero .hero-micro-trust { font-size: 13px; }
+            .hero .trust-badge { font-size: 14px; }
+            .hero-form-intro { font-size: 16px !important; }
+            h2 { font-size: 24px; }
+            h3 { font-size: 19px; }
+            .btn-primary,
+            .btn-secondary { padding: 18px 24px; font-size: 18px; min-height: 54px; }
+            .sticky-header .btn-secondary { padding: 12px 18px; font-size: 15px; min-height: 44px; }
+            .hero-cta-call-mobile .call-btn,
+            .hero .btn-secondary.call-btn-dominant { min-height: 56px !important; padding: 18px 22px !important; font-size: 18px !important; }
+            .cro-emotional-validation { padding: 44px 0; }
+            .cro-emotional-validation .cro-validation-intro { font-size: 21px; }
+            .cro-validation-list li { font-size: 21px; padding-top: 16px; padding-bottom: 16px; }
+            .cro-call-permission { padding: 44px 0; }
+            .cro-call-permission h2 { font-size: 24px; }
+            .mobile-sticky-cta .call-btn {
+                flex-direction: column;
+                gap: 6px;
+                padding: 16px 18px !important;
+                min-height: auto !important;
+            }
+            .mobile-sticky-cta .call-btn-icon { display: none; }
+            .mobile-sticky-cta .call-btn-inner { gap: 6px; }
+            .mobile-sticky-cta .call-btn-label {
+                display: block;
+                font-size: 0.92rem;
+                font-weight: 800;
+                color: var(--brand-navy);
+                line-height: 1.25;
+            }
+            .mobile-sticky-cta .call-btn-num {
+                font-size: 1.38rem !important;
+                font-weight: 900;
+                color: var(--brand-blue) !important;
+            }
+            .mobile-sticky-cta .call-btn-sub { display: none !important; }
+            body.mobile-sticky-cta-hidden .mobile-sticky-cta {
+                transform: translateY(calc(100% + 28px));
+                opacity: 0;
+                pointer-events: none;
+            }
+            .mobile-sticky-cta { transition: transform 0.25s ease, opacity 0.25s ease; }
+            html { scroll-padding-bottom: 120px; }
+            body { padding-bottom: 108px; }
+        }
     </style>
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -1103,6 +1246,19 @@
         </div>
     </section>
 
+    <section class="cro-emotional-validation" aria-labelledby="cro-validation-heading">
+        <div class="container cro-validation-inner">
+            <h2 id="cro-validation-heading">If This Is a Lot Right Now, You're Not Alone</h2>
+            <p class="cro-validation-intro">Insurance can move quickly after a crash—and your body and stress level may not move at the same pace. Whatever you're feeling, it helps to know what's common.</p>
+            <ul class="cro-validation-list">
+                <li><strong>Pain can show up later.</strong> New stiffness or symptoms in the days after the accident are common—and they do not mean you are overreacting.</li>
+                <li><strong>Calls and paperwork can feel like pressure.</strong> Adjusters are trained to keep claims moving; that can clash with how slowly healing actually works.</li>
+                <li><strong>Fault can feel unclear.</strong> You may replay the incident or worry about being blamed while you focus on getting care.</li>
+                <li><strong>The next steps can feel foggy.</strong> Treatment, work, and bills often pile up at once—you can still ask questions early.</li>
+            </ul>
+        </div>
+    </section>
+
     <section class="trust-badges-section">
         <div class="trust-badges-container">
             <div class="section-head">
@@ -1129,7 +1285,8 @@
     <section id="serious-qualification" class="section-alt">
         <div class="container">
             <h2 style="text-align: center;">We Focus On Serious Injury Cases Like</h2>
-            <p style="text-align: center; max-width: 640px; margin: 0 auto 8px; color: var(--brand-gray-700); font-size: 17px;">If you are hurt badly—or already getting lowball signals—we want to review your file before you leave money on the table.</p>
+            <p style="text-align: center; max-width: 640px; margin: 0 auto 8px; color: var(--brand-gray-700); font-size: 17px;">If you are hurt badly—or already getting lowball signals—we want to review your file.</p>
+            <p style="text-align: center; max-width: 640px; margin: 0 auto 8px; color: var(--brand-gray-700); font-size: 17px;">The goal is simple: help you avoid leaving money on the table before you sign.</p>
             <ul class="comp-list" style="margin-top: 20px;">
                 <li>Surgery recommended or already performed</li>
                 <li>Fractures or spinal injury</li>
@@ -1145,7 +1302,8 @@
     <section id="after-accident" class="after-accident-section">
         <div class="container">
             <h2 style="text-align: center;">Why Insurers Rush Offers After an LA Accident</h2>
-            <p style="text-align: center; max-width: 640px; margin: 0 auto 24px; color: var(--brand-gray-700); font-size: 17px;">The playbook is predictable: contact you early, sound helpful, and close the claim before your damages come into focus.</p>
+            <p style="text-align: center; max-width: 640px; margin: 0 auto 12px; color: var(--brand-gray-700); font-size: 17px;">The playbook is predictable: contact you early, sound helpful, and close the claim before your damages come into focus.</p>
+            <p style="text-align: center; max-width: 640px; margin: 0 auto 24px; color: var(--brand-gray-700); font-size: 17px;">Knowing that pattern can help you pause before you commit to a number.</p>
             <div class="after-accident-with-img">
                 <div class="after-accident-img-wrap">
                     <img src="/images/la/tall-mobile-image-injured-woman-stressed-looking-at-bills.png" alt="Stress from medical bills and insurance calls after an accident" class="section-img" width="480" height="360" loading="lazy">
@@ -1180,10 +1338,25 @@
             <h2 style="text-align: center;">Insurance Conflict Is Not Personal—It Is Structural</h2>
             <p style="text-align: center; max-width: 640px; margin: 0 auto 20px; color: var(--brand-gray-700); font-size: 17px;">Adjusters are not evil—but they are measured on paying less and closing faster. You deserve an advocate measured on your outcome.</p>
             <div class="not-overreacting-content">
-                <p>We explain what each call, form, and deadline means—so you are not guessing while hurt. Our job is to protect your story, your records, and your leverage.</p>
+                <h3 class="cro-density-subhead">What we help you understand</h3>
+                <p>We explain what each call, form, and deadline means—so you are not guessing while hurt.</p>
+                <p>Our job is to protect your story, your records, and your leverage.</p>
+                <ul class="cro-validation-list" style="max-width: 100%; margin-top: 8px;">
+                    <li>You deserve clarity before you sign releases</li>
+                    <li>You deserve a damages picture—not a rushed checklist</li>
+                    <li>You deserve real attorneys on serious injury work</li>
+                </ul>
                 <p><strong>No fee unless we win.</strong> Free consultation. Real Los Angeles trial attorneys—not a call center script.</p>
             </div>
             <p style="text-align: center; margin-top: 24px;"><a href="tel:844-467-4335" class="btn-primary" data-callrail-phone="844-467-4335">Free Consultation — 844-467-4335</a></p>
+        </div>
+    </section>
+
+    <section class="cro-call-permission" aria-labelledby="cro-call-permission-heading">
+        <div class="container">
+            <h2 id="cro-call-permission-heading">Not Sure How Serious Your Injuries Are? You Can Still Call.</h2>
+            <p>You do not need to know whether your case is “big enough” before you talk to a lawyer. If you are unsure about your injuries—or an offer feels rushed—a short call can help you decide what to do next.</p>
+            <a href="tel:844-467-4335" class="btn-secondary call-btn" data-callrail-phone="844-467-4335"><span class="call-btn-num">844-467-4335</span></a>
         </div>
     </section>
 
@@ -1418,16 +1591,34 @@
     </footer>
 
     <div class="mobile-sticky-cta">
-        <a href="tel:844-467-4335" class="btn-primary call-btn" data-callrail-phone="844-467-4335" aria-label="Call now for free case review">
+        <a href="tel:844-467-4335" class="btn-primary call-btn" data-callrail-phone="844-467-4335" aria-label="Speak with an attorney now. Call tracking number.">
             <span class="call-btn-inner">
+                <span class="call-btn-label">📞 Speak With an Attorney Now</span>
                 <span class="call-btn-num">844-467-4335</span>
-                <span class="call-btn-sub">Call Now · Free Case Review</span>
             </span>
             <svg class="call-btn-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
         </a>
     </div>
 
     <script>
+    (function() {
+        var form = document.getElementById('case-evaluation-form');
+        if (form && window.matchMedia && window.matchMedia('(max-width: 768px)').matches) {
+            var t;
+            var hide = function() { document.body.classList.add('mobile-sticky-cta-hidden'); };
+            var show = function() { document.body.classList.remove('mobile-sticky-cta-hidden'); };
+            form.querySelectorAll('input, select, textarea').forEach(function(el) {
+                el.addEventListener('focus', hide);
+                el.addEventListener('blur', function() {
+                    clearTimeout(t);
+                    t = setTimeout(function() {
+                        if (document.activeElement && form.contains(document.activeElement)) return;
+                        show();
+                    }, 200);
+                });
+            });
+        }
+    })();
     (function() {
         var phoneInputs = document.querySelectorAll('#hero-phone');
         phoneInputs.forEach(function(phoneInput) {
