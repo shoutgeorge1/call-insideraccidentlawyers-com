@@ -24,7 +24,13 @@
             --shadow: 0 10px 24px rgba(12, 35, 52, 0.12);
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 132px;
+        }
+        @media (max-width: 900px) {
+            html { scroll-padding-top: 168px; }
+        }
         body {
             font-family: "Inter", system-ui, sans-serif;
             font-size: 17px;
@@ -43,22 +49,109 @@
         .lead { font-size: 1.15rem; color: var(--gray-700); }
         section { padding: 56px 0; }
         @media (max-width: 768px) { section { padding: 40px 0; } }
-        .sticky-header {
+        .site-header {
             position: sticky; top: 0; z-index: 100;
-            background: rgba(255,255,255,0.97);
-            border-bottom: 2px solid var(--border);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-            padding: 10px 0;
+            background: var(--white);
+            box-shadow: 0 4px 20px rgba(12, 35, 52, 0.1);
         }
-        .header-inner {
-            display: flex; align-items: center; justify-content: space-between;
-            gap: 16px; flex-wrap: wrap;
+        .header-trust-bar {
+            background: linear-gradient(90deg, var(--navy), var(--blue));
+            color: rgba(255,255,255,0.95);
+            font-size: 0.8125rem;
+            font-weight: 600;
+            text-align: center;
+            padding: 8px 16px;
+            letter-spacing: 0.02em;
         }
-        .header-logo { height: 44px; width: auto; display: block; filter: brightness(0); }
-        .header-call {
-            font-weight: 700; font-size: 1rem;
+        .header-trust-bar span { opacity: 0.85; padding: 0 0.35rem; }
+        .header-main {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 14px 0;
+            flex-wrap: wrap;
+            border-bottom: 1px solid var(--border);
         }
-        .header-call a { color: var(--blue); text-decoration: none; }
+        .header-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--navy);
+        }
+        .header-brand img { height: 42px; width: auto; display: block; filter: brightness(0); }
+        .header-brand-text {
+            font-weight: 800;
+            font-size: 0.85rem;
+            line-height: 1.2;
+            max-width: 9rem;
+            letter-spacing: -0.02em;
+        }
+        @media (min-width: 400px) {
+            .header-brand-text { max-width: none; font-size: 0.9rem; }
+        }
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex: 1;
+            justify-content: center;
+            min-width: 0;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            padding: 4px 0;
+        }
+        .header-nav::-webkit-scrollbar { display: none; }
+        .header-nav a {
+            color: var(--gray-700);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.875rem;
+            padding: 8px 12px;
+            border-radius: 8px;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .header-nav a:hover {
+            color: var(--blue);
+            background: var(--wash);
+        }
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .header-phone-link {
+            font-weight: 800;
+            font-size: 0.95rem;
+            color: var(--navy);
+            text-decoration: none;
+            letter-spacing: 0.02em;
+        }
+        .header-phone-link:hover { color: var(--blue); }
+        .btn-header {
+            padding: 11px 20px !important;
+            font-size: 0.9375rem !important;
+        }
+        @media (max-width: 900px) {
+            .header-main {
+                flex-wrap: nowrap;
+            }
+            .header-nav {
+                order: 3;
+                flex-basis: 100%;
+                justify-content: flex-start;
+                border-top: 1px solid var(--border);
+                margin: 0 -4px;
+                padding-top: 10px;
+            }
+        }
+        @media (max-width: 380px) {
+            .header-brand-text { display: none; }
+        }
         .btn {
             display: inline-block; padding: 14px 26px; border-radius: 8px;
             font-weight: 700; font-size: 1rem; text-decoration: none;
@@ -76,6 +169,8 @@
             box-shadow: 0 6px 16px rgba(1, 70, 138, 0.25);
         }
         .btn-secondary:hover { background: #0f3261; color: var(--white); }
+        a.btn-primary, a.btn-primary:visited { color: var(--navy); }
+        a.btn-secondary, a.btn-secondary:visited { color: var(--white); }
         .btn-block { width: 100%; }
         .hero {
             position: relative;
@@ -198,7 +293,7 @@
             font-size: 1rem;
             font-family: inherit;
         }
-        .form-input:focus, .form-select:focus {
+        .form-input:focus, .form-select:focus, textarea.form-input:focus {
             outline: none;
             border-color: var(--blue);
         }
@@ -207,6 +302,34 @@
         .form-checkbox { display: flex; gap: 10px; align-items: flex-start; margin-top: 1rem; }
         .form-checkbox input { margin-top: 4px; flex-shrink: 0; }
         .form-checkbox label { font-size: 0.9rem; color: var(--gray-700); }
+        .form-sub-label {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--gray-700);
+            margin-bottom: 10px;
+            display: block;
+        }
+        .form-check-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px 16px;
+        }
+        .form-check-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            cursor: pointer;
+            font-size: 0.9375rem;
+            color: var(--gray-900);
+            font-weight: 500;
+        }
+        .form-check-item input {
+            margin-top: 4px;
+            flex-shrink: 0;
+            width: 18px;
+            height: 18px;
+            accent-color: var(--blue);
+        }
         .fine-print {
             font-size: 0.85rem;
             color: var(--gray-500);
@@ -270,21 +393,56 @@
                     }
                 });
             }
+            document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+                var href = anchor.getAttribute('href');
+                if (!href || href === '#') return;
+                anchor.addEventListener('click', function(e) {
+                    if (href === '#top') {
+                        e.preventDefault();
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                        if (history.replaceState) {
+                            history.replaceState(null, '', window.location.pathname + window.location.search);
+                        }
+                        return;
+                    }
+                    var target = document.querySelector(href);
+                    if (target) {
+                        e.preventDefault();
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        if (history.pushState) history.pushState(null, '', href);
+                    }
+                });
+            });
             setTimeout(function() {
                 if (typeof dataLayer !== 'undefined') dataLayer.push({ event: 'engaged_30s' });
             }, 30000);
         });
     </script>
 </head>
-<body>
+<body id="top">
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WS8XT5FC" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-    <header class="sticky-header">
-        <div class="container header-inner">
-            <img src="/images/la/logo.png" alt="Insider Accident Lawyers" class="header-logo" width="160" height="48">
-            <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
-                <span class="header-call" data-callrail-phone="844-467-4335">Call <a href="tel:844-467-4335">844-467-4335</a></span>
-                <a href="tel:844-467-4335" class="btn btn-secondary" data-callrail-phone="844-467-4335" style="padding:10px 18px;font-size:0.95rem;">Call now</a>
+    <header class="site-header">
+        <div class="header-trust-bar">
+            Free consultation · Confidential · No obligation · <span>Parents: answers start with a call</span>
+        </div>
+        <div class="container">
+            <div class="header-main">
+                <a class="header-brand" href="#top" aria-label="Back to top of page">
+                    <img src="/images/la/logo.png" alt="Insider Accident Lawyers" width="140" height="42">
+                    <span class="header-brand-text" aria-hidden="true">Insider Accident Lawyers</span>
+                </a>
+                <nav class="header-nav" aria-label="On this page">
+                    <a href="#not-imagining">The issue</a>
+                    <a href="#symptoms">Signs</a>
+                    <a href="#platforms">The apps</a>
+                    <a href="#eligibility">Qualify</a>
+                    <a href="#parent-form">Form</a>
+                </nav>
+                <div class="header-actions">
+                    <a href="tel:844-467-4335" class="header-phone-link" data-callrail-phone="844-467-4335">844-467-4335</a>
+                    <a href="tel:844-467-4335" class="btn btn-primary btn-header" data-callrail-phone="844-467-4335">Call now</a>
+                </div>
             </div>
         </div>
     </header>
@@ -420,20 +578,102 @@
                     <input type="hidden" name="_subject" value="Social media harm — parent inquiry">
                     <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
                     <div class="form-group">
-                        <label class="form-label" for="child-age">Child’s age range</label>
-                        <select class="form-select" id="child-age" name="child_age_range" required>
+                        <label class="form-label" for="relationship">Your relationship to the child</label>
+                        <select class="form-select" id="relationship" name="relationship_to_child" required>
                             <option value="">Select one</option>
-                            <option value="12 or younger">12 or younger</option>
-                            <option value="13–15">13–15</option>
-                            <option value="16–17">16–17</option>
+                            <option value="Mother">Mother</option>
+                            <option value="Father">Father</option>
+                            <option value="Stepparent">Stepparent</option>
+                            <option value="Legal guardian">Legal guardian</option>
+                            <option value="Grandparent">Grandparent</option>
+                            <option value="Other family">Other family member</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <span class="form-label">Have you noticed behavior changes?</span>
+                        <label class="form-label" for="child-age">Child’s age</label>
+                        <select class="form-select" id="child-age" name="child_age_range" required>
+                            <option value="">Select one</option>
+                            <option value="Under 10">Under 10</option>
+                            <option value="10–12">10–12</option>
+                            <option value="13–15">13–15</option>
+                            <option value="16–17">16–17</option>
+                            <option value="18+ (still a dependent)">18+ (still a dependent)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <span class="form-label">Apps or sites you’re worried about <span style="font-weight:400;color:var(--gray-500);">(check all that apply)</span></span>
+                        <div class="form-check-grid">
+                            <label class="form-check-item"><input type="checkbox" name="uses_instagram" value="yes"> Instagram</label>
+                            <label class="form-check-item"><input type="checkbox" name="uses_facebook" value="yes"> Facebook</label>
+                            <label class="form-check-item"><input type="checkbox" name="uses_tiktok" value="yes"> TikTok</label>
+                            <label class="form-check-item"><input type="checkbox" name="uses_youtube" value="yes"> YouTube</label>
+                            <label class="form-check-item"><input type="checkbox" name="uses_snapchat" value="yes"> Snapchat</label>
+                            <label class="form-check-item"><input type="checkbox" name="uses_other_platform" value="yes"> Other / not sure</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="concern-duration">How long has this been a concern?</label>
+                        <select class="form-select" id="concern-duration" name="concern_duration" required>
+                            <option value="">Select one</option>
+                            <option value="Less than 3 months">Less than 3 months</option>
+                            <option value="3–6 months">3–6 months</option>
+                            <option value="6–12 months">6–12 months</option>
+                            <option value="1–2 years">1–2 years</option>
+                            <option value="More than 2 years">More than 2 years</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <span class="form-label">What have you noticed? <span style="font-weight:400;color:var(--gray-500);">(check all that apply)</span></span>
+                        <div class="form-check-grid">
+                            <label class="form-check-item"><input type="checkbox" name="sign_excessive_phone" value="yes"> Excessive phone use</label>
+                            <label class="form-check-item"><input type="checkbox" name="sign_mood_swings" value="yes"> Mood swings</label>
+                            <label class="form-check-item"><input type="checkbox" name="sign_anxiety_depression" value="yes"> Anxiety or depression</label>
+                            <label class="form-check-item"><input type="checkbox" name="sign_sleep" value="yes"> Sleep problems</label>
+                            <label class="form-check-item"><input type="checkbox" name="sign_withdrawal_phone" value="yes"> Upset when phone is taken away</label>
+                            <label class="form-check-item"><input type="checkbox" name="sign_school_social" value="yes"> School or friends affected</label>
+                            <label class="form-check-item"><input type="checkbox" name="sign_self_harm_mention" value="yes"> Worried about self-harm (thoughts or actions)</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <span class="form-label">Have you noticed behavior changes overall?</span>
                         <div class="form-radio-row">
                             <label><input type="radio" name="noticed_behavior_changes" value="Yes" required> Yes</label>
                             <label><input type="radio" name="noticed_behavior_changes" value="No" required> No</label>
+                            <label><input type="radio" name="noticed_behavior_changes" value="Not sure" required> Not sure</label>
                         </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="prior-help">Has your child seen a counselor or therapist for this?</label>
+                        <select class="form-select" id="prior-help" name="prior_counseling" required>
+                            <option value="">Select one</option>
+                            <option value="Yes, currently">Yes, currently</option>
+                            <option value="Yes, in the past">Yes, in the past</option>
+                            <option value="No">No</option>
+                            <option value="Prefer not to say">Prefer not to say</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="best-time">Best time to reach you</label>
+                        <select class="form-select" id="best-time" name="best_time_to_call" required>
+                            <option value="">Select one</option>
+                            <option value="Morning (8–12)">Morning (8–12)</option>
+                            <option value="Afternoon (12–5)">Afternoon (12–5)</option>
+                            <option value="Evening (5–8)">Evening (5–8)</option>
+                            <option value="Anytime during business hours">Anytime during business hours</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="state">State you live in</label>
+                        <select class="form-select" id="state" name="state" required>
+                            <option value="">Select one</option>
+                            <option value="California">California</option>
+                            <option value="Arizona">Arizona</option>
+                            <option value="Nevada">Nevada</option>
+                            <option value="Texas">Texas</option>
+                            <option value="Florida">Florida</option>
+                            <option value="New York">New York</option>
+                            <option value="Other">Other</option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="parent-name">Your name</label>
@@ -442,6 +682,14 @@
                     <div class="form-group">
                         <label class="form-label" for="phone">Phone</label>
                         <input class="form-input" type="tel" id="phone" name="phone" inputmode="tel" autocomplete="tel" required placeholder="(555) 555-5555">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="email">Email <span style="font-weight:400;color:var(--gray-500);">(optional)</span></label>
+                        <input class="form-input" type="email" id="email" name="email" autocomplete="email" placeholder="you@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="notes">Anything else we should know? <span style="font-weight:400;color:var(--gray-500);">(optional)</span></label>
+                        <textarea class="form-input" id="notes" name="additional_notes" rows="3" style="resize:vertical;min-height:88px;" placeholder="Short summary is fine"></textarea>
                     </div>
                     <div class="form-checkbox">
                         <input type="checkbox" id="sms-consent" name="sms_consent" value="yes" required>
