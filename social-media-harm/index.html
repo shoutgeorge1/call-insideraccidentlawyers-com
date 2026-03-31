@@ -28,8 +28,8 @@
             scroll-behavior: smooth;
             scroll-padding-top: 132px;
         }
-        @media (max-width: 900px) {
-            html { scroll-padding-top: 168px; }
+        @media (max-width: 768px) {
+            html { scroll-padding-top: 142px; }
         }
         body {
             font-family: "Inter", system-ui, sans-serif;
@@ -54,6 +54,7 @@
             background: var(--white);
             box-shadow: 0 4px 20px rgba(12, 35, 52, 0.1);
         }
+        .site-header .container { position: relative; }
         .header-trust-bar {
             background: linear-gradient(90deg, var(--navy), var(--blue));
             color: rgba(255,255,255,0.95);
@@ -62,15 +63,22 @@
             text-align: center;
             padding: 8px 16px;
             letter-spacing: 0.02em;
+            line-height: 1.35;
         }
-        .header-trust-bar span { opacity: 0.85; padding: 0 0.35rem; }
+        .header-trust-bar .header-trust-muted { opacity: 0.88; }
+        .header-trust-desktop { display: block; }
+        .header-trust-mobile { display: none; }
+        @media (max-width: 640px) {
+            .header-trust-desktop { display: none; }
+            .header-trust-mobile { display: block; }
+            .header-trust-bar { font-size: 0.72rem; padding: 7px 12px; }
+        }
         .header-main {
             display: flex;
             align-items: center;
             justify-content: space-between;
             gap: 16px;
             padding: 14px 0;
-            flex-wrap: wrap;
             border-bottom: 1px solid var(--border);
         }
         .header-brand {
@@ -79,6 +87,7 @@
             gap: 10px;
             text-decoration: none;
             color: var(--navy);
+            min-width: 0;
         }
         .header-brand img { height: 42px; width: auto; display: block; filter: brightness(0); }
         .header-brand-text {
@@ -90,6 +99,68 @@
         }
         @media (min-width: 400px) {
             .header-brand-text { max-width: none; font-size: 0.9rem; }
+        }
+        .header-menu-toggle {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            width: 46px;
+            height: 46px;
+            flex-shrink: 0;
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            background: var(--wash);
+            cursor: pointer;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .header-menu-toggle:hover { border-color: var(--blue); background: #e8eef5; }
+        .header-menu-toggle[aria-expanded="true"] {
+            border-color: var(--blue);
+            background: var(--navy);
+        }
+        .header-menu-bars {
+            display: block;
+            width: 20px;
+            height: 14px;
+            position: relative;
+        }
+        .header-menu-bars::before,
+        .header-menu-bars::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--navy);
+            border-radius: 1px;
+            transition: transform 0.2s, opacity 0.2s, top 0.2s, bottom 0.2s;
+        }
+        .header-menu-bars span {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 6px;
+            height: 2px;
+            background: var(--navy);
+            border-radius: 1px;
+            transition: opacity 0.2s;
+        }
+        .header-menu-toggle[aria-expanded="true"] .header-menu-bars::before,
+        .header-menu-toggle[aria-expanded="true"] .header-menu-bars::after,
+        .header-menu-toggle[aria-expanded="true"] .header-menu-bars span {
+            background: var(--white);
+        }
+        .header-menu-bars::before { top: 0; }
+        .header-menu-bars::after { bottom: 0; }
+        .header-menu-toggle[aria-expanded="true"] .header-menu-bars span { opacity: 0; }
+        .header-menu-toggle[aria-expanded="true"] .header-menu-bars::before {
+            top: 6px;
+            transform: rotate(45deg);
+        }
+        .header-menu-toggle[aria-expanded="true"] .header-menu-bars::after {
+            bottom: 6px;
+            transform: rotate(-45deg);
         }
         .header-nav {
             display: flex;
@@ -114,15 +185,17 @@
             white-space: nowrap;
             flex-shrink: 0;
         }
-        .header-nav a:hover {
+        .header-nav a:hover,
+        .header-nav a:focus-visible {
             color: var(--blue);
             background: var(--wash);
+            outline: none;
         }
         .header-actions {
             display: flex;
             align-items: center;
             gap: 10px;
-            flex-wrap: wrap;
+            flex-shrink: 0;
         }
         .header-phone-link {
             font-weight: 800;
@@ -136,18 +209,85 @@
             padding: 11px 20px !important;
             font-size: 0.9375rem !important;
         }
-        @media (max-width: 900px) {
+        @media (min-width: 769px) {
             .header-main {
+                display: flex;
                 flex-wrap: nowrap;
             }
+            .header-brand { order: 1; }
             .header-nav {
-                order: 3;
-                flex-basis: 100%;
-                justify-content: flex-start;
-                border-top: 1px solid var(--border);
-                margin: 0 -4px;
-                padding-top: 10px;
+                order: 2;
+                display: flex !important;
+                flex: 1;
+                justify-content: center;
             }
+            .header-actions { order: 3; }
+            .header-menu-toggle {
+                order: 99;
+                display: none !important;
+            }
+        }
+        @media (max-width: 768px) {
+            .header-main {
+                display: grid;
+                grid-template-columns: 1fr auto;
+                grid-template-rows: auto auto auto;
+                gap: 10px 12px;
+                padding: 12px 0 14px;
+                align-items: center;
+            }
+            .header-brand {
+                grid-column: 1;
+                grid-row: 1;
+            }
+            .header-brand img { height: 38px; }
+            .header-menu-toggle {
+                display: flex;
+                grid-column: 2;
+                grid-row: 1;
+            }
+            .header-actions {
+                grid-column: 1 / -1;
+                grid-row: 2;
+                display: flex;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 8px;
+                width: 100%;
+            }
+            .header-phone-link {
+                display: none;
+            }
+            .header-actions .btn-header {
+                width: 100%;
+                padding: 14px 20px !important;
+                font-size: 1rem !important;
+            }
+            .header-nav {
+                grid-column: 1 / -1;
+                grid-row: 3;
+                display: none;
+                flex-direction: column;
+                align-items: stretch;
+                overflow: visible;
+                gap: 0;
+                padding: 0;
+                margin: 0;
+                border-top: 1px solid var(--border);
+                padding-top: 6px;
+                margin-top: 2px;
+            }
+            .header-nav.is-open {
+                display: flex;
+            }
+            .header-nav a {
+                white-space: normal;
+                padding: 14px 14px;
+                font-size: 1rem;
+                border-radius: 8px;
+                border-bottom: 1px solid var(--border);
+            }
+            .header-nav a:last-child { border-bottom: none; }
         }
         @media (max-width: 380px) {
             .header-brand-text { display: none; }
@@ -366,6 +506,31 @@
     <script>
         window.dataLayer = window.dataLayer || [];
         document.addEventListener('DOMContentLoaded', function() {
+            var siteNav = document.getElementById('site-nav');
+            var menuToggle = document.getElementById('header-menu-toggle');
+            function closeHeaderMenu() {
+                if (siteNav) siteNav.classList.remove('is-open');
+                if (menuToggle) menuToggle.setAttribute('aria-expanded', 'false');
+            }
+            function toggleHeaderMenu() {
+                if (!siteNav || !menuToggle) return;
+                var open = siteNav.classList.toggle('is-open');
+                menuToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+            }
+            if (menuToggle && siteNav) {
+                menuToggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    toggleHeaderMenu();
+                });
+            }
+            document.addEventListener('click', function(e) {
+                if (!siteNav || !siteNav.classList.contains('is-open')) return;
+                if (e.target.closest('.site-header')) return;
+                closeHeaderMenu();
+            });
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') closeHeaderMenu();
+            });
             document.querySelectorAll('a[href^="tel:"]').forEach(function(link) {
                 link.addEventListener('click', function() {
                     if (typeof dataLayer !== 'undefined') {
@@ -399,6 +564,7 @@
                 anchor.addEventListener('click', function(e) {
                     if (href === '#top') {
                         e.preventDefault();
+                        closeHeaderMenu();
                         window.scrollTo({ top: 0, behavior: 'smooth' });
                         if (history.replaceState) {
                             history.replaceState(null, '', window.location.pathname + window.location.search);
@@ -408,6 +574,7 @@
                     var target = document.querySelector(href);
                     if (target) {
                         e.preventDefault();
+                        closeHeaderMenu();
                         target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                         if (history.pushState) history.pushState(null, '', href);
                     }
@@ -424,7 +591,8 @@
 
     <header class="site-header">
         <div class="header-trust-bar">
-            Free consultation · Confidential · No obligation · <span>Parents: answers start with a call</span>
+            <span class="header-trust-desktop">Free consultation · Confidential · No obligation · <span class="header-trust-muted">Parents: answers start with a call</span></span>
+            <span class="header-trust-mobile">Free consult · Confidential · No obligation<br><span class="header-trust-muted">Call for answers</span></span>
         </div>
         <div class="container">
             <div class="header-main">
@@ -432,17 +600,20 @@
                     <img src="/images/la/logo.png" alt="Insider Accident Lawyers" width="140" height="42">
                     <span class="header-brand-text" aria-hidden="true">Insider Accident Lawyers</span>
                 </a>
-                <nav class="header-nav" aria-label="On this page">
+                <button type="button" class="header-menu-toggle" id="header-menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open page sections menu">
+                    <span class="header-menu-bars" aria-hidden="true"><span></span></span>
+                </button>
+                <div class="header-actions">
+                    <a href="tel:844-467-4335" class="header-phone-link" data-callrail-phone="844-467-4335">844-467-4335</a>
+                    <a href="tel:844-467-4335" class="btn btn-primary btn-header" data-callrail-phone="844-467-4335">Call now</a>
+                </div>
+                <nav class="header-nav" id="site-nav" aria-label="On this page">
                     <a href="#not-imagining">The issue</a>
                     <a href="#symptoms">Signs</a>
                     <a href="#platforms">The apps</a>
                     <a href="#eligibility">Qualify</a>
                     <a href="#parent-form">Form</a>
                 </nav>
-                <div class="header-actions">
-                    <a href="tel:844-467-4335" class="header-phone-link" data-callrail-phone="844-467-4335">844-467-4335</a>
-                    <a href="tel:844-467-4335" class="btn btn-primary btn-header" data-callrail-phone="844-467-4335">Call now</a>
-                </div>
             </div>
         </div>
     </header>
