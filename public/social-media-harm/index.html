@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Worried about your child and social media? Free, confidential talk with a lawyer. Call Insider Accident Lawyers.">
+    <title>Social Media & Your Child | Free Confidential Talk | Insider Accident Lawyers</title>
+    <link rel="canonical" href="https://call.insideraccidentlawyers.com/social-media-harm">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #01366c;
+            --blue: #01468a;
+            --yellow: #fbba00;
+            --white: #ffffff;
+            --gray-900: #1f2937;
+            --gray-700: #374151;
+            --gray-500: #6b7280;
+            --border: #e5e7eb;
+            --wash: #f3f6fa;
+            --radius: 12px;
+            --shadow: 0 10px 24px rgba(12, 35, 52, 0.12);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: "Inter", system-ui, sans-serif;
+            font-size: 17px;
+            line-height: 1.65;
+            color: var(--gray-900);
+            background: var(--white);
+        }
+        @media (max-width: 768px) { body { font-size: 18px; } }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        h1, h2, h3 { color: var(--navy); font-weight: 800; letter-spacing: -0.02em; line-height: 1.2; }
+        h1 { font-size: clamp(1.75rem, 5vw, 2.65rem); }
+        h2 { font-size: clamp(1.45rem, 4vw, 2rem); margin-bottom: 1rem; }
+        h3 { font-size: 1.2rem; margin-bottom: 0.5rem; font-weight: 700; }
+        p { margin-bottom: 1rem; color: var(--gray-700); }
+        p:last-child { margin-bottom: 0; }
+        .lead { font-size: 1.15rem; color: var(--gray-700); }
+        section { padding: 56px 0; }
+        @media (max-width: 768px) { section { padding: 40px 0; } }
+        .sticky-header {
+            position: sticky; top: 0; z-index: 100;
+            background: rgba(255,255,255,0.97);
+            border-bottom: 2px solid var(--border);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            padding: 10px 0;
+        }
+        .header-inner {
+            display: flex; align-items: center; justify-content: space-between;
+            gap: 16px; flex-wrap: wrap;
+        }
+        .header-logo { height: 44px; width: auto; display: block; filter: brightness(0); }
+        .header-call {
+            font-weight: 700; font-size: 1rem;
+        }
+        .header-call a { color: var(--blue); text-decoration: none; }
+        .btn {
+            display: inline-block; padding: 14px 26px; border-radius: 8px;
+            font-weight: 700; font-size: 1rem; text-decoration: none;
+            text-align: center; border: none; cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn:active { transform: scale(0.98); }
+        .btn-primary {
+            background: var(--yellow); color: var(--navy);
+            box-shadow: 0 8px 20px rgba(251, 186, 0, 0.35);
+        }
+        .btn-primary:hover { background: #e6b300; }
+        .btn-secondary {
+            background: var(--blue); color: var(--white);
+            box-shadow: 0 6px 16px rgba(1, 70, 138, 0.25);
+        }
+        .btn-secondary:hover { background: #0f3261; color: var(--white); }
+        .btn-block { width: 100%; }
+        .hero {
+            position: relative;
+            min-height: 420px;
+            display: flex;
+            align-items: flex-end;
+            color: var(--white);
+        }
+        .hero__media {
+            position: absolute; inset: 0;
+            background: #0c2334;
+        }
+        .hero__media img {
+            width: 100%; height: 100%; object-fit: cover; object-position: center top;
+            opacity: 0.92;
+        }
+        .hero__gradient {
+            position: absolute; inset: 0;
+            background: linear-gradient(
+                to top,
+                rgba(12, 35, 52, 0.95) 0%,
+                rgba(12, 35, 52, 0.55) 45%,
+                rgba(12, 35, 52, 0.25) 100%
+            );
+            pointer-events: none;
+        }
+        .hero__content {
+            position: relative; z-index: 2;
+            width: 100%;
+            padding: 48px 0 40px;
+        }
+        .hero h1 { color: var(--white); margin-bottom: 1rem; text-shadow: 0 4px 20px rgba(0,0,0,0.4); }
+        .hero h1 .accent { color: var(--yellow); }
+        .hero .lead {
+            color: rgba(255,255,255,0.95);
+            margin-bottom: 1.5rem;
+            max-width: 36rem;
+            text-shadow: 0 2px 12px rgba(0,0,0,0.35);
+        }
+        .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 1rem; }
+        .hero-note {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.85);
+        }
+        .section-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 40px 36px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+        }
+        @media (max-width: 768px) {
+            .section-card { padding: 28px 22px; }
+        }
+        .bg-wash { background: var(--wash); }
+        .split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        @media (max-width: 900px) {
+            .split { grid-template-columns: 1fr; }
+        }
+        .split img {
+            width: 100%; height: auto;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+        .checklist {
+            list-style: none;
+            margin: 1.25rem 0;
+        }
+        .checklist li {
+            padding: 12px 0 12px 36px;
+            position: relative;
+            border-bottom: 1px solid var(--border);
+            color: var(--gray-900);
+            font-weight: 600;
+        }
+        .checklist li:last-child { border-bottom: none; }
+        .checklist li::before {
+            content: "✓";
+            position: absolute; left: 0;
+            color: var(--blue);
+            font-weight: 800;
+        }
+        .mid-cta { margin-top: 1.5rem; text-align: center; }
+        .trust-pills {
+            display: flex; flex-wrap: wrap; gap: 12px;
+            margin-top: 1.25rem;
+        }
+        .trust-pill {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            padding: 10px 18px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--navy);
+        }
+        .cta-band {
+            background: linear-gradient(135deg, var(--navy), var(--blue));
+            color: var(--white);
+            text-align: center;
+            padding: 56px 20px;
+        }
+        .cta-band h2 { color: var(--white); margin-bottom: 1rem; }
+        .cta-band p { color: rgba(255,255,255,0.92); margin-bottom: 1.5rem; max-width: 560px; margin-left: auto; margin-right: auto; }
+        .form-wrap {
+            max-width: 520px;
+            margin: 0 auto;
+        }
+        .form-group { margin-bottom: 1.25rem; }
+        .form-label { display: block; font-weight: 600; margin-bottom: 6px; color: var(--navy); font-size: 0.95rem; }
+        .form-input, .form-select {
+            width: 100%; padding: 14px 14px;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+        .form-input:focus, .form-select:focus {
+            outline: none;
+            border-color: var(--blue);
+        }
+        .form-radio-row { display: flex; gap: 20px; flex-wrap: wrap; }
+        .form-radio-row label { font-weight: 500; color: var(--gray-700); cursor: pointer; }
+        .form-checkbox { display: flex; gap: 10px; align-items: flex-start; margin-top: 1rem; }
+        .form-checkbox input { margin-top: 4px; flex-shrink: 0; }
+        .form-checkbox label { font-size: 0.9rem; color: var(--gray-700); }
+        .fine-print {
+            font-size: 0.85rem;
+            color: var(--gray-500);
+            margin-top: 1rem;
+            line-height: 1.5;
+        }
+        footer {
+            background: #0c2334;
+            color: rgba(255,255,255,0.75);
+            padding: 40px 20px;
+            font-size: 0.9rem;
+        }
+        footer a { color: var(--yellow); }
+        .visually-hidden {
+            position: absolute; width: 1px; height: 1px;
+            padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0;
+        }
+        .caption-tag {
+            display: inline-block;
+            margin-top: 8px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--gray-500);
+            font-weight: 600;
+        }
+    </style>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WS8XT5FC');</script>
+    <script type="text/javascript" src="//cdn.callrail.com/companies/328698587/a8e768ec751936e4d680/12/swap.js"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('a[href^="tel:"]').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    if (typeof dataLayer !== 'undefined') {
+                        dataLayer.push({
+                            event: 'phone_click',
+                            phone_number: this.getAttribute('href').replace('tel:', '')
+                        });
+                    }
+                });
+            });
+            var form = document.getElementById('social-media-parent-form');
+            if (form) {
+                var started = false;
+                form.querySelectorAll('input, select, textarea').forEach(function(field) {
+                    field.addEventListener('focus', function() {
+                        if (!started && typeof dataLayer !== 'undefined') {
+                            started = true;
+                            dataLayer.push({ event: 'form_start', form_name: 'social_media_parent' });
+                        }
+                    }, { once: true });
+                });
+                form.addEventListener('submit', function() {
+                    if (typeof dataLayer !== 'undefined') {
+                        dataLayer.push({ event: 'form_submit', form_name: 'social_media_parent' });
+                    }
+                });
+            }
+            setTimeout(function() {
+                if (typeof dataLayer !== 'undefined') dataLayer.push({ event: 'engaged_30s' });
+            }, 30000);
+        });
+    </script>
+</head>
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WS8XT5FC" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <header class="sticky-header">
+        <div class="container header-inner">
+            <img src="/images/la/logo.png" alt="Insider Accident Lawyers" class="header-logo" width="160" height="48">
+            <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+                <span class="header-call" data-callrail-phone="844-467-4335">Call <a href="tel:844-467-4335">844-467-4335</a></span>
+                <a href="tel:844-467-4335" class="btn btn-secondary" data-callrail-phone="844-467-4335" style="padding:10px 18px;font-size:0.95rem;">Call now</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- [HERO IMAGE – teen phone at night] -->
+    <section class="hero" aria-label="Introduction">
+        <div class="hero__media">
+            <img src="/images/social-media-harm/hero-teen-phone-night.png" alt="Teenager on a phone at night while a parent stands in the doorway, concerned" width="1200" height="800" fetchpriority="high">
+            <div class="hero__gradient" aria-hidden="true"></div>
+        </div>
+        <div class="hero__content">
+            <div class="container">
+                <h1>Worried About Your Child and <span class="accent">Social Media?</span> You’re Not Overreacting.</h1>
+                <p class="lead">Many parents see the same signs: late nights on the phone, mood swings, pulling away. If that sounds familiar, you deserve straight answers — starting with a phone call.</p>
+                <div class="cta-row">
+                    <a href="tel:844-467-4335" class="btn btn-primary" data-callrail-phone="844-467-4335">Call now</a>
+                    <a href="#eligibility" class="btn btn-secondary">Check if we can help</a>
+                </div>
+                <p class="hero-note">Free talk. Confidential. No pressure.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="not-imagining" class="bg-wash">
+        <div class="container split">
+            <div>
+                <h2>You’re not imagining this.</h2>
+                <p>Other families are living the same story. The fights about screen time. The kid who seems “fine” online but shuts down at home.</p>
+                <p>Recently, a Los Angeles jury looked at how major platforms are built — endless feeds, pings, and suggestions that keep kids scrolling — and held Meta (Facebook and Instagram) and YouTube responsible for serious harm to a young person. The total award was <strong>$6 million</strong>. The jury found those products were a <strong>substantial factor</strong> in the mental health harm. Jurors also found <strong>malice</strong> and <strong>misconduct</strong> — meaning this was not written off as a simple mistake.</p>
+                <p>That does not mean every situation is the same. It does mean courts are starting to take what parents have been saying seriously.</p>
+                <div class="cta-row" style="margin-top:1.25rem;">
+                    <a href="tel:844-467-4335" class="btn btn-primary" data-callrail-phone="844-467-4335">Talk to someone now</a>
+                </div>
+            </div>
+            <div>
+                <!-- [PARENT CONCERN IMAGE] -->
+                <figure style="margin:0;">
+                    <img src="/images/social-media-harm/parent-concern.png" alt="Parent watching a child absorbed in a phone" width="600" height="600" loading="lazy">
+                    <figcaption class="visually-hidden">Parent concern — child focused on phone</figcaption>
+                    <span class="caption-tag" aria-hidden="true">Parent concern</span>
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <section id="symptoms">
+        <div class="container">
+            <div class="section-card">
+                <h2>Signs parents often notice</h2>
+                <p class="lead" style="margin-bottom:0;">If several of these sound familiar, it may be time to speak with someone who can explain your options in plain English.</p>
+                <ul class="checklist">
+                    <li>Excessive phone use</li>
+                    <li>Mood swings</li>
+                    <li>Anxiety or depression</li>
+                    <li>Sleep disruption</li>
+                    <li>Withdrawal when the phone is removed</li>
+                </ul>
+                <div class="mid-cta">
+                    <a href="tel:844-467-4335" class="btn btn-primary" data-callrail-phone="844-467-4335">Call now — free talk</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="platforms" class="bg-wash">
+        <div class="container split">
+            <div>
+                <!-- [ISOLATION IMAGE] -->
+                <figure style="margin:0;">
+                    <img src="/images/social-media-harm/isolation.png" alt="Teen sitting alone, overwhelmed, with social notification graphics nearby" width="600" height="600" loading="lazy">
+                    <span class="caption-tag" aria-hidden="true">Isolation &amp; pressure</span>
+                </figure>
+            </div>
+            <div>
+                <h2>What makes these apps different</h2>
+                <p>These products are not designed like a textbook or a family photo album. They are built to pull attention back, again and again.</p>
+                <p><strong>Feeds that never end.</strong> There is always another video, another post.</p>
+                <p><strong>Notifications.</strong> Little nudges that train the brain to check “just once more.”</p>
+                <p><strong>Suggestions tailored to your child.</strong> The app learns what keeps them watching — even when it is not good for them.</p>
+                <p>That mix can wear kids down over time. You are not wrong to worry.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="eligibility">
+        <div class="container">
+            <div class="section-card">
+                <h2>Who may qualify to speak with us</h2>
+                <p>We keep this broad on purpose. Every family is different.</p>
+                <ul class="checklist" style="margin-top:0.5rem;">
+                    <li>Your child is under 18</li>
+                    <li>Heavy use of social or video apps</li>
+                    <li>You have seen real changes in mood, sleep, or behavior</li>
+                    <li>You are a parent or legal guardian with questions</li>
+                </ul>
+                <p>The only way to know whether we can help <em>your</em> situation is to call.</p>
+                <a href="tel:844-467-4335" class="btn btn-primary" data-callrail-phone="844-467-4335">Call 844-467-4335</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="trust">
+        <div class="container">
+            <h2 style="text-align:center;margin-bottom:0.5rem;">No cost to find out where you stand</h2>
+            <p class="lead" style="text-align:center;max-width:640px;margin:0 auto 1.5rem;">We know this is personal. Here is what you can expect.</p>
+            <div class="trust-pills" style="justify-content:center;">
+                <span class="trust-pill">Free consultation</span>
+                <span class="trust-pill">Confidential</span>
+                <span class="trust-pill">No obligation</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-band" id="call-block">
+        <div class="container">
+            <h2>If your gut says something is off, honor it.</h2>
+            <p>You do not need a perfect story or a file folder of proof to pick up the phone. If social media may be part of what your child is going through, call now and we will listen.</p>
+            <a href="tel:844-467-4335" class="btn btn-primary" style="font-size:1.1rem;padding:16px 32px;" data-callrail-phone="844-467-4335">Call now — 844-467-4335</a>
+            <p style="margin-top:1.25rem;margin-bottom:0;font-size:0.95rem;">Prefer to leave your info? Use the short form below — calling is still fastest.</p>
+        </div>
+    </section>
+
+    <section id="parent-form" style="padding-bottom:72px;">
+        <div class="container">
+            <div class="section-card form-wrap">
+                <h2 style="text-align:center;">Quick form</h2>
+                <p class="fine-print" style="text-align:center;margin-bottom:1.25rem;">We read these by hand. For urgent questions, call.</p>
+                <p style="text-align:center;margin-bottom:1rem;">
+                    <a href="tel:844-467-4335" class="btn btn-primary btn-block" data-callrail-phone="844-467-4335">Call now</a>
+                </p>
+                <form action="https://formsubmit.co/ial.leads.2024@gmail.com" method="POST" id="social-media-parent-form">
+                    <input type="hidden" name="_next" value="https://call.insideraccidentlawyers.com/thank-you.html">
+                    <input type="hidden" name="_subject" value="Social media harm — parent inquiry">
+                    <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+                    <div class="form-group">
+                        <label class="form-label" for="child-age">Child’s age range</label>
+                        <select class="form-select" id="child-age" name="child_age_range" required>
+                            <option value="">Select one</option>
+                            <option value="12 or younger">12 or younger</option>
+                            <option value="13–15">13–15</option>
+                            <option value="16–17">16–17</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <span class="form-label">Have you noticed behavior changes?</span>
+                        <div class="form-radio-row">
+                            <label><input type="radio" name="noticed_behavior_changes" value="Yes" required> Yes</label>
+                            <label><input type="radio" name="noticed_behavior_changes" value="No" required> No</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="parent-name">Your name</label>
+                        <input class="form-input" type="text" id="parent-name" name="parent_name" required autocomplete="name">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="phone">Phone</label>
+                        <input class="form-input" type="tel" id="phone" name="phone" inputmode="tel" autocomplete="tel" required placeholder="(555) 555-5555">
+                    </div>
+                    <div class="form-checkbox">
+                        <input type="checkbox" id="sms-consent" name="sms_consent" value="yes" required>
+                        <label for="sms-consent">By checking this box, I agree to receive transactional or informational text messages from Insider Accident Lawyers. Message frequency varies. Message and data rates may apply. Reply HELP for help or STOP to opt out.</label>
+                    </div>
+                    <button type="submit" class="btn btn-secondary btn-block" style="margin-top:1.25rem;">Send</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer">
+        <div class="container">
+            <p style="margin-bottom:12px;"><strong>Insider Accident Lawyers</strong> · <a href="tel:844-467-4335" data-callrail-phone="844-467-4335">844-467-4335</a></p>
+            <p>This website is attorney advertising. Prior results do not guarantee a similar outcome. The information here is general. It is not legal advice. Reading this site does not form an attorney-client relationship.</p>
+        </div>
+    </footer>
+</body>
+</html>
