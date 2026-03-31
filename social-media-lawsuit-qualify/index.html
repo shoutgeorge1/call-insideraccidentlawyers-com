@@ -851,7 +851,8 @@
                                 <label class="option"><input type="radio" name="age" value="Under 13"><span>Under 13</span></label>
                                 <label class="option"><input type="radio" name="age" value="13–15"><span>13–15</span></label>
                                 <label class="option"><input type="radio" name="age" value="16–17"><span>16–17</span></label>
-                                <label class="option"><input type="radio" name="age" value="18+"><span>18+</span></label>
+                                <label class="option"><input type="radio" name="age" value="18–20"><span>18–20</span></label>
+                                <label class="option"><input type="radio" name="age" value="21+"><span>21+</span></label>
                             </div>
                         </div>
 
@@ -1072,20 +1073,26 @@
                     }
                 });
 
+                var age = getRadioValue('age');
                 var qualified = symptoms.length >= 2 && severityYesCount >= 1 && platforms.length >= 1;
+
+                if (age === '21+') {
+                    qualified = false;
+                }
 
                 quizForm.style.display = 'none';
                 logEvent('quiz_complete', {
                     symptoms: symptoms.length,
                     severity_yes: severityYesCount,
                     platforms: platforms.length,
+                    age: age,
                     qualified: qualified
                 });
 
                 if (qualified) {
                     qualifiedResult.classList.add('active');
                     logEvent('qualified_user', {
-                        age: getRadioValue('age'),
+                        age: age,
                         platforms: platforms,
                         symptoms: symptoms
                     });
@@ -1093,6 +1100,12 @@
                         window.location.href = '../social-media-lawsuit-qualified/index.html';
                     }, 1200);
                 } else {
+                    if (age === '21+') {
+                        var nonQualifiedMessage = unqualifiedResult.querySelector('p');
+                        if (nonQualifiedMessage) {
+                            nonQualifiedMessage.textContent = 'We can still review your situation, but some cases may be limited based on timing.';
+                        }
+                    }
                     unqualifiedResult.classList.add('active');
                     setTimeout(function () {
                         window.location.href = '../social-media-lawsuit-not-qualified/index.html';
