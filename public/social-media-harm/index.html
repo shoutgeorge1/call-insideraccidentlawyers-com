@@ -3,9 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Worried about your child and social media? Free, confidential talk with a lawyer. Call Insider Accident Lawyers.">
-    <title>Social Media & Your Child | Free Confidential Talk | Insider Accident Lawyers</title>
+    <meta name="description" content="Worried about your child, social media, and mental health? Free, confidential parent consult. Call now — no obligation. Insider Accident Lawyers.">
+    <title>Social Media & Your Child’s Mental Health | Free Parent Consultation | Insider Accident Lawyers</title>
     <link rel="canonical" href="https://call.insideraccidentlawyers.com/social-media-harm">
+    <meta property="og:title" content="Social Media & Your Child’s Mental Health | Free Parent Consultation | Insider Accident Lawyers">
+    <meta property="og:description" content="Free, confidential consult for parents. Worried about phones, mood, and apps? Call Insider Accident Lawyers — no obligation.">
+    <meta property="og:url" content="https://call.insideraccidentlawyers.com/social-media-harm">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://call.insideraccidentlawyers.com/images/social-media-harm/hero-teen-phone-night.png">
+    <link rel="preload" href="/images/social-media-harm/hero-teen-phone-night.png" as="image" fetchpriority="high">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -29,7 +35,7 @@
             scroll-padding-top: 132px;
         }
         @media (max-width: 768px) {
-            html { scroll-padding-top: 142px; }
+            html { scroll-padding-top: 96px; }
         }
         body {
             font-family: "Inter", system-ui, sans-serif;
@@ -37,6 +43,11 @@
             line-height: 1.65;
             color: var(--gray-900);
             background: var(--white);
+        }
+        @media (max-width: 768px) {
+            body.ppc-mobile-pad {
+                padding-bottom: calc(104px + env(safe-area-inset-bottom, 0px));
+            }
         }
         @media (max-width: 768px) { body { font-size: 18px; } }
         .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
@@ -231,9 +242,9 @@
             .header-main {
                 display: grid;
                 grid-template-columns: 1fr auto;
-                grid-template-rows: auto auto auto;
-                gap: 10px 12px;
-                padding: 12px 0 14px;
+                grid-template-rows: auto auto;
+                gap: 8px 12px;
+                padding: 10px 0 12px;
                 align-items: center;
             }
             .header-brand {
@@ -247,25 +258,11 @@
                 grid-row: 1;
             }
             .header-actions {
-                grid-column: 1 / -1;
-                grid-row: 2;
-                display: flex;
-                flex-direction: column;
-                align-items: stretch;
-                gap: 8px;
-                width: 100%;
-            }
-            .header-phone-link {
                 display: none;
-            }
-            .header-actions .btn-header {
-                width: 100%;
-                padding: 14px 20px !important;
-                font-size: 1rem !important;
             }
             .header-nav {
                 grid-column: 1 / -1;
-                grid-row: 3;
+                grid-row: 2;
                 display: none;
                 flex-direction: column;
                 align-items: stretch;
@@ -275,7 +272,7 @@
                 margin: 0;
                 border-top: 1px solid var(--border);
                 padding-top: 6px;
-                margin-top: 2px;
+                margin-top: 4px;
             }
             .header-nav.is-open {
                 display: flex;
@@ -319,6 +316,9 @@
             align-items: flex-end;
             color: var(--white);
         }
+        @media (max-width: 768px) {
+            .hero { min-height: 360px; }
+        }
         .hero__media {
             position: absolute; inset: 0;
             background: #0c2334;
@@ -351,6 +351,10 @@
             text-shadow: 0 2px 12px rgba(0,0,0,0.35);
         }
         .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 1rem; }
+        @media (max-width: 768px) {
+            .cta-row--ppc-hero { flex-direction: column; align-items: stretch; }
+            .cta-row--ppc-hero .btn { width: 100%; text-align: center; }
+        }
         .hero-note {
             font-size: 0.95rem;
             color: rgba(255,255,255,0.85);
@@ -496,6 +500,77 @@
             color: var(--gray-500);
             font-weight: 600;
         }
+        .ppc-mobile-cta {
+            display: none;
+        }
+        @media (max-width: 768px) {
+            .ppc-mobile-cta {
+                display: flex;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 8px;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                z-index: 95;
+                padding: 12px 16px calc(12px + env(safe-area-inset-bottom, 0px));
+                background: rgba(255, 255, 255, 0.98);
+                border-top: 1px solid var(--border);
+                box-shadow: 0 -10px 30px rgba(12, 35, 52, 0.14);
+                transition: transform 0.28s ease, opacity 0.22s ease, visibility 0.28s;
+            }
+            .ppc-mobile-cta.ppc-mobile-cta--hidden {
+                transform: translateY(110%);
+                opacity: 0;
+                visibility: hidden;
+                pointer-events: none;
+            }
+            .ppc-mobile-cta__call {
+                display: block;
+                width: 100%;
+                padding: 15px 20px !important;
+                font-size: 1.05rem !important;
+            }
+            .ppc-mobile-cta__form {
+                text-align: center;
+                font-size: 0.9rem;
+                font-weight: 600;
+                color: var(--blue);
+                text-decoration: none;
+                padding: 10px 12px;
+                min-height: 44px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .ppc-mobile-cta__form:visited { color: var(--blue); }
+            .ppc-mobile-cta__sub {
+                text-align: center;
+                font-size: 0.75rem;
+                color: var(--gray-500);
+                margin: 0;
+                line-height: 1.35;
+            }
+        }
+        @media print {
+            .ppc-mobile-cta { display: none !important; }
+            body.ppc-mobile-pad { padding-bottom: 0 !important; }
+        }
+        .ppc-text-link {
+            display: inline-block;
+            margin-top: 0.75rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--blue);
+            text-decoration: none;
+        }
+        .ppc-text-link:visited { color: var(--blue); }
+        .ppc-text-link:focus-visible {
+            outline: 2px solid var(--blue);
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
     </style>
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -583,6 +658,32 @@
             setTimeout(function() {
                 if (typeof dataLayer !== 'undefined') dataLayer.push({ event: 'engaged_30s' });
             }, 30000);
+            var mobileCta = document.getElementById('ppc-mobile-cta');
+            var parentFormSection = document.getElementById('parent-form');
+            function syncPpcMobilePad() {
+                document.body.classList.remove('ppc-mobile-pad');
+                if (!mobileCta || !window.matchMedia('(max-width: 768px)').matches) return;
+                if (!mobileCta.classList.contains('ppc-mobile-cta--hidden')) {
+                    document.body.classList.add('ppc-mobile-pad');
+                }
+            }
+            if (mobileCta && parentFormSection && 'IntersectionObserver' in window) {
+                var io = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            mobileCta.classList.add('ppc-mobile-cta--hidden');
+                        } else {
+                            mobileCta.classList.remove('ppc-mobile-cta--hidden');
+                        }
+                        syncPpcMobilePad();
+                    });
+                }, { root: null, rootMargin: '0px 0px -12% 0px', threshold: 0 });
+                io.observe(parentFormSection);
+            }
+            syncPpcMobilePad();
+            window.addEventListener('resize', function() {
+                syncPpcMobilePad();
+            });
         });
     </script>
 </head>
@@ -621,18 +722,18 @@
     <!-- [HERO IMAGE – teen phone at night] -->
     <section class="hero" aria-label="Introduction">
         <div class="hero__media">
-            <img src="/images/social-media-harm/hero-teen-phone-night.png" alt="Teenager on a phone at night while a parent stands in the doorway, concerned" width="1200" height="800" fetchpriority="high">
+            <img src="/images/social-media-harm/hero-teen-phone-night.png" alt="Teenager on a phone at night while a parent stands in the doorway, concerned" width="1200" height="800" fetchpriority="high" decoding="async" sizes="100vw">
             <div class="hero__gradient" aria-hidden="true"></div>
         </div>
         <div class="hero__content">
             <div class="container">
                 <h1>Worried About Your Child and <span class="accent">Social Media?</span> You’re Not Overreacting.</h1>
                 <p class="lead">Many parents see the same signs: late nights on the phone, mood swings, pulling away. If that sounds familiar, you deserve straight answers — starting with a phone call.</p>
-                <div class="cta-row">
-                    <a href="tel:844-467-4335" class="btn btn-primary" data-callrail-phone="844-467-4335">Call now</a>
-                    <a href="#eligibility" class="btn btn-secondary">Check if we can help</a>
+                <div class="cta-row cta-row--ppc-hero">
+                    <a href="tel:844-467-4335" class="btn btn-primary" data-callrail-phone="844-467-4335">Call now — free consult</a>
+                    <a href="#eligibility" class="btn btn-secondary">See if your family fits</a>
                 </div>
-                <p class="hero-note">Free talk. Confidential. No pressure.</p>
+                <p class="hero-note">Free talk · Confidential · No pressure</p>
             </div>
         </div>
     </section>
@@ -651,7 +752,7 @@
             <div>
                 <!-- [PARENT CONCERN IMAGE] -->
                 <figure style="margin:0;">
-                    <img src="/images/social-media-harm/parent-concern.png" alt="Parent watching a child absorbed in a phone" width="600" height="600" loading="lazy">
+                    <img src="/images/social-media-harm/parent-concern.png" alt="Parent watching a child absorbed in a phone" width="600" height="600" loading="lazy" decoding="async">
                     <figcaption class="visually-hidden">Parent concern — child focused on phone</figcaption>
                     <span class="caption-tag" aria-hidden="true">Parent concern</span>
                 </figure>
@@ -683,7 +784,7 @@
             <div>
                 <!-- [ISOLATION IMAGE] -->
                 <figure style="margin:0;">
-                    <img src="/images/social-media-harm/isolation.png" alt="Teen sitting alone, overwhelmed, with social notification graphics nearby" width="600" height="600" loading="lazy">
+                    <img src="/images/social-media-harm/isolation.png" alt="Teen sitting alone, overwhelmed, with social notification graphics nearby" width="600" height="600" loading="lazy" decoding="async">
                     <span class="caption-tag" aria-hidden="true">Isolation &amp; pressure</span>
                 </figure>
             </div>
@@ -711,6 +812,7 @@
                 </ul>
                 <p>The only way to know whether we can help <em>your</em> situation is to call.</p>
                 <a href="tel:844-467-4335" class="btn btn-primary" data-callrail-phone="844-467-4335">Call 844-467-4335</a>
+                <a href="#parent-form" class="ppc-text-link">Prefer to send a short message instead?</a>
             </div>
         </div>
     </section>
@@ -747,6 +849,7 @@
                 <form action="https://formsubmit.co/ial.leads.2024@gmail.com" method="POST" id="social-media-parent-form">
                     <input type="hidden" name="_next" value="https://call.insideraccidentlawyers.com/thank-you.html">
                     <input type="hidden" name="_subject" value="Social media harm — parent inquiry">
+                    <input type="hidden" name="_captcha" value="false">
                     <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
                     <div class="form-group">
                         <label class="form-label" for="relationship">Your relationship to the child</label>
@@ -871,6 +974,12 @@
             </div>
         </div>
     </section>
+
+    <div class="ppc-mobile-cta" id="ppc-mobile-cta" role="region" aria-label="Call Insider Accident Lawyers">
+        <a href="tel:844-467-4335" class="btn btn-primary ppc-mobile-cta__call" data-callrail-phone="844-467-4335">Call now — 844-467-4335</a>
+        <a href="#parent-form" class="ppc-mobile-cta__form">Send a message instead</a>
+        <p class="ppc-mobile-cta__sub">Free consult · Confidential</p>
+    </div>
 
     <footer id="footer">
         <div class="container">
