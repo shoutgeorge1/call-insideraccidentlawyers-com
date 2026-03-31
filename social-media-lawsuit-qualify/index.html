@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Has social media changed your child for the worse? Take this quick quiz to see if your family may qualify.">
+    <title>Has Social Media Changed Your Child? | Check If You May Qualify Now</title>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WS8XT5FC');</script>
+    <!-- End Google Tag Manager -->
+    <script type="text/javascript" src="//cdn.callrail.com/companies/328698587/a8e768ec751936e4d680/12/swap.js"></script>
+    <style>
+        :root {
+            --navy: #0f2740;
+            --blue: #1b5fa7;
+            --light-blue: #eef5fc;
+            --text: #1f2937;
+            --muted: #6b7280;
+            --border: #dbe4ee;
+            --white: #ffffff;
+            --yellow: #f5c242;
+            --gold: #e2a313;
+            --green: #0f8a4b;
+            --red: #b42318;
+            --shadow: 0 14px 34px rgba(15, 39, 64, 0.12);
+            --shadow-strong: 0 18px 38px rgba(15, 39, 64, 0.18);
+            --radius: 16px;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f7f9fc;
+            color: var(--text);
+            line-height: 1.55;
+        }
+        @media (max-width: 768px) {
+            body {
+                padding-bottom: 92px;
+            }
+        }
+        .container {
+            width: min(100%, 1080px);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .hero {
+            background: linear-gradient(180deg, var(--navy), #183b5e);
+            color: var(--white);
+            padding: 48px 0 32px;
+        }
+        .eyebrow {
+            display: inline-block;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--yellow);
+            margin-bottom: 14px;
+        }
+        h1 {
+            font-size: clamp(32px, 5vw, 52px);
+            line-height: 1.08;
+            margin-bottom: 14px;
+            max-width: 760px;
+        }
+        .hero p {
+            font-size: clamp(18px, 2.4vw, 22px);
+            max-width: 760px;
+            color: rgba(255, 255, 255, 0.92);
+        }
+        .hero-actions {
+            margin-top: 20px;
+        }
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 52px;
+            padding: 14px 22px;
+            border-radius: 12px;
+            background: linear-gradient(180deg, #f7d563 0%, var(--yellow) 45%, var(--gold) 100%);
+            color: var(--navy);
+            text-decoration: none;
+            font-weight: 700;
+            border: 0;
+            cursor: pointer;
+            font-size: 17px;
+            width: 100%;
+            max-width: 300px;
+            box-shadow: 0 10px 24px rgba(226, 163, 19, 0.32);
+            transition: transform 0.18s ease, box-shadow 0.18s ease;
+        }
+        .button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 14px 28px rgba(226, 163, 19, 0.38);
+        }
+        .button-secondary {
+            background: var(--blue);
+            color: var(--white);
+            box-shadow: 0 10px 24px rgba(27, 95, 167, 0.22);
+        }
+        .section {
+            padding: 20px 0 72px;
+        }
+        .trust-row {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 12px;
+            margin-top: -22px;
+            margin-bottom: 24px;
+        }
+        .trust-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 14px;
+            box-shadow: var(--shadow);
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--navy);
+            text-align: center;
+            line-height: 1.3;
+        }
+        .layout {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 28px;
+            align-items: start;
+        }
+        .hero-layout {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        .hero-visual {
+            position: relative;
+            border-radius: 22px;
+            overflow: hidden;
+            box-shadow: var(--shadow-strong);
+            aspect-ratio: 4 / 5;
+            background: #0d1624;
+        }
+        .hero-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .hero-visual::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(15, 39, 64, 0.18) 0%, rgba(15, 39, 64, 0.34) 48%, rgba(15, 39, 64, 0.62) 100%);
+        }
+        .hero-overlay {
+            position: absolute;
+            left: 18px;
+            right: 18px;
+            bottom: 18px;
+            z-index: 1;
+            font-size: clamp(24px, 4.8vw, 40px);
+            line-height: 1.08;
+            font-weight: 800;
+            color: var(--white);
+            text-shadow: 0 4px 16px rgba(0, 0, 0, 0.34);
+            max-width: 420px;
+        }
+        .microcopy {
+            margin-top: 12px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 14px;
+            font-weight: 700;
+        }
+        .story-block {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+            margin: 20px 0 26px;
+        }
+        .story-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+        .story-card img {
+            width: 100%;
+            display: block;
+            aspect-ratio: 16 / 10;
+            object-fit: cover;
+        }
+        .story-caption {
+            padding: 16px 18px 18px;
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--navy);
+        }
+        .pre-quiz {
+            margin-bottom: 26px;
+        }
+        .pre-quiz h2 {
+            font-size: clamp(28px, 4vw, 40px);
+            color: var(--navy);
+            line-height: 1.1;
+            margin-bottom: 14px;
+        }
+        .pre-quiz-wrap {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 18px;
+        }
+        .pre-quiz-list {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            box-shadow: var(--shadow);
+            padding: 22px;
+        }
+        .pre-quiz-list ul {
+            list-style: none;
+            display: grid;
+            gap: 14px;
+        }
+        .pre-quiz-list li {
+            position: relative;
+            padding-left: 32px;
+            font-size: 19px;
+            font-weight: 700;
+            color: var(--text);
+        }
+        .pre-quiz-list li::before {
+            content: "•";
+            position: absolute;
+            left: 8px;
+            top: -1px;
+            color: var(--blue);
+            font-size: 28px;
+            line-height: 1;
+        }
+        .image-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+        .image-grid img {
+            width: 100%;
+            display: block;
+            border-radius: 14px;
+            aspect-ratio: 16 / 10;
+            object-fit: cover;
+            box-shadow: var(--shadow);
+        }
+        .card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 26px;
+        }
+        .quiz-card {
+            background: linear-gradient(180deg, #11283f 0%, #0c2135 100%);
+            border: 1px solid rgba(103, 157, 217, 0.22);
+            box-shadow: 0 18px 38px rgba(15, 39, 64, 0.26);
+        }
+        .quiz-card h2,
+        .quiz-card h3,
+        .quiz-card .quiz-brand-note,
+        .quiz-card .lead,
+        .quiz-card .step-copy,
+        .quiz-card .tap-note {
+            color: var(--white);
+        }
+        .quiz-card .quiz-brand {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        }
+        .quiz-card .quiz-kicker {
+            background: rgba(255, 255, 255, 0.1);
+            color: #b8d9ff;
+        }
+        .quiz-card .step-pill {
+            background: rgba(255, 255, 255, 0.1);
+            color: #cdd9e6;
+        }
+        .quiz-card .step-pill.active {
+            background: linear-gradient(180deg, #f7d563 0%, var(--yellow) 50%, var(--gold) 100%);
+            color: var(--navy);
+        }
+        .quiz-card .option span {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(255, 255, 255, 0.14);
+            color: var(--white);
+        }
+        .quiz-card .option input:checked + span {
+            border-color: #8cc4ff;
+            background: rgba(71, 142, 218, 0.18);
+            color: var(--white);
+        }
+        .quiz-card .helper {
+            color: #ffb4ab;
+        }
+        .quiz-card .button-ghost {
+            background: rgba(255, 255, 255, 0.12);
+            color: var(--white);
+        }
+        .quiz-card .mini-form label {
+            color: var(--white);
+        }
+        .quiz-card .mini-form input {
+            background: rgba(255, 255, 255, 0.96);
+        }
+        .quiz-brand {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin: -4px 0 16px;
+            padding-bottom: 14px;
+            border-bottom: 1px solid var(--border);
+        }
+        .quiz-brand-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            border-radius: 999px;
+            background: linear-gradient(180deg, #eef6ff 0%, #e5f0fb 100%);
+            color: var(--blue);
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+        .quiz-brand-note {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--muted);
+        }
+        .card h2 {
+            color: var(--navy);
+            font-size: clamp(24px, 3vw, 34px);
+            line-height: 1.15;
+            margin-bottom: 10px;
+        }
+        .card p.lead {
+            color: var(--muted);
+            margin-bottom: 20px;
+            font-size: 17px;
+        }
+        .quiz-kicker {
+            display: inline-block;
+            margin-bottom: 10px;
+            padding: 7px 12px;
+            border-radius: 999px;
+            background: var(--light-blue);
+            color: var(--blue);
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+        }
+        .step-indicator {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        .step-pill {
+            padding: 8px 12px;
+            border-radius: 999px;
+            background: #edf2f7;
+            color: var(--muted);
+            font-size: 13px;
+            font-weight: 700;
+        }
+        .step-pill.active {
+            background: var(--navy);
+            color: var(--white);
+        }
+        .step {
+            display: none;
+        }
+        .step.active {
+            display: block;
+        }
+        .step h3 {
+            font-size: 24px;
+            color: var(--navy);
+            margin-bottom: 8px;
+        }
+        .step-copy {
+            color: var(--muted);
+            margin-bottom: 18px;
+            font-size: 15px;
+        }
+        .tap-note {
+            margin-top: -6px;
+            margin-bottom: 16px;
+            font-size: 14px;
+            color: var(--blue);
+            font-weight: 700;
+        }
+        .option-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+            margin-bottom: 18px;
+        }
+        .option {
+            position: relative;
+        }
+        .option input {
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+        }
+        .option span {
+            display: flex;
+            align-items: center;
+            min-height: 60px;
+            padding: 14px 16px;
+            border: 2px solid var(--border);
+            border-radius: 14px;
+            background: var(--white);
+            font-weight: 700;
+            color: var(--text);
+            transition: 0.18s ease;
+        }
+        .option input:checked + span {
+            border-color: var(--blue);
+            background: var(--light-blue);
+            color: var(--navy);
+        }
+        .option.yes-no span {
+            justify-content: center;
+        }
+        .actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+        .actions .button {
+            max-width: none;
+            flex: 1 1 180px;
+        }
+        .button-ghost {
+            background: #eef2f7;
+            color: var(--navy);
+            box-shadow: none;
+        }
+        .helper {
+            color: var(--red);
+            font-size: 14px;
+            margin-top: 10px;
+            min-height: 20px;
+        }
+        .result {
+            display: none;
+            margin-top: 20px;
+        }
+        .result.active {
+            display: block;
+        }
+        .result-box {
+            border-radius: 16px;
+            padding: 22px;
+        }
+        .result-qualified {
+            background: #ecfdf3;
+            border: 1px solid #b7ebc9;
+        }
+        .result-unqualified {
+            background: #fffaf0;
+            border: 1px solid #f2d7a1;
+        }
+        .result-box h3 {
+            font-size: 28px;
+            line-height: 1.15;
+            margin-bottom: 10px;
+        }
+        .result-qualified h3 {
+            color: var(--green);
+        }
+        .result-unqualified h3 {
+            color: var(--navy);
+        }
+        .mini-form {
+            margin-top: 18px;
+            display: grid;
+            gap: 12px;
+        }
+        .mini-form label {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 6px;
+            display: block;
+        }
+        .mini-form input {
+            width: 100%;
+            min-height: 50px;
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 12px 14px;
+            font-size: 16px;
+        }
+        .mini-form input:focus {
+            outline: none;
+            border-color: var(--blue);
+        }
+        .benefits {
+            display: grid;
+            gap: 16px;
+        }
+        .benefit {
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            background: #fbfdff;
+            padding: 18px;
+        }
+        .benefit h3 {
+            color: var(--navy);
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+        .benefit p {
+            color: var(--muted);
+            font-size: 15px;
+        }
+        .note {
+            margin-top: 18px;
+            color: var(--muted);
+            font-size: 14px;
+        }
+        .bottom-cta {
+            margin: 18px 0 40px;
+        }
+        .bottom-cta-card {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #132c45 0%, #1b5fa7 100%);
+            color: var(--white);
+            border-radius: 22px;
+            padding: 28px 22px;
+            box-shadow: var(--shadow-strong);
+            text-align: center;
+        }
+        .bottom-cta-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at top right, rgba(255,255,255,0.16), transparent 36%);
+            pointer-events: none;
+        }
+        .stop-sign {
+            position: relative;
+            width: 78px;
+            height: 78px;
+            margin: 0 auto 16px;
+            background: #d92d20;
+            clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            font-size: 15px;
+            box-shadow: 0 0 0 0 rgba(217, 45, 32, 0.48);
+            animation: pulseStop 1.8s ease-out infinite;
+        }
+        @keyframes pulseStop {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(217, 45, 32, 0.44);
+            }
+            70% {
+                transform: scale(1.03);
+                box-shadow: 0 0 0 18px rgba(217, 45, 32, 0);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(217, 45, 32, 0);
+            }
+        }
+        .bottom-cta-card h2 {
+            color: var(--white);
+            font-size: clamp(28px, 4vw, 40px);
+            line-height: 1.08;
+            margin-bottom: 10px;
+        }
+        .bottom-cta-copy {
+            color: rgba(255, 255, 255, 0.92);
+            font-size: 17px;
+            max-width: 640px;
+            margin: 0 auto 18px;
+        }
+        .bottom-cta-actions {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .footer {
+            background: #0b1724;
+            color: rgba(255, 255, 255, 0.74);
+            padding: 34px 0 120px;
+        }
+        .footer strong,
+        .footer a {
+            color: var(--white);
+        }
+        .footer a {
+            text-decoration: none;
+        }
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 18px;
+        }
+        .footer-title {
+            font-size: 18px;
+            font-weight: 800;
+        }
+        .footer-links {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            font-size: 14px;
+        }
+        .footer-copy {
+            font-size: 13px;
+            line-height: 1.65;
+            max-width: 900px;
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(18px);
+            animation: fadeInUp 0.55s ease forwards;
+        }
+        .fade-in.delay-1 { animation-delay: 0.08s; }
+        .fade-in.delay-2 { animation-delay: 0.16s; }
+        .fade-in.delay-3 { animation-delay: 0.24s; }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .sticky-mobile-bar {
+            display: none;
+        }
+        @media (max-width: 900px) {
+            .pre-quiz-wrap {
+                grid-template-columns: 1fr;
+            }
+            .layout {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (max-width: 640px) {
+            .hero {
+                padding: 38px 0 26px;
+            }
+            .trust-row {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                margin-top: -12px;
+                gap: 10px;
+            }
+            .trust-card:last-child {
+                grid-column: 1 / -1;
+            }
+            .card {
+                padding: 20px;
+            }
+            .quiz-brand {
+                align-items: flex-start;
+                gap: 8px;
+                margin-bottom: 14px;
+            }
+            .option-grid {
+                grid-template-columns: 1fr;
+            }
+            .actions {
+                flex-direction: column;
+            }
+            .actions .button {
+                flex: initial;
+            }
+            .hero-overlay {
+                left: 14px;
+                right: 14px;
+                bottom: 14px;
+            }
+            .story-caption {
+                font-size: 16px;
+            }
+            .sticky-mobile-bar {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+                position: fixed;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 20;
+                background: rgba(255, 255, 255, 0.97);
+                border-top: 1px solid var(--border);
+                box-shadow: 0 -10px 28px rgba(15, 39, 64, 0.14);
+                padding: 12px 14px calc(12px + env(safe-area-inset-bottom, 0px));
+                transition: transform 0.22s ease, opacity 0.22s ease;
+            }
+            .sticky-mobile-bar.is-hidden {
+                transform: translateY(100%);
+                opacity: 0;
+                pointer-events: none;
+            }
+            .sticky-mobile-bar .button {
+                max-width: none;
+                min-height: 50px;
+                font-size: 15px;
+                padding: 12px 12px;
+            }
+            #next-btn,
+            #prev-btn {
+                min-height: 46px;
+                padding: 11px 16px;
+                font-size: 15px;
+                border-radius: 10px;
+            }
+            .bottom-cta-actions {
+                flex-direction: column;
+            }
+            .bottom-cta-actions .button {
+                max-width: none;
+            }
+            .footer {
+                padding-bottom: 116px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WS8XT5FC"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <header class="hero">
+        <div class="container">
+            <div class="hero-layout">
+                <div class="fade-in">
+                    <span class="eyebrow">Social Media Harm Claims</span>
+                    <h1>Has Social Media Changed Your Child… For The Worse?</h1>
+                    <p>Families are now filing lawsuits against platforms like Instagram and TikTok.</p>
+                    <div class="hero-actions">
+                        <a href="#quiz" class="button">Check If You May Qualify Now</a>
+                    </div>
+                    <div class="microcopy">Takes less than 30 seconds · Confidential</div>
+                </div>
+                <div class="hero-visual fade-in delay-1">
+                    <img src="../images/social-media-lawsuit-qualify/hero-parent-night-watch-large.png" alt="Teen girl on her phone at night while her mother looks on from the doorway" fetchpriority="high" sizes="100vw">
+                    <div class="hero-overlay">Has Social Media Changed Your Child?</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="section">
+        <div class="container">
+            <div class="trust-row">
+                <div class="trust-card">4 Quick Questions</div>
+                <div class="trust-card">100% Confidential</div>
+                <div class="trust-card">See If You May Qualify</div>
+            </div>
+
+            <div class="layout">
+                <section class="card quiz-card" id="quiz">
+                    <div class="quiz-brand">
+                        <div class="quiz-brand-badge">Eligibility Screening Quiz</div>
+                        <div class="quiz-brand-note">4 steps · takes under 30 seconds</div>
+                    </div>
+                    <div class="quiz-kicker">Quick Screening Quiz</div>
+                    <h2>Let’s Start With What You’ve Noticed</h2>
+                    <p class="lead">Answer a few short questions. If your responses fit the claim criteria, you will be sent to the next step automatically.</p>
+                    <div class="tap-note">Tap the answers that fit best, then continue.</div>
+
+                    <div class="step-indicator" aria-hidden="true">
+                        <span class="step-pill active" data-pill="0">1. Symptoms</span>
+                        <span class="step-pill" data-pill="1">2. Severity</span>
+                        <span class="step-pill" data-pill="2">3. Platform</span>
+                        <span class="step-pill" data-pill="3">4. Age</span>
+                    </div>
+
+                    <form id="quiz-form" novalidate>
+                        <div class="step active" data-step="0">
+                            <h3>Which symptoms have you noticed?</h3>
+                            <p class="step-copy">Select all that apply.</p>
+                            <div class="option-grid">
+                                <label class="option"><input type="checkbox" name="symptoms" value="Depression or anxiety"><span>Depression or anxiety</span></label>
+                                <label class="option"><input type="checkbox" name="symptoms" value="Trouble sleeping"><span>Trouble sleeping</span></label>
+                                <label class="option"><input type="checkbox" name="symptoms" value="Irritable behavior"><span>Irritable behavior</span></label>
+                                <label class="option"><input type="checkbox" name="symptoms" value="Isolation"><span>Isolation</span></label>
+                                <label class="option"><input type="checkbox" name="symptoms" value="Drop in grades"><span>Drop in grades</span></label>
+                                <label class="option"><input type="checkbox" name="symptoms" value="Loss of interest"><span>Loss of interest</span></label>
+                                <label class="option"><input type="checkbox" name="symptoms" value="Excessive phone use"><span>Excessive phone use</span></label>
+                                <label class="option"><input type="checkbox" name="symptoms" value="Self-harm thoughts"><span>Self-harm thoughts</span></label>
+                                <label class="option"><input type="checkbox" name="symptoms" value="Eating issues"><span>Eating issues</span></label>
+                            </div>
+                        </div>
+
+                        <div class="step" data-step="1">
+                            <h3>How serious has it been?</h3>
+                            <p class="step-copy">Choose yes or no for each.</p>
+                            <div class="option-grid">
+                                <label class="option yes-no"><input type="radio" name="severity_months" value="yes"><span>Lasted more than a few months: Yes</span></label>
+                                <label class="option yes-no"><input type="radio" name="severity_months" value="no"><span>Lasted more than a few months: No</span></label>
+                                <label class="option yes-no"><input type="radio" name="severity_daily" value="yes"><span>Impacted daily life: Yes</span></label>
+                                <label class="option yes-no"><input type="radio" name="severity_daily" value="no"><span>Impacted daily life: No</span></label>
+                                <label class="option yes-no"><input type="radio" name="severity_therapy" value="yes"><span>Needed therapy: Yes</span></label>
+                                <label class="option yes-no"><input type="radio" name="severity_therapy" value="no"><span>Needed therapy: No</span></label>
+                            </div>
+                        </div>
+
+                        <div class="step" data-step="2">
+                            <h3>Which platforms were involved?</h3>
+                            <p class="step-copy">Select all that apply.</p>
+                            <div class="option-grid">
+                                <label class="option"><input type="checkbox" name="platforms" value="Instagram"><span>Instagram</span></label>
+                                <label class="option"><input type="checkbox" name="platforms" value="TikTok"><span>TikTok</span></label>
+                                <label class="option"><input type="checkbox" name="platforms" value="YouTube"><span>YouTube</span></label>
+                                <label class="option"><input type="checkbox" name="platforms" value="Snapchat"><span>Snapchat</span></label>
+                            </div>
+                        </div>
+
+                        <div class="step" data-step="3">
+                            <h3>How old is the child?</h3>
+                            <p class="step-copy">Choose one.</p>
+                            <div class="option-grid">
+                                <label class="option"><input type="radio" name="age" value="Under 13"><span>Under 13</span></label>
+                                <label class="option"><input type="radio" name="age" value="13–15"><span>13–15</span></label>
+                                <label class="option"><input type="radio" name="age" value="16–17"><span>16–17</span></label>
+                                <label class="option"><input type="radio" name="age" value="18+"><span>18+</span></label>
+                            </div>
+                        </div>
+
+                        <div class="helper" id="quiz-helper" aria-live="polite"></div>
+
+                        <div class="actions">
+                            <button type="button" class="button button-ghost" id="prev-btn" style="display:none;">Back</button>
+                            <button type="button" class="button" id="next-btn">Continue</button>
+                        </div>
+                    </form>
+
+                    <div class="result" id="qualified-result">
+                        <div class="result-box result-qualified">
+                            <h3>You May Qualify for a Social Media Harm Lawsuit</h3>
+                            <p>Next step: speak with someone or submit your case details.</p>
+                            <p>Please wait. You are being sent to the next page now.</p>
+                        </div>
+                    </div>
+
+                    <div class="result" id="unqualified-result">
+                        <div class="result-box result-unqualified">
+                            <h3>We Need a Little More Information</h3>
+                            <p>Based on these answers, you may not fit the current criteria. If you still want our team to review your situation, leave your contact details below.</p>
+                            <form class="mini-form" action="#" method="post">
+                                <div>
+                                    <label for="contact-name">Name</label>
+                                    <input id="contact-name" name="name" type="text" autocomplete="name">
+                                </div>
+                                <div>
+                                    <label for="contact-phone">Phone</label>
+                                    <input id="contact-phone" name="phone" type="tel" autocomplete="tel">
+                                </div>
+                                <div>
+                                    <label for="contact-email">Email</label>
+                                    <input id="contact-email" name="email" type="email" autocomplete="email">
+                                </div>
+                                <button type="submit" class="button button-secondary">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+
+                <aside class="card fade-in delay-1">
+                    <h2>Why This Matters</h2>
+                    <p class="lead">Lawsuits claim these platforms are designed to keep teens engaged longer than intended — sometimes leading to serious mental health effects.</p>
+                    <div class="benefits">
+                        <div class="benefit">
+                            <h3>Symptoms</h3>
+                            <p>Two or more signs tied to social media use, such as anxiety, sleep disruption, isolation, or self-harm thoughts.</p>
+                        </div>
+                        <div class="benefit">
+                            <h3>Severity</h3>
+                            <p>At least one sign that the issue became serious, such as lasting months, affecting daily life, or leading to therapy.</p>
+                        </div>
+                        <div class="benefit">
+                            <h3>Platform Use</h3>
+                            <p>At least one major platform selected: Instagram, TikTok, YouTube, or Snapchat.</p>
+                        </div>
+                    </div>
+                    <p class="note">This page uses qualification logic in plain JavaScript and logs quiz events to the browser console.</p>
+                </aside>
+            </div>
+
+            <div class="story-block">
+                <div class="story-card fade-in delay-2">
+                    <img src="../images/social-media-lawsuit-qualify/teen-phone-bed.png" alt="Teen lying in bed late at night looking at a phone" loading="lazy" sizes="100vw">
+                    <div class="story-caption">Many parents don’t realize how serious it has become until behavior starts to change.</div>
+                </div>
+            </div>
+
+            <section class="pre-quiz">
+                <div class="pre-quiz-wrap">
+                    <div class="pre-quiz-list fade-in">
+                        <h2>Does Any Of This Sound Familiar?</h2>
+                        <ul>
+                            <li>Staying up late on their phone</li>
+                            <li>Sudden anxiety or mood changes</li>
+                            <li>Withdrawal from friends or family</li>
+                            <li>Drop in grades</li>
+                            <li>Loss of interest in activities</li>
+                        </ul>
+                    </div>
+                    <div class="image-grid fade-in delay-1" aria-hidden="true">
+                        <img src="../images/social-media-lawsuit-qualify/study-exhausted.png" alt="Exhausted teen asleep at a desk" loading="lazy" sizes="(max-width: 640px) 50vw, 240px">
+                    </div>
+                </div>
+            </section>
+
+            <section class="bottom-cta">
+                <div class="bottom-cta-card fade-in delay-1">
+                    <div class="stop-sign" aria-hidden="true">STOP</div>
+                    <h2>Before You Leave, Take The 30-Second Quiz</h2>
+                    <p class="bottom-cta-copy">If social media may be affecting your child’s mood, sleep, or behavior, this quick filter can show whether your family may fit the current claim criteria.</p>
+                    <div class="bottom-cta-actions">
+                        <a href="#quiz" class="button">Take The Quiz Now</a>
+                        <a href="tel:844-467-4335" class="button button-secondary">Call Now</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div>
+                    <div class="footer-title">Insider Accident Lawyers</div>
+                    <div style="margin-top:8px;font-size:14px;">Questions? <a href="tel:844-467-4335">844-467-4335</a></div>
+                </div>
+                <div class="footer-links">
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms-conditions.html">Terms &amp; Conditions</a>
+                </div>
+            </div>
+            <p class="footer-copy">This website is attorney advertising. Prior results do not guarantee a similar outcome. The information on this site is for general information purposes only and is not legal advice. Viewing this page or submitting information does not create an attorney-client relationship. Case qualification depends on the facts of each situation.</p>
+        </div>
+    </footer>
+
+    <div class="sticky-mobile-bar" id="sticky-mobile-bar">
+        <a href="tel:844-467-4335" class="button button-secondary">Call Now</a>
+        <a href="#quiz" class="button">Take Quiz</a>
+    </div>
+
+    <script>
+        (function () {
+            window.dataLayer = window.dataLayer || [];
+            var currentStep = 0;
+            var steps = Array.prototype.slice.call(document.querySelectorAll('.step'));
+            var pills = Array.prototype.slice.call(document.querySelectorAll('.step-pill'));
+            var nextBtn = document.getElementById('next-btn');
+            var prevBtn = document.getElementById('prev-btn');
+            var helper = document.getElementById('quiz-helper');
+            var quizForm = document.getElementById('quiz-form');
+            var qualifiedResult = document.getElementById('qualified-result');
+            var unqualifiedResult = document.getElementById('unqualified-result');
+            var quizStarted = false;
+            var stickyBar = document.getElementById('sticky-mobile-bar');
+            var quizSection = document.getElementById('quiz');
+
+            function logEvent(name, data) {
+                if (typeof dataLayer !== 'undefined') {
+                    if (typeof data === 'undefined') {
+                        dataLayer.push({ event: name });
+                    } else {
+                        var eventData = { event: name };
+                        Object.keys(data).forEach(function (key) {
+                            eventData[key] = data[key];
+                        });
+                        dataLayer.push(eventData);
+                    }
+                }
+                if (typeof data === 'undefined') {
+                    console.log(name);
+                } else {
+                    console.log(name, data);
+                }
+            }
+
+            function getCheckedValues(name) {
+                return Array.prototype.slice.call(document.querySelectorAll('input[name="' + name + '"]:checked'))
+                    .map(function (item) { return item.value; });
+            }
+
+            function getRadioValue(name) {
+                var checked = document.querySelector('input[name="' + name + '"]:checked');
+                return checked ? checked.value : '';
+            }
+
+            function showStep(index) {
+                currentStep = index;
+                steps.forEach(function (step, i) {
+                    step.classList.toggle('active', i === index);
+                });
+                pills.forEach(function (pill, i) {
+                    pill.classList.toggle('active', i === index);
+                });
+                prevBtn.style.display = index === 0 ? 'none' : 'inline-flex';
+                nextBtn.textContent = index === steps.length - 1 ? 'See Results' : 'Continue';
+                helper.textContent = '';
+            }
+
+            function validateStep(index) {
+                if (index === 0) {
+                    if (getCheckedValues('symptoms').length === 0) {
+                        helper.textContent = 'Select at least one symptom to continue.';
+                        return false;
+                    }
+                }
+                if (index === 1) {
+                    if (!getRadioValue('severity_months') || !getRadioValue('severity_daily') || !getRadioValue('severity_therapy')) {
+                        helper.textContent = 'Answer all three severity questions to continue.';
+                        return false;
+                    }
+                }
+                if (index === 2) {
+                    if (getCheckedValues('platforms').length === 0) {
+                        helper.textContent = 'Select at least one platform to continue.';
+                        return false;
+                    }
+                }
+                if (index === 3) {
+                    if (!getRadioValue('age')) {
+                        helper.textContent = 'Choose an age range to continue.';
+                        return false;
+                    }
+                }
+                helper.textContent = '';
+                return true;
+            }
+
+            function finishQuiz() {
+                var symptoms = getCheckedValues('symptoms');
+                var platforms = getCheckedValues('platforms');
+                var severityYesCount = 0;
+                ['severity_months', 'severity_daily', 'severity_therapy'].forEach(function (name) {
+                    if (getRadioValue(name) === 'yes') {
+                        severityYesCount += 1;
+                    }
+                });
+
+                var qualified = symptoms.length >= 2 && severityYesCount >= 1 && platforms.length >= 1;
+
+                quizForm.style.display = 'none';
+                logEvent('quiz_complete', {
+                    symptoms: symptoms.length,
+                    severity_yes: severityYesCount,
+                    platforms: platforms.length,
+                    qualified: qualified
+                });
+
+                if (qualified) {
+                    qualifiedResult.classList.add('active');
+                    logEvent('qualified_user', {
+                        age: getRadioValue('age'),
+                        platforms: platforms,
+                        symptoms: symptoms
+                    });
+                    setTimeout(function () {
+                        window.location.href = '../social-media-lawsuit-qualified/index.html';
+                    }, 1200);
+                } else {
+                    unqualifiedResult.classList.add('active');
+                    setTimeout(function () {
+                        window.location.href = '../social-media-lawsuit-not-qualified/index.html';
+                    }, 1200);
+                }
+            }
+
+            document.querySelectorAll('a[href^="tel:"]').forEach(function (link) {
+                link.addEventListener('click', function () {
+                    logEvent('phone_click', {
+                        phone_number: this.getAttribute('href').replace('tel:', '')
+                    });
+                });
+            });
+
+            nextBtn.addEventListener('click', function () {
+                if (!quizStarted) {
+                    quizStarted = true;
+                    logEvent('quiz_start');
+                }
+
+                if (!validateStep(currentStep)) {
+                    return;
+                }
+
+                if (currentStep === steps.length - 1) {
+                    finishQuiz();
+                    return;
+                }
+
+                showStep(currentStep + 1);
+            });
+
+            prevBtn.addEventListener('click', function () {
+                if (currentStep > 0) {
+                    showStep(currentStep - 1);
+                }
+            });
+
+            document.querySelectorAll('#quiz-form input').forEach(function (field) {
+                field.addEventListener('focus', function handler() {
+                    logEvent('form_start', { form_name: 'social_media_quiz' });
+                    field.removeEventListener('focus', handler);
+                }, { once: true });
+            });
+
+            setTimeout(function () {
+                logEvent('engaged_30s');
+            }, 30000);
+
+            if (stickyBar && quizSection && 'IntersectionObserver' in window) {
+                var stickyObserver = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting && entry.intersectionRatio > 0.85) {
+                            stickyBar.classList.add('is-hidden');
+                        } else {
+                            stickyBar.classList.remove('is-hidden');
+                        }
+                    });
+                }, {
+                    threshold: [0, 0.85, 1]
+                });
+                stickyObserver.observe(quizSection);
+            }
+
+            showStep(0);
+        })();
+    </script>
+</body>
+</html>
