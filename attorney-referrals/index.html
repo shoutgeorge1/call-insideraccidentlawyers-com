@@ -166,29 +166,27 @@
             margin-bottom: 12px;
             letter-spacing: 0.02em;
         }
-        .hero-ig-frame {
+        .hero-video-frame {
             position: relative;
             width: 100%;
             max-width: 540px;
             margin: 0 auto 0 0;
             border-radius: var(--card-radius);
             overflow: hidden;
-            background: rgba(0,0,0,0.25);
+            background: rgba(0,0,0,0.35);
             border: 1px solid rgba(255,255,255,0.2);
-            min-height: 280px;
         }
         @media (max-width: 899px) {
-            .hero-ig-frame { margin-left: auto; margin-right: auto; max-width: 100%; }
+            .hero-video-frame { margin-left: auto; margin-right: auto; max-width: 100%; }
         }
-        .hero-ig-frame .instagram-media { margin: 0 !important; max-width: 100% !important; width: 100% !important; }
-        .hero-ig-placeholder {
-            padding: 28px 22px;
-            text-align: center;
-            color: rgba(255,255,255,0.88);
-            font-size: 15px;
-            line-height: 1.55;
+        .hero-video-frame video {
+            display: block;
+            width: 100%;
+            height: auto;
+            max-height: min(75vh, 560px);
+            object-fit: contain;
+            background: #000;
         }
-        .hero-ig-placeholder code { font-size: 12px; word-break: break-all; color: #ffbf00; }
         .hero .btn-secondary { background: rgba(255,255,255,0.12); border: 2px solid rgba(255,255,255,0.45); box-shadow: none; }
         .hero .btn-secondary:hover { background: rgba(255,255,255,0.2); }
         .hero-attorney-wrap { text-align: center; }
@@ -614,9 +612,6 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-WS8XT5FC');</script>
 
-    <!-- Instagram Reel (e.g. Shawn/Jin partnership video): paste full Reel URL, e.g. https://www.instagram.com/reel/SHORTCODE/ — leave '' to hide the hero video block -->
-    <script>window.IAL_INSTAGRAM_REEL_PERMALINK = '';</script>
-
     <script>
         window.dataLayer = window.dataLayer || [];
         document.addEventListener('DOMContentLoaded', function () {
@@ -711,6 +706,19 @@
                     });
                 }
             }, 30000);
+
+            var heroVid = document.querySelector('.hero-partnership-video');
+            if (heroVid) {
+                heroVid.addEventListener('play', function () {
+                    if (typeof dataLayer !== 'undefined') {
+                        dataLayer.push({
+                            event: 'hero_video_play',
+                            video_id: 'partnership_hero',
+                            page: 'attorney_referrals'
+                        });
+                    }
+                }, { once: true });
+            }
         });
     </script>
 </head>
@@ -746,8 +754,11 @@
                 </div>
                 <div class="hero-video-block">
                     <p class="hero-video-label">See how we partner with firms</p>
-                    <div class="hero-ig-frame">
-                        <div id="hero-ig-embed-root"></div>
+                    <div class="hero-video-frame">
+                        <video class="hero-partnership-video" controls playsinline preload="metadata" poster="../images/la/attorney-hero.webp" aria-label="Video: how Insider Accident Lawyers partners with referring firms">
+                            <source src="../videos/attorney-referrals/partnership-hero.mp4" type="video/mp4">
+                            Your browser does not support embedded video.
+                        </video>
                     </div>
                 </div>
                 <p class="hero-stats-line" style="font-size: 14px; opacity: 0.85; margin-top: 1.25rem;">Serving personal injury attorneys statewide — Los Angeles–based trial team.</p>
@@ -1098,33 +1109,6 @@
         bindStatSpin('hero-stats-spin');
         bindStatSpin('trust-strip-spin');
         bindStatSpin('proof-stats-spin');
-    })();
-    </script>
-    <script>
-    (function () {
-        var url = (typeof window.IAL_INSTAGRAM_REEL_PERMALINK === 'string') ? window.IAL_INSTAGRAM_REEL_PERMALINK.trim() : '';
-        var block = document.querySelector('.hero-video-block');
-        var root = document.getElementById('hero-ig-embed-root');
-        if (!url) {
-            if (block) block.style.display = 'none';
-            return;
-        }
-        if (!root) return;
-        var bq = document.createElement('blockquote');
-        bq.className = 'instagram-media';
-        bq.setAttribute('data-instgrm-permalink', url);
-        bq.setAttribute('data-instgrm-version', '14');
-        bq.setAttribute('data-instgrm-captioned', '');
-        root.appendChild(bq);
-        if (document.querySelector('script[data-ial-ig-embed="1"]')) return;
-        var s = document.createElement('script');
-        s.async = true;
-        s.src = 'https://www.instagram.com/embed.js';
-        s.setAttribute('data-ial-ig-embed', '1');
-        s.onload = function () {
-            if (window.instgrm && window.instgrm.Embeds) window.instgrm.Embeds.process();
-        };
-        document.body.appendChild(s);
     })();
     </script>
 </body>
