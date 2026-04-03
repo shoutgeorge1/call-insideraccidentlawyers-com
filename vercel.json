@@ -22,6 +22,8 @@
     { "source": "/med-spa-injury-lawyer-los-angeles/", "destination": "/med-spa-injury-lawyer-los-angeles/index.html" },
     { "source": "/second-opinion", "destination": "/second-opinion/index.html" },
     { "source": "/second-opinion/", "destination": "/second-opinion/index.html" },
+    { "source": "/attorney-referrals", "destination": "/attorney-referrals/index.html" },
+    { "source": "/attorney-referrals/", "destination": "/attorney-referrals/index.html" },
     { "source": "/litigation-support", "destination": "/litigation-support/index.html" },
     { "source": "/litigation-support/", "destination": "/litigation-support/index.html" },
     { "source": "/serious-injury-after-accident-los-angeles", "destination": "/serious-injury-after-accident-los-angeles/index.html" },
