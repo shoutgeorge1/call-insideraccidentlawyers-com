@@ -709,6 +709,11 @@
 
             var heroVid = document.querySelector('.hero-partnership-video');
             if (heroVid) {
+                heroVid.addEventListener('click', function () {
+                    if (heroVid.paused) {
+                        heroVid.play().catch(function () {});
+                    }
+                });
                 heroVid.addEventListener('play', function () {
                     if (typeof dataLayer !== 'undefined') {
                         dataLayer.push({
@@ -755,7 +760,7 @@
                 <div class="hero-video-block">
                     <p class="hero-video-label">See how we partner with firms</p>
                     <div class="hero-video-frame">
-                        <video class="hero-partnership-video" controls playsinline preload="metadata" poster="../images/la/attorney-hero.webp" aria-label="Video: how Insider Accident Lawyers partners with referring firms">
+                        <video class="hero-partnership-video" controls playsinline preload="auto" aria-label="Video: how Insider Accident Lawyers partners with referring firms">
                             <source src="../videos/attorney-referrals/partnership-hero.mp4" type="video/mp4">
                             Your browser does not support embedded video.
                         </video>
