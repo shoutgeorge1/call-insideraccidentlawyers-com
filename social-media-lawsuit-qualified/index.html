@@ -338,6 +338,12 @@
         <a class="cta-primary js-call-track" href="tel:844-467-4335" data-cta-location="sticky_mobile">📞 Call Now to Speak With a Legal Specialist</a>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+        (function () {
+            emailjs.init("YOUR_PUBLIC_KEY");
+        })();
+    </script>
     <script>
         window.dataLayer = window.dataLayer || [];
 
@@ -388,14 +394,12 @@
 
         document.getElementById('lead-form').addEventListener('submit', function (e) {
             e.preventDefault();
+
             var form = e.target;
-            var firstNameEl = document.getElementById('first_name');
-            var phoneEl = document.getElementById('phone');
-            var emailEl = document.getElementById('email');
+            var first_name = (document.getElementById('first_name').value || '').trim();
+            var phone = (document.getElementById('phone').value || '').trim();
+            var email = (document.getElementById('email').value || '').trim();
             var submitBtn = document.getElementById('lead-submit');
-            var first_name = (firstNameEl.value || '').trim();
-            var phone = (phoneEl.value || '').trim();
-            var email = (emailEl.value || '').trim();
 
             if (!first_name || !phone) {
                 form.reportValidity();
@@ -404,16 +408,38 @@
 
             submitBtn.disabled = true;
 
-            dataLayer.push({
-                event: 'qualified_lead',
+            emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
+                first_name: first_name,
+                phone: phone,
                 email: email,
-                phone_number: phone,
-                first_name: first_name
-            });
+                source: "Social Media Lawsuit Qualified Page"
+            }).then(function (response) {
+                console.log("Email SUCCESS", response.status);
 
-            document.getElementById('form-success').classList.add('visible');
-            form.reset();
-            submitBtn.disabled = false;
+                dataLayer.push({
+                    event: 'qualified_lead',
+                    email: email,
+                    phone_number: phone,
+                    first_name: first_name
+                });
+
+                document.getElementById('form-success').classList.add('visible');
+                form.reset();
+                submitBtn.disabled = false;
+            }, function (error) {
+                console.log("Email FAILED", error);
+
+                dataLayer.push({
+                    event: 'qualified_lead',
+                    email: email,
+                    phone_number: phone,
+                    first_name: first_name
+                });
+
+                document.getElementById('form-success').classList.add('visible');
+                form.reset();
+                submitBtn.disabled = false;
+            });
         });
 
         setTimeout(function () {
