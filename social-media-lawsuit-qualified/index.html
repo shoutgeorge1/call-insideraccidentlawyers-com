@@ -292,7 +292,10 @@
             </header>
 
             <section class="form-block" aria-label="Request a call back">
-                <form id="lead-form" novalidate>
+                <form id="lead-form" action="https://formsubmit.co/ial.leads.2024@gmail.com" method="POST">
+                    <input type="hidden" name="_subject" value="New Qualified Lead - Social Media">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
                     <div class="field">
                         <label for="first_name">First Name <span class="opt">(required)</span></label>
                         <input type="text" id="first_name" name="first_name" autocomplete="given-name" required maxlength="80">
@@ -338,12 +341,6 @@
         <a class="cta-primary js-call-track" href="tel:844-467-4335" data-cta-location="sticky_mobile">📞 Call Now to Speak With a Legal Specialist</a>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-    <script>
-        (function () {
-            emailjs.init("YOUR_PUBLIC_KEY");
-        })();
-    </script>
     <script>
         window.dataLayer = window.dataLayer || [];
 
@@ -392,53 +389,17 @@
             fire();
         })();
 
-        document.getElementById('lead-form').addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            var form = e.target;
+        document.getElementById('lead-form').addEventListener('submit', function () {
             var first_name = (document.getElementById('first_name').value || '').trim();
             var phone = (document.getElementById('phone').value || '').trim();
             var email = (document.getElementById('email').value || '').trim();
-            var submitBtn = document.getElementById('lead-submit');
 
-            if (!first_name || !phone) {
-                form.reportValidity();
-                return;
-            }
-
-            submitBtn.disabled = true;
-
-            emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
-                first_name: first_name,
-                phone: phone,
+            window.dataLayer = window.dataLayer || [];
+            dataLayer.push({
+                event: 'qualified_lead',
                 email: email,
-                source: "Social Media Lawsuit Qualified Page"
-            }).then(function (response) {
-                console.log("Email SUCCESS", response.status);
-
-                dataLayer.push({
-                    event: 'qualified_lead',
-                    email: email,
-                    phone_number: phone,
-                    first_name: first_name
-                });
-
-                document.getElementById('form-success').classList.add('visible');
-                form.reset();
-                submitBtn.disabled = false;
-            }, function (error) {
-                console.log("Email FAILED", error);
-
-                dataLayer.push({
-                    event: 'qualified_lead',
-                    email: email,
-                    phone_number: phone,
-                    first_name: first_name
-                });
-
-                document.getElementById('form-success').classList.add('visible');
-                form.reset();
-                submitBtn.disabled = false;
+                phone_number: phone,
+                first_name: first_name
             });
         });
 
