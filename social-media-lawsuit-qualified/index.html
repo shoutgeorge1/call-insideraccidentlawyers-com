@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Your responses have been submitted. Our team will review your information.">
-    <title>Your Responses Have Been Submitted</title>
+    <meta name="description" content="You may qualify for a social media lawsuit. Speak with a legal team now to confirm your case.">
+    <title>You May Qualify for a Social Media Lawsuit | Insider Accident Lawyers</title>
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -21,7 +21,10 @@
             --text: #1f2937;
             --muted: #6b7280;
             --border: #dbe4ee;
-            --yellow: #f5c242;
+            --cta-bg: #0d7a5f;
+            --cta-bg-hover: #0b634d;
+            --cta-shadow: 0 8px 24px rgba(13, 122, 95, 0.35);
+            --urgent: #b45309;
             --shadow: 0 14px 34px rgba(15, 39, 64, 0.12);
         }
         * {
@@ -34,57 +37,242 @@
             background: #f6f9fc;
             color: var(--text);
             min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 24px;
+            padding: 20px 16px 100px;
+            line-height: 1.5;
+        }
+        @media (min-width: 769px) {
+            body {
+                padding-bottom: 32px;
+            }
+        }
+        .wrap {
+            width: min(100%, 560px);
+            margin: 0 auto;
         }
         .card {
-            width: min(100%, 560px);
             background: var(--white);
             border: 1px solid var(--border);
             border-radius: 20px;
             box-shadow: var(--shadow);
-            padding: 34px 26px;
+            padding: 28px 22px 32px;
             text-align: center;
         }
-        .badge {
-            display: inline-block;
-            margin-bottom: 16px;
-            padding: 8px 12px;
-            border-radius: 999px;
-            background: #edf5ff;
-            color: var(--blue);
-            font-size: 13px;
-            font-weight: 700;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
+        @media (min-width: 480px) {
+            .card {
+                padding: 34px 28px 36px;
+            }
         }
         h1 {
             color: var(--navy);
-            font-size: clamp(30px, 5vw, 44px);
-            line-height: 1.08;
-            margin-bottom: 14px;
+            font-size: clamp(1.35rem, 4.5vw, 1.85rem);
+            line-height: 1.15;
+            margin-bottom: 12px;
+            font-weight: 800;
         }
-        p {
+        .sub {
             color: var(--muted);
-            font-size: 18px;
-            margin-bottom: 24px;
+            font-size: 1rem;
+            margin-bottom: 10px;
+            max-width: 32em;
+            margin-left: auto;
+            margin-right: auto;
         }
-        .button {
+        .urgency {
+            color: var(--urgent);
+            font-size: 0.875rem;
+            font-weight: 700;
+            margin-bottom: 22px;
+        }
+        .cta-primary {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            min-height: 54px;
+            gap: 8px;
+            min-height: 58px;
             width: 100%;
-            max-width: 300px;
-            padding: 14px 24px;
-            border-radius: 12px;
-            background: var(--yellow);
-            color: var(--navy);
+            padding: 16px 20px;
+            border-radius: 14px;
+            background: var(--cta-bg);
+            color: var(--white);
             text-decoration: none;
+            font-weight: 800;
+            font-size: 1.05rem;
+            box-shadow: var(--cta-shadow);
+            border: none;
+            cursor: pointer;
+            transition: background 0.15s ease, transform 0.1s ease;
+        }
+        .cta-primary:hover,
+        .cta-primary:focus-visible {
+            background: var(--cta-bg-hover);
+            color: var(--white);
+            outline: 2px solid var(--navy);
+            outline-offset: 2px;
+        }
+        .cta-primary:active {
+            transform: scale(0.99);
+        }
+        .cta-secondary {
+            background: var(--navy);
+            box-shadow: 0 8px 24px rgba(15, 39, 64, 0.25);
+        }
+        .cta-secondary:hover,
+        .cta-secondary:focus-visible {
+            background: #1a3654;
+        }
+        .form-block {
+            margin-top: 26px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            text-align: left;
+        }
+        .field {
+            margin-bottom: 14px;
+        }
+        .field label {
+            display: block;
+            font-size: 0.8125rem;
             font-weight: 700;
-            font-size: 18px;
+            color: var(--navy);
+            margin-bottom: 6px;
+        }
+        .field .opt {
+            font-weight: 600;
+            color: var(--muted);
+        }
+        .field input {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            font-size: 16px;
+            font-family: inherit;
+        }
+        .field input:focus {
+            outline: 2px solid var(--blue);
+            outline-offset: 0;
+            border-color: var(--blue);
+        }
+        .btn-submit {
+            margin-top: 6px;
+            width: 100%;
+            min-height: 52px;
+            padding: 14px 20px;
+            border-radius: 12px;
+            background: var(--blue);
+            color: var(--white);
+            font-weight: 800;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+            transition: background 0.15s ease;
+        }
+        .btn-submit:hover,
+        .btn-submit:focus-visible {
+            background: #164a82;
+            outline: 2px solid var(--navy);
+            outline-offset: 2px;
+        }
+        .btn-submit:disabled {
+            opacity: 0.65;
+            cursor: not-allowed;
+        }
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: 16px;
+            background: #ecfdf5;
+            border-radius: 12px;
+            color: #065f46;
+            font-weight: 700;
+            font-size: 0.9375rem;
+            margin-top: 12px;
+        }
+        .form-success.visible {
+            display: block;
+        }
+        .trust {
+            margin-top: 28px;
+            padding: 18px 16px;
+            background: #f0f6fc;
+            border-radius: 14px;
+            border: 1px solid var(--border);
+            text-align: left;
+        }
+        .trust h3 {
+            font-size: 0.8125rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--blue);
+            margin-bottom: 12px;
+            text-align: center;
+        }
+        .trust ul {
+            list-style: none;
+            font-size: 0.9375rem;
+            color: var(--text);
+        }
+        .trust li {
+            padding: 8px 0 8px 28px;
+            position: relative;
+        }
+        .trust li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--cta-bg);
+            font-weight: 900;
+        }
+        .next {
+            margin-top: 26px;
+            text-align: left;
+        }
+        .next h3 {
+            font-size: 1.05rem;
+            color: var(--navy);
+            margin-bottom: 14px;
+            text-align: center;
+            font-weight: 800;
+        }
+        .next ol {
+            padding-left: 1.25rem;
+            font-size: 0.9375rem;
+            color: var(--muted);
+        }
+        .next li {
+            margin-bottom: 10px;
+            padding-left: 4px;
+        }
+        .next li strong {
+            color: var(--text);
+        }
+        .bottom-cta {
+            margin-top: 28px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+        }
+        .sticky-call {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+            background: linear-gradient(180deg, rgba(246, 249, 252, 0) 0%, #f6f9fc 18%);
+            background-color: rgba(246, 249, 252, 0.97);
+            border-top: 1px solid var(--border);
+            z-index: 50;
+            box-shadow: 0 -8px 24px rgba(15, 39, 64, 0.08);
+        }
+        .sticky-call .cta-primary {
+            min-height: 54px;
+            font-size: 0.98rem;
+        }
+        @media (max-width: 768px) {
+            .sticky-call {
+                display: block;
+            }
         }
     </style>
 </head>
@@ -93,28 +281,143 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WS8XT5FC"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-    <main class="card">
-        <span class="badge">Submitted</span>
-        <h1>Your Responses Have Been Submitted</h1>
-        <p>Our team will review your information.</p>
-        <a class="button" href="tel:844-467-4335">Call Now</a>
-    </main>
+
+    <div class="wrap">
+        <main class="card">
+            <header class="hero">
+                <h1>You May Qualify for a Social Media Lawsuit</h1>
+                <p class="sub">Based on your answers, you may be eligible for compensation. Speak with a legal team now to confirm your case.</p>
+                <p class="urgency">Cases are time-sensitive and subject to review.</p>
+                <a class="cta-primary js-call-track" href="tel:844-467-4335" data-cta-location="hero">📞 Call Now to Speak With a Legal Specialist</a>
+            </header>
+
+            <section class="form-block" aria-label="Request a call back">
+                <form id="lead-form" novalidate>
+                    <div class="field">
+                        <label for="first_name">First Name <span class="opt">(required)</span></label>
+                        <input type="text" id="first_name" name="first_name" autocomplete="given-name" required maxlength="80">
+                    </div>
+                    <div class="field">
+                        <label for="phone">Phone <span class="opt">(required)</span></label>
+                        <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" required>
+                    </div>
+                    <div class="field">
+                        <label for="email">Email <span class="opt">(optional)</span></label>
+                        <input type="email" id="email" name="email" autocomplete="email" inputmode="email">
+                    </div>
+                    <button type="submit" class="btn-submit" id="lead-submit">Get a Call Back in Minutes</button>
+                </form>
+                <p class="form-success" id="form-success" role="status">Thanks — we’ll call you shortly.</p>
+            </section>
+
+            <section class="trust" aria-labelledby="trust-heading">
+                <h3 id="trust-heading">Why speak with us</h3>
+                <ul>
+                    <li>No fees unless we win</li>
+                    <li>100% confidential consultation</li>
+                    <li>Experienced legal team</li>
+                </ul>
+            </section>
+
+            <section class="next" aria-labelledby="next-heading">
+                <h3 id="next-heading">What Happens Next</h3>
+                <ol>
+                    <li><strong>You call</strong> → speak to intake</li>
+                    <li><strong>We review</strong> your case</li>
+                    <li><strong>You get</strong> next steps immediately</li>
+                </ol>
+            </section>
+
+            <div class="bottom-cta">
+                <a class="cta-primary cta-secondary js-call-track" href="tel:844-467-4335" data-cta-location="footer">📞 Call Now – Limited Case Availability</a>
+            </div>
+        </main>
+    </div>
+
+    <div class="sticky-call" aria-hidden="false">
+        <a class="cta-primary js-call-track" href="tel:844-467-4335" data-cta-location="sticky_mobile">📞 Call Now to Speak With a Legal Specialist</a>
+    </div>
+
     <script>
         window.dataLayer = window.dataLayer || [];
-        document.querySelectorAll('a[href^="tel:"]').forEach(function (link) {
+
+        function pushCallConversion(link) {
+            var href = link.getAttribute('href') || '';
+            var tel = href.replace(/^tel:/i, '');
+            dataLayer.push({
+                event: 'phone_click',
+                conversion_type: 'qualified_thank_you_call',
+                cta_location: link.getAttribute('data-cta-location') || 'unknown',
+                phone_number: tel
+            });
+        }
+
+        document.querySelectorAll('.js-call-track').forEach(function (link) {
             link.addEventListener('click', function () {
-                if (typeof dataLayer !== 'undefined') {
-                    dataLayer.push({
-                        event: 'phone_click',
-                        phone_number: this.getAttribute('href').replace('tel:', '')
-                    });
-                }
+                pushCallConversion(this);
             });
         });
-        setTimeout(function () {
-            if (typeof dataLayer !== 'undefined') {
-                dataLayer.push({ event: 'engaged_30s' });
+
+        (function scrollDepth() {
+            var marks = { 25: false, 50: false, 75: false, 100: false };
+            function pct() {
+                var el = document.documentElement;
+                var sh = el.scrollHeight - el.clientHeight;
+                if (sh <= 0) return 100;
+                return Math.round((el.scrollTop / sh) * 100);
             }
+            function fire() {
+                var p = pct();
+                [25, 50, 75, 100].forEach(function (threshold) {
+                    if (!marks[threshold] && p >= threshold) {
+                        marks[threshold] = true;
+                        dataLayer.push({
+                            event: 'scroll_depth',
+                            scroll_depth_threshold: threshold
+                        });
+                    }
+                });
+            }
+            var t;
+            window.addEventListener('scroll', function () {
+                clearTimeout(t);
+                t = setTimeout(fire, 80);
+            }, { passive: true });
+            fire();
+        })();
+
+        document.getElementById('lead-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            var form = e.target;
+            var firstNameEl = document.getElementById('first_name');
+            var phoneEl = document.getElementById('phone');
+            var emailEl = document.getElementById('email');
+            var submitBtn = document.getElementById('lead-submit');
+            var first_name = (firstNameEl.value || '').trim();
+            var phone = (phoneEl.value || '').trim();
+            var email = (emailEl.value || '').trim();
+
+            if (!first_name || !phone) {
+                form.reportValidity();
+                return;
+            }
+
+            submitBtn.disabled = true;
+
+            dataLayer.push({
+                event: 'qualified_lead',
+                email: email,
+                phone_number: phone,
+                first_name: first_name
+            });
+
+            document.getElementById('form-success').classList.add('visible');
+            form.reset();
+            submitBtn.disabled = false;
+        });
+
+        setTimeout(function () {
+            dataLayer.push({ event: 'engaged_30s' });
         }, 30000);
     </script>
 </body>
