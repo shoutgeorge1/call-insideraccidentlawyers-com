@@ -796,6 +796,35 @@
             box-shadow: 0 8px 20px rgba(255,255,255,0.2);
         }
         .final-cta .btn-secondary:hover { background: #f3f4f6; }
+        .inspirational-outro {
+            background: var(--brand-white);
+            padding: 48px 0 56px;
+            border-top: 1px solid var(--brand-border);
+        }
+        .inspirational-outro-inner { max-width: 720px; margin: 0 auto; text-align: center; }
+        .inspirational-outro figure { margin: 0; }
+        .inspirational-outro img {
+            width: 100%;
+            max-width: 520px;
+            height: auto;
+            border-radius: var(--card-radius);
+            box-shadow: var(--card-shadow);
+            display: block;
+            margin: 0 auto;
+        }
+        .inspirational-outro figcaption {
+            margin-top: 18px;
+            font-size: 16px;
+            color: var(--brand-gray-700);
+            line-height: 1.6;
+            max-width: 36em;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        @media (max-width: 768px) {
+            .inspirational-outro { padding: 36px 0 44px; }
+            .inspirational-outro figcaption { font-size: 15px; }
+        }
         footer {
             background: var(--brand-navy);
             color: var(--brand-white);
@@ -1585,6 +1614,15 @@
                 <a href="#case-evaluation" class="btn-primary">Free Case Review</a>
                 <a href="tel:213-267-7190" class="btn-secondary" data-callrail-phone="844-467-4335">Call Now</a>
             </div>
+        </div>
+    </section>
+
+    <section class="inspirational-outro" aria-label="Recovery and moving forward">
+        <div class="container inspirational-outro-inner">
+            <figure>
+                <img src="/images/la/injured-woman-healing-walking.png" alt="Person in recovery walking with an arm sling after medical care" width="480" height="360" loading="lazy" decoding="async">
+                <figcaption>Healing is not always linear. Many clients tell us they want to get back to work, family, and everyday life. We focus on your case so you can focus on what comes next.</figcaption>
+            </figure>
         </div>
     </section>
 
