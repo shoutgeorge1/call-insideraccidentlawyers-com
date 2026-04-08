@@ -359,14 +359,40 @@
             gap: 28px;
             align-items: center;
         }
+        .split > * { min-width: 0; }
         @media (min-width: 800px) {
             .split { grid-template-columns: 1fr 1fr; gap: 48px; }
         }
-        .split img {
-            width: 100%;
+        .split-visual {
             border-radius: var(--radius);
+            overflow: hidden;
             box-shadow: var(--shadow);
+            background: var(--gray-100);
+        }
+        .split-visual img {
+            width: 100%;
             display: block;
+        }
+        @media (min-width: 800px) {
+            .split-visual img {
+                height: auto;
+            }
+        }
+        @media (max-width: 799px) {
+            .split {
+                grid-template-columns: 1fr;
+            }
+            .split-copy { order: 1; }
+            .split-visual { order: 2; }
+            .split-visual {
+                aspect-ratio: 16 / 9;
+                width: 100%;
+            }
+            .split-visual img {
+                height: 100%;
+                object-fit: cover;
+                object-position: center 42%;
+            }
         }
         .split h2 {
             font-size: 1.65rem;
@@ -633,10 +659,10 @@
         </section>
 
         <section class="container split" aria-labelledby="mid-heading">
-            <div>
-                <img src="/images/la/rain-street-lights-los-angeles.png" alt="Los Angeles street at night after rain" width="800" height="600" loading="lazy">
+            <div class="split-visual">
+                <img src="/images/la/rain-street-lights-los-angeles.png" alt="Los Angeles street at night after rain" width="1536" height="1024" loading="lazy" decoding="async">
             </div>
-            <div>
+            <div class="split-copy">
                 <h2 id="mid-heading">Local focus, serious injury experience</h2>
                 <p>We review claims for people hurt in Los Angeles and nearby areas. You get a structured look at your situation, not a scripted pitch.</p>
                 <p>If we can help, we explain how representation works. If not, you still leave with a clearer picture.</p>
