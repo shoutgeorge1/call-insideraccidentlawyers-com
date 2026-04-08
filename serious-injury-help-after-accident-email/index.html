@@ -524,6 +524,16 @@
         @media (max-width: 768px) { .pa-cards-section { padding: 44px 0 52px; } }
         .pa-cards-section h2 { text-align: center; margin-bottom: 12px; }
         .pa-cards-section.pa-at-page-top h2 { scroll-margin-top: 80px; }
+        .pa-heading-wrap {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto 8px;
+        }
+        .pa-cards-section.pa-at-page-top .pa-heading-wrap h2 {
+            font-size: clamp(1.65rem, 4.2vw, 2.15rem);
+            margin-bottom: 14px;
+            letter-spacing: -0.03em;
+        }
         .pa-cards-intro {
             text-align: center;
             max-width: 680px;
@@ -1346,8 +1356,10 @@
     <!-- PRACTICE AREAS: top of page (below header) -->
     <section id="types" class="pa-cards-section email-lp-pa pa-at-page-top" aria-labelledby="pa-cards-heading">
         <div class="container">
-            <h2 id="pa-cards-heading">Practice Areas We Handle</h2>
-            <p class="pa-cards-intro">We help people in Los Angeles across these case types. Tap a card to request your free case review below.</p>
+            <div class="pa-heading-wrap">
+                <h2 id="pa-cards-heading">Practice Areas</h2>
+                <p class="pa-cards-intro">We handle these case types for injured people in Los Angeles. Tap a card to go to your free case review.</p>
+            </div>
             <div class="pa-cards-grid">
                 <a href="#form-section" class="pa-card">
                     <div class="pa-card-img">
