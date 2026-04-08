@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Attorney advertising. Monetize unworked PI cases: co-counsel partnership. No upfront cost, no extra workload. For licensed attorneys. Prior results do not guarantee a similar outcome.">
+    <meta name="description" content="Monetize unworked PI cases: co-counsel partnership. No upfront cost, no extra workload. Trusted by California personal injury attorneys.">
     <link rel="canonical" href="https://call.insideraccidentlawyers.com/case-monetization" />
     <meta property="og:title" content="Turn Unworked Cases Into Revenue | Attorney Co-Counsel" />
     <meta property="og:description" content="You send the case. We handle everything. You get paid. Transparent co-counsel structure for PI firms." />
@@ -80,25 +80,13 @@
             margin-bottom: 1rem;
         }
         .muted { color: var(--muted); }
-        .legal-disclaimer,
-        .page-disclaimer-top {
-            font-size: clamp(0.82rem, 2.6vw, 0.95rem);
+        .site-disclaimer {
+            font-size: clamp(0.8rem, 2.4vw, 0.9rem);
             color: var(--muted);
             line-height: 1.5;
-            font-style: italic;
+            margin-top: 1.25rem;
+            max-width: 52rem;
         }
-        .page-disclaimer-top {
-            text-align: center;
-            padding: 0.65rem clamp(1rem, 4vw, 1.5rem);
-            background: var(--surface);
-            border-bottom: 1px solid var(--border);
-            font-style: normal;
-            font-weight: 600;
-            color: #c4c4c4;
-        }
-        .legal-disclaimer { margin-top: clamp(0.85rem, 3vw, 1.25rem); }
-        .legal-disclaimer--flush { margin-top: 0.5rem; }
-        .legal-disclaimer--spaced { margin-top: 1.75rem; }
         .subhead {
             font-size: var(--fs-lead);
             color: var(--muted);
@@ -179,9 +167,12 @@
 
         /* Hero */
         .hero {
-            padding-top: clamp(1.75rem, 5vw, 3rem);
+            padding-top: clamp(0.65rem, 3vw, 3rem);
             padding-bottom: var(--section-y);
             border-bottom: 1px solid var(--border);
+        }
+        @media (min-width: 768px) {
+            .hero { padding-top: clamp(1.75rem, 5vw, 3rem); }
         }
         .hero-grid {
             display: grid;
@@ -192,14 +183,10 @@
             .hero-grid { grid-template-columns: 1fr minmax(260px, 38%); }
         }
         .hero-visual {
-            order: -1;
             border-radius: var(--radius);
             overflow: hidden;
             border: 1px solid var(--border);
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
-        }
-        @media (min-width: 768px) {
-            .hero-visual { order: 0; }
         }
         .hero-visual img {
             width: 100%;
@@ -419,13 +406,6 @@
             font-weight: 800;
             color: var(--text);
         }
-        .calc-disclaimer {
-            margin-top: 1rem;
-            font-size: clamp(0.95rem, 2.8vw, 1.05rem);
-            color: var(--muted);
-            line-height: 1.5;
-            text-align: left;
-        }
 
         /* Why list */
         .why-list {
@@ -618,8 +598,6 @@
         </div>
     </header>
 
-    <p class="page-disclaimer-top">Attorney advertising. For licensed attorneys only. Nothing on this page is legal advice. Prior results do not guarantee a similar outcome. No attorney-client relationship is created by browsing or submitting this form until agreed in writing.</p>
-
     <section class="hero">
         <div class="container">
             <div class="hero-grid">
@@ -640,11 +618,9 @@
                         <p><strong>Trusted by PI attorneys across California.</strong> Built for firms that want upside on cases they are not actively litigating.</p>
                         <p><strong>Millions recovered through co-counsel partnerships.</strong> We invest resources so you do not have to.</p>
                     </div>
-                    <p class="legal-disclaimer">Trust and recovery statements describe general firm experience only. Your matter may differ. They are not promises or predictions about any specific case or co-counsel arrangement.</p>
                 </div>
                 <div class="hero-visual">
                     <img src="../images/la/attorney-trial.png" alt="Trial-ready attorneys partnering with referring firms" width="640" height="480" fetchpriority="high" decoding="async">
-                    <p class="legal-disclaimer legal-disclaimer--flush" style="padding: 0.65rem 0.85rem 0.85rem; margin: 0; background: var(--card); border-top: 1px solid var(--border);">Photo for illustration only; not necessarily depicting any actual attorney, client, or case.</p>
                 </div>
             </div>
         </div>
@@ -662,7 +638,6 @@
                 <img src="../images/la/yelp-logo-aug2021-112.webp" alt="Yelp" width="200" height="112" decoding="async" loading="lazy">
                 <img src="../images/la/ucla-ww-ps-logo-260.webp" alt="UCLA" width="260" height="120" decoding="async" loading="lazy">
             </div>
-            <p class="legal-disclaimer legal-disclaimer--spaced">Logos and badges are property of their respective owners. Display is for informational purposes only and does not imply endorsement, affiliation, or verification of any claim on this page.</p>
         </div>
     </section>
 
@@ -736,7 +711,6 @@
                     </div>
                 </div>
             </div>
-            <p class="legal-disclaimer legal-disclaimer--spaced">This overview is illustrative. Actual process, timing, fee splits, and involvement depend on the engagement documents and the facts of each matter. We do not accept every submission.</p>
         </div>
     </section>
 
@@ -782,7 +756,6 @@
                 </div>
             </div>
             <p class="hint">Cases that require time, capital, or litigation resources.</p>
-            <p class="legal-disclaimer legal-disclaimer--spaced">Case-type summaries and photos are for illustration only. They are not legal advice and do not depict actual clients, events, or results. Eligibility and strategy depend on the facts and applicable law.</p>
         </div>
     </section>
 
@@ -790,11 +763,10 @@
         <div class="container">
             <h2 id="estimator-heading">Case value estimator</h2>
             <p class="subhead" style="margin-bottom: 2rem;">Rough range only—built to qualify the conversation, not replace analysis.</p>
-            <p class="legal-disclaimer" style="margin-bottom: 1.25rem;">The estimator uses simplified assumptions. It is not a valuation, settlement prediction, or opinion on any real case. Actual value depends on facts, liability, damages, insurance, and jurisdiction.</p>
             <div class="calc-wrap card" style="padding: 1.75rem 1.5rem;">
                 <div class="calc-field">
                     <label class="calc-label" for="est-case-type">Case type</label>
-                    <select id="est-case-type" class="calc-select" aria-describedby="calc-disclaimer">
+                    <select id="est-case-type" class="calc-select">
                         <option value="auto">Catastrophic Auto Accidents</option>
                         <option value="truck">Trucking Accidents</option>
                         <option value="nursing">Nursing Home Abuse</option>
@@ -821,10 +793,8 @@
                 <div class="calc-result" id="calc-result-box">
                     <div class="calc-result-label">Estimated case value range</div>
                     <div class="calc-result-value" id="calc-result-text">$0 – $0</div>
-                    <p class="calc-disclaimer" id="calc-disclaimer">This estimate is for illustrative purposes only. Actual case value depends on facts, liability, damages, and jurisdiction. No guarantee of outcome.</p>
                 </div>
                 <a href="#submit-case" class="btn btn-gold btn-block" style="margin-top: 1.25rem;" data-cta="estimator_submit">Submit This Case for Review</a>
-                <p class="legal-disclaimer legal-disclaimer--flush">Using the estimator or clicking submit does not create an attorney-client relationship or obligate us to accept your case.</p>
             </div>
         </div>
     </section>
@@ -840,7 +810,6 @@
                 <li>Transparent fee structures</li>
                 <li>Fast case review turnaround</li>
             </ul>
-            <p class="legal-disclaimer legal-disclaimer--spaced">Benefits listed are general capabilities, not guarantees. Scope of work, costs advanced, timelines, and fees are governed by written agreements and the rules of professional conduct. Offers and terms are not binding until documented.</p>
         </div>
     </section>
 
@@ -862,7 +831,6 @@
                     <p class="stat-label">Response times on attorney submissions</p>
                 </div>
             </div>
-            <p class="legal-disclaimer legal-disclaimer--spaced">Statistics are aggregate summaries for marketing. They are not adjusted for case type or difficulty and do not predict results in your matter. “Fast” describes typical responsiveness, not a promise for every submission.</p>
             <div class="quotes">
                 <div class="quote-card">
                     “They picked up a file we could not finance. Clear splits, no drama, client stayed ours on paper where it mattered.”
@@ -873,7 +841,6 @@
                     <p class="quote-src">— Solo practitioner, CA</p>
                 </div>
             </div>
-            <p class="legal-disclaimer legal-disclaimer--spaced">Testimonials are composite or anonymized for privacy. They do not identify actual clients or matters, are not verified endorsements, and are not guarantees of future performance.</p>
         </div>
     </section>
 
@@ -897,7 +864,6 @@
                 <summary class="faq-q">Is there any upfront cost?</summary>
                 <div class="faq-a">No. We invest in case development. You are not buying a slot—you are monetizing a dormant asset.</div>
             </details>
-            <p class="legal-disclaimer legal-disclaimer--spaced">FAQ answers are general information for attorneys only. They are not legal advice for any specific case and may not reflect how your matter would be handled.</p>
         </div>
     </section>
 
@@ -907,7 +873,6 @@
             <p class="subhead" style="margin-bottom: 2rem;">Licensed attorneys only. Confidential review.</p>
             <div class="card" style="padding: 1.75rem 1.5rem;">
                 <p class="form-note">Include venue, liability snapshot, damages, carriers, and deadlines. We will respond by phone or email.</p>
-                <p class="legal-disclaimer legal-disclaimer--flush" style="margin-bottom: 1.25rem;">By submitting, you represent you are a licensed attorney inquiring on behalf of your firm. Submission does not create an attorney-client relationship, establish confidentiality protections beyond what law requires, or guarantee a response timeline.</p>
                 <form action="https://formsubmit.co/ial.leads.2024@gmail.com" method="POST" id="case-monetization-form">
                     <input type="hidden" name="_subject" value="Case monetization / co-counsel — call.insideraccidentlawyers.com/case-monetization">
                     <input type="hidden" name="_captcha" value="false">
@@ -962,7 +927,6 @@
                     </label>
                     <button type="submit" class="btn btn-gold btn-block" style="margin-top: 1.25rem;" data-cta="form_submit_case">Submit a Case Now</button>
                 </form>
-                <p class="legal-disclaimer legal-disclaimer--flush" style="margin-top: 1rem;">Electronic communications may not be secure. Do not send privileged or highly sensitive information unless you have a separate agreement addressing confidentiality.</p>
             </div>
         </div>
     </section>
@@ -975,18 +939,17 @@
                 <a href="#submit-case" class="btn btn-gold" data-cta="final_submit">Submit a Case Now</a>
                 <a href="tel:844-467-4335" class="btn btn-outline" data-callrail-phone="844-467-4335" data-cta="final_call">Call to Discuss</a>
             </div>
-            <p class="legal-disclaimer legal-disclaimer--spaced" style="max-width: 42rem; margin-left: auto; margin-right: auto;">Calls and clicks do not create an attorney-client relationship. This page is attorney advertising under applicable state rules. For responsible attorney identification and bar admissions, contact the firm directly.</p>
         </div>
     </section>
 
     <footer class="site-footer">
         <div class="container">
             <p>Partner line: <a href="tel:844-467-4335" data-callrail-phone="844-467-4335">844-467-4335</a></p>
-            <p class="legal-disclaimer legal-disclaimer--spaced" style="font-style: normal;">This website is attorney advertising. The information here is for general informational purposes only, is directed to licensed attorneys considering co-counsel or referral arrangements, and is not legal advice for any matter. Prior results do not guarantee a similar outcome. No attorney-client relationship is formed by your use of this site, the estimator, or unsolicited submissions until—and only if—confirmed in a written agreement signed by the firm. Insider Accident Lawyers makes no warranty as to accuracy, completeness, or suitability for your situation. Where required, the firm identifies as a responsible attorney; for specific naming and bar admissions, contact the firm directly.</p>
+            <p class="site-disclaimer" id="legal-disclaimers">Attorney advertising. For licensed attorneys. Not legal advice. Prior results do not guarantee a similar outcome. No attorney-client relationship from browsing, using the case value estimator, or submitting this form unless agreed in writing. Estimator output is illustrative only—not a valuation or prediction for any real case.</p>
         </div>
     </footer>
 
-    <div class="sticky-cta" role="region" aria-label="Quick actions. Attorney advertising. Submitting a case or calling does not create an attorney-client relationship or guarantee results.">
+    <div class="sticky-cta" role="region" aria-label="Quick actions">
         <a href="#submit-case" class="btn btn-gold" data-cta="sticky_submit">Submit Case</a>
         <a href="tel:844-467-4335" class="btn btn-blue" data-callrail-phone="844-467-4335" data-cta="sticky_call">Call Now</a>
     </div>
