@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Attorney advertising. Monetize unworked PI cases: co-counsel partnership. No upfront cost, no extra workload. For licensed attorneys. Prior results do not guarantee a similar outcome.">
+    <link rel="canonical" href="https://call.insideraccidentlawyers.com/case-monetization" />
+    <meta property="og:title" content="Turn Unworked Cases Into Revenue | Attorney Co-Counsel" />
+    <meta property="og:description" content="You send the case. We handle everything. You get paid. Transparent co-counsel structure for PI firms." />
+    <meta property="og:url" content="https://call.insideraccidentlawyers.com/case-monetization" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://call.insideraccidentlawyers.com/images/la/attorney-trial.png" />
+    <title>Case Monetization for PI Attorneys | Co-Counsel Partnership</title>
+    <link rel="preload" as="image" href="../images/la/attorney-trial.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --surface: #141414;
+            --card: #1a1a1a;
+            --border: #2a2a2a;
+            --text: #fafafa;
+            --muted: #a3a3a3;
+            --gold: #c9a227;
+            --gold-dim: rgba(201, 162, 39, 0.15);
+            --blue: #3b82f6;
+            --blue-dim: rgba(59, 130, 246, 0.12);
+            --radius: 16px;
+            /* Mobile-first: generous vertical rhythm */
+            --section-y: clamp(4.5rem, 14vw, 7rem);
+            --sticky-h: 92px;
+            /* Type scale — large on small screens, caps on desktop */
+            --fs-body: clamp(1.25rem, 4.8vw, 1.35rem);
+            --fs-h1: clamp(2.75rem, 11vw, 3.5rem);
+            --fs-h2: clamp(2.05rem, 7.5vw, 2.65rem);
+            --fs-h3: clamp(1.45rem, 5.5vw, 1.75rem);
+            --fs-lead: clamp(1.25rem, 4.2vw, 1.45rem);
+            --fs-eyebrow: clamp(0.8rem, 2.8vw, 0.9rem);
+            --icon-arrow: clamp(2.25rem, 10vw, 3.25rem);
+            --badge-h: clamp(52px, 18vw, 88px);
+        }
+        @media (min-width: 900px) {
+            :root {
+                --fs-body: 1.2rem;
+                --section-y: clamp(4rem, 8vw, 6rem);
+            }
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        html, body { overflow-x: hidden; }
+        body {
+            font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            font-size: var(--fs-body);
+            line-height: 1.55;
+            color: var(--text);
+            background: var(--bg);
+            padding-bottom: calc(var(--sticky-h) + env(safe-area-inset-bottom, 0px));
+        }
+        h1, h2, h3 {
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            color: var(--text);
+        }
+        h1 { font-size: var(--fs-h1); }
+        h2 { font-size: var(--fs-h2); margin-bottom: 1.25rem; }
+        h3 { font-size: var(--fs-h3); font-weight: 700; margin-bottom: 0.35rem; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 clamp(1rem, 5vw, 1.5rem); }
+        section { padding: var(--section-y) 0; }
+        section[id] { scroll-margin-top: 28px; }
+
+        .eyebrow {
+            font-size: var(--fs-eyebrow);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+        .muted { color: var(--muted); }
+        .legal-disclaimer,
+        .page-disclaimer-top {
+            font-size: clamp(0.82rem, 2.6vw, 0.95rem);
+            color: var(--muted);
+            line-height: 1.5;
+            font-style: italic;
+        }
+        .page-disclaimer-top {
+            text-align: center;
+            padding: 0.65rem clamp(1rem, 4vw, 1.5rem);
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            font-style: normal;
+            font-weight: 600;
+            color: #c4c4c4;
+        }
+        .legal-disclaimer { margin-top: clamp(0.85rem, 3vw, 1.25rem); }
+        .legal-disclaimer--flush { margin-top: 0.5rem; }
+        .legal-disclaimer--spaced { margin-top: 1.75rem; }
+        .subhead {
+            font-size: var(--fs-lead);
+            color: var(--muted);
+            max-width: 40rem;
+            margin-top: 1rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 56px;
+            padding: 1.05rem 1.5rem;
+            font-size: clamp(1.05rem, 3.5vw, 1.15rem);
+            font-weight: 700;
+            border-radius: 10px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+            font-family: inherit;
+        }
+        .btn:active { transform: scale(0.98); }
+        .btn-gold {
+            background: var(--gold);
+            color: #0a0a0a;
+            box-shadow: 0 4px 24px rgba(201, 162, 39, 0.35);
+        }
+        .btn-gold:hover { box-shadow: 0 6px 28px rgba(201, 162, 39, 0.45); }
+        .btn-outline {
+            background: transparent;
+            color: var(--text);
+            border: 2px solid var(--border);
+        }
+        .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+        .btn-blue {
+            background: var(--blue);
+            color: #fff;
+            box-shadow: 0 4px 20px rgba(59, 130, 246, 0.35);
+        }
+        .btn-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.85rem;
+            margin-top: 1.75rem;
+        }
+        .btn-block { width: 100%; }
+
+        /* Header */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: rgba(10, 10, 10, 0.92);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 0.75rem 0;
+            flex-wrap: wrap;
+        }
+        .header-logo {
+            height: clamp(44px, 12vw, 52px);
+            width: auto;
+            display: block;
+            filter: brightness(0) invert(1);
+        }
+        .header-call {
+            font-weight: 700;
+            font-size: clamp(1.05rem, 3.5vw, 1.15rem);
+        }
+        .header-call a { color: var(--gold); text-decoration: none; }
+        .header-call a:hover { text-decoration: underline; }
+
+        /* Hero */
+        .hero {
+            padding-top: clamp(1.75rem, 5vw, 3rem);
+            padding-bottom: var(--section-y);
+            border-bottom: 1px solid var(--border);
+        }
+        .hero-grid {
+            display: grid;
+            gap: clamp(1.75rem, 6vw, 2.5rem);
+            align-items: center;
+        }
+        @media (min-width: 768px) {
+            .hero-grid { grid-template-columns: 1fr minmax(260px, 38%); }
+        }
+        .hero-visual {
+            order: -1;
+            border-radius: var(--radius);
+            overflow: hidden;
+            border: 1px solid var(--border);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+        }
+        @media (min-width: 768px) {
+            .hero-visual { order: 0; }
+        }
+        .hero-visual img {
+            width: 100%;
+            height: auto;
+            min-height: clamp(220px, 55vw, 420px);
+            object-fit: cover;
+            display: block;
+            vertical-align: middle;
+        }
+        .hero-bullets {
+            list-style: none;
+            margin-top: 1.75rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+        }
+        .hero-bullets li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            font-weight: 600;
+            font-size: clamp(1.2rem, 4.2vw, 1.35rem);
+        }
+        .hero-bullets li::before {
+            content: "✔";
+            color: var(--gold);
+            flex-shrink: 0;
+            font-size: clamp(1.35rem, 5.5vw, 2rem);
+            line-height: 1.15;
+        }
+        .trust-bar {
+            margin-top: 2.5rem;
+            padding: clamp(1.35rem, 5vw, 1.75rem);
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            display: grid;
+            gap: 1rem;
+        }
+        @media (min-width: 640px) {
+            .trust-bar { grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+        }
+        .trust-bar p {
+            font-size: clamp(1.1rem, 3.5vw, 1.2rem);
+            color: var(--muted);
+            line-height: 1.45;
+        }
+        .trust-bar strong { color: var(--text); }
+
+        /* Badges / recognition strip */
+        .badge-strip {
+            padding: clamp(2rem, 8vw, 3rem) 0;
+            border-bottom: 1px solid var(--border);
+            background: var(--surface);
+        }
+        .badge-strip-label {
+            text-align: center;
+            font-size: clamp(0.85rem, 2.8vw, 0.95rem);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--gold);
+            margin-bottom: clamp(1.25rem, 4vw, 1.75rem);
+        }
+        .badge-row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: clamp(1.25rem, 5vw, 2.25rem);
+        }
+        .badge-row img {
+            height: var(--badge-h);
+            width: auto;
+            max-width: min(100%, 200px);
+            object-fit: contain;
+        }
+        .badge-row .badge-img--wide {
+            max-width: min(100%, 280px);
+            height: calc(var(--badge-h) * 0.92);
+        }
+
+        /* Cards */
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: clamp(1.35rem, 4vw, 1.65rem);
+        }
+        .card-label { font-size: clamp(0.8rem, 2.5vw, 0.9rem); font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.35rem; }
+        .card p { font-size: clamp(1.1rem, 3.5vw, 1.2rem); color: var(--muted); line-height: 1.45; }
+
+        /* Flow */
+        .flow {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            gap: 0;
+            max-width: 560px;
+            margin: 0 auto;
+        }
+        .flow-step { position: relative; }
+        .flow-step-inner {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: clamp(1rem, 4vw, 1.35rem);
+            align-items: start;
+        }
+        .flow-icon {
+            width: clamp(4.5rem, 22vw, 6.25rem);
+            height: clamp(4.5rem, 22vw, 6.25rem);
+            border-radius: 16px;
+            background: var(--gold-dim);
+            border: 2px solid rgba(201, 162, 39, 0.45);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: var(--gold);
+        }
+        .flow-icon svg {
+            width: clamp(2.5rem, 12vw, 3.5rem);
+            height: clamp(2.5rem, 12vw, 3.5rem);
+        }
+        .flow-icon .fi-line {
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        .flow-icon .fi-fill {
+            fill: currentColor;
+            stroke: none;
+        }
+        .flow-arrow {
+            text-align: center;
+            color: var(--gold);
+            font-size: var(--icon-arrow);
+            line-height: 1;
+            padding: 0.45rem 0;
+            font-weight: 300;
+        }
+
+        /* Case types grid */
+        .grid-cases {
+            display: grid;
+            gap: 1rem;
+        }
+        @media (min-width: 600px) {
+            .grid-cases { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (min-width: 900px) {
+            .grid-cases { grid-template-columns: repeat(3, 1fr); }
+        }
+        .case-card { padding: 0; overflow: hidden; }
+        .case-card h3 { color: var(--text); padding: 1.15rem clamp(1.35rem, 4vw, 1.65rem) 0; }
+        .case-card p { padding: 0 clamp(1.35rem, 4vw, 1.65rem) 1.35rem; }
+        .case-card-media {
+            overflow: hidden;
+            border-bottom: 1px solid var(--border);
+        }
+        .case-card-media img {
+            width: 100%;
+            height: clamp(180px, 48vw, 260px);
+            object-fit: cover;
+            display: block;
+        }
+        .case-card .hint { font-size: clamp(1.05rem, 3.2vw, 1.15rem); color: var(--muted); margin-top: 2rem; text-align: center; max-width: 40rem; margin-left: auto; margin-right: auto; }
+
+        /* Calculator */
+        .section-wash { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+        .calc-wrap {
+            max-width: 560px;
+            margin: 0 auto;
+        }
+        .calc-field { margin-bottom: 1.25rem; }
+        .calc-label {
+            display: block;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            font-size: clamp(1.1rem, 3.5vw, 1.2rem);
+        }
+        .calc-select {
+            width: 100%;
+            min-height: 58px;
+            padding: 0 1rem;
+            font-size: clamp(1.1rem, 3.5vw, 1.2rem);
+            font-family: inherit;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            background: var(--bg);
+            color: var(--text);
+        }
+        .calc-select:focus {
+            outline: 2px solid var(--gold);
+            outline-offset: 2px;
+        }
+        .calc-result {
+            margin-top: 1.5rem;
+            padding: 1.5rem;
+            background: var(--gold-dim);
+            border: 1px solid rgba(201, 162, 39, 0.35);
+            border-radius: var(--radius);
+            text-align: center;
+        }
+        .calc-result-label {
+            font-size: clamp(0.95rem, 3vw, 1.05rem);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+        .calc-result-value {
+            font-size: clamp(1.65rem, 7vw, 2.35rem);
+            font-weight: 800;
+            color: var(--text);
+        }
+        .calc-disclaimer {
+            margin-top: 1rem;
+            font-size: clamp(0.95rem, 2.8vw, 1.05rem);
+            color: var(--muted);
+            line-height: 1.5;
+            text-align: left;
+        }
+
+        /* Why list */
+        .why-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .why-list li {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            padding: clamp(1.2rem, 4vw, 1.45rem) clamp(1.15rem, 4vw, 1.35rem);
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            font-size: clamp(1.15rem, 3.8vw, 1.3rem);
+            font-weight: 600;
+        }
+        .why-list li::before {
+            content: "";
+            width: clamp(12px, 3.5vw, 16px);
+            height: clamp(12px, 3.5vw, 16px);
+            border-radius: 50%;
+            background: var(--gold);
+            margin-top: 0.55rem;
+            flex-shrink: 0;
+        }
+
+        /* Stats */
+        .stats-row {
+            display: grid;
+            gap: 1rem;
+        }
+        @media (min-width: 640px) {
+            .stats-row { grid-template-columns: repeat(3, 1fr); }
+        }
+        .stat-card {
+            text-align: center;
+            padding: 1.5rem 1rem;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+        }
+        .stat-num { font-size: clamp(1.85rem, 7vw, 2.5rem); font-weight: 800; color: var(--gold); }
+        .stat-label { font-size: clamp(1.05rem, 3.2vw, 1.15rem); color: var(--muted); margin-top: 0.35rem; }
+
+        .quotes {
+            display: grid;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        @media (min-width: 700px) {
+            .quotes { grid-template-columns: 1fr 1fr; }
+        }
+        .quote-card {
+            padding: clamp(1.35rem, 4vw, 1.6rem);
+            border-left: 4px solid var(--gold);
+            background: var(--surface);
+            font-size: clamp(1.1rem, 3.5vw, 1.2rem);
+            color: var(--muted);
+            font-style: italic;
+        }
+        .quote-src { margin-top: 0.75rem; font-style: normal; font-size: clamp(0.95rem, 3vw, 1.05rem); font-weight: 700; color: var(--text); }
+
+        /* FAQ */
+        .faq-item {
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            margin-bottom: 0.85rem;
+            overflow: hidden;
+            background: var(--card);
+        }
+        .faq-q {
+            font-weight: 700;
+            padding: clamp(1.2rem, 4vw, 1.4rem) clamp(1.15rem, 4vw, 1.35rem);
+            font-size: clamp(1.15rem, 3.8vw, 1.28rem);
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+        .faq-q::-webkit-details-marker { display: none; }
+        .faq-q::after { content: "+"; color: var(--gold); font-size: clamp(1.5rem, 5vw, 2rem); font-weight: 400; line-height: 1; }
+        details[open] .faq-q::after { content: "–"; }
+        .faq-a {
+            padding: 0 clamp(1.15rem, 4vw, 1.35rem) clamp(1.15rem, 4vw, 1.35rem);
+            color: var(--muted);
+            font-size: clamp(1.1rem, 3.5vw, 1.2rem);
+            line-height: 1.5;
+        }
+
+        /* Form */
+        .form-section .card { max-width: 640px; margin: 0 auto; }
+        .form-group { margin-bottom: 1.15rem; }
+        .form-label { display: block; font-weight: 700; margin-bottom: 0.45rem; font-size: clamp(1.1rem, 3.5vw, 1.2rem); }
+        .form-input, .form-select, .form-textarea {
+            width: 100%;
+            min-height: 58px;
+            padding: 0.75rem 1rem;
+            font-size: clamp(1.1rem, 3.5vw, 1.2rem);
+            font-family: inherit;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            background: var(--bg);
+            color: var(--text);
+        }
+        .form-textarea { min-height: 140px; resize: vertical; }
+        .form-input:focus, .form-select:focus, .form-textarea:focus {
+            outline: 2px solid var(--gold);
+            outline-offset: 2px;
+        }
+        .form-grid-2 {
+            display: grid;
+            gap: 1.15rem;
+        }
+        @media (min-width: 560px) {
+            .form-grid-2 { grid-template-columns: 1fr 1fr; }
+        }
+        .form-note { font-size: clamp(1.05rem, 3.2vw, 1.12rem); color: var(--muted); margin-bottom: 1.25rem; line-height: 1.5; }
+        .sms-check {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            font-size: clamp(0.95rem, 3vw, 1.05rem);
+            line-height: 1.45;
+            color: var(--muted);
+            margin-top: 0.5rem;
+        }
+        .sms-check input { margin-top: 0.2rem; min-width: 22px; min-height: 22px; accent-color: var(--gold); }
+
+        /* Final CTA */
+        .final-band {
+            background: linear-gradient(180deg, var(--blue-dim) 0%, transparent 100%);
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+        .final-band .subhead { margin-left: auto; margin-right: auto; }
+
+        /* Footer */
+        .site-footer {
+            padding: 2rem 0 6rem;
+            border-top: 1px solid var(--border);
+            font-size: clamp(0.95rem, 3vw, 1.05rem);
+            color: var(--muted);
+            line-height: 1.55;
+        }
+        .site-footer a { color: var(--gold); }
+
+        /* Sticky bar */
+        .sticky-cta {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 100;
+            display: flex;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+            padding-bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px));
+            background: rgba(10, 10, 10, 0.97);
+            backdrop-filter: blur(12px);
+            border-top: 1px solid var(--border);
+            box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.5);
+        }
+        .sticky-cta .btn { flex: 1; min-height: 58px; font-size: clamp(1.05rem, 3.5vw, 1.15rem); padding-left: 0.65rem; padding-right: 0.65rem; }
+    </style>
+
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WS8XT5FC');</script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+    </script>
+</head>
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WS8XT5FC" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>
+    (function(){ var k=['gclid','gbraid','wbraid','utm_source','utm_medium','utm_campaign','utm_term','utm_content']; var q=window.location.search?new URLSearchParams(window.location.search):null; if(q){ for(var i=0;i<k.length;i++){ var v=q.get(k[i]); if(v) try{ localStorage.setItem('ial_'+k[i],v); }catch(e){} } } })();
+    </script>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <img src="../images/la/logo.png" alt="Insider Accident Lawyers" class="header-logo" width="140" height="36" decoding="async">
+            <p class="header-call">Partner line: <a href="tel:844-467-4335" data-callrail-phone="844-467-4335">844-467-4335</a></p>
+        </div>
+    </header>
+
+    <p class="page-disclaimer-top">Attorney advertising. For licensed attorneys only. Nothing on this page is legal advice. Prior results do not guarantee a similar outcome. No attorney-client relationship is created by browsing or submitting this form until agreed in writing.</p>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div>
+                    <p class="eyebrow">Revenue system · Co-counsel</p>
+                    <h1>Turn Unworked Cases Into Revenue</h1>
+                    <p class="subhead">You send the case. We handle everything. You get paid.</p>
+                    <ul class="hero-bullets">
+                        <li>No additional workload</li>
+                        <li>No upfront cost</li>
+                        <li>Transparent co-counsel structure</li>
+                    </ul>
+                    <div class="btn-row">
+                        <a href="#case-estimator" class="btn btn-gold" data-cta="hero_see_value">See What Your Case Is Worth</a>
+                        <a href="tel:844-467-4335" class="btn btn-outline" data-callrail-phone="844-467-4335" data-cta="hero_call">Call Now</a>
+                    </div>
+                    <div class="trust-bar">
+                        <p><strong>Trusted by PI attorneys across California.</strong> Built for firms that want upside on cases they are not actively litigating.</p>
+                        <p><strong>Millions recovered through co-counsel partnerships.</strong> We invest resources so you do not have to.</p>
+                    </div>
+                    <p class="legal-disclaimer">Trust and recovery statements describe general firm experience only. Your matter may differ. They are not promises or predictions about any specific case or co-counsel arrangement.</p>
+                </div>
+                <div class="hero-visual">
+                    <img src="../images/la/attorney-trial.png" alt="Trial-ready attorneys partnering with referring firms" width="640" height="480" fetchpriority="high" decoding="async">
+                    <p class="legal-disclaimer legal-disclaimer--flush" style="padding: 0.65rem 0.85rem 0.85rem; margin: 0; background: var(--card); border-top: 1px solid var(--border);">Photo for illustration only; not necessarily depicting any actual attorney, client, or case.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="badge-strip" aria-label="Recognition and reviews">
+        <div class="container">
+            <p class="badge-strip-label">Recognition &amp; reviews</p>
+            <div class="badge-row">
+                <img src="../images/la/insider-badge.png" alt="Insider Accident Lawyers" width="220" height="120" decoding="async" loading="lazy">
+                <img src="../images/la/trust-badge-1-260.webp" alt="Client trust award" width="260" height="260" decoding="async" loading="lazy">
+                <img src="../images/la/trust-badge-4-260.webp" alt="Client trust award" width="260" height="260" decoding="async" loading="lazy">
+                <img src="../images/la/google-badge-160.webp" alt="Google reviews" width="200" height="160" decoding="async" loading="lazy">
+                <img src="../images/la/google-g-logo-500.png" alt="Google" class="badge-img--wide" width="500" height="500" decoding="async" loading="lazy">
+                <img src="../images/la/yelp-logo-aug2021-112.webp" alt="Yelp" width="200" height="112" decoding="async" loading="lazy">
+                <img src="../images/la/ucla-ww-ps-logo-260.webp" alt="UCLA" width="260" height="120" decoding="async" loading="lazy">
+            </div>
+            <p class="legal-disclaimer legal-disclaimer--spaced">Logos and badges are property of their respective owners. Display is for informational purposes only and does not imply endorsement, affiliation, or verification of any claim on this page.</p>
+        </div>
+    </section>
+
+    <section id="flow" aria-labelledby="flow-heading">
+        <div class="container">
+            <h2 id="flow-heading">How it works</h2>
+            <p class="subhead" style="margin-bottom: 2.5rem;">Five steps. No fluff.</p>
+            <div class="flow">
+                <div class="flow-step card">
+                    <div class="flow-step-inner">
+                        <div class="flow-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><rect class="fi-line" x="3" y="8" width="18" height="13" rx="2" ry="2"/><path class="fi-line" d="M9 8V6a1 1 0 011-1h4a1 1 0 011 1v2"/></svg>
+                        </div>
+                        <div>
+                            <p class="card-label">You</p>
+                            <h3>Attorney</h3>
+                            <p>You already signed the client or hold the file.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flow-arrow" aria-hidden="true">↓</div>
+                <div class="flow-step card">
+                    <div class="flow-step-inner">
+                        <div class="flow-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path class="fi-line" d="M12 19V5M5 12l7-7 7 7"/></svg>
+                        </div>
+                        <div>
+                            <p class="card-label">Action</p>
+                            <h3>Send case</h3>
+                            <p>One submission. We screen fast.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flow-arrow" aria-hidden="true">↓</div>
+                <div class="flow-step card">
+                    <div class="flow-step-inner">
+                        <div class="flow-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path class="fi-line" d="M12 3 3 8l9 5 9-5-9-5z"/><path class="fi-line" d="M3 12l9 5 9-5"/><path class="fi-line" d="M3 16l9 5 9-5"/></svg>
+                        </div>
+                        <div>
+                            <p class="card-label">Execution</p>
+                            <h3>We handle everything</h3>
+                            <p>Intake depth, development, litigation capital—our side.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flow-arrow" aria-hidden="true">↓</div>
+                <div class="flow-step card">
+                    <div class="flow-step-inner">
+                        <div class="flow-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><circle class="fi-line" cx="12" cy="12" r="9"/><polyline class="fi-line" points="8 12 11 15 16 9"/></svg>
+                        </div>
+                        <div>
+                            <p class="card-label">Outcome</p>
+                            <h3>Case resolves</h3>
+                            <p>Structured like a real partnership, not a handoff black box.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flow-arrow" aria-hidden="true">↓</div>
+                <div class="flow-step card" style="border-color: rgba(201, 162, 39, 0.4);">
+                    <div class="flow-step-inner">
+                        <div class="flow-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><circle class="fi-line" cx="12" cy="12" r="10"/><text class="fi-fill" x="12" y="16.5" text-anchor="middle" font-size="13" font-family="system-ui,sans-serif" font-weight="800">$</text></svg>
+                        </div>
+                        <div>
+                            <p class="card-label">Payoff</p>
+                            <h3>You get paid</h3>
+                            <p>Co-counsel economics, documented and predictable.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="legal-disclaimer legal-disclaimer--spaced">This overview is illustrative. Actual process, timing, fee splits, and involvement depend on the engagement documents and the facts of each matter. We do not accept every submission.</p>
+        </div>
+    </section>
+
+    <section id="case-types" class="section-wash" aria-labelledby="cases-heading">
+        <div class="container">
+            <h2 id="cases-heading">What cases make sense</h2>
+            <p class="subhead" style="margin-bottom: 2rem;">High-stakes files where execution and capital matter.</p>
+            <div class="grid-cases">
+                <div class="card case-card">
+                    <div class="case-card-media">
+                        <img src="../images/la/truck-rear-ends-sedan-collision.png" alt="" width="800" height="500" decoding="async" loading="lazy">
+                    </div>
+                    <h3>Catastrophic Auto Accidents</h3>
+                    <p>Severe injury, long-tail treatment, disputed liability.</p>
+                </div>
+                <div class="card case-card">
+                    <div class="case-card-media">
+                        <img src="../images/la/truck-smashes-car-hero.png" alt="" width="800" height="500" decoding="async" loading="lazy">
+                    </div>
+                    <h3>Trucking Accidents</h3>
+                    <p>Federal regs, multiple carriers, higher policy stacks.</p>
+                </div>
+                <div class="card case-card">
+                    <div class="case-card-media">
+                        <img src="../images/la/nurse-checks-bedsore.png" alt="" width="800" height="500" decoding="async" loading="lazy">
+                    </div>
+                    <h3>Nursing Home Abuse</h3>
+                    <p>Record-heavy, expert-driven, institutional defendants.</p>
+                </div>
+                <div class="card case-card">
+                    <div class="case-card-media">
+                        <img src="../images/la/daughter-hold-dads-hand.png" alt="" width="800" height="500" decoding="async" loading="lazy">
+                    </div>
+                    <h3>Wrongful Death</h3>
+                    <p>Valuation complexity and litigation pressure from day one.</p>
+                </div>
+                <div class="card case-card" style="grid-column: 1 / -1;">
+                    <div class="case-card-media">
+                        <img src="../images/la/wet-floor-grocery-store.png" alt="" width="800" height="500" decoding="async" loading="lazy">
+                    </div>
+                    <h3>Complex Liability Cases</h3>
+                    <p>Multiple parties, coverage fights, or trial exposure you cannot resource right now.</p>
+                </div>
+            </div>
+            <p class="hint">Cases that require time, capital, or litigation resources.</p>
+            <p class="legal-disclaimer legal-disclaimer--spaced">Case-type summaries and photos are for illustration only. They are not legal advice and do not depict actual clients, events, or results. Eligibility and strategy depend on the facts and applicable law.</p>
+        </div>
+    </section>
+
+    <section id="case-estimator" aria-labelledby="estimator-heading">
+        <div class="container">
+            <h2 id="estimator-heading">Case value estimator</h2>
+            <p class="subhead" style="margin-bottom: 2rem;">Rough range only—built to qualify the conversation, not replace analysis.</p>
+            <p class="legal-disclaimer" style="margin-bottom: 1.25rem;">The estimator uses simplified assumptions. It is not a valuation, settlement prediction, or opinion on any real case. Actual value depends on facts, liability, damages, insurance, and jurisdiction.</p>
+            <div class="calc-wrap card" style="padding: 1.75rem 1.5rem;">
+                <div class="calc-field">
+                    <label class="calc-label" for="est-case-type">Case type</label>
+                    <select id="est-case-type" class="calc-select" aria-describedby="calc-disclaimer">
+                        <option value="auto">Catastrophic Auto Accidents</option>
+                        <option value="truck">Trucking Accidents</option>
+                        <option value="nursing">Nursing Home Abuse</option>
+                        <option value="death">Wrongful Death</option>
+                        <option value="complex">Complex Liability Cases</option>
+                    </select>
+                </div>
+                <div class="calc-field">
+                    <label class="calc-label" for="est-severity">Injury severity</label>
+                    <select id="est-severity" class="calc-select">
+                        <option value="minor">Minor</option>
+                        <option value="moderate" selected>Moderate</option>
+                        <option value="severe">Severe</option>
+                    </select>
+                </div>
+                <div class="calc-field">
+                    <label class="calc-label" for="est-liability">Liability strength</label>
+                    <select id="est-liability" class="calc-select">
+                        <option value="weak">Weak</option>
+                        <option value="moderate" selected>Moderate</option>
+                        <option value="strong">Strong</option>
+                    </select>
+                </div>
+                <div class="calc-result" id="calc-result-box">
+                    <div class="calc-result-label">Estimated case value range</div>
+                    <div class="calc-result-value" id="calc-result-text">$0 – $0</div>
+                    <p class="calc-disclaimer" id="calc-disclaimer">This estimate is for illustrative purposes only. Actual case value depends on facts, liability, damages, and jurisdiction. No guarantee of outcome.</p>
+                </div>
+                <a href="#submit-case" class="btn btn-gold btn-block" style="margin-top: 1.25rem;" data-cta="estimator_submit">Submit This Case for Review</a>
+                <p class="legal-disclaimer legal-disclaimer--flush">Using the estimator or clicking submit does not create an attorney-client relationship or obligate us to accept your case.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="why-us" aria-labelledby="why-heading">
+        <div class="container">
+            <h2 id="why-heading">Why attorneys work with us</h2>
+            <p class="subhead" style="margin-bottom: 2rem;">Operational upside, not vanity branding.</p>
+            <ul class="why-list">
+                <li>We front litigation costs</li>
+                <li>We handle intake, treatment coordination, and case development</li>
+                <li>Flexible involvement—stay involved or hands-off</li>
+                <li>Transparent fee structures</li>
+                <li>Fast case review turnaround</li>
+            </ul>
+            <p class="legal-disclaimer legal-disclaimer--spaced">Benefits listed are general capabilities, not guarantees. Scope of work, costs advanced, timelines, and fees are governed by written agreements and the rules of professional conduct. Offers and terms are not binding until documented.</p>
+        </div>
+    </section>
+
+    <section id="trust" class="section-wash" aria-labelledby="trust-heading">
+        <div class="container">
+            <h2 id="trust-heading">Track record</h2>
+            <p class="subhead" style="margin-bottom: 2rem;">Numbers attorneys actually care about.</p>
+            <div class="stats-row">
+                <div class="stat-card">
+                    <div class="stat-num">$100M+</div>
+                    <p class="stat-label">Recovered for injury clients</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-num">500+</div>
+                    <p class="stat-label">Cases handled</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-num">Fast</div>
+                    <p class="stat-label">Response times on attorney submissions</p>
+                </div>
+            </div>
+            <p class="legal-disclaimer legal-disclaimer--spaced">Statistics are aggregate summaries for marketing. They are not adjusted for case type or difficulty and do not predict results in your matter. “Fast” describes typical responsiveness, not a promise for every submission.</p>
+            <div class="quotes">
+                <div class="quote-card">
+                    “They picked up a file we could not finance. Clear splits, no drama, client stayed ours on paper where it mattered.”
+                    <p class="quote-src">— PI firm principal, Southern California</p>
+                </div>
+                <div class="quote-card">
+                    “Finally a team that talks like litigators, not a referral desk. Turnaround on the review was same week.”
+                    <p class="quote-src">— Solo practitioner, CA</p>
+                </div>
+            </div>
+            <p class="legal-disclaimer legal-disclaimer--spaced">Testimonials are composite or anonymized for privacy. They do not identify actual clients or matters, are not verified endorsements, and are not guarantees of future performance.</p>
+        </div>
+    </section>
+
+    <section id="objections" aria-labelledby="faq-heading">
+        <div class="container">
+            <h2 id="faq-heading">Straight answers</h2>
+            <p class="subhead" style="margin-bottom: 2rem;">The questions partners ask before they send a case.</p>
+            <details class="faq-item">
+                <summary class="faq-q">Do I lose control of my case?</summary>
+                <div class="faq-a">No. You choose your level of involvement. Structure is spelled out up front—co-counsel, not a silent confiscation of your file.</div>
+            </details>
+            <details class="faq-item">
+                <summary class="faq-q">How do I get paid?</summary>
+                <div class="faq-a">Through structured co-counsel agreements. Economics are agreed before heavy spend, not renegotiated after the work is done.</div>
+            </details>
+            <details class="faq-item">
+                <summary class="faq-q">What cases qualify?</summary>
+                <div class="faq-a">We review all submissions, especially complex or high-value cases. If it is not a fit, we say so quickly.</div>
+            </details>
+            <details class="faq-item">
+                <summary class="faq-q">Is there any upfront cost?</summary>
+                <div class="faq-a">No. We invest in case development. You are not buying a slot—you are monetizing a dormant asset.</div>
+            </details>
+            <p class="legal-disclaimer legal-disclaimer--spaced">FAQ answers are general information for attorneys only. They are not legal advice for any specific case and may not reflect how your matter would be handled.</p>
+        </div>
+    </section>
+
+    <section id="submit-case" class="form-section section-wash" aria-labelledby="form-heading">
+        <div class="container">
+            <h2 id="form-heading">Submit a case</h2>
+            <p class="subhead" style="margin-bottom: 2rem;">Licensed attorneys only. Confidential review.</p>
+            <div class="card" style="padding: 1.75rem 1.5rem;">
+                <p class="form-note">Include venue, liability snapshot, damages, carriers, and deadlines. We will respond by phone or email.</p>
+                <p class="legal-disclaimer legal-disclaimer--flush" style="margin-bottom: 1.25rem;">By submitting, you represent you are a licensed attorney inquiring on behalf of your firm. Submission does not create an attorney-client relationship, establish confidentiality protections beyond what law requires, or guarantee a response timeline.</p>
+                <form action="https://formsubmit.co/ial.leads.2024@gmail.com" method="POST" id="case-monetization-form">
+                    <input type="hidden" name="_subject" value="Case monetization / co-counsel — call.insideraccidentlawyers.com/case-monetization">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_autoresponse" value="Thank you — we received your case submission. Our team will contact your firm shortly.">
+                    <input type="hidden" name="_next" value="https://call.insideraccidentlawyers.com/thank-you.html">
+                    <input type="hidden" name="lead_source" value="case-monetization-lp">
+                    <input type="hidden" name="estimator_case_type" id="hf-est-type" value="">
+                    <input type="hidden" name="estimator_injury_severity" id="hf-est-sev" value="">
+                    <input type="hidden" name="estimator_liability" id="hf-est-liab" value="">
+                    <input type="hidden" name="estimator_range_display" id="hf-est-range" value="">
+
+                    <div class="form-grid-2">
+                        <div class="form-group">
+                            <label class="form-label" for="cm-name">Your name *</label>
+                            <input type="text" class="form-input" id="cm-name" name="attorney_name" required autocomplete="name" placeholder="Attorney name">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="cm-firm">Law firm *</label>
+                            <input type="text" class="form-input" id="cm-firm" name="law_firm_name" required autocomplete="organization" placeholder="Firm name">
+                        </div>
+                    </div>
+                    <div class="form-grid-2">
+                        <div class="form-group">
+                            <label class="form-label" for="cm-email">Email *</label>
+                            <input type="email" class="form-input" id="cm-email" name="email" required autocomplete="email" placeholder="you@yourfirm.com">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="cm-phone">Phone *</label>
+                            <input type="tel" class="form-input" id="cm-phone" name="phone" required autocomplete="tel" placeholder="Direct line">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="cm-type">Case type *</label>
+                        <select class="form-select" id="cm-type" name="case_type" required>
+                            <option value="">Select</option>
+                            <option value="Catastrophic Auto Accidents">Catastrophic Auto Accidents</option>
+                            <option value="Trucking Accidents">Trucking Accidents</option>
+                            <option value="Nursing Home Abuse">Nursing Home Abuse</option>
+                            <option value="Wrongful Death">Wrongful Death</option>
+                            <option value="Complex Liability Cases">Complex Liability Cases</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="cm-desc">Case summary *</label>
+                        <textarea class="form-textarea" id="cm-desc" name="case_description" required placeholder="Facts, injuries, status, what you need."></textarea>
+                    </div>
+                    <label class="sms-check">
+                        <input type="checkbox" name="sms_opt_in" required>
+                        <span>By checking this box, I agree to receive transactional text messages related to this inquiry. Msg &amp; data rates may apply. Reply STOP to opt-out.</span>
+                    </label>
+                    <button type="submit" class="btn btn-gold btn-block" style="margin-top: 1.25rem;" data-cta="form_submit_case">Submit a Case Now</button>
+                </form>
+                <p class="legal-disclaimer legal-disclaimer--flush" style="margin-top: 1rem;">Electronic communications may not be secure. Do not send privileged or highly sensitive information unless you have a separate agreement addressing confidentiality.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="final-band" aria-labelledby="final-heading">
+        <div class="container" style="padding-top: var(--section-y); padding-bottom: var(--section-y);">
+            <h2 id="final-heading">You Already Have the Cases. We Help You Monetize Them.</h2>
+            <p class="subhead">Stop letting files sit. Send one for review—or call and we will talk structure in plain English.</p>
+            <div class="btn-row" style="justify-content: center;">
+                <a href="#submit-case" class="btn btn-gold" data-cta="final_submit">Submit a Case Now</a>
+                <a href="tel:844-467-4335" class="btn btn-outline" data-callrail-phone="844-467-4335" data-cta="final_call">Call to Discuss</a>
+            </div>
+            <p class="legal-disclaimer legal-disclaimer--spaced" style="max-width: 42rem; margin-left: auto; margin-right: auto;">Calls and clicks do not create an attorney-client relationship. This page is attorney advertising under applicable state rules. For responsible attorney identification and bar admissions, contact the firm directly.</p>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>Partner line: <a href="tel:844-467-4335" data-callrail-phone="844-467-4335">844-467-4335</a></p>
+            <p class="legal-disclaimer legal-disclaimer--spaced" style="font-style: normal;">This website is attorney advertising. The information here is for general informational purposes only, is directed to licensed attorneys considering co-counsel or referral arrangements, and is not legal advice for any matter. Prior results do not guarantee a similar outcome. No attorney-client relationship is formed by your use of this site, the estimator, or unsolicited submissions until—and only if—confirmed in a written agreement signed by the firm. Insider Accident Lawyers makes no warranty as to accuracy, completeness, or suitability for your situation. Where required, the firm identifies as a responsible attorney; for specific naming and bar admissions, contact the firm directly.</p>
+        </div>
+    </footer>
+
+    <div class="sticky-cta" role="region" aria-label="Quick actions. Attorney advertising. Submitting a case or calling does not create an attorney-client relationship or guarantee results.">
+        <a href="#submit-case" class="btn btn-gold" data-cta="sticky_submit">Submit Case</a>
+        <a href="tel:844-467-4335" class="btn btn-blue" data-callrail-phone="844-467-4335" data-cta="sticky_call">Call Now</a>
+    </div>
+
+    <script>
+    (function () {
+        window.dataLayer = window.dataLayer || [];
+
+        var bases = {
+            auto: { min: 85000, max: 2200000 },
+            truck: { min: 175000, max: 4200000 },
+            nursing: { min: 65000, max: 1400000 },
+            death: { min: 350000, max: 7500000 },
+            complex: { min: 55000, max: 1200000 }
+        };
+        var severity = {
+            minor: [0.22, 0.42],
+            moderate: [0.42, 0.68],
+            severe: [0.68, 1]
+        };
+        var liability = {
+            weak: [0.32, 0.52],
+            moderate: [0.52, 0.78],
+            strong: [0.78, 1]
+        };
+
+        function roundNice(n) {
+            if (n < 25000) return Math.round(n / 1000) * 1000;
+            return Math.round(n / 5000) * 5000;
+        }
+
+        function formatMoney(n) {
+            return '$' + n.toLocaleString('en-US');
+        }
+
+        function updateEstimator() {
+            var typeEl = document.getElementById('est-case-type');
+            var sevEl = document.getElementById('est-severity');
+            var liabEl = document.getElementById('est-liability');
+            var out = document.getElementById('calc-result-text');
+            if (!typeEl || !out) return;
+
+            var b = bases[typeEl.value] || bases.auto;
+            var s = severity[sevEl.value] || severity.moderate;
+            var l = liability[liabEl.value] || liability.moderate;
+
+            var low = roundNice(b.min * s[0] * l[0]);
+            var high = roundNice(b.max * s[1] * l[1]);
+            if (high <= low) high = roundNice(low * 1.35);
+
+            out.textContent = formatMoney(low) + ' – ' + formatMoney(high);
+
+            var hfType = document.getElementById('hf-est-type');
+            var hfSev = document.getElementById('hf-est-sev');
+            var hfLiab = document.getElementById('hf-est-liab');
+            var hfRange = document.getElementById('hf-est-range');
+            if (hfType) hfType.value = typeEl.options[typeEl.selectedIndex].text;
+            if (hfSev) hfSev.value = sevEl.value;
+            if (hfLiab) hfLiab.value = liabEl.value;
+            if (hfRange) hfRange.value = out.textContent;
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            ['est-case-type', 'est-severity', 'est-liability'].forEach(function (id) {
+                var el = document.getElementById(id);
+                if (el) el.addEventListener('change', updateEstimator);
+            });
+            updateEstimator();
+
+            document.querySelectorAll('a[href^="tel:"]').forEach(function (link) {
+                link.addEventListener('click', function () {
+                    if (typeof dataLayer !== 'undefined') {
+                        dataLayer.push({ event: 'attorney_call_click' });
+                    }
+                });
+            });
+
+            var form = document.getElementById('case-monetization-form');
+            if (form) {
+                form.addEventListener('submit', function () {
+                    if (!form.checkValidity()) return;
+                    updateEstimator();
+                    if (typeof dataLayer !== 'undefined') {
+                        dataLayer.push({ event: 'attorney_case_submit' });
+                    }
+                });
+            }
+        });
+    })();
+    </script>
+</body>
+</html>

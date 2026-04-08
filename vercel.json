@@ -24,6 +24,8 @@
     { "source": "/second-opinion/", "destination": "/second-opinion/index.html" },
     { "source": "/attorney-referrals", "destination": "/attorney-referrals/index.html" },
     { "source": "/attorney-referrals/", "destination": "/attorney-referrals/index.html" },
+    { "source": "/case-monetization", "destination": "/case-monetization/index.html" },
+    { "source": "/case-monetization/", "destination": "/case-monetization/index.html" },
     { "source": "/litigation-support", "destination": "/litigation-support/index.html" },
     { "source": "/litigation-support/", "destination": "/litigation-support/index.html" },
     { "source": "/serious-injury-after-accident-los-angeles", "destination": "/serious-injury-after-accident-los-angeles/index.html" },
