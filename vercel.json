@@ -43,7 +43,9 @@
     { "source": "/switch-personal-injury-lawyer-los-angeles", "destination": "/switch-personal-injury-lawyer-los-angeles/index.html" },
     { "source": "/switch-personal-injury-lawyer-los-angeles/", "destination": "/switch-personal-injury-lawyer-los-angeles/index.html" },
     { "source": "/serious-truck-accident-lawyer-los-angeles", "destination": "/serious-truck-accident-lawyer-los-angeles.html" },
-    { "source": "/serious-truck-accident-lawyer-los-angeles/", "destination": "/serious-truck-accident-lawyer-los-angeles.html" }
+    { "source": "/serious-truck-accident-lawyer-los-angeles/", "destination": "/serious-truck-accident-lawyer-los-angeles.html" },
+    { "source": "/serious-injury-los-angeles-signup", "destination": "/serious-injury-los-angeles-signup/index.html" },
+    { "source": "/serious-injury-los-angeles-signup/", "destination": "/serious-injury-los-angeles-signup/index.html" }
   ],
   "redirects": [
     {
