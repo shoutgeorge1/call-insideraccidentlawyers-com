@@ -112,20 +112,38 @@
             .sticky-header { position: fixed; left: 0; right: 0; z-index: 1000; }
         }
         .header-content {
-            display: flex;
-            justify-content: space-between;
+            display: grid;
+            grid-template-columns: auto minmax(0, 1fr) auto;
             align-items: center;
-            gap: 20px;
-            flex-wrap: wrap;
+            gap: 16px 20px;
+        }
+        .header-logo-link {
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
+            line-height: 0;
         }
         .header-logo { max-height: 48px; width: auto; max-width: 220px; height: auto; display: block; object-fit: contain; }
         @media (min-width: 769px) { .header-logo { max-height: 44px; max-width: 200px; } }
         @media (max-width: 768px) { .header-logo { max-height: 38px; max-width: 180px; } }
         .header-nav {
             display: flex;
-            gap: 24px;
+            gap: 18px 22px;
             align-items: center;
+            justify-content: center;
+            justify-self: center;
             flex-wrap: wrap;
+            min-width: 0;
+        }
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 14px 18px;
+            justify-self: end;
+            flex-shrink: 0;
+        }
+        .header-actions .header-phone {
+            white-space: nowrap;
         }
         .header-nav a {
             color: var(--brand-gray-900);
@@ -138,11 +156,25 @@
         .header-phone { font-size: 16px; font-weight: 700; }
         .header-phone a { color: var(--brand-blue) !important; text-decoration: none; }
         @media (max-width: 768px) {
+            .header-content {
+                display: flex;
+                flex-wrap: nowrap;
+                justify-content: space-between;
+                align-items: center;
+                gap: 10px 12px;
+            }
+            .header-logo-link { min-width: 0; }
+            .header-actions {
+                margin-left: auto;
+                gap: 8px 10px;
+                flex-shrink: 0;
+            }
             .header-nav { display: none; }
             .header-logo { max-width: min(200px, 58vw); max-height: 40px; }
-            .sticky-header .header-content { gap: 12px; }
-            .sticky-header .header-phone { font-size: 15px; }
+            .sticky-header .header-phone { font-size: 14px; }
             .sticky-header .btn-secondary { padding: 12px 20px; font-size: 16px; }
+            .header-actions .header-phone { white-space: normal; max-width: 11rem; text-align: right; line-height: 1.25; }
+            .header-cta-review { padding: 10px 14px; font-size: 14px; white-space: nowrap; }
         }
         .hero {
             position: relative;
@@ -1338,17 +1370,18 @@
     <header class="sticky-header">
         <div class="container">
             <div class="header-content">
-                <a href="https://call.insideraccidentlawyers.com/"><img src="insider-lawyers-logo.png" alt="Insider Lawyers" class="header-logo" width="200" height="48" loading="eager"></a>
+                <a class="header-logo-link" href="https://call.insideraccidentlawyers.com/"><img src="insider-lawyers-logo.png" alt="Insider Lawyers" class="header-logo" width="200" height="48" loading="eager"></a>
                 <nav class="header-nav" aria-label="Page sections">
                     <a href="#types">Practice Areas</a>
                     <a href="#micro-intent">How We Help</a>
-                    <a href="#form-section" data-cta="nav">Free Case Review</a>
                     <a href="#after-accident">After the Accident</a>
                     <a href="#why-call">Why Call Early</a>
                     <a href="#faq">FAQ</a>
                 </nav>
-                <div class="header-phone" data-callrail-phone="844-467-4335">Call: <a href="tel:844-467-4335">844-467-4335</a></div>
-                <a href="#form-section" class="header-cta-review" data-cta="header">Free Case Review</a>
+                <div class="header-actions">
+                    <div class="header-phone" data-callrail-phone="844-467-4335">Call: <a href="tel:844-467-4335">844-467-4335</a></div>
+                    <a href="#form-section" class="header-cta-review" data-cta="header">Free Case Review</a>
+                </div>
             </div>
         </div>
     </header>
