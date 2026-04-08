@@ -59,14 +59,21 @@
             min-height: var(--header-h);
             padding: 10px 0;
         }
-        .logo-link { display: flex; align-items: center; text-decoration: none; }
-        .header-logo { max-width: 200px; width: auto; height: auto; display: block; }
-        @media (min-width: 769px) {
-            .header-logo { max-width: 180px; }
+        .logo-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+            min-width: 0;
         }
-        @media (max-width: 768px) {
-            .header-logo { max-width: 158px; }
+        .header-wordmark {
+            font-size: clamp(1.35rem, 5.2vw, 2rem);
+            font-weight: 800;
+            color: var(--brand-navy);
+            letter-spacing: -0.04em;
+            line-height: 1.05;
         }
+        .logo-link:hover .header-wordmark { color: var(--brand-blue); }
         .btn-cta {
             display: inline-flex;
             align-items: center;
@@ -526,7 +533,7 @@
     <header class="site-header">
         <div class="container site-header-inner">
             <a href="https://call.insideraccidentlawyers.com/" class="logo-link" aria-label="Insider Lawyers home">
-                <img src="/images/la/logo-insider-lawyers.svg" alt="Insider Lawyers" class="header-logo" width="188" height="44" loading="eager">
+                <span class="header-wordmark">Insider Lawyers</span>
             </a>
             <div class="header-cta-wrap">
                 <a href="#case-review-form" class="btn-cta btn-cta-primary">Sign Up Now</a>
