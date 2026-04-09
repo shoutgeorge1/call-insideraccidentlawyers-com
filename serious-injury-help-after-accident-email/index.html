@@ -27,7 +27,7 @@
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html, body { overflow-x: hidden; }
-        html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+        html { scroll-behavior: smooth; scroll-padding-top: 100px; }
         body {
             font-family: "Inter", "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
             font-weight: 400;
@@ -103,12 +103,12 @@
             top: 0;
             background: var(--brand-white);
             border-bottom: 2px solid var(--brand-border);
-            padding: 12px 0;
+            padding: 14px 0;
             z-index: 1000;
             box-shadow: 0 4px 12px rgba(0,0,0,0.06);
         }
         @media (min-width: 769px) {
-            body { padding-top: 56px; }
+            body { padding-top: 88px; }
             .sticky-header { position: fixed; left: 0; right: 0; z-index: 1000; }
         }
         .header-content {
@@ -123,9 +123,9 @@
             flex-shrink: 0;
             line-height: 0;
         }
-        .header-logo { max-height: 48px; width: auto; max-width: 220px; height: auto; display: block; object-fit: contain; }
-        @media (min-width: 769px) { .header-logo { max-height: 44px; max-width: 200px; } }
-        @media (max-width: 768px) { .header-logo { max-height: 38px; max-width: 180px; } }
+        .header-logo { max-height: 96px; width: auto; max-width: 440px; height: auto; display: block; object-fit: contain; }
+        @media (min-width: 769px) { .header-logo { max-height: 88px; max-width: 400px; } }
+        @media (max-width: 768px) { .header-logo { max-height: 64px; max-width: 280px; } }
         .header-nav {
             display: flex;
             gap: 18px 22px;
@@ -170,7 +170,7 @@
                 flex-shrink: 0;
             }
             .header-nav { display: none; }
-            .header-logo { max-width: min(200px, 58vw); max-height: 40px; }
+            .header-logo { max-width: min(280px, 72vw); max-height: 64px; }
             .sticky-header .header-phone { font-size: 14px; }
             .sticky-header .btn-secondary { padding: 12px 20px; font-size: 16px; }
             .header-actions .header-phone { white-space: normal; max-width: 11rem; text-align: right; line-height: 1.25; }
@@ -550,12 +550,12 @@
         .pa-cards-section.pa-at-page-top {
             padding: 52px 0 56px;
             margin-top: 0;
-            scroll-margin-top: 80px;
+            scroll-margin-top: 100px;
         }
         @media (max-width: 768px) { .pa-cards-section.pa-at-page-top { padding: 36px 0 44px; } }
         @media (max-width: 768px) { .pa-cards-section { padding: 44px 0 52px; } }
         .pa-cards-section h2 { text-align: center; margin-bottom: 12px; }
-        .pa-cards-section.pa-at-page-top h2 { scroll-margin-top: 80px; }
+        .pa-cards-section.pa-at-page-top h2 { scroll-margin-top: 100px; }
         .pa-heading-wrap {
             text-align: center;
             max-width: 720px;
@@ -958,7 +958,7 @@
         .form-section-email {
             background: linear-gradient(165deg, var(--brand-slate) 0%, var(--brand-navy) 42%, var(--brand-blue) 100%);
             padding: 64px 0 72px;
-            scroll-margin-top: 80px;
+            scroll-margin-top: 100px;
             position: relative;
             overflow: hidden;
         }
@@ -994,7 +994,7 @@
             .form-section-email { padding: 52px 0 60px; }
             .form-section-email .hero-form-box.form-section-box { padding: 24px 18px 22px; }
         }
-        #micro-intent { scroll-margin-top: 80px; }
+        #micro-intent { scroll-margin-top: 100px; }
         .form-section-box .form-section-title {
             font-size: clamp(1.35rem, 3vw, 1.65rem);
             line-height: 1.3;
@@ -1370,11 +1370,11 @@
     <header class="sticky-header">
         <div class="container">
             <div class="header-content">
-                <a class="header-logo-link" href="https://call.insideraccidentlawyers.com/"><img src="insider-lawyers-logo.png" alt="Insider Lawyers" class="header-logo" width="200" height="48" loading="eager"></a>
+                <a class="header-logo-link" href="https://call.insideraccidentlawyers.com/"><img src="insider-lawyers-logo.png" alt="Insider Lawyers" class="header-logo" width="400" height="96" loading="eager"></a>
                 <nav class="header-nav" aria-label="Page sections">
                     <a href="#types">Practice Areas</a>
                     <a href="#micro-intent">How We Help</a>
-                    <a href="#after-accident">After the Accident</a>
+                    <a href="#after-accident">Know Your Rights</a>
                     <a href="#why-call">Why Call Early</a>
                     <a href="#faq">FAQ</a>
                 </nav>
@@ -1646,8 +1646,8 @@
     <section class="trust-badges-section">
         <div class="trust-badges-container">
             <div class="section-head">
-                <h2 style="text-align: center;">Experienced Serious Injury Attorneys in Los Angeles</h2>
-                <p class="section-sub" style="text-align: center;">We handle auto accidents (including catastrophic injury and wrongful death), premises liability, elder abuse, nursing home negligence, burn injuries, product liability, med spa injuries, social media harm, and other serious injury cases.</p>
+                <h2 style="text-align: center;">Experienced Los Angeles Injury Attorneys</h2>
+                <p class="section-sub" style="text-align: center;">We handle auto accidents (including catastrophic injury and wrongful death), premises liability, elder abuse, nursing home negligence, burn injuries, product liability, med spa injuries, social media harm, and other injury and accident cases.</p>
             </div>
             <div class="lp-stats" id="lp-stats">
                 <div class="lp-stat-item"><span class="lp-stat-value" data-count="100000000" data-prefix="$" data-suffix="+">0</span><span class="lp-stat-label">Won for Clients</span></div>
@@ -1670,8 +1670,7 @@
 
     <section id="after-accident" class="after-accident-section">
         <div class="container">
-            <h2 style="text-align: center;">What Happens After a Serious Accident</h2>
-            <p style="text-align: center; max-width: 640px; margin: 0 auto 12px; color: var(--brand-gray-700); font-size: 17px;">In the days and weeks after a serious injury, a few things often happen.</p>
+            <h2 style="text-align: center;">What Happens Next</h2>
             <p style="text-align: center; max-width: 640px; margin: 0 auto 24px; color: var(--brand-gray-700); font-size: 17px;">Knowing what to expect can help you protect your rights.</p>
             <div class="after-accident-with-img">
                 <div class="after-accident-img-wrap">
@@ -1739,13 +1738,13 @@
     <section id="why-call" class="why-call-section">
         <div class="container">
             <h2 style="text-align: center;">Why Call Early</h2>
-            <p style="text-align: center; max-width: 640px; margin: 0 auto; color: var(--brand-gray-700); font-size: 17px;">After a serious accident, getting legal guidance early can make a real difference—without pressure or drama.</p>
+            <p style="text-align: center; max-width: 640px; margin: 0 auto; color: var(--brand-gray-700); font-size: 17px;">Getting legal guidance early can make a real difference—without pressure or drama.</p>
             <ul class="why-call-list">
                 <li><strong>Protect evidence.</strong> Photos, witnesses, and scene evidence matter. The sooner we can advise, the better the chance to preserve what you need.</li>
                 <li><strong>Avoid damaging recorded statements.</strong> Insurers may ask for a recorded statement. Saying the wrong thing can hurt your claim. We help you know what to do.</li>
                 <li><strong>Document medical treatment properly.</strong> Your medical records are the foundation of your case. Early guidance can help ensure your care is documented in a way that supports your claim.</li>
                 <li><strong>Understand claim value.</strong> Before you accept any offer or sign anything, you deserve to know what your case may be worth.</li>
-                <li><strong>Avoid early low settlements.</strong> Quick settlement offers are often far below what serious injuries warrant. We help you make an informed decision.</li>
+                <li><strong>Avoid early low settlements.</strong> Quick settlement offers are often far below what your injuries warrant. We help you make an informed decision.</li>
             </ul>
         </div>
     </section>
@@ -1753,7 +1752,7 @@
     <section class="comp-section">
         <div class="container">
             <h2 style="text-align: center;">Compensation</h2>
-            <p style="text-align: center; max-width: 640px; margin: 0 auto; color: var(--brand-gray-700); font-size: 17px;">In serious injury cases, recoverable damages may include:</p>
+            <p style="text-align: center; max-width: 640px; margin: 0 auto; color: var(--brand-gray-700); font-size: 17px;">Depending on your case, recoverable damages may include:</p>
             <ul class="comp-list">
                 <li>Emergency room and hospital costs</li>
                 <li>Ongoing treatment and rehabilitation</li>
@@ -1795,8 +1794,8 @@
 
     <section class="why-us-section">
         <div class="container">
-            <h2 style="text-align: center;">Why Insider Accident Lawyers</h2>
-            <p style="text-align: center; max-width: 680px; margin: 0 auto; color: rgba(255,255,255,0.9); font-size: 17px; line-height: 1.6;">We combine Los Angeles injury focus with serious case experience and a straightforward, responsive approach.</p>
+            <h2 style="text-align: center;">Why Insider Lawyers</h2>
+            <p style="text-align: center; max-width: 680px; margin: 0 auto; color: rgba(255,255,255,0.9); font-size: 17px; line-height: 1.6;">We combine Los Angeles injury focus with strong case experience and a straightforward, responsive approach.</p>
             <div class="why-us-grid">
                 <div class="why-us-card">
                     <h3>Los Angeles injury focus</h3>
@@ -1807,7 +1806,7 @@
                     <p>We prepare cases as if they could go to trial. That approach often leads to better outcomes at the negotiating table.</p>
                 </div>
                 <div class="why-us-card">
-                    <h3>Serious case handling</h3>
+                    <h3>Focused case handling</h3>
                     <p>We focus on cases involving real injuries and clear fault. If your situation fits, you get focused attention.</p>
                 </div>
                 <div class="why-us-card">
@@ -1906,7 +1905,7 @@
                     <p><a href="#types">Practice Areas</a></p>
                     <p><a href="#micro-intent">How We Help</a></p>
                     <p><a href="#form-section" data-cta="footer">Free Case Review</a></p>
-                    <p><a href="#after-accident">After the Accident</a></p>
+                    <p><a href="#after-accident">Know Your Rights</a></p>
                     <p><a href="#why-call">Why Call Early</a></p>
                     <p><a href="#faq">FAQ</a></p>
                     <p style="margin-top: 12px;"><a href="tel:844-467-4335">Call Now</a></p>
