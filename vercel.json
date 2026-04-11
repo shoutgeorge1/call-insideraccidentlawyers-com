@@ -47,7 +47,9 @@
     { "source": "/serious-injury-los-angeles-signup", "destination": "/serious-injury-los-angeles-signup/index.html" },
     { "source": "/serious-injury-los-angeles-signup/", "destination": "/serious-injury-los-angeles-signup/index.html" },
     { "source": "/serious-injury", "destination": "/serious-injury/index.html" },
-    { "source": "/serious-injury/", "destination": "/serious-injury/index.html" }
+    { "source": "/serious-injury/", "destination": "/serious-injury/index.html" },
+    { "source": "/accident-help-now", "destination": "/accident-help-now/index.html" },
+    { "source": "/accident-help-now/", "destination": "/accident-help-now/index.html" }
   ],
   "redirects": [
     {
