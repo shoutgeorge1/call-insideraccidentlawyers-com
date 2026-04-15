@@ -49,7 +49,19 @@
     { "source": "/serious-injury", "destination": "/serious-injury/index.html" },
     { "source": "/serious-injury/", "destination": "/serious-injury/index.html" },
     { "source": "/accident-help-now", "destination": "/accident-help-now/index.html" },
-    { "source": "/accident-help-now/", "destination": "/accident-help-now/index.html" }
+    { "source": "/accident-help-now/", "destination": "/accident-help-now/index.html" },
+    { "source": "/police-misconduct-lawyer-los-angeles", "destination": "/police-misconduct-lawyer-los-angeles/index.html" },
+    { "source": "/police-misconduct-lawyer-los-angeles/", "destination": "/police-misconduct-lawyer-los-angeles/index.html" },
+    { "source": "/police-misconduct-attorney-los-angeles", "destination": "/police-misconduct-attorney-los-angeles/index.html" },
+    { "source": "/police-misconduct-attorney-los-angeles/", "destination": "/police-misconduct-attorney-los-angeles/index.html" },
+    { "source": "/los-angeles-police-civil-rights-lawyer", "destination": "/los-angeles-police-civil-rights-lawyer/index.html" },
+    { "source": "/los-angeles-police-civil-rights-lawyer/", "destination": "/los-angeles-police-civil-rights-lawyer/index.html" },
+    { "source": "/civil-rights-police-abuse-los-angeles", "destination": "/civil-rights-police-abuse-los-angeles/index.html" },
+    { "source": "/civil-rights-police-abuse-los-angeles/", "destination": "/civil-rights-police-abuse-los-angeles/index.html" },
+    { "source": "/before-you-sign-anything-los-angeles", "destination": "/before-you-sign-anything-los-angeles/index.html" },
+    { "source": "/before-you-sign-anything-los-angeles/", "destination": "/before-you-sign-anything-los-angeles/index.html" },
+    { "source": "/dont-need-right-words-los-angeles", "destination": "/dont-need-right-words-los-angeles/index.html" },
+    { "source": "/dont-need-right-words-los-angeles/", "destination": "/dont-need-right-words-los-angeles/index.html" }
   ],
   "redirects": [
     {
