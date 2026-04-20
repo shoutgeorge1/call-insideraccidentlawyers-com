@@ -1,0 +1,8 @@
+{
+  "name": "call-insider-lp",
+  "private": true,
+  "scripts": {
+    "build": "cd nursing-home-chat-web && npm install && npm run build && cd .. && node scripts/copy-nursing-export.mjs",
+    "dev:nursing-chat": "cd nursing-home-chat-web && npm install && npm run dev"
+  }
+}

@@ -61,7 +61,9 @@
     { "source": "/before-you-sign-anything-los-angeles", "destination": "/before-you-sign-anything-los-angeles/index.html" },
     { "source": "/before-you-sign-anything-los-angeles/", "destination": "/before-you-sign-anything-los-angeles/index.html" },
     { "source": "/dont-need-right-words-los-angeles", "destination": "/dont-need-right-words-los-angeles/index.html" },
-    { "source": "/dont-need-right-words-los-angeles/", "destination": "/dont-need-right-words-los-angeles/index.html" }
+    { "source": "/dont-need-right-words-los-angeles/", "destination": "/dont-need-right-words-los-angeles/index.html" },
+    { "source": "/nursing-home-chat-check", "destination": "/nursing-home-chat-check/index.html" },
+    { "source": "/nursing-home-chat-check/", "destination": "/nursing-home-chat-check/index.html" }
   ],
   "redirects": [
     {

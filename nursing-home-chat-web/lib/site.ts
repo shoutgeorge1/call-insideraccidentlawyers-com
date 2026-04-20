@@ -1,0 +1,2 @@
+export const PRIMARY_PHONE_DISPLAY = '844-467-4335';
+export const PRIMARY_TEL_HREF = `tel:${PRIMARY_PHONE_DISPLAY}`;

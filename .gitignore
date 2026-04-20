@@ -1,1 +1,6 @@
 .vercel
+/_next/
+/nursing-home-chat-check/
+nursing-home-chat-web/node_modules/
+nursing-home-chat-web/.next/
+nursing-home-chat-web/out/
