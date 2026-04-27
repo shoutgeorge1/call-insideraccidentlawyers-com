@@ -63,7 +63,13 @@
     { "source": "/dont-need-right-words-los-angeles", "destination": "/dont-need-right-words-los-angeles/index.html" },
     { "source": "/dont-need-right-words-los-angeles/", "destination": "/dont-need-right-words-los-angeles/index.html" },
     { "source": "/nursing-home-chat-check", "destination": "/nursing-home-chat-check/index.html" },
-    { "source": "/nursing-home-chat-check/", "destination": "/nursing-home-chat-check/index.html" }
+    { "source": "/nursing-home-chat-check/", "destination": "/nursing-home-chat-check/index.html" },
+    { "source": "/catastrophic-injury-case-review", "destination": "/catastrophic-injury-case-review/index.html" },
+    { "source": "/catastrophic-injury-case-review/", "destination": "/catastrophic-injury-case-review/index.html" },
+    { "source": "/serious-injury-case-review", "destination": "/serious-injury-case-review/index.html" },
+    { "source": "/serious-injury-case-review/", "destination": "/serious-injury-case-review/index.html" },
+    { "source": "/major-injury-free-case-review", "destination": "/major-injury-free-case-review/index.html" },
+    { "source": "/major-injury-free-case-review/", "destination": "/major-injury-free-case-review/index.html" }
   ],
   "redirects": [
     {
