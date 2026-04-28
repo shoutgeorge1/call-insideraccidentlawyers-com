@@ -93,7 +93,17 @@
     { "source": "/glp1-injury-lawyer-california", "destination": "/glp1-injury-lawyer-california/index.html" },
     { "source": "/glp1-injury-lawyer-california/", "destination": "/glp1-injury-lawyer-california/index.html" },
     { "source": "/sepsis-infection-negligence-lawyer-california", "destination": "/sepsis-infection-negligence-lawyer-california/index.html" },
-    { "source": "/sepsis-infection-negligence-lawyer-california/", "destination": "/sepsis-infection-negligence-lawyer-california/index.html" }
+    { "source": "/sepsis-infection-negligence-lawyer-california/", "destination": "/sepsis-infection-negligence-lawyer-california/index.html" },
+    { "source": "/catastrophic-auto-accident-lawyer-california", "destination": "/catastrophic-auto-accident-lawyer-california/index.html" },
+    { "source": "/catastrophic-auto-accident-lawyer-california/", "destination": "/catastrophic-auto-accident-lawyer-california/index.html" },
+    { "source": "/commercial-vehicle-accident-lawyer-california", "destination": "/commercial-vehicle-accident-lawyer-california/index.html" },
+    { "source": "/commercial-vehicle-accident-lawyer-california/", "destination": "/commercial-vehicle-accident-lawyer-california/index.html" },
+    { "source": "/commercial-truck-accident-lawyer-california", "destination": "/commercial-truck-accident-lawyer-california/index.html" },
+    { "source": "/commercial-truck-accident-lawyer-california/", "destination": "/commercial-truck-accident-lawyer-california/index.html" },
+    { "source": "/brain-injury-car-accident-lawyer-california", "destination": "/brain-injury-car-accident-lawyer-california/index.html" },
+    { "source": "/brain-injury-car-accident-lawyer-california/", "destination": "/brain-injury-car-accident-lawyer-california/index.html" },
+    { "source": "/wrongful-death-car-accident-lawyer-california", "destination": "/wrongful-death-car-accident-lawyer-california/index.html" },
+    { "source": "/wrongful-death-car-accident-lawyer-california/", "destination": "/wrongful-death-car-accident-lawyer-california/index.html" }
   ],
   "redirects": [
     {
