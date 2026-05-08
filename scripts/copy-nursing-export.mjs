@@ -26,3 +26,4 @@ function copyIntoRoot(name) {
 
 copyIntoRoot('_next');
 copyIntoRoot('nursing-home-chat-check');
+copyIntoRoot('injury-help');

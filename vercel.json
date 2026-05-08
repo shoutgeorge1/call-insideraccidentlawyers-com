@@ -64,16 +64,18 @@
     { "source": "/dont-need-right-words-los-angeles/", "destination": "/dont-need-right-words-los-angeles/index.html" },
     { "source": "/nursing-home-chat-check", "destination": "/nursing-home-chat-check/index.html" },
     { "source": "/nursing-home-chat-check/", "destination": "/nursing-home-chat-check/index.html" },
+    { "source": "/glp1-lawsuit", "destination": "/glp1-lawsuit/index.html" },
+    { "source": "/glp1-lawsuit/", "destination": "/glp1-lawsuit/index.html" },
+    { "source": "/glp1-side-effects", "destination": "/glp1-side-effects/index.html" },
+    { "source": "/glp1-side-effects/", "destination": "/glp1-side-effects/index.html" },
+    { "source": "/injury-help", "destination": "/injury-help/index.html" },
+    { "source": "/injury-help/", "destination": "/injury-help/index.html" },
     { "source": "/catastrophic-injury-case-review", "destination": "/catastrophic-injury-case-review/index.html" },
     { "source": "/catastrophic-injury-case-review/", "destination": "/catastrophic-injury-case-review/index.html" },
     { "source": "/serious-injury-case-review", "destination": "/serious-injury-case-review/index.html" },
     { "source": "/serious-injury-case-review/", "destination": "/serious-injury-case-review/index.html" },
     { "source": "/major-injury-free-case-review", "destination": "/major-injury-free-case-review/index.html" },
     { "source": "/major-injury-free-case-review/", "destination": "/major-injury-free-case-review/index.html" },
-    { "source": "/glp1-lawsuit", "destination": "/glp1-lawsuit/index.html" },
-    { "source": "/glp1-lawsuit/", "destination": "/glp1-lawsuit/index.html" },
-    { "source": "/glp1-side-effects", "destination": "/glp1-side-effects/index.html" },
-    { "source": "/glp1-side-effects/", "destination": "/glp1-side-effects/index.html" },
     { "source": "/wrongful-death-lawyer-california", "destination": "/wrongful-death-lawyer-california/index.html" },
     { "source": "/wrongful-death-lawyer-california/", "destination": "/wrongful-death-lawyer-california/index.html" },
     { "source": "/brain-injury-lawyer-california", "destination": "/brain-injury-lawyer-california/index.html" },
@@ -113,7 +115,17 @@
     { "source": "/brain-injury-car-accident-lawyer-california", "destination": "/brain-injury-car-accident-lawyer-california/index.html" },
     { "source": "/brain-injury-car-accident-lawyer-california/", "destination": "/brain-injury-car-accident-lawyer-california/index.html" },
     { "source": "/wrongful-death-car-accident-lawyer-california", "destination": "/wrongful-death-car-accident-lawyer-california/index.html" },
-    { "source": "/wrongful-death-car-accident-lawyer-california/", "destination": "/wrongful-death-car-accident-lawyer-california/index.html" }
+    { "source": "/wrongful-death-car-accident-lawyer-california/", "destination": "/wrongful-death-car-accident-lawyer-california/index.html" },
+    { "source": "/construction-injury-lawyer-california", "destination": "/construction-injury-lawyer-california/index.html" },
+    { "source": "/construction-injury-lawyer-california/", "destination": "/construction-injury-lawyer-california/index.html" },
+    { "source": "/constructon-injury-lawyer-california", "destination": "/construction-injury-lawyer-california/index.html" },
+    { "source": "/constructon-injury-lawyer-california/", "destination": "/construction-injury-lawyer-california/index.html" }
+    ,{ "source": "/construction-accident-lawyer-los-angeles", "destination": "/construction-accident-lawyer-los-angeles/index.html" }
+    ,{ "source": "/construction-accident-lawyer-los-angeles/", "destination": "/construction-accident-lawyer-los-angeles/index.html" }
+    ,{ "source": "/construction-site-injury-lawyer-california", "destination": "/construction-site-injury-lawyer-california/index.html" }
+    ,{ "source": "/construction-site-injury-lawyer-california/", "destination": "/construction-site-injury-lawyer-california/index.html" }
+    ,{ "source": "/scaffold-accident-lawyer-california", "destination": "/scaffold-accident-lawyer-california/index.html" }
+    ,{ "source": "/scaffold-accident-lawyer-california/", "destination": "/scaffold-accident-lawyer-california/index.html" }
   ],
   "redirects": [
     {

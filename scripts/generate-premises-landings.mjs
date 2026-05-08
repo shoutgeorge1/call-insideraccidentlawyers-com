@@ -131,17 +131,41 @@ function inferIcon(text) {
   if (t.includes("lighting") || t.includes("light")) return "lightbulb";
   if (t.includes("stairs") || t.includes("handrail") || t.includes("rail")) return "stairs";
   if (t.includes("responsibility") || t.includes("trial") || t.includes("negligence")) return "gavel";
+  if (t.includes("third-party") || t.includes("subcontractor") || t.includes("vendor")) return "building";
+  if (t.includes("documentation") || t.includes("osha")) return "clipboard";
   return "warningTriangle";
 }
 
-function accidentGrid(items) {
+function accidentGrid(items, accentImages = [], caseCardImages = null) {
   return items
-    .map(
-      (t) => `                <div class="accident-item premium-service-card">
+    .map((t, i) => {
+      const cardImg = caseCardImages && caseCardImages[i];
+      const accent = accentImages[i % accentImages.length];
+      if (cardImg) {
+        return `                <div class="accident-item premium-service-card accident-item--photo-card">
+                    <div class="accident-item-photo-wrap">
+                        <img src="${cardImg.src}" alt="${escAttr(
+                          cardImg.alt
+                        )}" class="accident-item-photo" loading="lazy" decoding="async" width="640" height="400">
+                    </div>
+                    <div class="accident-item-body">
+                        <div class="premium-icon-badge">${icon(inferIcon(t))}</div>
+                        <div class="accident-item-text">${t}</div>
+                    </div>
+                </div>`;
+      }
+      return `                <div class="accident-item premium-service-card">
                     <div class="premium-icon-badge">${icon(inferIcon(t))}</div>
-                    <div class="accident-item-text">${t}</div>
-                </div>`
-    )
+                    <div class="accident-item-text">${t}</div>${
+                      accent
+                        ? `
+                    <img src="${accent.src}" alt="${escAttr(
+                            accent.alt
+                          )}" loading="lazy" decoding="async" width="96" height="64" style="margin-left:auto;border-radius:10px;object-fit:cover;width:96px;height:64px;box-shadow:0 8px 16px rgba(12,35,52,.14);">`
+                        : ""
+                    }
+                </div>`;
+    })
     .join("\n");
 }
 
@@ -848,6 +872,718 @@ function buildPages() {
       preloadHref: IMG.knee,
       checklistResultId: "case-checklist-result",
     },
+    {
+      slug: "construction-injury-lawyer-california",
+      bodyAttrs: 'data-page-type="construction_injury_serious" data-ad-group="AG | Construction Injury California"',
+      title: "Construction Injury Lawyer California | Construction Accident Attorney",
+      metaDesc:
+        "Injured on a construction site in California? You may have a claim beyond workers’ comp. Free construction injury case review. No fee unless we win.",
+      ogTitle: "Construction Injury Lawyer California",
+      ogDesc:
+        "Construction site accident? We review serious injury cases involving falls, falling objects, equipment, unsafe jobsites, contractors, and third-party liability.",
+      canonical: "https://call.insideraccidentlawyers.com/construction-injury-lawyer-california",
+      h1: "Injured On A Construction Site?",
+      heroSub:
+        '<span class="hero-tagline">Free Case Review • No Fee Unless We Win.</span> <span class="hero-highlight">You may have a claim beyond workers’ comp.</span> Free Construction Injury Case Review • Serious Jobsite Injuries Reviewed • Falls, Equipment Accidents, Falling Objects &amp; Unsafe Sites • Hablamos Espa\u00f1ol',
+      heroReframe:
+        "We review serious construction injury cases across California and identify potential third-party liability paths.",
+      heroImg: getImage("hero-injured-construction-worker.png", IMG.attorney),
+      heroImgAlt: "Injured construction worker being helped by coworkers on a construction site",
+      heroPlannedImage: "hero-injured-construction-worker.png",
+      heroHazardFallback: IMG.attorney,
+      heroUseAttorney: false,
+      heroCaption: "Construction accident and serious injury case review",
+      trustH2: "A Construction Injury Case May Involve More Than Workers’ Comp",
+      trustSub:
+        "Workers’ compensation may apply after many jobsite injuries, but some construction accidents also involve third-party liability.<br><br>A third-party claim may exist when someone other than your employer contributed to the accident, such as a subcontractor, property owner, equipment company, negligent driver, vendor, or general contractor.",
+      formSubject: "New Construction Injury Lead (CA)",
+      formH2: "Free Case Review — Construction Injury",
+      formIntro:
+        "Tell us what happened, where it happened, and what treatment you received. We review serious construction injury cases statewide.",
+      situationOptions: [
+        ["Fall from scaffold, ladder, roof, or height", "Fall from scaffold, ladder, roof, or height"],
+        ["Falling object injury", "Falling object injury"],
+        ["Crane or heavy equipment accident", "Crane or heavy equipment accident"],
+        ["Forklift or vehicle accident", "Forklift or vehicle accident"],
+        ["Trench, collapse, or excavation accident", "Trench, collapse, or excavation accident"],
+        ["Electrical injury", "Electrical injury"],
+        ["Burn injury", "Burn injury"],
+        ["Machinery or tool injury", "Machinery or tool injury"],
+        ["Unsafe jobsite condition", "Unsafe jobsite condition"],
+        ["Construction wrongful death", "Construction wrongful death"],
+        ["Workers comp only or not sure", "Workers’ comp only / not sure"],
+        ["Other serious construction injury", "Other serious construction injury"],
+      ],
+      casesH2: "Serious Construction Accident Cases We Review",
+      casesLead:
+        "Construction sites involve many companies and moving parts. We review serious injury cases where a contractor, property owner, equipment company, driver, vendor, or unsafe condition may have contributed.",
+      casesItems: [
+        "Scaffold and ladder falls",
+        "Falling object injuries",
+        "Heavy equipment and forklift accidents",
+        "Unsafe jobsite conditions",
+        "Electrical injuries and burns",
+        "Trench, collapse, and excavation injuries",
+        "Machinery and tool injuries",
+        "Construction wrongful death",
+      ],
+      caseAccentImages: [
+        {
+          src: getImage(
+            "construction-man-looking-up-something-falling.png",
+            getImage("hero-injured-construction-worker.png", IMG.attorney)
+          ),
+          alt: "Construction worker looking up at a possible falling object hazard on a jobsite",
+        },
+        {
+          src: getImage(
+            "injured-construction-worker-hispanic.png",
+            getImage("hero-injured-construction-worker.png", IMG.attorney)
+          ),
+          alt: "Injured construction worker being helped near heavy equipment",
+        },
+        {
+          src: getImage(
+            "man-severly-wounded-wrongful-death-construction.png",
+            getImage("hero-injured-construction-worker.png", IMG.attorney)
+          ),
+          alt: "Construction workers responding to a serious jobsite injury",
+        },
+      ],
+      hazardsH2: "Construction Accident Attorneys",
+      hazardsLead:
+        "When a serious construction accident happens, identifying who controlled the hazard and who may be legally responsible can be critical to the recovery path.",
+      hazardsFigure: {
+        src: getImage("attorney-contruction-site.png", IMG.attorney),
+        alt: "Personal injury attorney standing near a construction site",
+        caption: "Potentially responsible parties can include contractors, subcontractors, owners, equipment companies, and vendors.",
+      },
+      hazardsSecondFigure: {
+        src: getImage(
+          "injured-construction-worker-hispanic.png",
+          getImage("hero-injured-construction-worker.png", IMG.attorney)
+        ),
+        alt: "Injured construction worker being helped near heavy equipment",
+        caption: "We can review whether your case is workers’ comp only, a third-party injury claim, or another recovery path.",
+      },
+      signsH2: "Signs You May Have A Construction Injury Case",
+      signsIntro:
+        "Tap what applies. Not every workplace injury is a personal injury case. Some are workers’ comp only, and we can review whether there may be a third-party liability path.",
+      signsItems: [
+        "Serious injury requiring ER care, hospitalization, surgery, imaging, or ongoing treatment",
+        "A subcontractor, vendor, driver, equipment company, property owner, or general contractor may have contributed",
+        "Photos, video, incident reports, OSHA reports, witnesses, or jobsite records may exist",
+        "The accident involved a fall, falling object, machinery, vehicle, collapse, electrical hazard, or unsafe worksite condition",
+        "You are unsure whether this is only workers’ comp or also a third-party injury claim",
+      ],
+      checklistDefault:
+        "Not every construction injury supports a third-party claim. We screen for serious injury, factual evidence, and who may have controlled the hazard.",
+      checklistOne:
+        "If one of these applies, a free case review can help clarify whether there may be a claim beyond workers’ comp.",
+      checklistMany:
+        "Multiple factors may support a serious construction injury claim. Request a free case review.",
+      seriousTitle: "Serious Injuries Matter",
+      seriousBody:
+        "We review severe injuries including fractures, surgery, head and brain injuries, spine and back injuries, burns, amputations, crush injuries, electrocution, wrongful death, and long-term impairment.",
+      evidenceTitle: "Evidence Can Disappear Fast",
+      evidenceIntro:
+        "Construction cases can depend on fast evidence preservation. Photos, video, incident reports, witness names, contractor information, OSHA records where applicable, and equipment records may help determine who was responsible.",
+      evidenceItems: [
+        "Incident reports",
+        "OSHA reports where applicable",
+        "Photos and videos",
+        "Witness names",
+        "Contractor and subcontractor information",
+        "Site safety records",
+        "Equipment maintenance records",
+        "Prior complaints",
+        "Jobsite control records",
+        "Medical records",
+        "Insurance coverage review",
+      ],
+      investigateH2: "How We Investigate Construction Accident Claims",
+      investigateIntro: "Construction injury claims often require fast evidence preservation and a structured liability review.",
+      investigationPlannedImage: "cell-phone-capture-equipment-on-floor.png",
+      investigationFeatureAlt:
+        "Phone documenting construction accident evidence including hard hat and safety vest",
+      investigateSteps: [
+        { title: "Accident and incident report review", body: "We review reports from the site, employer, and available incident documentation.", img: getImage("cell-phone-capture-equipment-on-floor.png", IMG.attorney), alt: "Phone documenting construction accident evidence including hard hat and safety vest" },
+        { title: "Jobsite and subcontractor fact review", body: "We identify who controlled work areas, equipment, and safety procedures.", img: null, alt: "" },
+        { title: "Photo and video evidence", body: "Images and footage can help document conditions before evidence changes.", img: null, alt: "" },
+        { title: "Witness statements", body: "Coworkers, supervisors, and bystanders may support key facts.", img: null, alt: "" },
+        { title: "OSHA and safety record review", body: "Where applicable, we review safety records and reported violations.", img: null, alt: "" },
+        { title: "Equipment and maintenance review", body: "Defective tools, machinery, or poor maintenance may create third-party liability.", img: null, alt: "" },
+        { title: "Owner / contractor responsibility analysis", body: "We evaluate property owner, general contractor, and subcontractor roles.", img: null, alt: "" },
+        { title: "Medical record review", body: "Treatment records help connect injury severity to the mechanism of harm.", img: null, alt: "" },
+        { title: "Insurance and recovery path review", body: "We assess potential coverage and realistic recovery pathways under the facts.", img: null, alt: "" },
+      ],
+      compH2: "Compensation In Construction Injury Cases",
+      compLead:
+        "Potential damages may include medical bills, future treatment, lost income, pain and suffering, long-term impairment, loss of earning capacity, and wrongful death damages where applicable. Every case depends on the facts. Past results do not guarantee a similar outcome.",
+      compCards: [
+        ["Medical bills and future treatment", "/images/la/nurse-helping-woman.png", "Medical care and expenses after serious injury"],
+        ["Lost income and earning capacity", "/images/la/attorney-paperwork.png", "Attorney reviewing construction injury case documents"],
+        ["Pain and suffering", "/images/la/daughter-hold-dads-hand.png", "Family supporting injured loved one"],
+        ["Long-term impairment", "/images/la/injured-woman-healing-walking.png", "Adult recovering after severe injury"],
+      ],
+      whyH2: "Why Choose Insider Accident Lawyers",
+      whyIntro: "How we approach serious construction injury claims:",
+      whyCards: [
+        ["Trial-ready strategy from day one", "We prepare claims as if they may need to be tried."],
+        ["No fee unless we win", "Contingency fee representation with no upfront attorney fee."],
+        ["Direct attorney access", "You work directly with attorneys focused on serious injury facts."],
+        ["Evidence preservation", "Fast action can matter in protecting jobsite and incident evidence."],
+        ["Serious injury case review", "We focus on major injury cases with documented treatment."],
+        ["Insurance and liability analysis", "We evaluate coverage and responsible parties under California law."],
+      ],
+      howMuchTitle: "Why A Construction Injury May Be More Than Workers’ Comp",
+      howMuchBody:
+        "Workers’ compensation may apply after many jobsite injuries, but some construction accidents also involve third-party liability. A third-party claim may exist when someone other than your employer contributed to the injury, such as another contractor, a negligent driver, a property owner, an equipment manufacturer, or a maintenance company. This is a case-by-case review, not legal advice.",
+      finalH2: "See If You Have A Construction Injury Case",
+      finalP:
+        "If you were seriously injured on a construction site, request a free case review. We can review whether the facts suggest a personal injury claim, a workers’ compensation issue, or another recovery path.",
+      footerBlurb:
+        "California attorneys for serious construction accident and injury cases. Attorney advertising.",
+      preloadHref: getImage("hero-injured-construction-worker.png", IMG.attorney),
+      checklistResultId: "case-checklist-result",
+      finalBgImage: "background-construction-site.png",
+    },
+    {
+      slug: "construction-accident-lawyer-los-angeles",
+      bodyAttrs: 'data-page-type="construction_accident_los_angeles" data-ad-group="AG | Construction Accident Los Angeles"',
+      title: "Construction Accident Lawyer Los Angeles | Jobsite Injury Attorney",
+      metaDesc:
+        "Injured on a construction site in Los Angeles? You may have a claim beyond workers’ comp. Free construction accident case review.",
+      ogTitle: "Construction Accident Lawyer Los Angeles",
+      ogDesc:
+        "Injured on a Los Angeles construction site? We review serious construction accident cases involving falls, equipment, unsafe jobsites, and third-party liability.",
+      canonical: "https://call.insideraccidentlawyers.com/construction-accident-lawyer-los-angeles",
+      h1: "Construction Accident Lawyer Los Angeles",
+      heroSub:
+        '<span class="hero-tagline">Free Case Review • No Fee Unless We Win.</span> <span class="hero-highlight">Injured on a Los Angeles construction site?</span> You may have a claim beyond workers’ comp. Free case review.',
+      heroReframe:
+        "We review serious construction injury cases in Los Angeles and identify potential third-party liability paths.",
+      heroImg: getImage("hero-injured-construction-worker.png", IMG.attorney),
+      heroImgAlt: "Injured construction worker being helped by coworkers on a construction site",
+      heroPlannedImage: "hero-injured-construction-worker.png",
+      heroHazardFallback: IMG.attorney,
+      heroUseAttorney: false,
+      heroCaption: "Construction accident and serious injury case review",
+      heroBgImage: "background-construction-site.png",
+      trustH2: "A Construction Injury Case May Involve More Than Workers’ Comp",
+      trustSub:
+        "Workers’ compensation may apply after many jobsite injuries, but some construction accidents also involve third-party liability.<br><br>A third-party claim may exist when someone other than your employer contributed to the accident, such as a subcontractor, property owner, equipment company, negligent driver, vendor, or general contractor.",
+      formSubject: "New Construction Injury Lead (Los Angeles)",
+      formH2: "Free Case Review — Construction Injury",
+      formIntro:
+        "Tell us what happened, where it happened, and what treatment you received. We review serious construction injury cases statewide.",
+      situationOptions: [
+        ["Fall from scaffold, ladder, roof, or height", "Fall from scaffold, ladder, roof, or height"],
+        ["Falling object injury", "Falling object injury"],
+        ["Crane or heavy equipment accident", "Crane or heavy equipment accident"],
+        ["Forklift or vehicle accident", "Forklift or vehicle accident"],
+        ["Trench, collapse, or excavation accident", "Trench, collapse, or excavation accident"],
+        ["Electrical injury", "Electrical injury"],
+        ["Burn injury", "Burn injury"],
+        ["Machinery or tool injury", "Machinery or tool injury"],
+        ["Unsafe jobsite condition", "Unsafe jobsite condition"],
+        ["Construction wrongful death", "Construction wrongful death"],
+        ["Workers comp only or not sure", "Workers’ comp only / not sure"],
+        ["Other serious construction injury", "Other serious construction injury"],
+      ],
+      casesH2: "Serious Construction Accident Cases We Review",
+      casesLead:
+        "Construction sites involve many companies and moving parts. We review serious injury cases where a contractor, property owner, equipment company, driver, vendor, or unsafe condition may have contributed.",
+      casesItems: [
+        "Scaffold and ladder falls",
+        "Falling object injuries",
+        "Heavy equipment and forklift accidents",
+        "Unsafe jobsite conditions",
+        "Electrical injuries and burns",
+        "Trench, collapse, and excavation injuries",
+        "Machinery and tool injuries",
+        "Construction wrongful death",
+      ],
+      caseAccentImages: [],
+      caseCardImages: [
+        {
+          src: getImage("broken-leg-construction.png", getImage("hero-injured-construction-worker.png", IMG.attorney)),
+          alt: "Construction worker with leg injury beside scaffolding and ladder on a Los Angeles-area jobsite",
+        },
+        {
+          src: getImage("falling-rock-head-injury-construction.png", getImage("hero-injured-construction-worker.png", IMG.attorney)),
+          alt: "Injured worker after a struck-by or falling object incident on a construction site",
+        },
+        {
+          src: getImage("forklift-injury-construction.png", getImage("hero-injured-construction-worker.png", IMG.attorney)),
+          alt: "Injured construction worker near a forklift with coworkers responding on the jobsite",
+        },
+        {
+          src: getImage("ankle-injury-construction.png", getImage("hero-injured-construction-worker.png", IMG.attorney)),
+          alt: "Worker with ankle or foot injury on the ground with debris and safety gear nearby",
+        },
+        {
+          src: getImage("electrical-injury-construction.png", getImage("hero-injured-construction-worker.png", IMG.attorney)),
+          alt: "Worker being helped after an electrical hazard injury near equipment on a construction site",
+        },
+        {
+          src: getImage("trench-collapse.png", getImage("hero-injured-construction-worker.png", IMG.attorney)),
+          alt: "Workers responding to an injury in an excavation or trench with heavy equipment nearby",
+        },
+        {
+          src: getImage("broken-leg-excavator-construction.png", getImage("hero-injured-construction-worker.png", IMG.attorney)),
+          alt: "Worker with leg injury on the ground near heavy equipment and tools",
+        },
+        {
+          src: getImage(
+            "man-unconscious-construction.png",
+            getImage("man-severly-wounded-wrongful-death-construction.png", getImage("hero-injured-construction-worker.png", IMG.attorney))
+          ),
+          alt: "Construction workers responding to a coworker with grave injuries on the jobsite",
+        },
+      ],
+      hazardsH2: "Construction Accident Attorneys",
+      hazardsLead:
+        "When a serious construction accident happens, identifying who controlled the hazard and who may be legally responsible can be critical to the recovery path.",
+      hazardsFigure: {
+        src: getImage(
+          "construction-man-looking-up-something-falling.png",
+          getImage("hero-injured-construction-worker.png", IMG.attorney)
+        ),
+        alt: "Construction worker looking up at a possible falling object hazard on a jobsite",
+        caption: "Potentially responsible parties can include contractors, subcontractors, owners, equipment companies, and vendors.",
+      },
+      hazardsSecondFigure: {
+        src: getImage("injured-construction-worker-hispanic.png", getImage("hero-injured-construction-worker.png", IMG.attorney)),
+        alt: "Injured construction worker being helped near heavy equipment",
+        caption: "We can review whether your case is workers’ comp only, a third-party injury claim, or another recovery path.",
+      },
+      signsH2: "Signs You May Have A Construction Injury Case",
+      signsIntro:
+        "Tap any statement that fits your situation. Many injuries start as workers’ compensation matters—but some also involve a negligence claim against another company on site. This helps us screen serious cases; it is not legal advice.",
+      signsItems: [],
+      signsCards: [
+        {
+          heading: "Serious injury or major medical care",
+          body: "You needed emergency care, hospitalization, surgery, imaging, or ongoing treatment—and the harm is more than a minor strain or bruise.",
+        },
+        {
+          heading: "Someone other than your employer may share fault",
+          body: "A subcontractor, vendor, motorist, equipment provider, property owner, or general contractor—not just your direct employer—may have contributed to what happened.",
+        },
+        {
+          heading: "There may be records to prove it",
+          body: "Photos, video, an incident or OSHA report, witness names, site logs, subcontractor lists, or equipment information may still exist.",
+        },
+        {
+          heading: "A high-risk jobsite incident",
+          body: "The event involved a fall, falling object, machinery or vehicle strike, trench or collapse, electrical hazard, fire, explosion, trip hazard, or another unsafe condition.",
+        },
+        {
+          heading: "You’re unsure what kind of claim this is",
+          body: "You do not know whether this is only workers’ comp, only a third-party case, or both—and you want clarity before evidence disappears.",
+        },
+      ],
+      checklistDefault:
+        "Not every construction injury supports a third-party claim. We screen for serious injury, factual evidence, and who may have controlled the hazard.",
+      checklistOne:
+        "If one of these applies, a free case review can help clarify whether there may be a claim beyond workers’ comp.",
+      checklistMany:
+        "Multiple factors may support a serious construction injury claim. Request a free case review.",
+      seriousTitle: "Serious Injuries Matter",
+      seriousBody:
+        "We review severe injuries including fractures, surgery, head and brain injuries, spine and back injuries, burns, amputations, crush injuries, electrocution, wrongful death, and long-term impairment.",
+      evidenceTitle: "Evidence Can Disappear Fast",
+      evidenceIntro:
+        "Construction cases can depend on fast evidence preservation. Photos, video, incident reports, witness names, contractor information, OSHA records where applicable, and equipment records may help determine who was responsible.",
+      evidenceItems: [
+        "Incident reports",
+        "OSHA reports where applicable",
+        "Photos and videos",
+        "Witness names",
+        "Contractor and subcontractor information",
+        "Site safety records",
+        "Equipment maintenance records",
+        "Prior complaints",
+        "Jobsite control records",
+        "Medical records",
+        "Insurance coverage review",
+      ],
+      investigateH2: "How We Investigate Construction Accident Claims",
+      investigateIntro: "Construction injury claims often require fast evidence preservation and a structured liability review.",
+      investigationPlannedImage: "cell-phone-capture-equipment-on-floor.png",
+      investigationFeatureAlt:
+        "Phone documenting construction accident evidence including hard hat and safety vest",
+      investigateSteps: [
+        { title: "Accident and incident report review", body: "We review reports from the site, employer, and available incident documentation.", img: getImage("cell-phone-capture-equipment-on-floor.png", IMG.attorney), alt: "Phone documenting construction accident evidence including hard hat and safety vest" },
+        { title: "Jobsite and subcontractor fact review", body: "We identify who controlled work areas, equipment, and safety procedures.", img: null, alt: "" },
+        { title: "Photo and video evidence", body: "Images and footage can help document conditions before evidence changes.", img: null, alt: "" },
+        { title: "Witness statements", body: "Coworkers, supervisors, and bystanders may support key facts.", img: null, alt: "" },
+        { title: "OSHA and safety record review", body: "Where applicable, we review safety records and reported violations.", img: null, alt: "" },
+        { title: "Equipment and maintenance review", body: "Defective tools, machinery, or poor maintenance may create third-party liability.", img: null, alt: "" },
+        { title: "Owner / contractor responsibility analysis", body: "We evaluate property owner, general contractor, and subcontractor roles.", img: null, alt: "" },
+        { title: "Medical record review", body: "Treatment records help connect injury severity to the mechanism of harm.", img: null, alt: "" },
+        { title: "Insurance and recovery path review", body: "We assess potential coverage and realistic recovery pathways under the facts.", img: null, alt: "" },
+      ],
+      compH2: "Compensation In Construction Injury Cases",
+      compLead:
+        "Potential damages may include medical bills, future treatment, lost income, pain and suffering, long-term impairment, loss of earning capacity, and wrongful death damages where applicable. Every case depends on the facts. Past results do not guarantee a similar outcome.",
+      compCards: [
+        ["Medical bills and future treatment", "/images/la/nurse-helping-woman.png", "Medical care and expenses after serious injury"],
+        ["Lost income and earning capacity", "/images/la/attorney-paperwork.png", "Attorney reviewing construction injury case documents"],
+        ["Pain and suffering", "/images/la/daughter-hold-dads-hand.png", "Family supporting injured loved one"],
+        ["Long-term impairment", "/images/la/injured-woman-healing-walking.png", "Adult recovering after severe injury"],
+      ],
+      whyH2: "Why Choose Insider Accident Lawyers",
+      whyIntro: "How we approach serious construction injury claims:",
+      whyCards: [
+        ["Trial-ready strategy from day one", "We prepare claims as if they may need to be tried."],
+        ["No fee unless we win", "Contingency fee representation with no upfront attorney fee."],
+        ["Direct attorney access", "You work directly with attorneys focused on serious injury facts."],
+        ["Evidence preservation", "Fast action can matter in protecting jobsite and incident evidence."],
+        ["Serious injury case review", "We focus on major injury cases with documented treatment."],
+        ["Insurance and liability analysis", "We evaluate coverage and responsible parties under California law."],
+      ],
+      howMuchTitle: "Why A Construction Injury May Be More Than Workers’ Comp",
+      howMuchBody:
+        "Workers’ compensation may apply after many jobsite injuries, but some construction accidents also involve third-party liability. A third-party claim may exist when someone other than your employer contributed to the injury, such as another contractor, a negligent driver, a property owner, an equipment manufacturer, or a maintenance company. This is a case-by-case review, not legal advice.",
+      finalH2: "See If You Have A Construction Injury Case",
+      finalP:
+        "If you were seriously injured on a construction site, request a free case review. We can review whether the facts suggest a personal injury claim, a workers’ compensation issue, or another recovery path.",
+      footerBlurb:
+        "California attorneys for serious construction accident and injury cases. Attorney advertising.",
+      preloadHref: getImage("hero-injured-construction-worker.png", IMG.attorney),
+      checklistResultId: "case-checklist-result",
+      finalBgImage: "background-construction-site.png",
+    },
+    {
+      slug: "construction-site-injury-lawyer-california",
+      bodyAttrs: 'data-page-type="construction_site_injury_california" data-ad-group="AG | Construction Site Injury California"',
+      title: "Construction Site Injury Lawyer California | Free Case Review",
+      metaDesc:
+        "Serious construction site injury in California? Free case review. No fee unless we win.",
+      ogTitle: "Construction Site Injury Lawyer California",
+      ogDesc:
+        "Serious construction site injury? We review major jobsite accident claims involving falls, equipment incidents, unsafe sites, and third-party liability.",
+      canonical: "https://call.insideraccidentlawyers.com/construction-site-injury-lawyer-california",
+      h1: "Construction Site Injury Lawyer California",
+      heroSub:
+        '<span class="hero-tagline">Free Case Review • No Fee Unless We Win.</span> <span class="hero-highlight">Serious construction site injury?</span> Free case review. No fee unless we win.',
+      heroReframe:
+        "We review serious construction injury cases across California and identify potential third-party liability paths.",
+      heroImg: getImage("hero-injured-construction-worker.png", IMG.attorney),
+      heroImgAlt: "Injured construction worker being helped by coworkers on a construction site",
+      heroPlannedImage: "hero-injured-construction-worker.png",
+      heroHazardFallback: IMG.attorney,
+      heroUseAttorney: false,
+      heroCaption: "Construction accident and serious injury case review",
+      trustH2: "A Construction Injury Case May Involve More Than Workers’ Comp",
+      trustSub:
+        "Workers’ compensation may apply after many jobsite injuries, but some construction accidents also involve third-party liability.<br><br>A third-party claim may exist when someone other than your employer contributed to the accident, such as a subcontractor, property owner, equipment company, negligent driver, vendor, or general contractor.",
+      formSubject: "New Construction Injury Lead (CA)",
+      formH2: "Free Case Review — Construction Injury",
+      formIntro:
+        "Tell us what happened, where it happened, and what treatment you received. We review serious construction injury cases statewide.",
+      situationOptions: [
+        ["Fall from scaffold, ladder, roof, or height", "Fall from scaffold, ladder, roof, or height"],
+        ["Falling object injury", "Falling object injury"],
+        ["Crane or heavy equipment accident", "Crane or heavy equipment accident"],
+        ["Forklift or vehicle accident", "Forklift or vehicle accident"],
+        ["Trench, collapse, or excavation accident", "Trench, collapse, or excavation accident"],
+        ["Electrical injury", "Electrical injury"],
+        ["Burn injury", "Burn injury"],
+        ["Machinery or tool injury", "Machinery or tool injury"],
+        ["Unsafe jobsite condition", "Unsafe jobsite condition"],
+        ["Construction wrongful death", "Construction wrongful death"],
+        ["Workers comp only or not sure", "Workers’ comp only / not sure"],
+        ["Other serious construction injury", "Other serious construction injury"],
+      ],
+      casesH2: "Serious Construction Accident Cases We Review",
+      casesLead:
+        "Construction sites involve many companies and moving parts. We review serious injury cases where a contractor, property owner, equipment company, driver, vendor, or unsafe condition may have contributed.",
+      casesItems: [
+        "Scaffold and ladder falls",
+        "Falling object injuries",
+        "Heavy equipment and forklift accidents",
+        "Unsafe jobsite conditions",
+        "Electrical injuries and burns",
+        "Trench, collapse, and excavation injuries",
+        "Machinery and tool injuries",
+        "Construction wrongful death",
+      ],
+      caseAccentImages: [
+        {
+          src: getImage("construction-man-looking-up-something-falling.png", getImage("hero-injured-construction-worker.png", IMG.attorney)),
+          alt: "Construction worker looking up at a possible falling object hazard on a jobsite",
+        },
+        {
+          src: getImage("injured-construction-worker-hispanic.png", getImage("hero-injured-construction-worker.png", IMG.attorney)),
+          alt: "Injured construction worker being helped near heavy equipment",
+        },
+        {
+          src: getImage("man-severly-wounded-wrongful-death-construction.png", getImage("hero-injured-construction-worker.png", IMG.attorney)),
+          alt: "Construction workers responding to a serious jobsite injury",
+        },
+      ],
+      hazardsH2: "Construction Accident Attorneys",
+      hazardsLead:
+        "When a serious construction accident happens, identifying who controlled the hazard and who may be legally responsible can be critical to the recovery path.",
+      hazardsFigure: {
+        src: getImage("attorney-contruction-site.png", IMG.attorney),
+        alt: "Personal injury attorney standing near a construction site",
+        caption: "Potentially responsible parties can include contractors, subcontractors, owners, equipment companies, and vendors.",
+      },
+      hazardsSecondFigure: {
+        src: getImage("injured-construction-worker-hispanic.png", getImage("hero-injured-construction-worker.png", IMG.attorney)),
+        alt: "Injured construction worker being helped near heavy equipment",
+        caption: "We can review whether your case is workers’ comp only, a third-party injury claim, or another recovery path.",
+      },
+      signsH2: "Signs You May Have A Construction Injury Case",
+      signsIntro:
+        "Tap what applies. Not every workplace injury is a personal injury case. Some are workers’ comp only, and we can review whether there may be a third-party liability path.",
+      signsItems: [
+        "Serious injury requiring ER care, hospitalization, surgery, imaging, or ongoing treatment",
+        "A subcontractor, vendor, driver, equipment company, property owner, or general contractor may have contributed",
+        "Photos, video, incident reports, OSHA reports, witnesses, or jobsite records may exist",
+        "The accident involved a fall, falling object, machinery, vehicle, collapse, electrical hazard, or unsafe worksite condition",
+        "You are unsure whether this is only workers’ comp or also a third-party injury claim",
+      ],
+      checklistDefault:
+        "Not every construction injury supports a third-party claim. We screen for serious injury, factual evidence, and who may have controlled the hazard.",
+      checklistOne:
+        "If one of these applies, a free case review can help clarify whether there may be a claim beyond workers’ comp.",
+      checklistMany:
+        "Multiple factors may support a serious construction injury claim. Request a free case review.",
+      seriousTitle: "Serious Injuries Matter",
+      seriousBody:
+        "We review severe injuries including fractures, surgery, head and brain injuries, spine and back injuries, burns, amputations, crush injuries, electrocution, wrongful death, and long-term impairment.",
+      evidenceTitle: "Evidence Can Disappear Fast",
+      evidenceIntro:
+        "Construction cases can depend on fast evidence preservation. Photos, video, incident reports, witness names, contractor information, OSHA records where applicable, and equipment records may help determine who was responsible.",
+      evidenceItems: [
+        "Incident reports",
+        "OSHA reports where applicable",
+        "Photos and videos",
+        "Witness names",
+        "Contractor and subcontractor information",
+        "Site safety records",
+        "Equipment maintenance records",
+        "Prior complaints",
+        "Jobsite control records",
+        "Medical records",
+        "Insurance coverage review",
+      ],
+      investigateH2: "How We Investigate Construction Accident Claims",
+      investigateIntro: "Construction injury claims often require fast evidence preservation and a structured liability review.",
+      investigationPlannedImage: "cell-phone-capture-equipment-on-floor.png",
+      investigationFeatureAlt:
+        "Phone documenting construction accident evidence including hard hat and safety vest",
+      investigateSteps: [
+        { title: "Accident and incident report review", body: "We review reports from the site, employer, and available incident documentation.", img: getImage("cell-phone-capture-equipment-on-floor.png", IMG.attorney), alt: "Phone documenting construction accident evidence including hard hat and safety vest" },
+        { title: "Jobsite and subcontractor fact review", body: "We identify who controlled work areas, equipment, and safety procedures.", img: null, alt: "" },
+        { title: "Photo and video evidence", body: "Images and footage can help document conditions before evidence changes.", img: null, alt: "" },
+        { title: "Witness statements", body: "Coworkers, supervisors, and bystanders may support key facts.", img: null, alt: "" },
+        { title: "OSHA and safety record review", body: "Where applicable, we review safety records and reported violations.", img: null, alt: "" },
+        { title: "Equipment and maintenance review", body: "Defective tools, machinery, or poor maintenance may create third-party liability.", img: null, alt: "" },
+        { title: "Owner / contractor responsibility analysis", body: "We evaluate property owner, general contractor, and subcontractor roles.", img: null, alt: "" },
+        { title: "Medical record review", body: "Treatment records help connect injury severity to the mechanism of harm.", img: null, alt: "" },
+        { title: "Insurance and recovery path review", body: "We assess potential coverage and realistic recovery pathways under the facts.", img: null, alt: "" },
+      ],
+      compH2: "Compensation In Construction Injury Cases",
+      compLead:
+        "Potential damages may include medical bills, future treatment, lost income, pain and suffering, long-term impairment, loss of earning capacity, and wrongful death damages where applicable. Every case depends on the facts. Past results do not guarantee a similar outcome.",
+      compCards: [
+        ["Medical bills and future treatment", "/images/la/nurse-helping-woman.png", "Medical care and expenses after serious injury"],
+        ["Lost income and earning capacity", "/images/la/attorney-paperwork.png", "Attorney reviewing construction injury case documents"],
+        ["Pain and suffering", "/images/la/daughter-hold-dads-hand.png", "Family supporting injured loved one"],
+        ["Long-term impairment", "/images/la/injured-woman-healing-walking.png", "Adult recovering after severe injury"],
+      ],
+      whyH2: "Why Choose Insider Accident Lawyers",
+      whyIntro: "How we approach serious construction injury claims:",
+      whyCards: [
+        ["Trial-ready strategy from day one", "We prepare claims as if they may need to be tried."],
+        ["No fee unless we win", "Contingency fee representation with no upfront attorney fee."],
+        ["Direct attorney access", "You work directly with attorneys focused on serious injury facts."],
+        ["Evidence preservation", "Fast action can matter in protecting jobsite and incident evidence."],
+        ["Serious injury case review", "We focus on major injury cases with documented treatment."],
+        ["Insurance and liability analysis", "We evaluate coverage and responsible parties under California law."],
+      ],
+      howMuchTitle: "Why A Construction Injury May Be More Than Workers’ Comp",
+      howMuchBody:
+        "Workers’ compensation may apply after many jobsite injuries, but some construction accidents also involve third-party liability. A third-party claim may exist when someone other than your employer contributed to the injury, such as another contractor, a negligent driver, a property owner, an equipment manufacturer, or a maintenance company. This is a case-by-case review, not legal advice.",
+      finalH2: "See If You Have A Construction Injury Case",
+      finalP:
+        "If you were seriously injured on a construction site, request a free case review. We can review whether the facts suggest a personal injury claim, a workers’ compensation issue, or another recovery path.",
+      footerBlurb:
+        "California attorneys for serious construction accident and injury cases. Attorney advertising.",
+      preloadHref: getImage("hero-injured-construction-worker.png", IMG.attorney),
+      checklistResultId: "case-checklist-result",
+      finalBgImage: "background-construction-site.png",
+    },
+    {
+      slug: "scaffold-accident-lawyer-california",
+      bodyAttrs: 'data-page-type="scaffold_accident_california" data-ad-group="AG | Scaffold Accident California"',
+      title: "Scaffold Accident Lawyer California | Construction Fall Attorney",
+      metaDesc:
+        "Injured in a scaffold, ladder, roof, or elevated work fall? Free case review.",
+      ogTitle: "Scaffold Accident Lawyer California",
+      ogDesc:
+        "Injured in a scaffold or elevated work fall in California? We review serious construction fall and third-party liability claims.",
+      canonical: "https://call.insideraccidentlawyers.com/scaffold-accident-lawyer-california",
+      h1: "Scaffold Accident Lawyer California",
+      heroSub:
+        '<span class="hero-tagline">Free Case Review • No Fee Unless We Win.</span> <span class="hero-highlight">Injured in a scaffold, ladder, roof, or elevated work fall?</span> Free case review.',
+      heroReframe:
+        "We review serious scaffold and construction fall injuries across California and identify potential third-party liability paths.",
+      heroImg: getImage("hero-injured-construction-worker.png", IMG.attorney),
+      heroImgAlt: "Injured construction worker being helped by coworkers on a construction site",
+      heroPlannedImage: "hero-injured-construction-worker.png",
+      heroHazardFallback: IMG.attorney,
+      heroUseAttorney: false,
+      heroCaption: "Construction accident and serious injury case review",
+      trustH2: "A Construction Injury Case May Involve More Than Workers’ Comp",
+      trustSub:
+        "Workers’ compensation may apply after many jobsite injuries, but some construction accidents also involve third-party liability.<br><br>A third-party claim may exist when someone other than your employer contributed to the accident, such as a subcontractor, property owner, equipment company, negligent driver, vendor, or general contractor.",
+      formSubject: "New Construction Injury Lead (Scaffold CA)",
+      formH2: "Free Case Review — Construction Injury",
+      formIntro:
+        "Tell us what happened, where it happened, and what treatment you received. We review serious construction injury cases statewide.",
+      situationOptions: [
+        ["Fall from scaffold, ladder, roof, or height", "Fall from scaffold, ladder, roof, or height"],
+        ["Falling object injury", "Falling object injury"],
+        ["Crane or heavy equipment accident", "Crane or heavy equipment accident"],
+        ["Forklift or vehicle accident", "Forklift or vehicle accident"],
+        ["Trench, collapse, or excavation accident", "Trench, collapse, or excavation accident"],
+        ["Electrical injury", "Electrical injury"],
+        ["Burn injury", "Burn injury"],
+        ["Machinery or tool injury", "Machinery or tool injury"],
+        ["Unsafe jobsite condition", "Unsafe jobsite condition"],
+        ["Construction wrongful death", "Construction wrongful death"],
+        ["Workers comp only or not sure", "Workers’ comp only / not sure"],
+        ["Other serious construction injury", "Other serious construction injury"],
+      ],
+      casesH2: "Serious Construction Accident Cases We Review",
+      casesLead:
+        "Construction sites involve many companies and moving parts. We review serious injury cases where a contractor, property owner, equipment company, driver, vendor, or unsafe condition may have contributed.",
+      casesItems: [
+        "Scaffold and ladder falls",
+        "Falling object injuries",
+        "Heavy equipment and forklift accidents",
+        "Unsafe jobsite conditions",
+        "Electrical injuries and burns",
+        "Trench, collapse, and excavation injuries",
+        "Machinery and tool injuries",
+        "Construction wrongful death",
+      ],
+      caseAccentImages: [
+        {
+          src: getImage("construction-man-looking-up-something-falling.png", getImage("hero-injured-construction-worker.png", IMG.attorney)),
+          alt: "Construction worker looking up at a possible falling object hazard on a jobsite",
+        },
+        {
+          src: getImage("injured-construction-worker-hispanic.png", getImage("hero-injured-construction-worker.png", IMG.attorney)),
+          alt: "Injured construction worker being helped near heavy equipment",
+        },
+        {
+          src: getImage("man-severly-wounded-wrongful-death-construction.png", getImage("hero-injured-construction-worker.png", IMG.attorney)),
+          alt: "Construction workers responding to a serious jobsite injury",
+        },
+      ],
+      hazardsH2: "Construction Accident Attorneys",
+      hazardsLead:
+        "When a serious construction accident happens, identifying who controlled the hazard and who may be legally responsible can be critical to the recovery path.",
+      hazardsFigure: {
+        src: getImage("attorney-contruction-site.png", IMG.attorney),
+        alt: "Personal injury attorney standing near a construction site",
+        caption: "Potentially responsible parties can include contractors, subcontractors, owners, equipment companies, and vendors.",
+      },
+      hazardsSecondFigure: {
+        src: getImage("injured-construction-worker-hispanic.png", getImage("hero-injured-construction-worker.png", IMG.attorney)),
+        alt: "Injured construction worker being helped near heavy equipment",
+        caption: "We can review whether your case is workers’ comp only, a third-party injury claim, or another recovery path.",
+      },
+      signsH2: "Signs You May Have A Construction Injury Case",
+      signsIntro:
+        "Tap what applies. Not every workplace injury is a personal injury case. Some are workers’ comp only, and we can review whether there may be a third-party liability path.",
+      signsItems: [
+        "Serious injury requiring ER care, hospitalization, surgery, imaging, or ongoing treatment",
+        "A subcontractor, vendor, driver, equipment company, property owner, or general contractor may have contributed",
+        "Photos, video, incident reports, OSHA reports, witnesses, or jobsite records may exist",
+        "The accident involved a fall, falling object, machinery, vehicle, collapse, electrical hazard, or unsafe worksite condition",
+        "You are unsure whether this is only workers’ comp or also a third-party injury claim",
+      ],
+      checklistDefault:
+        "Not every construction injury supports a third-party claim. We screen for serious injury, factual evidence, and who may have controlled the hazard.",
+      checklistOne:
+        "If one of these applies, a free case review can help clarify whether there may be a claim beyond workers’ comp.",
+      checklistMany:
+        "Multiple factors may support a serious construction injury claim. Request a free case review.",
+      seriousTitle: "Serious Injuries Matter",
+      seriousBody:
+        "We review severe injuries including fractures, surgery, head and brain injuries, spine and back injuries, burns, amputations, crush injuries, electrocution, wrongful death, and long-term impairment.",
+      evidenceTitle: "Evidence Can Disappear Fast",
+      evidenceIntro:
+        "Construction cases can depend on fast evidence preservation. Photos, video, incident reports, witness names, contractor information, OSHA records where applicable, and equipment records may help determine who was responsible.",
+      evidenceItems: [
+        "Incident reports",
+        "OSHA reports where applicable",
+        "Photos and videos",
+        "Witness names",
+        "Contractor and subcontractor information",
+        "Site safety records",
+        "Equipment maintenance records",
+        "Prior complaints",
+        "Jobsite control records",
+        "Medical records",
+        "Insurance coverage review",
+      ],
+      investigateH2: "How We Investigate Construction Accident Claims",
+      investigateIntro: "Construction injury claims often require fast evidence preservation and a structured liability review.",
+      investigationPlannedImage: "cell-phone-capture-equipment-on-floor.png",
+      investigationFeatureAlt:
+        "Phone documenting construction accident evidence including hard hat and safety vest",
+      investigateSteps: [
+        { title: "Accident and incident report review", body: "We review reports from the site, employer, and available incident documentation.", img: getImage("cell-phone-capture-equipment-on-floor.png", IMG.attorney), alt: "Phone documenting construction accident evidence including hard hat and safety vest" },
+        { title: "Jobsite and subcontractor fact review", body: "We identify who controlled work areas, equipment, and safety procedures.", img: null, alt: "" },
+        { title: "Photo and video evidence", body: "Images and footage can help document conditions before evidence changes.", img: null, alt: "" },
+        { title: "Witness statements", body: "Coworkers, supervisors, and bystanders may support key facts.", img: null, alt: "" },
+        { title: "OSHA and safety record review", body: "Where applicable, we review safety records and reported violations.", img: null, alt: "" },
+        { title: "Equipment and maintenance review", body: "Defective tools, machinery, or poor maintenance may create third-party liability.", img: null, alt: "" },
+        { title: "Owner / contractor responsibility analysis", body: "We evaluate property owner, general contractor, and subcontractor roles.", img: null, alt: "" },
+        { title: "Medical record review", body: "Treatment records help connect injury severity to the mechanism of harm.", img: null, alt: "" },
+        { title: "Insurance and recovery path review", body: "We assess potential coverage and realistic recovery pathways under the facts.", img: null, alt: "" },
+      ],
+      compH2: "Compensation In Construction Injury Cases",
+      compLead:
+        "Potential damages may include medical bills, future treatment, lost income, pain and suffering, long-term impairment, loss of earning capacity, and wrongful death damages where applicable. Every case depends on the facts. Past results do not guarantee a similar outcome.",
+      compCards: [
+        ["Medical bills and future treatment", "/images/la/nurse-helping-woman.png", "Medical care and expenses after serious injury"],
+        ["Lost income and earning capacity", "/images/la/attorney-paperwork.png", "Attorney reviewing construction injury case documents"],
+        ["Pain and suffering", "/images/la/daughter-hold-dads-hand.png", "Family supporting injured loved one"],
+        ["Long-term impairment", "/images/la/injured-woman-healing-walking.png", "Adult recovering after severe injury"],
+      ],
+      whyH2: "Why Choose Insider Accident Lawyers",
+      whyIntro: "How we approach serious construction injury claims:",
+      whyCards: [
+        ["Trial-ready strategy from day one", "We prepare claims as if they may need to be tried."],
+        ["No fee unless we win", "Contingency fee representation with no upfront attorney fee."],
+        ["Direct attorney access", "You work directly with attorneys focused on serious injury facts."],
+        ["Evidence preservation", "Fast action can matter in protecting jobsite and incident evidence."],
+        ["Serious injury case review", "We focus on major injury cases with documented treatment."],
+        ["Insurance and liability analysis", "We evaluate coverage and responsible parties under California law."],
+      ],
+      howMuchTitle: "Why A Construction Injury May Be More Than Workers’ Comp",
+      howMuchBody:
+        "Workers’ compensation may apply after many jobsite injuries, but some construction accidents also involve third-party liability. A third-party claim may exist when someone other than your employer contributed to the injury, such as another contractor, a negligent driver, a property owner, an equipment manufacturer, or a maintenance company. This is a case-by-case review, not legal advice.",
+      finalH2: "See If You Have A Construction Injury Case",
+      finalP:
+        "If you were seriously injured on a construction site, request a free case review. We can review whether the facts suggest a personal injury claim, a workers’ compensation issue, or another recovery path.",
+      footerBlurb:
+        "California attorneys for serious construction accident and injury cases. Attorney advertising.",
+      preloadHref: getImage("hero-injured-construction-worker.png", IMG.attorney),
+      checklistResultId: "case-checklist-result",
+      finalBgImage: "background-construction-site.png",
+    },
   ];
 }
 
@@ -898,6 +1634,14 @@ function signTitle(label) {
   if (t.includes("witness")) return "Witnesses";
   if (t.includes("failed") || t.includes("no repair") || t.includes("failure")) return "Failure to fix or warn";
   if (t.includes("insurance") || t.includes("coverage")) return "Insurance path";
+  if (
+    (t.includes("subcontractor") || t.includes("vendor") || t.includes("equipment company") || t.includes("general contractor")) &&
+    (t.includes("contributed") || t.includes("may have"))
+  )
+    return "Another company may share fault";
+  if (t.includes("accident involved") || (t.includes("unsafe worksite") && t.includes("condition")))
+    return "Typical high-risk incidents";
+  if (t.includes("not sure") || t.includes("unsure")) return "Unsure what type of claim";
   if (t.includes("store") || t.includes("business") || t.includes("landlord") || t.includes("property") || t.includes("common-area") || t.includes("common area")) return "Property or business connection";
   if (t.includes("notice") || t.includes("prior complaints")) return "Notice of the hazard";
   const clean = label.replace(/\s*\([^)]*\)\s*/g, "").trim();
@@ -907,8 +1651,21 @@ function signTitle(label) {
   return firstWords.replace(/^There was a /i, "").replace(/^A /i, "").replace(/^The /i, "");
 }
 
-function buildSignCards(items) {
-  return items
+function buildSignCards(items, signsCardsOverride) {
+  if (signsCardsOverride && signsCardsOverride.length) {
+    return signsCardsOverride
+      .map(
+        ({ heading, body }) => `                    <li class="case-checklist-item premium-check-card" role="checkbox" tabindex="0" data-checked="false" aria-checked="false">
+                        <span class="premium-icon-badge">${icon(inferIcon(`${heading} ${body}`))}</span>
+                        <span class="case-checklist-copy">
+                            <span class="case-checklist-heading">${heading}</span>
+                            <span class="case-checklist-label">${body}</span>
+                        </span>
+                    </li>`
+      )
+      .join("\n");
+  }
+  return (items || [])
     .map((label) => {
       const heading = signTitle(label);
       return `                    <li class="case-checklist-item premium-check-card" role="checkbox" tabindex="0" data-checked="false" aria-checked="false">
@@ -960,11 +1717,12 @@ ${factors
   .join("\n")}
                 </div>
                 <p class="case-value-disclaimer">Every case depends on the facts. Past results do not guarantee a similar outcome.</p>
-                <a href="#case-evaluation" class="btn-primary case-value-cta">${reviewCtaLabel(page)}</a>
+                <a href="#case-evaluation" class="btn-primary case-value-cta"${ctaDataAttr(page)}>${reviewCtaLabel(page)}</a>
             </div>`;
 }
 
 function reviewCtaLabel(page) {
+  if (isConstructionPage(page)) return "Free Construction Injury Review";
   if (page.slug.includes("retail")) return "Free Store Injury Review";
   if (page.slug.includes("parking")) return "Free Parking Lot Injury Review";
   if (page.slug.includes("stairs")) return "Free Unsafe Property Review";
@@ -974,9 +1732,36 @@ function reviewCtaLabel(page) {
 
 function compactCta(page) {
   return `<div class="compact-cta-row">
-                <a href="#case-evaluation" class="btn-primary compact-cta-primary">${reviewCtaLabel(page)}</a>
-                <a href="tel:844-467-4335" class="btn-secondary compact-cta-secondary" data-callrail-phone="844-467-4335">Call Now</a>
+                <a href="#case-evaluation" class="btn-primary compact-cta-primary"${ctaDataAttr(page)}>${reviewCtaLabel(page)}</a>
+                <a href="tel:844-467-4335" class="btn-secondary compact-cta-secondary" data-callrail-phone="844-467-4335"${phoneDataAttr(page)}>Call Now</a>
             </div>`;
+}
+
+function ctaDataAttr(page) {
+  return isConstructionPage(page)
+    ? ' data-cta="construction-injury-free-case-review"'
+    : "";
+}
+
+function phoneDataAttr(page) {
+  return isConstructionPage(page)
+    ? ' data-phone-click="construction-injury-call"'
+    : "";
+}
+
+function formDataAttr(page) {
+  return isConstructionPage(page)
+    ? ' data-form="construction-injury-case-review"'
+    : "";
+}
+
+function isConstructionPage(page) {
+  return (
+    page.slug.includes("construction-injury") ||
+    page.slug.includes("construction-accident") ||
+    page.slug.includes("construction-site-injury") ||
+    page.slug.includes("scaffold-accident-lawyer-california")
+  );
 }
 
 function applyPage(html, p) {
@@ -994,6 +1779,14 @@ function applyPage(html, p) {
 .premium-service-card:nth-child(3n+2) .premium-icon-badge,.evidence-card:nth-child(3n+2) .premium-icon-badge,.premium-check-card:nth-child(3n+2) .premium-icon-badge,.premium-process-card:nth-child(3n+2) .premium-icon-badge,.case-value-factor:nth-child(3n+2) .premium-icon-badge{background:linear-gradient(135deg,#edf7ff,#ffffff);color:#0c4a6e;}
 .prem-icon{width:25px;height:25px;display:block;}
 .premium-service-card.accident-item{display:flex;align-items:flex-start;gap:16px;text-align:left;padding:26px;background:linear-gradient(180deg,#fff,#f8fbff);border:1px solid rgba(1,54,108,.1);box-shadow:0 10px 25px rgba(12,35,52,.08);}
+.accident-grid.accident-grid--photo-cards{max-width:1100px;}
+.accident-item.accident-item--photo-card{flex-direction:column;align-items:stretch;padding:0;overflow:hidden;border-left:none;border:1px solid rgba(1,54,108,.1);}
+.accident-item.accident-item--photo-card:hover{border-left:none;border-color:rgba(251,186,0,.4);}
+.accident-item-photo-wrap{width:100%;aspect-ratio:16/10;overflow:hidden;background:#e8eef5;}
+.accident-item-photo{width:100%;height:100%;object-fit:cover;display:block;}
+.accident-item.accident-item--photo-card .accident-item-body{display:flex;align-items:flex-start;gap:16px;padding:20px 22px 22px;text-align:left;}
+.construction-hero-with-bg{background-attachment:scroll!important;}
+#your-case .case-checklist-wrap{max-width:min(920px,100%);}
 .premium-service-card .accident-item-text{font-weight:800;color:#0c2334;line-height:1.35;}
 .case-checklist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;list-style:none;padding:0;margin:0;}
 .premium-check-card.case-checklist-item{display:flex;gap:16px;align-items:flex-start;text-align:left;padding:22px;background:#fff;border:1px solid rgba(1,54,108,.12);border-radius:14px;box-shadow:0 8px 22px rgba(12,35,52,.08);}
@@ -1075,6 +1868,8 @@ function applyPage(html, p) {
   .injury-signal-pill{font-size:13px;}
   .evidence-board,.case-value-panel{padding:24px 18px;}
   .premium-service-card.accident-item,.premium-check-card.case-checklist-item{padding:18px;}
+  .premium-service-card.accident-item.accident-item--photo-card{padding:0!important;}
+  .accident-item.accident-item--photo-card .accident-item-body{padding:18px!important;}
   .premium-icon-badge{width:40px;height:40px;border-radius:13px;}
   .prem-icon{width:20px;height:20px;}
   .compact-cta-row{margin-top:22px;gap:10px;}
@@ -1092,6 +1887,14 @@ function applyPage(html, p) {
     /<meta name="description" content="[^"]*"/,
     `<meta name="description" content="${escAttr(p.metaDesc)}"`
   );
+  if ((p.ogTitle || p.ogDesc) && !h.includes('property="og:title"')) {
+    h = h.replace(
+      "</head>",
+      `    <meta property="og:title" content="${escAttr(p.ogTitle || p.title)}">
+    <meta property="og:description" content="${escAttr(p.ogDesc || p.metaDesc)}">
+</head>`
+    );
+  }
   h = h.replace(
     /<link rel="canonical" href="[^"]*"/,
     `<link rel="canonical" href="${escAttr(p.canonical)}"`
@@ -1120,10 +1923,10 @@ function applyPage(html, p) {
     /<div class="hero-cta-group hero-cta">\s*\n\s*<div class="call-cta-wrap">\s*\n\s*<a href="tel:844-467-4335" class="btn-primary call-btn" data-callrail-phone="844-467-4335"><span class="call-btn-num">844-467-4335<\/span><span class="call-btn-sub">Free Case Review<\/span><\/a>\s*\n\s*\n\s*<\/div>\s*\n\s*<\/div>/,
     `<div class="hero-cta-group hero-cta" style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;">
                         <div class="call-cta-wrap">
-                            <a href="#case-evaluation" class="btn-primary" style="text-align:center;">Free Case Review</a>
+                            <a href="#case-evaluation" class="btn-primary" style="text-align:center;"${ctaDataAttr(p)}>Free Case Review</a>
                         </div>
                         <div class="call-cta-wrap">
-                            <a href="tel:844-467-4335" class="btn-secondary call-btn" data-callrail-phone="844-467-4335"><span class="call-btn-num">844-467-4335</span><span class="call-btn-sub">Call Now</span></a>
+                            <a href="tel:844-467-4335" class="btn-secondary call-btn" data-callrail-phone="844-467-4335"${phoneDataAttr(p)}><span class="call-btn-num">844-467-4335</span><span class="call-btn-sub">Call Now</span></a>
                         </div>
                     </div>`
   );
@@ -1137,6 +1940,16 @@ function applyPage(html, p) {
                 <p class="hero-attorney-caption" style="margin-top:8px;font-size:14px;color:rgba(255,255,255,0.9);font-weight:500;">${p.heroCaption}</p>
                 </div>`
   );
+
+  if (p.heroBgImage) {
+    const bgUrl = getImage(p.heroBgImage, null);
+    if (bgUrl) {
+      h = h.replace(
+        '<section class="hero hero-section">',
+        `<section class="hero hero-section construction-hero-with-bg" style="background-image:linear-gradient(105deg,rgba(12,35,52,.93) 0%,rgba(12,35,52,.85) 42%,rgba(1,54,108,.52) 100%),url('${bgUrl}');background-size:cover;background-position:center;background-repeat:no-repeat;">`
+      );
+    }
+  }
 
   h = h.replace(
     /<h2 style="text-align: center;">Our Legal Team<\/h2>/,
@@ -1178,8 +1991,8 @@ function applyPage(html, p) {
         <div class="container">
             <h2>${p.casesH2}</h2>
             <p class="lead-text subtext-muted" style="text-align: center; margin-bottom: 32px; max-width: 700px; margin-left: auto; margin-right: auto;">${p.casesLead}</p>
-            <div class="accident-grid">
-${accidentGrid(p.casesItems)}
+            <div class="accident-grid${p.caseCardImages?.length ? " accident-grid--photo-cards" : ""}">
+${accidentGrid(p.casesItems, p.caseAccentImages, p.caseCardImages)}
             </div>
             ${compactCta(p)}
         </div>
@@ -1240,11 +2053,11 @@ ${accidentGrid(p.casesItems)}
             <p class="lead-text subtext-muted" style="text-align: center; margin-bottom: 40px; max-width: 760px; margin-left: auto; margin-right: auto; font-size: 18px;">${p.signsIntro}</p>
             <div class="case-checklist-wrap">
                 <ul class="case-checklist" id="case-checklist">
-${buildSignCards(p.signsItems)}
+${buildSignCards(p.signsItems, p.signsCards)}
                 </ul>
                 <p class="case-checklist-result" id="case-checklist-result" aria-live="polite">${p.checklistDefault}</p>
                 <p class="case-checklist-cta" id="case-checklist-cta" style="display: none; text-align: center; margin-top: 24px;">
-                    <a href="#case-evaluation" class="btn-primary">Free Case Review</a>
+                    <a href="#case-evaluation" class="btn-primary"${ctaDataAttr(p)}>Free Case Review</a>
                 </p>
             </div>
         </div>
@@ -1274,7 +2087,7 @@ ${buildSignCards(p.signsItems)}
         <div class="container">
             <div class="evidence-board">
                 <h2>${p.evidenceTitle}</h2>
-                <p class="evidence-board__intro">Property injury cases often depend on proof that can disappear quickly. Photos, reports, witnesses, surveillance, and maintenance records may help show what happened and who was responsible.</p>
+                <p class="evidence-board__intro">${p.evidenceIntro || "Property injury cases often depend on proof that can disappear quickly. Photos, reports, witnesses, surveillance, and maintenance records may help show what happened and who was responsible."}</p>
                 <div class="evidence-grid">
 ${buildEvidenceList(p.evidenceItems)}
                 </div>
@@ -1337,7 +2150,7 @@ ${buildWhyCards(p.whyCards)}
             <h2 style="text-align: center;">${p.investigateH2}</h2>
             <p class="lead-text subtext-muted" style="text-align: center; margin-bottom: 32px;">${p.investigateIntro}</p>
             <div class="investigation-feature">
-                <img src="${getImage(p.investigationPlannedImage || "attorneys-consultation-premises-hero.png", HERO_CONFIG.heroConsultationFallback)}" alt="Attorney reviewing unsafe property injury evidence with client" width="420" height="315" loading="lazy" decoding="async">
+                <img src="${getImage(p.investigationPlannedImage || "attorneys-consultation-premises-hero.png", HERO_CONFIG.heroConsultationFallback)}" alt="${escAttr(p.investigationFeatureAlt || "Attorney reviewing unsafe property injury evidence with client")}" width="420" height="315" loading="lazy" decoding="async">
                 <div>
                     <h3>Evidence-first case review</h3>
                     <p>Property injury claims often turn on fast evidence preservation, medical documentation, and identifying the business, owner, landlord, or maintenance company that controlled the hazard.</p>
@@ -1379,6 +2192,15 @@ ${buildInvestigateSteps(p.investigateSteps)}
             <p>${p.finalP}</p>
             <p style="margin-top: 12px;">Free Case Review • Call Now • No Fee Unless We Win</p>`
   );
+  if (p.finalBgImage) {
+    h = h.replace(
+      /<section class="final-cta stop-section">/,
+      `<section class="final-cta stop-section" style="background-image:linear-gradient(135deg,rgba(12,35,52,.88),rgba(1,54,108,.78)),url('${getImage(
+        p.finalBgImage,
+        p.finalBgImage
+      )}');background-size:cover;background-position:center;">`
+    );
+  }
 
   h = h.replace(
     /<p>Los Angeles personal injury and elder abuse attorneys\. Real trial lawyers, real results\.<\/p>/,
@@ -1429,7 +2251,11 @@ ${buildInvestigateSteps(p.investigateSteps)}
   h = h.replace(/Free Consultation - No Obligation/g, "Free Case Review - No Obligation");
   h = h.replace(
     /<button type="submit" class="btn-primary"[^>]*>Get My Free Review<\/button>/,
-    `<button type="submit" class="btn-primary" style="width: 100%; margin-top: 24px;">Request Free Case Review</button>`
+    `<button type="submit" class="btn-primary" style="width: 100%; margin-top: 24px;"${ctaDataAttr(p)}>Request Free Case Review</button>`
+  );
+  h = h.replace(
+    /<form action="https:\/\/formsubmit\.co\/ial\.leads\.2024@gmail\.com" method="POST" id="case-evaluation-form">/,
+    `<form action="https://formsubmit.co/ial.leads.2024@gmail.com" method="POST" id="case-evaluation-form"${formDataAttr(p)}>`
   );
   h = h.replace(/btn\.textContent='Get My Free Review'/g, "btn.textContent='Request Free Case Review'");
   h = h.replace(

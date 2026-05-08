@@ -2644,6 +2644,14 @@
 .premium-service-card:nth-child(3n+2) .premium-icon-badge,.evidence-card:nth-child(3n+2) .premium-icon-badge,.premium-check-card:nth-child(3n+2) .premium-icon-badge,.premium-process-card:nth-child(3n+2) .premium-icon-badge,.case-value-factor:nth-child(3n+2) .premium-icon-badge{background:linear-gradient(135deg,#edf7ff,#ffffff);color:#0c4a6e;}
 .prem-icon{width:25px;height:25px;display:block;}
 .premium-service-card.accident-item{display:flex;align-items:flex-start;gap:16px;text-align:left;padding:26px;background:linear-gradient(180deg,#fff,#f8fbff);border:1px solid rgba(1,54,108,.1);box-shadow:0 10px 25px rgba(12,35,52,.08);}
+.accident-grid.accident-grid--photo-cards{max-width:1100px;}
+.accident-item.accident-item--photo-card{flex-direction:column;align-items:stretch;padding:0;overflow:hidden;border-left:none;border:1px solid rgba(1,54,108,.1);}
+.accident-item.accident-item--photo-card:hover{border-left:none;border-color:rgba(251,186,0,.4);}
+.accident-item-photo-wrap{width:100%;aspect-ratio:16/10;overflow:hidden;background:#e8eef5;}
+.accident-item-photo{width:100%;height:100%;object-fit:cover;display:block;}
+.accident-item.accident-item--photo-card .accident-item-body{display:flex;align-items:flex-start;gap:16px;padding:20px 22px 22px;text-align:left;}
+.construction-hero-with-bg{background-attachment:scroll!important;}
+#your-case .case-checklist-wrap{max-width:min(920px,100%);}
 .premium-service-card .accident-item-text{font-weight:800;color:#0c2334;line-height:1.35;}
 .case-checklist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;list-style:none;padding:0;margin:0;}
 .premium-check-card.case-checklist-item{display:flex;gap:16px;align-items:flex-start;text-align:left;padding:22px;background:#fff;border:1px solid rgba(1,54,108,.12);border-radius:14px;box-shadow:0 8px 22px rgba(12,35,52,.08);}
@@ -2725,6 +2733,8 @@
   .injury-signal-pill{font-size:13px;}
   .evidence-board,.case-value-panel{padding:24px 18px;}
   .premium-service-card.accident-item,.premium-check-card.case-checklist-item{padding:18px;}
+  .premium-service-card.accident-item.accident-item--photo-card{padding:0!important;}
+  .accident-item.accident-item--photo-card .accident-item-body{padding:18px!important;}
   .premium-icon-badge{width:40px;height:40px;border-radius:13px;}
   .prem-icon{width:20px;height:20px;}
   .compact-cta-row{margin-top:22px;gap:10px;}
