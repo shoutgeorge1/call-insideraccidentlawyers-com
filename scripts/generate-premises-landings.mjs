@@ -169,6 +169,102 @@ function accidentGrid(items, accentImages = [], caseCardImages = null) {
     .join("\n");
 }
 
+/** Premium case cards: 16:9 image, title, one-line description (construction PPC). */
+function accidentGridFromCasesCards(cards) {
+  return cards
+    .map(
+      (c) => `                <div class="accident-item premium-service-card accident-item--photo-card accident-item--case-detail">
+                    <div class="accident-item-photo-wrap accident-item-photo-wrap--169">
+                        <img src="${c.image.src}" alt="${escAttr(
+        c.image.alt
+      )}" class="accident-item-photo" loading="lazy" decoding="async" width="640" height="360">
+                    </div>
+                    <div class="accident-item-body accident-item-body--stack">
+                        <div class="accident-item-title-row">
+                            <div class="premium-icon-badge">${icon(inferIcon(`${c.title} ${c.description || ""}`))}</div>
+                            <div class="accident-item-text accident-item-text--title">${c.title}</div>
+                        </div>
+                        <p class="accident-item-desc">${c.description}</p>
+                    </div>
+                </div>`
+    )
+    .join("\n");
+}
+
+function buildCompensationDamagesSection(p) {
+  const img = p.compHeroImage;
+  const items = p.compDamageItems;
+  return `    <section class="section-with-bg">
+        <div class="container">
+            <div class="section-content comp-damage-lead-section">
+                <h2 style="text-align: center;">${p.compH2}</h2>
+                <p class="lead-text subtext-muted" style="text-align: center; margin-bottom: 28px; max-width: 820px; margin-left: auto; margin-right: auto;">${p.compLead}</p>
+                <figure class="comp-damage-hero-figure" style="max-width: 720px; margin: 0 auto 32px;">
+                    <img src="${img.src}" alt="${escAttr(img.alt)}" width="960" height="540" loading="lazy" decoding="async" style="width:100%;height:auto;border-radius: var(--card-radius); object-fit: cover; aspect-ratio: 16/9;">
+                </figure>
+                <div class="comp-damage-grid">
+${items
+  .map(
+    ([title, body]) => `                    <div class="comp-damage-card">
+                        <h3 class="comp-damage-card__h">${title}</h3>
+                        <p class="comp-damage-card__p">${body}</p>
+                    </div>`
+  )
+  .join("\n")}
+                </div>
+                <p class="comp-damage-disclaimer" style="text-align:center;font-size:14px;color:var(--brand-gray-600);max-width:800px;margin:24px auto 0;line-height:1.6;">${p.compDisclaimer}</p>
+                ${compactCta(p)}
+            </div>
+        </div>
+    </section>`;
+}
+
+function htmlWhySection(p) {
+  return `    <section class="core-trust section-with-bg section-alt">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 42px; margin-bottom: 24px;">${p.whyH2}</h2>
+            <p class="subtext-muted" style="text-align: center; font-size: 20px; color: var(--brand-gray-700); margin-bottom: 56px; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.7;">${p.whyIntro}</p>
+            <div class="trust-grid">
+${buildWhyCards(p.whyCards)}
+            </div>
+        </div>
+    </section>`;
+}
+
+function htmlProcessSection(p) {
+  const featH3 = p.investigationFeatureH3 || "Evidence-first case review";
+  const featP =
+    p.investigationFeatureP ||
+    "Property injury claims often turn on fast evidence preservation, medical documentation, and identifying the business, owner, landlord, or maintenance company that controlled the hazard.";
+  const footer =
+    p.processFooterHint ||
+    `Questions about your jobsite incident? Call <a href="tel:844-467-4335" style="color: var(--brand-blue); text-decoration: none; font-weight: 800; font-size: 1.2em; letter-spacing: 0.02em;"${phoneDataAttr(
+      p
+    )}><span data-callrail-phone="844-467-4335">844-467-4335</span></a> | Available 24/7`;
+  return `    <section class="process-section section-with-bg">
+        <div class="container">
+            <h2 style="text-align: center;">${p.investigateH2}</h2>
+            <p class="lead-text subtext-muted" style="text-align: center; margin-bottom: 32px;">${p.investigateIntro}</p>
+            <div class="investigation-feature">
+                <img src="${getImage(p.investigationPlannedImage || "attorneys-consultation-premises-hero.png", HERO_CONFIG.heroConsultationFallback)}" alt="${escAttr(
+                  p.investigationFeatureAlt || "Attorney reviewing unsafe property injury evidence with client"
+                )}" width="420" height="315" loading="lazy" decoding="async">
+                <div>
+                    <h3>${featH3}</h3>
+                    <p>${featP}</p>
+                </div>
+            </div>
+            <div class="process-steps process-steps--with-images">
+${buildInvestigateSteps(p.investigateSteps)}
+            </div>
+            ${compactCta(p)}
+            <div style="text-align: center; margin-top: 48px;">
+                <p style="margin-top: 16px; color: var(--brand-gray-700);">${footer}</p>
+            </div>
+        </div>
+    </section>`;
+}
+
 function processStep(n, title, body, imgSrc, imgAlt) {
   const stepIcon = inferIcon(`${title} ${body}`);
   return `                <div class="process-step premium-process-card">
@@ -890,7 +986,7 @@ function buildPages() {
       heroImg: getImage("hero-injured-construction-worker.png", IMG.attorney),
       heroImgAlt: "Injured construction worker being helped by coworkers on a construction site",
       heroPlannedImage: "hero-injured-construction-worker.png",
-      heroHazardFallback: IMG.attorney,
+      heroHazardFallback: getImage("hero-injured-construction-worker.png", IMG.attorney),
       heroUseAttorney: false,
       heroCaption: "Construction accident and serious injury case review",
       trustH2: "A Construction Injury Case May Involve More Than Workers’ Comp",
@@ -917,71 +1013,168 @@ function buildPages() {
       casesH2: "Serious Construction Accident Cases We Review",
       casesLead:
         "Construction sites involve many companies and moving parts. We review serious injury cases where a contractor, property owner, equipment company, driver, vendor, or unsafe condition may have contributed.",
-      casesItems: [
-        "Scaffold and ladder falls",
-        "Falling object injuries",
-        "Heavy equipment and forklift accidents",
-        "Unsafe jobsite conditions",
-        "Electrical injuries and burns",
-        "Trench, collapse, and excavation injuries",
-        "Machinery and tool injuries",
-        "Construction wrongful death",
+      casesItems: [],
+      casesCards: [
+        {
+          title: "Scaffold and ladder falls",
+          description:
+            "Falls from scaffolds, ladders, roofs, platforms, or elevated work areas may involve missing fall protection, unsafe access, or safety violations.",
+          image: {
+            src: getImage("broken-leg-construction.png", getImage("hero-injured-construction-worker.png", IMG.attorney)),
+            alt: "Construction workers assisting an injured worker near scaffolding and a ladder on a jobsite",
+          },
+        },
+        {
+          title: "Falling object injuries",
+          description:
+            "Tools, materials, debris, or equipment falling from above can cause serious head, neck, spine, and orthopedic injuries.",
+          image: {
+            src: getImage(
+              "falling-rock-head-injury-construction.png",
+              getImage("hero-injured-construction-worker.png", IMG.attorney)
+            ),
+            alt: "Construction workers assisting an injured coworker after falling debris on a jobsite",
+          },
+        },
+        {
+          title: "Heavy equipment and forklift accidents",
+          description:
+            "Forklifts, cranes, loaders, trucks, and other heavy equipment can cause severe injuries when work areas and traffic are not controlled safely.",
+          image: {
+            src: getImage("forklift-injury-construction.png", getImage("hero-injured-construction-worker.png", IMG.attorney)),
+            alt: "Construction workers assisting an injured worker near a forklift on a jobsite",
+          },
+        },
+        {
+          title: "Unsafe jobsite conditions",
+          description:
+            "Open edges, debris, unstable surfaces, poor lighting, missing warnings, and blocked walkways can create serious trip and fall hazards.",
+          image: {
+            src: getImage("ankle-injury-construction.png", getImage("hero-injured-construction-worker.png", IMG.attorney)),
+            alt: "Worker being helped after an unsafe jobsite accident near debris and an open work area",
+          },
+        },
+        {
+          title: "Electrical injuries and burns",
+          description:
+            "Exposed wiring, unsafe panels, power tools, and energized equipment can cause shock injuries, burns, and other serious harm.",
+          image: {
+            src: getImage("electrical-injury-construction.png", getImage("hero-injured-construction-worker.png", IMG.attorney)),
+            alt: "Construction worker being helped near exposed electrical wiring on a jobsite",
+          },
+        },
+        {
+          title: "Trench, collapse, and excavation injuries",
+          description:
+            "Excavation accidents may involve cave-ins, unstable soil, missing trench protection, or unsafe site control by contractors.",
+          image: {
+            src: getImage("trench-collapse.png", getImage("hero-injured-construction-worker.png", IMG.attorney)),
+            alt: "Workers assisting an injured colleague inside a construction trench or excavation",
+          },
+        },
+        {
+          title: "Machinery and tool injuries",
+          description:
+            "Defective tools, unguarded machinery, maintenance failures, or unsafe equipment use may require a third-party investigation.",
+          image: {
+            src: getImage(
+              "broken-leg-excavator-construction.png",
+              getImage("hero-injured-construction-worker.png", IMG.attorney)
+            ),
+            alt: "Construction worker being helped near tools and heavy machinery on a jobsite",
+          },
+        },
+        {
+          title: "Construction wrongful death",
+          description:
+            "When a construction accident causes a death, families may need urgent review of liability, evidence preservation, and insurance coverage.",
+          image: {
+            src: getImage(
+              "man-unconscious-construction.png",
+              getImage("man-severly-wounded-wrongful-death-construction.png", getImage("hero-injured-construction-worker.png", IMG.attorney))
+            ),
+            alt: "Construction workers responding to a serious jobsite emergency",
+          },
+        },
       ],
-      caseAccentImages: [
-        {
-          src: getImage(
-            "construction-man-looking-up-something-falling.png",
-            getImage("hero-injured-construction-worker.png", IMG.attorney)
-          ),
-          alt: "Construction worker looking up at a possible falling object hazard on a jobsite",
-        },
-        {
-          src: getImage(
-            "injured-construction-worker-hispanic.png",
-            getImage("hero-injured-construction-worker.png", IMG.attorney)
-          ),
-          alt: "Injured construction worker being helped near heavy equipment",
-        },
-        {
-          src: getImage(
-            "man-severly-wounded-wrongful-death-construction.png",
-            getImage("hero-injured-construction-worker.png", IMG.attorney)
-          ),
-          alt: "Construction workers responding to a serious jobsite injury",
-        },
-      ],
+      caseAccentImages: [],
       hazardsH2: "Construction Accident Attorneys",
       hazardsLead:
         "When a serious construction accident happens, identifying who controlled the hazard and who may be legally responsible can be critical to the recovery path.",
       hazardsFigure: {
-        src: getImage("attorney-contruction-site.png", IMG.attorney),
-        alt: "Personal injury attorney standing near a construction site",
+        src: getImage("attorney-contruction-site.png", getImage("background-construction-site.png", IMG.attorney)),
+        alt: "Attorney reviewing a serious construction injury case near a jobsite",
         caption: "Potentially responsible parties can include contractors, subcontractors, owners, equipment companies, and vendors.",
       },
       hazardsSecondFigure: {
-        src: getImage(
-          "injured-construction-worker-hispanic.png",
-          getImage("hero-injured-construction-worker.png", IMG.attorney)
-        ),
+        src: getImage("injured-construction-worker-hispanic.png", getImage("hero-injured-construction-worker.png", IMG.attorney)),
         alt: "Injured construction worker being helped near heavy equipment",
         caption: "We can review whether your case is workers’ comp only, a third-party injury claim, or another recovery path.",
       },
       signsH2: "Signs You May Have A Construction Injury Case",
       signsIntro:
-        "Tap what applies. Not every workplace injury is a personal injury case. Some are workers’ comp only, and we can review whether there may be a third-party liability path.",
-      signsItems: [
-        "Serious injury requiring ER care, hospitalization, surgery, imaging, or ongoing treatment",
-        "A subcontractor, vendor, driver, equipment company, property owner, or general contractor may have contributed",
-        "Photos, video, incident reports, OSHA reports, witnesses, or jobsite records may exist",
-        "The accident involved a fall, falling object, machinery, vehicle, collapse, electrical hazard, or unsafe worksite condition",
-        "You are unsure whether this is only workers’ comp or also a third-party injury claim",
+        "Not every jobsite injury is a personal injury claim. But certain facts may suggest there is more to review than a standard workers’ compensation issue.",
+      signsChecklistExtraClass: "case-checklist--signs-six",
+      signsItems: [],
+      signsCards: [
+        {
+          heading: "Someone Other Than Your Employer May Be Responsible",
+          body: "A subcontractor, property owner, equipment company, driver, vendor, or general contractor may have created or failed to fix the hazard.",
+        },
+        {
+          heading: "The Injury Was Serious",
+          body: "Fractures, surgery, head injuries, back or spine trauma, burns, crush injuries, amputations, or hospitalization may require deeper investigation.",
+        },
+        {
+          heading: "The Accident Involved A Dangerous Jobsite Condition",
+          body: "Falls, missing guardrails, open edges, debris, falling objects, unstable surfaces, trench hazards, exposed wiring, or unsafe equipment may all matter.",
+        },
+        {
+          heading: "There Were Multiple Companies On Site",
+          body: "Construction sites often involve several contractors and vendors. Liability may depend on who controlled the area, equipment, or safety condition.",
+        },
+        {
+          heading: "Evidence May Disappear Quickly",
+          body: "Photos, video, incident reports, witness names, OSHA records where applicable, equipment logs, and subcontractor information can be important.",
+        },
+        {
+          heading: "You Are Not Sure If It Is Only Workers’ Comp",
+          body: "Many injured workers are told their only option is workers’ comp. That may be true in some cases, but serious accidents may deserve a third-party liability review.",
+        },
       ],
+      signsCallout:
+        "If you are unsure, it is worth having the facts reviewed. We can help identify whether the case appears to be workers’ comp only, a third-party injury claim, or another possible recovery path.",
       checklistDefault:
         "Not every construction injury supports a third-party claim. We screen for serious injury, factual evidence, and who may have controlled the hazard.",
       checklistOne:
         "If one of these applies, a free case review can help clarify whether there may be a claim beyond workers’ comp.",
       checklistMany:
         "Multiple factors may support a serious construction injury claim. Request a free case review.",
+      omitSeriousAndEvidence: true,
+      caseValueBeforeComp: true,
+      caseValueGridClass: "case-value-grid--construction-factors",
+      caseValueFactors: [
+        [
+          "Injury severity",
+          "Fractures, surgery, head or back injuries, crush injuries, and long-term limitations change how a case is evaluated.",
+          "medicalCross",
+        ],
+        [
+          "Jobsite complexity",
+          "Multiple contractors, equipment vendors, and overlapping work areas can affect who owed a duty and who controlled the hazard.",
+          "building",
+        ],
+        [
+          "Evidence",
+          "Photos, video, incident documentation, witness names, OSHA filings where applicable, and equipment records may not last long.",
+          "camera",
+        ],
+        [
+          "Third-party fault",
+          "A claim may be stronger when another company—not only your employer—contributed to unsafe conditions or equipment.",
+          "shieldCheck",
+        ],
+      ],
       seriousTitle: "Serious Injuries Matter",
       seriousBody:
         "We review severe injuries including fractures, surgery, head and brain injuries, spine and back injuries, burns, amputations, crush injuries, electrocution, wrongful death, and long-term impairment.",
@@ -1002,39 +1195,77 @@ function buildPages() {
         "Insurance coverage review",
       ],
       investigateH2: "How We Investigate Construction Accident Claims",
-      investigateIntro: "Construction injury claims often require fast evidence preservation and a structured liability review.",
+      investigateIntro:
+        "Construction accident cases often depend on identifying who controlled the worksite, who created the hazard, and what evidence exists before it disappears.",
       investigationPlannedImage: "cell-phone-capture-equipment-on-floor.png",
       investigationFeatureAlt:
         "Phone documenting construction accident evidence including hard hat and safety vest",
+      investigationFeatureH3: "Jobsite evidence and liability review",
+      investigationFeatureP:
+        "We focus on incident documentation, subcontractor roles, equipment involvement, and who had safety responsibility on the project—before records fade and scenes change.",
       investigateSteps: [
-        { title: "Accident and incident report review", body: "We review reports from the site, employer, and available incident documentation.", img: getImage("cell-phone-capture-equipment-on-floor.png", IMG.attorney), alt: "Phone documenting construction accident evidence including hard hat and safety vest" },
-        { title: "Jobsite and subcontractor fact review", body: "We identify who controlled work areas, equipment, and safety procedures.", img: null, alt: "" },
-        { title: "Photo and video evidence", body: "Images and footage can help document conditions before evidence changes.", img: null, alt: "" },
-        { title: "Witness statements", body: "Coworkers, supervisors, and bystanders may support key facts.", img: null, alt: "" },
-        { title: "OSHA and safety record review", body: "Where applicable, we review safety records and reported violations.", img: null, alt: "" },
-        { title: "Equipment and maintenance review", body: "Defective tools, machinery, or poor maintenance may create third-party liability.", img: null, alt: "" },
-        { title: "Owner / contractor responsibility analysis", body: "We evaluate property owner, general contractor, and subcontractor roles.", img: null, alt: "" },
-        { title: "Medical record review", body: "Treatment records help connect injury severity to the mechanism of harm.", img: null, alt: "" },
-        { title: "Insurance and recovery path review", body: "We assess potential coverage and realistic recovery pathways under the facts.", img: null, alt: "" },
+        { title: "Review how the accident happened", body: "We start with your account, employer reports, and any immediate documentation from the site.", img: null, alt: "" },
+        { title: "Identify all companies on the jobsite", body: "We map general contractors, subcontractors, vendors, equipment providers, and property involvement.", img: null, alt: "" },
+        { title: "Review incident reports, photos, video, and witness names", body: "We look for documentation that may support how the work area was controlled and what was unsafe.", img: null, alt: "" },
+        { title: "Evaluate jobsite control and safety responsibilities", body: "Liability often turns on who controlled the area, equipment, or condition that contributed to the injury.", img: null, alt: "" },
+        { title: "Review equipment, maintenance, and contractor records", body: "Equipment logs, maintenance history, and contractor communications may matter in serious equipment cases.", img: null, alt: "" },
+        { title: "Review medical treatment and injury severity", body: "Medical records help connect the mechanism of injury to the harm and future needs.", img: null, alt: "" },
+        { title: "Analyze insurance coverage and possible recovery paths", body: "We evaluate liability coverage, additional insureds, and realistic paths under the facts.", img: null, alt: "" },
+        {
+          title: "Determine workers’ comp only, third-party liability, or both",
+          body: "We help identify whether the facts suggest a workers’ comp-only path, a third-party injury claim, or another recovery option to review.",
+          img: null,
+          alt: "",
+        },
       ],
       compH2: "Compensation In Construction Injury Cases",
       compLead:
-        "Potential damages may include medical bills, future treatment, lost income, pain and suffering, long-term impairment, loss of earning capacity, and wrongful death damages where applicable. Every case depends on the facts. Past results do not guarantee a similar outcome.",
+        "The value of a construction accident case depends on the facts, injuries, insurance coverage, and whether a third party may be legally responsible.",
+      compDisclaimer:
+        "Every case is different. Past results do not guarantee a similar outcome. The available recovery depends on liability, damages, insurance coverage, and the facts of the accident.",
+      compHeroImage: {
+        src: getImage("cell-phone-capture-equipment-on-floor.png", getImage("attorney-contruction-site.png", IMG.attorney)),
+        alt: "Documenting construction accident evidence including hard hat and safety vest on a jobsite floor",
+      },
+      compDamageItems: [
+        [
+          "Medical Bills & Future Treatment",
+          "Construction injuries may require emergency care, imaging, surgery, therapy, specialist visits, medication, or long-term treatment.",
+        ],
+        ["Lost Income", "A serious jobsite injury can keep you from working temporarily or permanently."],
+        [
+          "Pain & Suffering",
+          "A third-party injury claim may include damages beyond workers’ compensation benefits, depending on the facts.",
+        ],
+        [
+          "Loss Of Earning Capacity",
+          "Severe injuries may affect your ability to return to your trade or perform the same type of work.",
+        ],
+        [
+          "Long-Term Impairment",
+          "Spine injuries, brain injuries, crush injuries, burns, amputations, and permanent limitations can change the value of a case.",
+        ],
+        [
+          "Wrongful Death",
+          "When a construction accident causes a death, surviving family members may have legal rights that should be reviewed quickly.",
+        ],
+      ],
       compCards: [
-        ["Medical bills and future treatment", "/images/la/nurse-helping-woman.png", "Medical care and expenses after serious injury"],
-        ["Lost income and earning capacity", "/images/la/attorney-paperwork.png", "Attorney reviewing construction injury case documents"],
-        ["Pain and suffering", "/images/la/daughter-hold-dads-hand.png", "Family supporting injured loved one"],
-        ["Long-term impairment", "/images/la/injured-woman-healing-walking.png", "Adult recovering after severe injury"],
+        ["Medical bills and future treatment", "/images/premises-lp/hero-injured-construction-worker.png", "Placeholder for generator — compDamageItems used"],
+        ["Lost income", "/images/premises-lp/hero-injured-construction-worker.png", "Placeholder"],
+        ["Pain and suffering", "/images/premises-lp/hero-injured-construction-worker.png", "Placeholder"],
+        ["Long-term impairment", "/images/premises-lp/hero-injured-construction-worker.png", "Placeholder"],
       ],
       whyH2: "Why Choose Insider Accident Lawyers",
-      whyIntro: "How we approach serious construction injury claims:",
+      whyIntro: "Serious construction injury cases deserve a focused review—not generic intake.",
       whyCards: [
-        ["Trial-ready strategy from day one", "We prepare claims as if they may need to be tried."],
+        ["Serious injury case review", "We prioritize major jobsite injuries with documented treatment and clear fact patterns to evaluate."],
+        ["Third-party liability analysis", "We review whether another contractor, vendor, owner, or equipment party may share responsibility—not only your employer."],
+        ["Evidence preservation", "We emphasize fast action to protect photos, reports, witness information, and site documentation where possible."],
+        ["Insurance coverage review", "We evaluate realistic coverage and recovery paths under California injury law."],
         ["No fee unless we win", "Contingency fee representation with no upfront attorney fee."],
-        ["Direct attorney access", "You work directly with attorneys focused on serious injury facts."],
-        ["Evidence preservation", "Fast action can matter in protecting jobsite and incident evidence."],
-        ["Serious injury case review", "We focus on major injury cases with documented treatment."],
-        ["Insurance and liability analysis", "We evaluate coverage and responsible parties under California law."],
+        ["Hablamos Español", "Spanish-speaking team members are available to assist when needed."],
+        ["Direct attorney review", "Serious inquiries receive attorney-level review of the fact pattern when appropriate."],
       ],
       howMuchTitle: "Why A Construction Injury May Be More Than Workers’ Comp",
       howMuchBody:
@@ -1044,6 +1275,11 @@ function buildPages() {
         "If you were seriously injured on a construction site, request a free case review. We can review whether the facts suggest a personal injury claim, a workers’ compensation issue, or another recovery path.",
       footerBlurb:
         "California attorneys for serious construction accident and injury cases. Attorney advertising.",
+      attorneyBioConstruction: [
+        "Shawn Rokni is an experienced California personal injury attorney who represents people seriously injured on construction sites and in other major injury cases statewide.",
+        "Prior to representing injured people, Shawn worked with insurance companies. That experience informs how we investigate third-party liability, preserve jobsite evidence, and pursue fair compensation.",
+      ],
+      resultTypeLabel: "Construction Injury",
       preloadHref: getImage("hero-injured-construction-worker.png", IMG.attorney),
       checklistResultId: "case-checklist-result",
       finalBgImage: "background-construction-site.png",
@@ -1697,15 +1933,16 @@ function injuryPills() {
 }
 
 function buildCaseValue(page) {
-  const factors = [
+  const factors = page.caseValueFactors || [
     ["Injury severity", "Fractures, surgery, head or back injuries, and long-term limitations change the stakes.", "medicalCross"],
     ["Medical treatment", "ER care, imaging, specialists, therapy, and ongoing treatment help document harm.", "clipboard"],
     ["Evidence available", "Photos, video, reports, witnesses, and records can prove what happened before it disappears.", "camera"],
     ["Notice and responsibility", "A claim is stronger when a business or owner had a chance to repair or warn.", "building"],
   ];
+  const gridClass = page.caseValueGridClass || "";
   return `<div class="case-value-panel">
                 <p class="case-value-lead">${page.howMuchBody}</p>
-                <div class="case-value-grid">
+                <div class="case-value-grid${gridClass ? ` ${gridClass}` : ""}">
 ${factors
   .map(
     ([h, p, iconName]) => `                    <div class="case-value-factor">
@@ -1785,6 +2022,20 @@ function applyPage(html, p) {
 .accident-item-photo-wrap{width:100%;aspect-ratio:16/10;overflow:hidden;background:#e8eef5;}
 .accident-item-photo{width:100%;height:100%;object-fit:cover;display:block;}
 .accident-item.accident-item--photo-card .accident-item-body{display:flex;align-items:flex-start;gap:16px;padding:20px 22px 22px;text-align:left;}
+.accident-item-photo-wrap--169{aspect-ratio:16/9!important;}
+.accident-item-body--stack{flex-direction:column;align-items:stretch!important;gap:12px;}
+.accident-item-title-row{display:flex;align-items:flex-start;gap:14px;}
+.accident-item-text--title{font-size:17px;line-height:1.35;flex:1;min-width:0;}
+.accident-item-desc{font-size:15px;line-height:1.55;color:#4b5563;margin:0;}
+.comp-damage-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;max-width:1000px;margin:0 auto;text-align:left;}
+.comp-damage-card{background:#fff;border:1px solid rgba(1,54,108,.1);border-radius:14px;padding:20px 22px;box-shadow:0 8px 20px rgba(12,35,52,.06);}
+.comp-damage-card__h{font-size:18px;color:#0c2334;margin:0 0 10px;font-weight:800;}
+.comp-damage-card__p{font-size:15px;color:#4b5563;margin:0;line-height:1.55;}
+.case-checklist--signs-six{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;}
+@media(max-width:1024px){.case-checklist--signs-six{grid-template-columns:repeat(2,minmax(0,1fr));}}
+.signs-callout-note{max-width:760px;margin:28px auto 0;padding:18px 20px;background:#f8fbff;border:1px solid rgba(1,54,108,.12);border-radius:14px;font-size:16px;line-height:1.6;color:#374151;}
+@media(min-width:900px){.case-value-grid.case-value-grid--construction-factors{grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media(min-width:1200px){.case-value-grid.case-value-grid--construction-factors{grid-template-columns:repeat(4,minmax(0,1fr));}}
 .construction-hero-with-bg{background-attachment:scroll!important;}
 #your-case .case-checklist-wrap{max-width:min(920px,100%);}
 .premium-service-card .accident-item-text{font-weight:800;color:#0c2334;line-height:1.35;}
@@ -1863,6 +2114,7 @@ function applyPage(html, p) {
   .hero-section .hero-review-badge-item{width:100%!important;justify-content:center!important;}
   .hero-attorney-wrap::after{left:10px;bottom:38px;font-size:10px;padding:6px 9px;}
   .case-checklist,.evidence-grid,.case-value-grid{grid-template-columns:1fr;}
+  .comp-damage-grid{grid-template-columns:1fr;}
   .serious-banner{padding:24px 18px;}
   .serious-banner__content,.investigation-feature{grid-template-columns:1fr;}
   .injury-signal-pill{font-size:13px;}
@@ -1991,8 +2243,8 @@ function applyPage(html, p) {
         <div class="container">
             <h2>${p.casesH2}</h2>
             <p class="lead-text subtext-muted" style="text-align: center; margin-bottom: 32px; max-width: 700px; margin-left: auto; margin-right: auto;">${p.casesLead}</p>
-            <div class="accident-grid${p.caseCardImages?.length ? " accident-grid--photo-cards" : ""}">
-${accidentGrid(p.casesItems, p.caseAccentImages, p.caseCardImages)}
+            <div class="accident-grid${p.casesCards?.length || p.caseCardImages?.length ? " accident-grid--photo-cards" : ""}">
+${p.casesCards?.length ? accidentGridFromCasesCards(p.casesCards) : accidentGrid(p.casesItems, p.caseAccentImages, p.caseCardImages)}
             </div>
             ${compactCta(p)}
         </div>
@@ -2045,6 +2297,13 @@ ${accidentGrid(p.casesItems, p.caseAccentImages, p.caseCardImages)}
     </section>`;
   }
 
+  const signsChecklistClass = p.signsChecklistExtraClass ? ` ${p.signsChecklistExtraClass}` : "";
+  const signsCalloutBlock = p.signsCallout
+    ? `
+                <p class="signs-callout-note" role="note">${p.signsCallout}</p>
+                ${p.signsCalloutShowCta !== false ? `${compactCta(p)}` : ""}`
+    : "";
+
   h = h.replace(
     /<section id="your-case" class="worth-section section-with-bg"[\s\S]*?<\/section>/,
     `<section id="your-case" class="worth-section section-with-bg" style="background: var(--brand-white); padding-top: 100px;">
@@ -2052,19 +2311,27 @@ ${accidentGrid(p.casesItems, p.caseAccentImages, p.caseCardImages)}
             <h2 style="text-align: center; margin-bottom: 16px; font-size: 42px;">${p.signsH2}</h2>
             <p class="lead-text subtext-muted" style="text-align: center; margin-bottom: 40px; max-width: 760px; margin-left: auto; margin-right: auto; font-size: 18px;">${p.signsIntro}</p>
             <div class="case-checklist-wrap">
-                <ul class="case-checklist" id="case-checklist">
+                <ul class="case-checklist${signsChecklistClass}" id="case-checklist">
 ${buildSignCards(p.signsItems, p.signsCards)}
                 </ul>
                 <p class="case-checklist-result" id="case-checklist-result" aria-live="polite">${p.checklistDefault}</p>
                 <p class="case-checklist-cta" id="case-checklist-cta" style="display: none; text-align: center; margin-top: 24px;">
                     <a href="#case-evaluation" class="btn-primary"${ctaDataAttr(p)}>Free Case Review</a>
                 </p>
-            </div>
+            </div>${signsCalloutBlock}
         </div>
     </section>`
   );
 
-  const seriousEvidence = `
+  const seriousBannerParagraph =
+    p.seriousBannerParagraph ||
+    (p.seriousTitle === "Serious Injuries Matter" && !isConstructionPage(p)
+      ? "Premises liability cases are stronger when the injury is serious, documented, and tied to a dangerous property condition."
+      : p.seriousBody);
+
+  const seriousEvidence = p.omitSeriousAndEvidence
+    ? ""
+    : `
     <section class="section-with-bg">
         <div class="container">
             <div class="serious-banner">
@@ -2072,7 +2339,7 @@ ${buildSignCards(p.signsItems, p.signsCards)}
                     <div>
                         <div class="premium-icon-badge">${icon("medicalCross")}</div>
                         <h2>${p.seriousTitle}</h2>
-                        <p>${p.seriousTitle === "Serious Injuries Matter" ? "Premises liability cases are stronger when the injury is serious, documented, and tied to a dangerous property condition." : p.seriousBody}</p>
+                        <p>${seriousBannerParagraph}</p>
                     </div>
                     <div class="injury-signal-grid" aria-label="Serious injury signals">
                         ${injuryPills()}
@@ -2096,12 +2363,16 @@ ${buildEvidenceList(p.evidenceItems)}
         </div>
     </section>`;
 
-  h = h.replace(
-    /<section class="section-with-bg">\s*\n\s*<div class="container">\s*\n\s*<div class="section-content">\s*\n\s*<h2 style="text-align: center;">Compensation in Nursing Home Neglect Cases<\/h2>[\s\S]*?<\/section>/,
-    seriousEvidence +
-      `
+  const caseValueFrontHtml = p.caseValueBeforeComp
+    ? `    <section class="worth-section section-with-bg section-alt" id="why-more-than-workers-comp">
+        <div class="container">
+            <h2 style="font-size: 42px; margin-bottom: 24px; text-align: center;">${p.howMuchTitle}</h2>
+            ${buildCaseValue(p)}
+        </div>
+    </section>`
+    : "";
 
-    <section class="section-with-bg">
+  const compSectionDefault = `    <section class="section-with-bg">
         <div class="container">
             <div class="section-content">
                 <h2 style="text-align: center;">${p.compH2}</h2>
@@ -2130,12 +2401,26 @@ ${buildEvidenceList(p.evidenceItems)}
                 </div>
             </div>
         </div>
-    </section>`
-  );
+    </section>`;
+
+  const compSectionOut = p.compDamageItems ? buildCompensationDamagesSection(p) : compSectionDefault;
 
   h = h.replace(
-    /<section class="core-trust section-with-bg section-alt">[\s\S]*?<\/section>\s*\n\s*<section class="process-section section-with-bg">[\s\S]*?<\/section>\s*\n\s*<section class="worth-section section-with-bg">\s*\n\s*<div class="container">\s*\n\s*<h2 style="font-size: 42px; margin-bottom: 24px;">How Much Compensation Could You Receive\?<\/h2>/,
-    `<section class="core-trust section-with-bg section-alt">
+    /<section class="section-with-bg">\s*\n\s*<div class="container">\s*\n\s*<div class="section-content">\s*\n\s*<h2 style="text-align: center;">Compensation in Nursing Home Neglect Cases<\/h2>[\s\S]*?<\/section>/,
+    seriousEvidence + caseValueFrontHtml + `
+
+` + compSectionOut
+  );
+
+  const coreProcessWorthRegex =
+    /<section class="core-trust section-with-bg section-alt">[\s\S]*?<\/section>\s*<section class="process-section section-with-bg">[\s\S]*?<\/section>\s*<section class="worth-section section-with-bg">[\s\S]*?<\/section>/;
+
+  if (p.caseValueBeforeComp) {
+    h = h.replace(coreProcessWorthRegex, `${htmlProcessSection(p)}\n\n${htmlWhySection(p)}`);
+  } else {
+    h = h.replace(
+      /<section class="core-trust section-with-bg section-alt">[\s\S]*?<\/section>\s*\n\s*<section class="process-section section-with-bg">[\s\S]*?<\/section>\s*\n\s*<section class="worth-section section-with-bg">\s*\n\s*<div class="container">\s*\n\s*<h2 style="font-size: 42px; margin-bottom: 24px;">How Much Compensation Could You Receive\?<\/h2>/,
+      `<section class="core-trust section-with-bg section-alt">
         <div class="container">
             <h2 style="text-align: center; font-size: 42px; margin-bottom: 24px;">${p.whyH2}</h2>
             <p class="subtext-muted" style="text-align: center; font-size: 20px; color: var(--brand-gray-700); margin-bottom: 56px; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.7;">${p.whyIntro}</p>
@@ -2169,12 +2454,15 @@ ${buildInvestigateSteps(p.investigateSteps)}
     <section class="worth-section section-with-bg">
         <div class="container">
             <h2 style="font-size: 42px; margin-bottom: 24px;">${p.howMuchTitle}</h2>`
-  );
+    );
+  }
 
-  h = h.replace(
-    /<p class="subtext-muted" style="font-size: 20px; color: var\(--brand-gray-700\); max-width: 800px; margin: 0 auto 40px; line-height: 1.7;">There is no set average—every case depends on the severity of harm, the facility's conduct, medical bills, and whether death occurred\.[\s\S]*?<\/p>/,
-    buildCaseValue(p)
-  );
+  if (!p.caseValueBeforeComp) {
+    h = h.replace(
+      /<p class="subtext-muted" style="font-size: 20px; color: var\(--brand-gray-700\); max-width: 800px; margin: 0 auto 40px; line-height: 1.7;">There is no set average—every case depends on the severity of harm, the facility's conduct, medical bills, and whether death occurred\.[\s\S]*?<\/p>/,
+      buildCaseValue(p)
+    );
+  }
 
   h = h.replace(
     /<p>Shawn Rokni is an experienced personal injury attorney in Los Angeles who has represented families in nursing home neglect, elder abuse, and serious injury cases throughout Los Angeles County\.<\/p>/,
@@ -2185,6 +2473,17 @@ ${buildInvestigateSteps(p.investigateSteps)}
     /<p style="margin-top: 16px;">Prior to representing injured people and families, Shawn worked with insurance companies\. This former insurance attorney experience gives him unique insight into how defendants evaluate and defend claims, helping him build stronger cases and negotiate better settlements for his clients\.<\/p>/,
     `<p style="margin-top: 16px;">Prior to representing injured people, Shawn worked with insurance companies. That experience informs how we preserve evidence, frame liability, and pursue fair compensation from carriers and property defendants.</p>`
   );
+
+  if (p.attorneyBioConstruction) {
+    h = h.replace(
+      /<p>Shawn Rokni is an experienced California personal injury attorney who represents people seriously injured on unsafe property—including retail, hospitality, apartments, and commercial sites\.<\/p>/,
+      `<p>${p.attorneyBioConstruction[0]}</p>`
+    );
+    h = h.replace(
+      /<p style="margin-top: 16px;">Prior to representing injured people, Shawn worked with insurance companies\. That experience informs how we preserve evidence, frame liability, and pursue fair compensation from carriers and property defendants\.<\/p>/,
+      `<p style="margin-top: 16px;">${p.attorneyBioConstruction[1]}</p>`
+    );
+  }
 
   h = h.replace(
     /<h2>Speak With a Los Angeles Nursing Home Neglect Lawyer Today<\/h2>[\s\S]*?<p style="margin-top: 12px;">Free Consultation • No Fee Unless We Win<\/p>/,
@@ -2211,6 +2510,10 @@ ${buildInvestigateSteps(p.investigateSteps)}
     /<div class="result-type">Slip and Fall<\/div>/,
     `<div class="result-type">Unsafe Property Injury</div>`
   );
+
+  if (p.resultTypeLabel) {
+    h = h.replace(/<div class="result-type">Unsafe Property Injury<\/div>/, `<div class="result-type">${p.resultTypeLabel}</div>`);
+  }
 
   const ph = JSON.stringify(
     Object.fromEntries(

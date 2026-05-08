@@ -2650,6 +2650,20 @@
 .accident-item-photo-wrap{width:100%;aspect-ratio:16/10;overflow:hidden;background:#e8eef5;}
 .accident-item-photo{width:100%;height:100%;object-fit:cover;display:block;}
 .accident-item.accident-item--photo-card .accident-item-body{display:flex;align-items:flex-start;gap:16px;padding:20px 22px 22px;text-align:left;}
+.accident-item-photo-wrap--169{aspect-ratio:16/9!important;}
+.accident-item-body--stack{flex-direction:column;align-items:stretch!important;gap:12px;}
+.accident-item-title-row{display:flex;align-items:flex-start;gap:14px;}
+.accident-item-text--title{font-size:17px;line-height:1.35;flex:1;min-width:0;}
+.accident-item-desc{font-size:15px;line-height:1.55;color:#4b5563;margin:0;}
+.comp-damage-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;max-width:1000px;margin:0 auto;text-align:left;}
+.comp-damage-card{background:#fff;border:1px solid rgba(1,54,108,.1);border-radius:14px;padding:20px 22px;box-shadow:0 8px 20px rgba(12,35,52,.06);}
+.comp-damage-card__h{font-size:18px;color:#0c2334;margin:0 0 10px;font-weight:800;}
+.comp-damage-card__p{font-size:15px;color:#4b5563;margin:0;line-height:1.55;}
+.case-checklist--signs-six{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;}
+@media(max-width:1024px){.case-checklist--signs-six{grid-template-columns:repeat(2,minmax(0,1fr));}}
+.signs-callout-note{max-width:760px;margin:28px auto 0;padding:18px 20px;background:#f8fbff;border:1px solid rgba(1,54,108,.12);border-radius:14px;font-size:16px;line-height:1.6;color:#374151;}
+@media(min-width:900px){.case-value-grid.case-value-grid--construction-factors{grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media(min-width:1200px){.case-value-grid.case-value-grid--construction-factors{grid-template-columns:repeat(4,minmax(0,1fr));}}
 .construction-hero-with-bg{background-attachment:scroll!important;}
 #your-case .case-checklist-wrap{max-width:min(920px,100%);}
 .premium-service-card .accident-item-text{font-weight:800;color:#0c2334;line-height:1.35;}
@@ -2728,6 +2742,7 @@
   .hero-section .hero-review-badge-item{width:100%!important;justify-content:center!important;}
   .hero-attorney-wrap::after{left:10px;bottom:38px;font-size:10px;padding:6px 9px;}
   .case-checklist,.evidence-grid,.case-value-grid{grid-template-columns:1fr;}
+  .comp-damage-grid{grid-template-columns:1fr;}
   .serious-banner{padding:24px 18px;}
   .serious-banner__content,.investigation-feature{grid-template-columns:1fr;}
   .injury-signal-pill{font-size:13px;}
@@ -3070,46 +3085,102 @@
         <div class="container">
             <h2>Serious Construction Accident Cases We Review</h2>
             <p class="lead-text subtext-muted" style="text-align: center; margin-bottom: 32px; max-width: 700px; margin-left: auto; margin-right: auto;">Construction sites involve many companies and moving parts. We review serious injury cases where a contractor, property owner, equipment company, driver, vendor, or unsafe condition may have contributed.</p>
-            <div class="accident-grid">
-                <div class="accident-item premium-service-card">
-                    <div class="premium-icon-badge"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2.5 20h19L12 3Z"/><path d="M12 9v5"/><path d="M12 17h.01"/></svg></div>
-                    <div class="accident-item-text">Scaffold and ladder falls</div>
-                    <img src="/images/premises-lp/construction-man-looking-up-something-falling.png" alt="Construction worker looking up at a possible falling object hazard on a jobsite" loading="lazy" decoding="async" width="96" height="64" style="margin-left:auto;border-radius:10px;object-fit:cover;width:96px;height:64px;box-shadow:0 8px 16px rgba(12,35,52,.14);">
+            <div class="accident-grid accident-grid--photo-cards">
+                <div class="accident-item premium-service-card accident-item--photo-card accident-item--case-detail">
+                    <div class="accident-item-photo-wrap accident-item-photo-wrap--169">
+                        <img src="/images/premises-lp/broken-leg-construction.png" alt="Construction workers assisting an injured worker near scaffolding and a ladder on a jobsite" class="accident-item-photo" loading="lazy" decoding="async" width="640" height="360">
+                    </div>
+                    <div class="accident-item-body accident-item-body--stack">
+                        <div class="accident-item-title-row">
+                            <div class="premium-icon-badge"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2.5 20h19L12 3Z"/><path d="M12 9v5"/><path d="M12 17h.01"/></svg></div>
+                            <div class="accident-item-text accident-item-text--title">Scaffold and ladder falls</div>
+                        </div>
+                        <p class="accident-item-desc">Falls from scaffolds, ladders, roofs, platforms, or elevated work areas may involve missing fall protection, unsafe access, or safety violations.</p>
+                    </div>
                 </div>
-                <div class="accident-item premium-service-card">
-                    <div class="premium-icon-badge"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m3 7 9-4 9 4-9 4-9-4Z"/><path d="M3 7v10l9 4 9-4V7"/><path d="M12 11v10"/></svg></div>
-                    <div class="accident-item-text">Falling object injuries</div>
-                    <img src="/images/premises-lp/injured-construction-worker-hispanic.png" alt="Injured construction worker being helped near heavy equipment" loading="lazy" decoding="async" width="96" height="64" style="margin-left:auto;border-radius:10px;object-fit:cover;width:96px;height:64px;box-shadow:0 8px 16px rgba(12,35,52,.14);">
+                <div class="accident-item premium-service-card accident-item--photo-card accident-item--case-detail">
+                    <div class="accident-item-photo-wrap accident-item-photo-wrap--169">
+                        <img src="/images/premises-lp/falling-rock-head-injury-construction.png" alt="Construction workers assisting an injured coworker after falling debris on a jobsite" class="accident-item-photo" loading="lazy" decoding="async" width="640" height="360">
+                    </div>
+                    <div class="accident-item-body accident-item-body--stack">
+                        <div class="accident-item-title-row">
+                            <div class="premium-icon-badge"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m3 7 9-4 9 4-9 4-9-4Z"/><path d="M3 7v10l9 4 9-4V7"/><path d="M12 11v10"/></svg></div>
+                            <div class="accident-item-text accident-item-text--title">Falling object injuries</div>
+                        </div>
+                        <p class="accident-item-desc">Tools, materials, debris, or equipment falling from above can cause serious head, neck, spine, and orthopedic injuries.</p>
+                    </div>
                 </div>
-                <div class="accident-item premium-service-card">
-                    <div class="premium-icon-badge"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2.5 20h19L12 3Z"/><path d="M12 9v5"/><path d="M12 17h.01"/></svg></div>
-                    <div class="accident-item-text">Heavy equipment and forklift accidents</div>
-                    <img src="/images/premises-lp/man-severly-wounded-wrongful-death-construction.png" alt="Construction workers responding to a serious jobsite injury" loading="lazy" decoding="async" width="96" height="64" style="margin-left:auto;border-radius:10px;object-fit:cover;width:96px;height:64px;box-shadow:0 8px 16px rgba(12,35,52,.14);">
+                <div class="accident-item premium-service-card accident-item--photo-card accident-item--case-detail">
+                    <div class="accident-item-photo-wrap accident-item-photo-wrap--169">
+                        <img src="/images/premises-lp/forklift-injury-construction.png" alt="Construction workers assisting an injured worker near a forklift on a jobsite" class="accident-item-photo" loading="lazy" decoding="async" width="640" height="360">
+                    </div>
+                    <div class="accident-item-body accident-item-body--stack">
+                        <div class="accident-item-title-row">
+                            <div class="premium-icon-badge"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2.5 20h19L12 3Z"/><path d="M12 9v5"/><path d="M12 17h.01"/></svg></div>
+                            <div class="accident-item-text accident-item-text--title">Heavy equipment and forklift accidents</div>
+                        </div>
+                        <p class="accident-item-desc">Forklifts, cranes, loaders, trucks, and other heavy equipment can cause severe injuries when work areas and traffic are not controlled safely.</p>
+                    </div>
                 </div>
-                <div class="accident-item premium-service-card">
-                    <div class="premium-icon-badge"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2.5 20h19L12 3Z"/><path d="M12 9v5"/><path d="M12 17h.01"/></svg></div>
-                    <div class="accident-item-text">Unsafe jobsite conditions</div>
-                    <img src="/images/premises-lp/construction-man-looking-up-something-falling.png" alt="Construction worker looking up at a possible falling object hazard on a jobsite" loading="lazy" decoding="async" width="96" height="64" style="margin-left:auto;border-radius:10px;object-fit:cover;width:96px;height:64px;box-shadow:0 8px 16px rgba(12,35,52,.14);">
+                <div class="accident-item premium-service-card accident-item--photo-card accident-item--case-detail">
+                    <div class="accident-item-photo-wrap accident-item-photo-wrap--169">
+                        <img src="/images/premises-lp/ankle-injury-construction.png" alt="Worker being helped after an unsafe jobsite accident near debris and an open work area" class="accident-item-photo" loading="lazy" decoding="async" width="640" height="360">
+                    </div>
+                    <div class="accident-item-body accident-item-body--stack">
+                        <div class="accident-item-title-row">
+                            <div class="premium-icon-badge"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M8 14a6 6 0 1 1 8 0c-.8.7-1 1.5-1 2H9c0-.5-.2-1.3-1-2Z"/></svg></div>
+                            <div class="accident-item-text accident-item-text--title">Unsafe jobsite conditions</div>
+                        </div>
+                        <p class="accident-item-desc">Open edges, debris, unstable surfaces, poor lighting, missing warnings, and blocked walkways can create serious trip and fall hazards.</p>
+                    </div>
                 </div>
-                <div class="accident-item premium-service-card">
-                    <div class="premium-icon-badge"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2.5 20h19L12 3Z"/><path d="M12 9v5"/><path d="M12 17h.01"/></svg></div>
-                    <div class="accident-item-text">Electrical injuries and burns</div>
-                    <img src="/images/premises-lp/injured-construction-worker-hispanic.png" alt="Injured construction worker being helped near heavy equipment" loading="lazy" decoding="async" width="96" height="64" style="margin-left:auto;border-radius:10px;object-fit:cover;width:96px;height:64px;box-shadow:0 8px 16px rgba(12,35,52,.14);">
+                <div class="accident-item premium-service-card accident-item--photo-card accident-item--case-detail">
+                    <div class="accident-item-photo-wrap accident-item-photo-wrap--169">
+                        <img src="/images/premises-lp/electrical-injury-construction.png" alt="Construction worker being helped near exposed electrical wiring on a jobsite" class="accident-item-photo" loading="lazy" decoding="async" width="640" height="360">
+                    </div>
+                    <div class="accident-item-body accident-item-body--stack">
+                        <div class="accident-item-title-row">
+                            <div class="premium-icon-badge"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2.5 20h19L12 3Z"/><path d="M12 9v5"/><path d="M12 17h.01"/></svg></div>
+                            <div class="accident-item-text accident-item-text--title">Electrical injuries and burns</div>
+                        </div>
+                        <p class="accident-item-desc">Exposed wiring, unsafe panels, power tools, and energized equipment can cause shock injuries, burns, and other serious harm.</p>
+                    </div>
                 </div>
-                <div class="accident-item premium-service-card">
-                    <div class="premium-icon-badge"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2.5 20h19L12 3Z"/><path d="M12 9v5"/><path d="M12 17h.01"/></svg></div>
-                    <div class="accident-item-text">Trench, collapse, and excavation injuries</div>
-                    <img src="/images/premises-lp/man-severly-wounded-wrongful-death-construction.png" alt="Construction workers responding to a serious jobsite injury" loading="lazy" decoding="async" width="96" height="64" style="margin-left:auto;border-radius:10px;object-fit:cover;width:96px;height:64px;box-shadow:0 8px 16px rgba(12,35,52,.14);">
+                <div class="accident-item premium-service-card accident-item--photo-card accident-item--case-detail">
+                    <div class="accident-item-photo-wrap accident-item-photo-wrap--169">
+                        <img src="/images/premises-lp/trench-collapse.png" alt="Workers assisting an injured colleague inside a construction trench or excavation" class="accident-item-photo" loading="lazy" decoding="async" width="640" height="360">
+                    </div>
+                    <div class="accident-item-body accident-item-body--stack">
+                        <div class="accident-item-title-row">
+                            <div class="premium-icon-badge"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2.5 20h19L12 3Z"/><path d="M12 9v5"/><path d="M12 17h.01"/></svg></div>
+                            <div class="accident-item-text accident-item-text--title">Trench, collapse, and excavation injuries</div>
+                        </div>
+                        <p class="accident-item-desc">Excavation accidents may involve cave-ins, unstable soil, missing trench protection, or unsafe site control by contractors.</p>
+                    </div>
                 </div>
-                <div class="accident-item premium-service-card">
-                    <div class="premium-icon-badge"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2.5 20h19L12 3Z"/><path d="M12 9v5"/><path d="M12 17h.01"/></svg></div>
-                    <div class="accident-item-text">Machinery and tool injuries</div>
-                    <img src="/images/premises-lp/construction-man-looking-up-something-falling.png" alt="Construction worker looking up at a possible falling object hazard on a jobsite" loading="lazy" decoding="async" width="96" height="64" style="margin-left:auto;border-radius:10px;object-fit:cover;width:96px;height:64px;box-shadow:0 8px 16px rgba(12,35,52,.14);">
+                <div class="accident-item premium-service-card accident-item--photo-card accident-item--case-detail">
+                    <div class="accident-item-photo-wrap accident-item-photo-wrap--169">
+                        <img src="/images/premises-lp/broken-leg-excavator-construction.png" alt="Construction worker being helped near tools and heavy machinery on a jobsite" class="accident-item-photo" loading="lazy" decoding="async" width="640" height="360">
+                    </div>
+                    <div class="accident-item-body accident-item-body--stack">
+                        <div class="accident-item-title-row">
+                            <div class="premium-icon-badge"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.1 5.1L3 18l3 3 6.6-6.6a4 4 0 0 0 5.1-5.1l-2.8 2.8-3-3 2.8-2.8Z"/></svg></div>
+                            <div class="accident-item-text accident-item-text--title">Machinery and tool injuries</div>
+                        </div>
+                        <p class="accident-item-desc">Defective tools, unguarded machinery, maintenance failures, or unsafe equipment use may require a third-party investigation.</p>
+                    </div>
                 </div>
-                <div class="accident-item premium-service-card">
-                    <div class="premium-icon-badge"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2.5 20h19L12 3Z"/><path d="M12 9v5"/><path d="M12 17h.01"/></svg></div>
-                    <div class="accident-item-text">Construction wrongful death</div>
-                    <img src="/images/premises-lp/injured-construction-worker-hispanic.png" alt="Injured construction worker being helped near heavy equipment" loading="lazy" decoding="async" width="96" height="64" style="margin-left:auto;border-radius:10px;object-fit:cover;width:96px;height:64px;box-shadow:0 8px 16px rgba(12,35,52,.14);">
+                <div class="accident-item premium-service-card accident-item--photo-card accident-item--case-detail">
+                    <div class="accident-item-photo-wrap accident-item-photo-wrap--169">
+                        <img src="/images/premises-lp/man-unconscious-construction.png" alt="Construction workers responding to a serious jobsite emergency" class="accident-item-photo" loading="lazy" decoding="async" width="640" height="360">
+                    </div>
+                    <div class="accident-item-body accident-item-body--stack">
+                        <div class="accident-item-title-row">
+                            <div class="premium-icon-badge"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 5 6v5c0 5 3 8.5 7 10 4-1.5 7-5 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-5"/></svg></div>
+                            <div class="accident-item-text accident-item-text--title">Construction wrongful death</div>
+                        </div>
+                        <p class="accident-item-desc">When a construction accident causes a death, families may need urgent review of liability, evidence preservation, and insurance coverage.</p>
+                    </div>
                 </div>
             </div>
             <div class="compact-cta-row">
@@ -3125,7 +3196,7 @@
                 <h2 style="text-align: center;">Construction Accident Attorneys</h2>
                 <p class="lead-text subtext-muted" style="text-align: center; max-width: 720px; margin: 0 auto 24px;">When a serious construction accident happens, identifying who controlled the hazard and who may be legally responsible can be critical to the recovery path.</p>
                 <figure style="max-width: 800px; margin: 24px auto 0;">
-                    <img src="/images/premises-lp/attorney-contruction-site.png" alt="Personal injury attorney standing near a construction site" width="1024" height="682" loading="lazy" decoding="async" style="width: 100%; height: auto; border-radius: var(--card-radius); object-fit: cover;">
+                    <img src="/images/premises-lp/attorney-contruction-site.png" alt="Attorney reviewing a serious construction injury case near a jobsite" width="1024" height="682" loading="lazy" decoding="async" style="width: 100%; height: auto; border-radius: var(--card-radius); object-fit: cover;">
                     <figcaption style="text-align:center;margin-top:12px;font-size:15px;color:var(--brand-gray-600);">Potentially responsible parties can include contractors, subcontractors, owners, equipment companies, and vendors.</figcaption>
                 </figure>
                 <figure style="max-width: 800px; margin: 32px auto 0;">
@@ -3139,42 +3210,49 @@
     <section id="your-case" class="worth-section section-with-bg" style="background: var(--brand-white); padding-top: 100px;">
         <div class="container">
             <h2 style="text-align: center; margin-bottom: 16px; font-size: 42px;">Signs You May Have A Construction Injury Case</h2>
-            <p class="lead-text subtext-muted" style="text-align: center; margin-bottom: 40px; max-width: 760px; margin-left: auto; margin-right: auto; font-size: 18px;">Tap what applies. Not every workplace injury is a personal injury case. Some are workers’ comp only, and we can review whether there may be a third-party liability path.</p>
+            <p class="lead-text subtext-muted" style="text-align: center; margin-bottom: 40px; max-width: 760px; margin-left: auto; margin-right: auto; font-size: 18px;">Not every jobsite injury is a personal injury claim. But certain facts may suggest there is more to review than a standard workers’ compensation issue.</p>
             <div class="case-checklist-wrap">
-                <ul class="case-checklist" id="case-checklist">
-                    <li class="case-checklist-item premium-check-card" role="checkbox" tabindex="0" data-checked="false" aria-checked="false">
-                        <span class="premium-icon-badge"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6v6h6v6h-6v6H9v-6H3V9h6V3Z"/></svg></span>
-                        <span class="case-checklist-copy">
-                            <span class="case-checklist-heading">Serious injury</span>
-                            <span class="case-checklist-label">Serious injury requiring ER care, hospitalization, surgery, imaging, or ongoing treatment</span>
-                        </span>
-                    </li>
+                <ul class="case-checklist case-checklist--signs-six" id="case-checklist">
                     <li class="case-checklist-item premium-check-card" role="checkbox" tabindex="0" data-checked="false" aria-checked="false">
                         <span class="premium-icon-badge"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V5a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v16"/><path d="M9 21v-5h3v5"/><path d="M8 7h1"/><path d="M12 7h1"/><path d="M8 11h1"/><path d="M12 11h1"/><path d="M2 21h20"/></svg></span>
                         <span class="case-checklist-copy">
-                            <span class="case-checklist-heading">Another company may share fault</span>
-                            <span class="case-checklist-label">A subcontractor, vendor, driver, equipment company, property owner, or general contractor may have contributed</span>
+                            <span class="case-checklist-heading">Someone Other Than Your Employer May Be Responsible</span>
+                            <span class="case-checklist-label">A subcontractor, property owner, equipment company, driver, vendor, or general contractor may have created or failed to fix the hazard.</span>
                         </span>
                     </li>
                     <li class="case-checklist-item premium-check-card" role="checkbox" tabindex="0" data-checked="false" aria-checked="false">
-                        <span class="premium-icon-badge"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4h6l1 2h2v15H6V6h2l1-2Z"/><path d="M9 10h6"/><path d="M9 14h6"/><path d="M9 18h4"/></svg></span>
+                        <span class="premium-icon-badge"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6v6h6v6h-6v6H9v-6H3V9h6V3Z"/></svg></span>
                         <span class="case-checklist-copy">
-                            <span class="case-checklist-heading">Photos, video, or reports</span>
-                            <span class="case-checklist-label">Photos, video, incident reports, OSHA reports, witnesses, or jobsite records may exist</span>
+                            <span class="case-checklist-heading">The Injury Was Serious</span>
+                            <span class="case-checklist-label">Fractures, surgery, head injuries, back or spine trauma, burns, crush injuries, amputations, or hospitalization may require deeper investigation.</span>
                         </span>
                     </li>
                     <li class="case-checklist-item premium-check-card" role="checkbox" tabindex="0" data-checked="false" aria-checked="false">
                         <span class="premium-icon-badge"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m3 7 9-4 9 4-9 4-9-4Z"/><path d="M3 7v10l9 4 9-4V7"/><path d="M12 11v10"/></svg></span>
                         <span class="case-checklist-copy">
-                            <span class="case-checklist-heading">Typical high-risk incidents</span>
-                            <span class="case-checklist-label">The accident involved a fall, falling object, machinery, vehicle, collapse, electrical hazard, or unsafe worksite condition</span>
+                            <span class="case-checklist-heading">The Accident Involved A Dangerous Jobsite Condition</span>
+                            <span class="case-checklist-label">Falls, missing guardrails, open edges, debris, falling objects, unstable surfaces, trench hazards, exposed wiring, or unsafe equipment may all matter.</span>
                         </span>
                     </li>
                     <li class="case-checklist-item premium-check-card" role="checkbox" tabindex="0" data-checked="false" aria-checked="false">
                         <span class="premium-icon-badge"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V5a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v16"/><path d="M9 21v-5h3v5"/><path d="M8 7h1"/><path d="M12 7h1"/><path d="M8 11h1"/><path d="M12 11h1"/><path d="M2 21h20"/></svg></span>
                         <span class="case-checklist-copy">
-                            <span class="case-checklist-heading">Unsure what type of claim</span>
-                            <span class="case-checklist-label">You are unsure whether this is only workers’ comp or also a third-party injury claim</span>
+                            <span class="case-checklist-heading">There Were Multiple Companies On Site</span>
+                            <span class="case-checklist-label">Construction sites often involve several contractors and vendors. Liability may depend on who controlled the area, equipment, or safety condition.</span>
+                        </span>
+                    </li>
+                    <li class="case-checklist-item premium-check-card" role="checkbox" tabindex="0" data-checked="false" aria-checked="false">
+                        <span class="premium-icon-badge"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4h6l1 2h2v15H6V6h2l1-2Z"/><path d="M9 10h6"/><path d="M9 14h6"/><path d="M9 18h4"/></svg></span>
+                        <span class="case-checklist-copy">
+                            <span class="case-checklist-heading">Evidence May Disappear Quickly</span>
+                            <span class="case-checklist-label">Photos, video, incident reports, witness names, OSHA records where applicable, equipment logs, and subcontractor information can be important.</span>
+                        </span>
+                    </li>
+                    <li class="case-checklist-item premium-check-card" role="checkbox" tabindex="0" data-checked="false" aria-checked="false">
+                        <span class="premium-icon-badge"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V5a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v16"/><path d="M9 21v-5h3v5"/><path d="M8 7h1"/><path d="M12 7h1"/><path d="M8 11h1"/><path d="M12 11h1"/><path d="M2 21h20"/></svg></span>
+                        <span class="case-checklist-copy">
+                            <span class="case-checklist-heading">You Are Not Sure If It Is Only Workers’ Comp</span>
+                            <span class="case-checklist-label">Many injured workers are told their only option is workers’ comp. That may be true in some cases, but serious accidents may deserve a third-party liability review.</span>
                         </span>
                     </li>
                 </ul>
@@ -3183,79 +3261,82 @@
                     <a href="#case-evaluation" class="btn-primary" data-cta="construction-injury-free-case-review">Free Case Review</a>
                 </p>
             </div>
-        </div>
-    </section>
-
-    
-    <section class="section-with-bg">
-        <div class="container">
-            <div class="serious-banner">
-                <div class="serious-banner__content">
-                    <div>
-                        <div class="premium-icon-badge"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6v6h6v6h-6v6H9v-6H3V9h6V3Z"/></svg></div>
-                        <h2>Serious Injuries Matter</h2>
-                        <p>Premises liability cases are stronger when the injury is serious, documented, and tied to a dangerous property condition.</p>
-                    </div>
-                    <div class="injury-signal-grid" aria-label="Serious injury signals">
-                        <span class="injury-signal-pill"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v16"/><path d="M9 21v-6h6v6"/><path d="M12 7v5"/><path d="M9.5 9.5h5"/></svg>Hospitalization</span><span class="injury-signal-pill"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6v6h6v6h-6v6H9v-6H3V9h6V3Z"/></svg>Surgery</span><span class="injury-signal-pill"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M7 6a3 3 0 1 1 3 3l5 5a3 3 0 1 1 3 3 3 3 0 1 1-3 3l-5-5a3 3 0 1 1-3-3 3 3 0 1 1 0-6Z"/></svg>Fracture or broken bone</span><span class="injury-signal-pill"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M7 6a3 3 0 1 1 3 3l5 5a3 3 0 1 1 3 3 3 3 0 1 1-3 3l-5-5a3 3 0 1 1-3-3 3 3 0 1 1 0-6Z"/></svg>Broken hip</span><span class="injury-signal-pill"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6v6h6v6h-6v6H9v-6H3V9h6V3Z"/></svg>Head or back injury</span><span class="injury-signal-pill"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17V7h9v10"/><path d="M13 10h4l3 4v3h-7"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/><path d="M8 10h3"/><path d="M9.5 8.5v3"/></svg>Ambulance / ER care</span><span class="injury-signal-pill"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4h6l1 2h2v15H6V6h2l1-2Z"/><path d="M9 10h6"/><path d="M9 14h6"/><path d="M9 18h4"/></svg>Ongoing treatment</span>
-                    </div>
-                </div>
+                <p class="signs-callout-note" role="note">If you are unsure, it is worth having the facts reviewed. We can help identify whether the case appears to be workers’ comp only, a third-party injury claim, or another possible recovery path.</p>
+                <div class="compact-cta-row">
+                <a href="#case-evaluation" class="btn-primary compact-cta-primary" data-cta="construction-injury-free-case-review">Free Construction Injury Review</a>
+                <a href="tel:844-467-4335" class="btn-secondary compact-cta-secondary" data-callrail-phone="844-467-4335" data-phone-click="construction-injury-call">Call Now</a>
             </div>
         </div>
     </section>
-    
 
-    <section class="section-with-bg section-alt">
+        <section class="worth-section section-with-bg section-alt" id="why-more-than-workers-comp">
         <div class="container">
-            <div class="evidence-board">
-                <h2>Evidence Can Disappear Fast</h2>
-                <p class="evidence-board__intro">Construction cases can depend on fast evidence preservation. Photos, video, incident reports, witness names, contractor information, OSHA records where applicable, and equipment records may help determine who was responsible.</p>
-                <div class="evidence-grid">
-                    <div class="evidence-card">
-                        <div class="premium-icon-badge"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4h6l1 2h2v15H6V6h2l1-2Z"/><path d="M9 10h6"/><path d="M9 14h6"/><path d="M9 18h4"/></svg></div>
-                        <span>Incident reports</span>
-                    </div>
-                    <div class="evidence-card">
-                        <div class="premium-icon-badge"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4h6l1 2h2v15H6V6h2l1-2Z"/><path d="M9 10h6"/><path d="M9 14h6"/><path d="M9 18h4"/></svg></div>
-                        <span>OSHA reports where applicable</span>
-                    </div>
-                    <div class="evidence-card">
-                        <div class="premium-icon-badge"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h11v10H4V7Z"/><path d="m15 11 5-3v8l-5-3"/></svg></div>
-                        <span>Photos and videos</span>
-                    </div>
-                    <div class="evidence-card">
-                        <div class="premium-icon-badge"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="9.5" cy="8" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.8"/><path d="M16 4.2a4 4 0 0 1 0 7.6"/></svg></div>
-                        <span>Witness names</span>
-                    </div>
-                    <div class="evidence-card">
-                        <div class="premium-icon-badge"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V5a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v16"/><path d="M9 21v-5h3v5"/><path d="M8 7h1"/><path d="M12 7h1"/><path d="M8 11h1"/><path d="M12 11h1"/><path d="M2 21h20"/></svg></div>
-                        <span>Contractor and subcontractor information</span>
-                    </div>
-                    <div class="evidence-card">
-                        <div class="premium-icon-badge"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2.5 20h19L12 3Z"/><path d="M12 9v5"/><path d="M12 17h.01"/></svg></div>
-                        <span>Site safety records</span>
-                    </div>
-                    <div class="evidence-card">
-                        <div class="premium-icon-badge"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.1 5.1L3 18l3 3 6.6-6.6a4 4 0 0 0 5.1-5.1l-2.8 2.8-3-3 2.8-2.8Z"/></svg></div>
-                        <span>Equipment maintenance records</span>
-                    </div>
-                    <div class="evidence-card">
-                        <div class="premium-icon-badge"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2.5 20h19L12 3Z"/><path d="M12 9v5"/><path d="M12 17h.01"/></svg></div>
-                        <span>Prior complaints</span>
-                    </div>
-                    <div class="evidence-card">
-                        <div class="premium-icon-badge"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2.5 20h19L12 3Z"/><path d="M12 9v5"/><path d="M12 17h.01"/></svg></div>
-                        <span>Jobsite control records</span>
-                    </div>
-                    <div class="evidence-card">
+            <h2 style="font-size: 42px; margin-bottom: 24px; text-align: center;">Why A Construction Injury May Be More Than Workers’ Comp</h2>
+            <div class="case-value-panel">
+                <p class="case-value-lead">Workers’ compensation may apply after many jobsite injuries, but some construction accidents also involve third-party liability. A third-party claim may exist when someone other than your employer contributed to the injury, such as another contractor, a negligent driver, a property owner, an equipment manufacturer, or a maintenance company. This is a case-by-case review, not legal advice.</p>
+                <div class="case-value-grid case-value-grid--construction-factors">
+                    <div class="case-value-factor">
                         <div class="premium-icon-badge"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6v6h6v6h-6v6H9v-6H3V9h6V3Z"/></svg></div>
-                        <span>Medical records</span>
+                        <h3>Injury severity</h3>
+                        <p>Fractures, surgery, head or back injuries, crush injuries, and long-term limitations change how a case is evaluated.</p>
                     </div>
-                    <div class="evidence-card">
+                    <div class="case-value-factor">
+                        <div class="premium-icon-badge"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V5a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v16"/><path d="M9 21v-5h3v5"/><path d="M8 7h1"/><path d="M12 7h1"/><path d="M8 11h1"/><path d="M12 11h1"/><path d="M2 21h20"/></svg></div>
+                        <h3>Jobsite complexity</h3>
+                        <p>Multiple contractors, equipment vendors, and overlapping work areas can affect who owed a duty and who controlled the hazard.</p>
+                    </div>
+                    <div class="case-value-factor">
+                        <div class="premium-icon-badge"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h4l1.5-2h5L16 8h4v11H4V8Z"/><circle cx="12" cy="13.5" r="3"/></svg></div>
+                        <h3>Evidence</h3>
+                        <p>Photos, video, incident documentation, witness names, OSHA filings where applicable, and equipment records may not last long.</p>
+                    </div>
+                    <div class="case-value-factor">
                         <div class="premium-icon-badge"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 5 6v5c0 5 3 8.5 7 10 4-1.5 7-5 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-5"/></svg></div>
-                        <span>Insurance coverage review</span>
+                        <h3>Third-party fault</h3>
+                        <p>A claim may be stronger when another company—not only your employer—contributed to unsafe conditions or equipment.</p>
                     </div>
                 </div>
+                <p class="case-value-disclaimer">Every case depends on the facts. Past results do not guarantee a similar outcome.</p>
+                <a href="#case-evaluation" class="btn-primary case-value-cta" data-cta="construction-injury-free-case-review">Free Construction Injury Review</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-with-bg">
+        <div class="container">
+            <div class="section-content comp-damage-lead-section">
+                <h2 style="text-align: center;">Compensation In Construction Injury Cases</h2>
+                <p class="lead-text subtext-muted" style="text-align: center; margin-bottom: 28px; max-width: 820px; margin-left: auto; margin-right: auto;">The value of a construction accident case depends on the facts, injuries, insurance coverage, and whether a third party may be legally responsible.</p>
+                <figure class="comp-damage-hero-figure" style="max-width: 720px; margin: 0 auto 32px;">
+                    <img src="/images/premises-lp/cell-phone-capture-equipment-on-floor.png" alt="Documenting construction accident evidence including hard hat and safety vest on a jobsite floor" width="960" height="540" loading="lazy" decoding="async" style="width:100%;height:auto;border-radius: var(--card-radius); object-fit: cover; aspect-ratio: 16/9;">
+                </figure>
+                <div class="comp-damage-grid">
+                    <div class="comp-damage-card">
+                        <h3 class="comp-damage-card__h">Medical Bills & Future Treatment</h3>
+                        <p class="comp-damage-card__p">Construction injuries may require emergency care, imaging, surgery, therapy, specialist visits, medication, or long-term treatment.</p>
+                    </div>
+                    <div class="comp-damage-card">
+                        <h3 class="comp-damage-card__h">Lost Income</h3>
+                        <p class="comp-damage-card__p">A serious jobsite injury can keep you from working temporarily or permanently.</p>
+                    </div>
+                    <div class="comp-damage-card">
+                        <h3 class="comp-damage-card__h">Pain & Suffering</h3>
+                        <p class="comp-damage-card__p">A third-party injury claim may include damages beyond workers’ compensation benefits, depending on the facts.</p>
+                    </div>
+                    <div class="comp-damage-card">
+                        <h3 class="comp-damage-card__h">Loss Of Earning Capacity</h3>
+                        <p class="comp-damage-card__p">Severe injuries may affect your ability to return to your trade or perform the same type of work.</p>
+                    </div>
+                    <div class="comp-damage-card">
+                        <h3 class="comp-damage-card__h">Long-Term Impairment</h3>
+                        <p class="comp-damage-card__p">Spine injuries, brain injuries, crush injuries, burns, amputations, and permanent limitations can change the value of a case.</p>
+                    </div>
+                    <div class="comp-damage-card">
+                        <h3 class="comp-damage-card__h">Wrongful Death</h3>
+                        <p class="comp-damage-card__p">When a construction accident causes a death, surviving family members may have legal rights that should be reviewed quickly.</p>
+                    </div>
+                </div>
+                <p class="comp-damage-disclaimer" style="text-align:center;font-size:14px;color:var(--brand-gray-600);max-width:800px;margin:24px auto 0;line-height:1.6;">Every case is different. Past results do not guarantee a similar outcome. The available recovery depends on liability, damages, insurance coverage, and the facts of the accident.</p>
                 <div class="compact-cta-row">
                 <a href="#case-evaluation" class="btn-primary compact-cta-primary" data-cta="construction-injury-free-case-review">Free Construction Injury Review</a>
                 <a href="tel:844-467-4335" class="btn-secondary compact-cta-secondary" data-callrail-phone="844-467-4335" data-phone-click="construction-injury-call">Call Now</a>
@@ -3264,85 +3345,15 @@
         </div>
     </section>
 
-    <section class="section-with-bg">
-        <div class="container">
-            <div class="section-content">
-                <h2 style="text-align: center;">Compensation In Construction Injury Cases</h2>
-                <p class="lead-text subtext-muted" style="text-align: center; margin-bottom: 24px;">Potential damages may include medical bills, future treatment, lost income, pain and suffering, long-term impairment, loss of earning capacity, and wrongful death damages where applicable. Every case depends on the facts. Past results do not guarantee a similar outcome.</p>
-                <div class="injury-cards injury-cards--four">
-                    <div class="injury-card">
-                        <img src="/images/la/nurse-helping-woman.png" alt="Medical care and expenses after serious injury" width="400" height="180" loading="lazy">
-                        <div class="premium-icon-badge" style="margin:-28px auto 10px;position:relative;"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6v6h6v6h-6v6H9v-6H3V9h6V3Z"/></svg></div>
-                        <div class="injury-card-text">Medical bills and future treatment</div>
-                    </div>
-                    <div class="injury-card">
-                        <img src="/images/la/attorney-paperwork.png" alt="Attorney reviewing construction injury case documents" width="400" height="180" loading="lazy">
-                        <div class="premium-icon-badge" style="margin:-28px auto 10px;position:relative;"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M17 6.5C15.9 5.5 14.3 5 12.7 5 10 5 8 6.3 8 8.4c0 4.2 8.5 2 8.5 6.6 0 2.1-2 3.5-4.7 3.5-1.9 0-3.6-.6-4.8-1.8"/></svg></div>
-                        <div class="injury-card-text">Lost income and earning capacity</div>
-                    </div>
-                    <div class="injury-card">
-                        <img src="/images/la/daughter-hold-dads-hand.png" alt="Family supporting injured loved one" width="400" height="180" loading="lazy">
-                        <div class="premium-icon-badge" style="margin:-28px auto 10px;position:relative;"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="9.5" cy="8" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.8"/><path d="M16 4.2a4 4 0 0 1 0 7.6"/></svg></div>
-                        <div class="injury-card-text">Pain and suffering</div>
-                    </div>
-                    <div class="injury-card">
-                        <img src="/images/la/injured-woman-healing-walking.png" alt="Adult recovering after severe injury" width="400" height="180" loading="lazy">
-                        <div class="premium-icon-badge" style="margin:-28px auto 10px;position:relative;"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 5 6v5c0 5 3 8.5 7 10 4-1.5 7-5 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-5"/></svg></div>
-                        <div class="injury-card-text">Long-term impairment</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="core-trust section-with-bg section-alt">
-        <div class="container">
-            <h2 style="text-align: center; font-size: 42px; margin-bottom: 24px;">Why Choose Insider Accident Lawyers</h2>
-            <p class="subtext-muted" style="text-align: center; font-size: 20px; color: var(--brand-gray-700); margin-bottom: 56px; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.7;">How we approach serious construction injury claims:</p>
-            <div class="trust-grid">
-                <div class="trust-card premium-trust-card">
-                    <div class="premium-icon-badge"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m14 5 5 5"/><path d="m12 7 5 5"/><path d="M4 20h7"/><path d="m2 22 7-7"/><path d="m7 10 5-5 7 7-5 5-7-7Z"/></svg></div>
-                    <h3>Trial-ready strategy from day one</h3>
-                    <p>We prepare claims as if they may need to be tried.</p>
-                </div>
-                <div class="trust-card premium-trust-card">
-                    <div class="premium-icon-badge"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2.5 20h19L12 3Z"/><path d="M12 9v5"/><path d="M12 17h.01"/></svg></div>
-                    <h3>No fee unless we win</h3>
-                    <p>Contingency fee representation with no upfront attorney fee.</p>
-                </div>
-                <div class="trust-card premium-trust-card">
-                    <div class="premium-icon-badge"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2.5 20h19L12 3Z"/><path d="M12 9v5"/><path d="M12 17h.01"/></svg></div>
-                    <h3>Direct attorney access</h3>
-                    <p>You work directly with attorneys focused on serious injury facts.</p>
-                </div>
-                <div class="trust-card premium-trust-card">
-                    <div class="premium-icon-badge"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4h6l1 2h2v15H6V6h2l1-2Z"/><path d="M9 10h6"/><path d="M9 14h6"/><path d="M9 18h4"/></svg></div>
-                    <h3>Evidence preservation</h3>
-                    <p>Fast action can matter in protecting jobsite and incident evidence.</p>
-                </div>
-                <div class="trust-card premium-trust-card">
-                    <div class="premium-icon-badge"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6v6h6v6h-6v6H9v-6H3V9h6V3Z"/></svg></div>
-                    <h3>Serious injury case review</h3>
-                    <p>We focus on major injury cases with documented treatment.</p>
-                </div>
-                <div class="trust-card premium-trust-card">
-                    <div class="premium-icon-badge"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 5 6v5c0 5 3 8.5 7 10 4-1.5 7-5 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-5"/></svg></div>
-                    <h3>Insurance and liability analysis</h3>
-                    <p>We evaluate coverage and responsible parties under California law.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="process-section section-with-bg">
+        <section class="process-section section-with-bg">
         <div class="container">
             <h2 style="text-align: center;">How We Investigate Construction Accident Claims</h2>
-            <p class="lead-text subtext-muted" style="text-align: center; margin-bottom: 32px;">Construction injury claims often require fast evidence preservation and a structured liability review.</p>
+            <p class="lead-text subtext-muted" style="text-align: center; margin-bottom: 32px;">Construction accident cases often depend on identifying who controlled the worksite, who created the hazard, and what evidence exists before it disappears.</p>
             <div class="investigation-feature">
                 <img src="/images/premises-lp/cell-phone-capture-equipment-on-floor.png" alt="Phone documenting construction accident evidence including hard hat and safety vest" width="420" height="315" loading="lazy" decoding="async">
                 <div>
-                    <h3>Evidence-first case review</h3>
-                    <p>Property injury claims often turn on fast evidence preservation, medical documentation, and identifying the business, owner, landlord, or maintenance company that controlled the hazard.</p>
+                    <h3>Jobsite evidence and liability review</h3>
+                    <p>We focus on incident documentation, subcontractor roles, equipment involvement, and who had safety responsibility on the project—before records fade and scenes change.</p>
                 </div>
             </div>
             <div class="process-steps process-steps--with-images">
@@ -3351,72 +3362,64 @@
                         <div class="process-step-number">1</div>
                         <div class="premium-icon-badge"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4h6l1 2h2v15H6V6h2l1-2Z"/><path d="M9 10h6"/><path d="M9 14h6"/><path d="M9 18h4"/></svg></div>
                     </div>
-                    <h3>Accident and incident report review</h3>
-                    <p>We review reports from the site, employer, and available incident documentation.</p>
+                    <h3>Review how the accident happened</h3>
+                    <p>We start with your account, employer reports, and any immediate documentation from the site.</p>
                 </div>
                 <div class="process-step premium-process-card">
                     <div class="process-card-head">
                         <div class="process-step-number">2</div>
                         <div class="premium-icon-badge"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V5a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v16"/><path d="M9 21v-5h3v5"/><path d="M8 7h1"/><path d="M12 7h1"/><path d="M8 11h1"/><path d="M12 11h1"/><path d="M2 21h20"/></svg></div>
                     </div>
-                    <h3>Jobsite and subcontractor fact review</h3>
-                    <p>We identify who controlled work areas, equipment, and safety procedures.</p>
+                    <h3>Identify all companies on the jobsite</h3>
+                    <p>We map general contractors, subcontractors, vendors, equipment providers, and property involvement.</p>
                 </div>
                 <div class="process-step premium-process-card">
                     <div class="process-card-head">
                         <div class="process-step-number">3</div>
-                        <div class="premium-icon-badge"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h11v10H4V7Z"/><path d="m15 11 5-3v8l-5-3"/></svg></div>
+                        <div class="premium-icon-badge"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4h6l1 2h2v15H6V6h2l1-2Z"/><path d="M9 10h6"/><path d="M9 14h6"/><path d="M9 18h4"/></svg></div>
                     </div>
-                    <h3>Photo and video evidence</h3>
-                    <p>Images and footage can help document conditions before evidence changes.</p>
+                    <h3>Review incident reports, photos, video, and witness names</h3>
+                    <p>We look for documentation that may support how the work area was controlled and what was unsafe.</p>
                 </div>
                 <div class="process-step premium-process-card">
                     <div class="process-card-head">
                         <div class="process-step-number">4</div>
-                        <div class="premium-icon-badge"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="9.5" cy="8" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.8"/><path d="M16 4.2a4 4 0 0 1 0 7.6"/></svg></div>
+                        <div class="premium-icon-badge"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2.5 20h19L12 3Z"/><path d="M12 9v5"/><path d="M12 17h.01"/></svg></div>
                     </div>
-                    <h3>Witness statements</h3>
-                    <p>Coworkers, supervisors, and bystanders may support key facts.</p>
+                    <h3>Evaluate jobsite control and safety responsibilities</h3>
+                    <p>Liability often turns on who controlled the area, equipment, or condition that contributed to the injury.</p>
                 </div>
                 <div class="process-step premium-process-card">
                     <div class="process-card-head">
                         <div class="process-step-number">5</div>
-                        <div class="premium-icon-badge"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4h6l1 2h2v15H6V6h2l1-2Z"/><path d="M9 10h6"/><path d="M9 14h6"/><path d="M9 18h4"/></svg></div>
+                        <div class="premium-icon-badge"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.1 5.1L3 18l3 3 6.6-6.6a4 4 0 0 0 5.1-5.1l-2.8 2.8-3-3 2.8-2.8Z"/></svg></div>
                     </div>
-                    <h3>OSHA and safety record review</h3>
-                    <p>Where applicable, we review safety records and reported violations.</p>
+                    <h3>Review equipment, maintenance, and contractor records</h3>
+                    <p>Equipment logs, maintenance history, and contractor communications may matter in serious equipment cases.</p>
                 </div>
                 <div class="process-step premium-process-card">
                     <div class="process-card-head">
                         <div class="process-step-number">6</div>
-                        <div class="premium-icon-badge"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.1 5.1L3 18l3 3 6.6-6.6a4 4 0 0 0 5.1-5.1l-2.8 2.8-3-3 2.8-2.8Z"/></svg></div>
+                        <div class="premium-icon-badge"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6v6h6v6h-6v6H9v-6H3V9h6V3Z"/></svg></div>
                     </div>
-                    <h3>Equipment and maintenance review</h3>
-                    <p>Defective tools, machinery, or poor maintenance may create third-party liability.</p>
+                    <h3>Review medical treatment and injury severity</h3>
+                    <p>Medical records help connect the mechanism of injury to the harm and future needs.</p>
                 </div>
                 <div class="process-step premium-process-card">
                     <div class="process-card-head">
                         <div class="process-step-number">7</div>
-                        <div class="premium-icon-badge"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V5a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v16"/><path d="M9 21v-5h3v5"/><path d="M8 7h1"/><path d="M12 7h1"/><path d="M8 11h1"/><path d="M12 11h1"/><path d="M2 21h20"/></svg></div>
+                        <div class="premium-icon-badge"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 5 6v5c0 5 3 8.5 7 10 4-1.5 7-5 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-5"/></svg></div>
                     </div>
-                    <h3>Owner / contractor responsibility analysis</h3>
-                    <p>We evaluate property owner, general contractor, and subcontractor roles.</p>
+                    <h3>Analyze insurance coverage and possible recovery paths</h3>
+                    <p>We evaluate liability coverage, additional insureds, and realistic paths under the facts.</p>
                 </div>
                 <div class="process-step premium-process-card">
                     <div class="process-card-head">
                         <div class="process-step-number">8</div>
-                        <div class="premium-icon-badge"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6v6h6v6h-6v6H9v-6H3V9h6V3Z"/></svg></div>
-                    </div>
-                    <h3>Medical record review</h3>
-                    <p>Treatment records help connect injury severity to the mechanism of harm.</p>
-                </div>
-                <div class="process-step premium-process-card">
-                    <div class="process-card-head">
-                        <div class="process-step-number">9</div>
                         <div class="premium-icon-badge"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 5 6v5c0 5 3 8.5 7 10 4-1.5 7-5 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-5"/></svg></div>
                     </div>
-                    <h3>Insurance and recovery path review</h3>
-                    <p>We assess potential coverage and realistic recovery pathways under the facts.</p>
+                    <h3>Determine workers’ comp only, third-party liability, or both</h3>
+                    <p>We help identify whether the facts suggest a workers’ comp-only path, a third-party injury claim, or another recovery option to review.</p>
                 </div>
             </div>
             <div class="compact-cta-row">
@@ -3424,40 +3427,51 @@
                 <a href="tel:844-467-4335" class="btn-secondary compact-cta-secondary" data-callrail-phone="844-467-4335" data-phone-click="construction-injury-call">Call Now</a>
             </div>
             <div style="text-align: center; margin-top: 48px;">
-                <p style="margin-top: 16px; color: var(--brand-gray-700);">Questions about your incident? Call <a href="tel:844-467-4335" style="color: var(--brand-blue); text-decoration: none; font-weight: 800; font-size: 1.2em; letter-spacing: 0.02em;"><span data-callrail-phone="844-467-4335">844-467-4335</span></a> | Available 24/7</p>
+                <p style="margin-top: 16px; color: var(--brand-gray-700);">Questions about your jobsite incident? Call <a href="tel:844-467-4335" style="color: var(--brand-blue); text-decoration: none; font-weight: 800; font-size: 1.2em; letter-spacing: 0.02em;" data-phone-click="construction-injury-call"><span data-callrail-phone="844-467-4335">844-467-4335</span></a> | Available 24/7</p>
             </div>
         </div>
     </section>
 
-    <section class="worth-section section-with-bg">
+    <section class="core-trust section-with-bg section-alt">
         <div class="container">
-            <h2 style="font-size: 42px; margin-bottom: 24px;">Why A Construction Injury May Be More Than Workers’ Comp</h2>
-            <div class="case-value-panel">
-                <p class="case-value-lead">Workers’ compensation may apply after many jobsite injuries, but some construction accidents also involve third-party liability. A third-party claim may exist when someone other than your employer contributed to the injury, such as another contractor, a negligent driver, a property owner, an equipment manufacturer, or a maintenance company. This is a case-by-case review, not legal advice.</p>
-                <div class="case-value-grid">
-                    <div class="case-value-factor">
-                        <div class="premium-icon-badge"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6v6h6v6h-6v6H9v-6H3V9h6V3Z"/></svg></div>
-                        <h3>Injury severity</h3>
-                        <p>Fractures, surgery, head or back injuries, and long-term limitations change the stakes.</p>
-                    </div>
-                    <div class="case-value-factor">
-                        <div class="premium-icon-badge"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4h6l1 2h2v15H6V6h2l1-2Z"/><path d="M9 10h6"/><path d="M9 14h6"/><path d="M9 18h4"/></svg></div>
-                        <h3>Medical treatment</h3>
-                        <p>ER care, imaging, specialists, therapy, and ongoing treatment help document harm.</p>
-                    </div>
-                    <div class="case-value-factor">
-                        <div class="premium-icon-badge"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h4l1.5-2h5L16 8h4v11H4V8Z"/><circle cx="12" cy="13.5" r="3"/></svg></div>
-                        <h3>Evidence available</h3>
-                        <p>Photos, video, reports, witnesses, and records can prove what happened before it disappears.</p>
-                    </div>
-                    <div class="case-value-factor">
-                        <div class="premium-icon-badge"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V5a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v16"/><path d="M9 21v-5h3v5"/><path d="M8 7h1"/><path d="M12 7h1"/><path d="M8 11h1"/><path d="M12 11h1"/><path d="M2 21h20"/></svg></div>
-                        <h3>Notice and responsibility</h3>
-                        <p>A claim is stronger when a business or owner had a chance to repair or warn.</p>
-                    </div>
+            <h2 style="text-align: center; font-size: 42px; margin-bottom: 24px;">Why Choose Insider Accident Lawyers</h2>
+            <p class="subtext-muted" style="text-align: center; font-size: 20px; color: var(--brand-gray-700); margin-bottom: 56px; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.7;">Serious construction injury cases deserve a focused review—not generic intake.</p>
+            <div class="trust-grid">
+                <div class="trust-card premium-trust-card">
+                    <div class="premium-icon-badge"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6v6h6v6h-6v6H9v-6H3V9h6V3Z"/></svg></div>
+                    <h3>Serious injury case review</h3>
+                    <p>We prioritize major jobsite injuries with documented treatment and clear fact patterns to evaluate.</p>
                 </div>
-                <p class="case-value-disclaimer">Every case depends on the facts. Past results do not guarantee a similar outcome.</p>
-                <a href="#case-evaluation" class="btn-primary case-value-cta" data-cta="construction-injury-free-case-review">Free Construction Injury Review</a>
+                <div class="trust-card premium-trust-card">
+                    <div class="premium-icon-badge"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m14 5 5 5"/><path d="m12 7 5 5"/><path d="M4 20h7"/><path d="m2 22 7-7"/><path d="m7 10 5-5 7 7-5 5-7-7Z"/></svg></div>
+                    <h3>Third-party liability analysis</h3>
+                    <p>We review whether another contractor, vendor, owner, or equipment party may share responsibility—not only your employer.</p>
+                </div>
+                <div class="trust-card premium-trust-card">
+                    <div class="premium-icon-badge"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4h6l1 2h2v15H6V6h2l1-2Z"/><path d="M9 10h6"/><path d="M9 14h6"/><path d="M9 18h4"/></svg></div>
+                    <h3>Evidence preservation</h3>
+                    <p>We emphasize fast action to protect photos, reports, witness information, and site documentation where possible.</p>
+                </div>
+                <div class="trust-card premium-trust-card">
+                    <div class="premium-icon-badge"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 5 6v5c0 5 3 8.5 7 10 4-1.5 7-5 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-5"/></svg></div>
+                    <h3>Insurance coverage review</h3>
+                    <p>We evaluate realistic coverage and recovery paths under California injury law.</p>
+                </div>
+                <div class="trust-card premium-trust-card">
+                    <div class="premium-icon-badge"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2.5 20h19L12 3Z"/><path d="M12 9v5"/><path d="M12 17h.01"/></svg></div>
+                    <h3>No fee unless we win</h3>
+                    <p>Contingency fee representation with no upfront attorney fee.</p>
+                </div>
+                <div class="trust-card premium-trust-card">
+                    <div class="premium-icon-badge"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2.5 20h19L12 3Z"/><path d="M12 9v5"/><path d="M12 17h.01"/></svg></div>
+                    <h3>Hablamos Español</h3>
+                    <p>Spanish-speaking team members are available to assist when needed.</p>
+                </div>
+                <div class="trust-card premium-trust-card">
+                    <div class="premium-icon-badge"><svg class="prem-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2.5 20h19L12 3Z"/><path d="M12 9v5"/><path d="M12 17h.01"/></svg></div>
+                    <h3>Direct attorney review</h3>
+                    <p>Serious inquiries receive attorney-level review of the fact pattern when appropriate.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -3470,8 +3484,8 @@
                     <h2>Meet Your Attorney</h2>
                     <div class="attorney-name">Shawn Rokni</div>
                     <div class="attorney-title">Attorney at Law</div>
-                    <p>Shawn Rokni is an experienced California personal injury attorney who represents people seriously injured on unsafe property—including retail, hospitality, apartments, and commercial sites.</p>
-                    <p style="margin-top: 16px;">Prior to representing injured people, Shawn worked with insurance companies. That experience informs how we preserve evidence, frame liability, and pursue fair compensation from carriers and property defendants.</p>
+                    <p>Shawn Rokni is an experienced California personal injury attorney who represents people seriously injured on construction sites and in other major injury cases statewide.</p>
+                    <p style="margin-top: 16px;">Prior to representing injured people, Shawn worked with insurance companies. That experience informs how we investigate third-party liability, preserve jobsite evidence, and pursue fair compensation.</p>
                     <h3 style="margin-top: 32px;">Education</h3>
                     <ul class="education-list">
                         <li>J.D., Chapman University School of Law</li>
@@ -3559,7 +3573,7 @@
                 <div class="result-card">
                     <div class="result-label">Settlement</div>
                     <div class="result-amount" data-count="1200000" data-prefix="$">$0</div>
-                    <div class="result-type">Unsafe Property Injury</div>
+                    <div class="result-type">Construction Injury</div>
                     <div class="result-meta">Results depend on the facts of each case.</div>
                 </div>
             </div>
