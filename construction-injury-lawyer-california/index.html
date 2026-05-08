@@ -2659,6 +2659,9 @@
 .comp-damage-card{background:#fff;border:1px solid rgba(1,54,108,.1);border-radius:14px;padding:20px 22px;box-shadow:0 8px 20px rgba(12,35,52,.06);}
 .comp-damage-card__h{font-size:18px;color:#0c2334;margin:0 0 10px;font-weight:800;}
 .comp-damage-card__p{font-size:15px;color:#4b5563;margin:0;line-height:1.55;}
+.comp-damage-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;max-width:1000px;margin:0 auto 24px;}
+.comp-damage-gallery__item{margin:0;border-radius:12px;overflow:hidden;background:#e8eef5;box-shadow:0 8px 20px rgba(12,35,52,.08);}
+.comp-damage-gallery__item img{display:block;width:100%;height:100%;object-fit:cover;aspect-ratio:16/9;}
 .case-checklist--signs-six{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;}
 @media(max-width:1024px){.case-checklist--signs-six{grid-template-columns:repeat(2,minmax(0,1fr));}}
 .signs-callout-note{max-width:760px;margin:28px auto 0;padding:18px 20px;background:#f8fbff;border:1px solid rgba(1,54,108,.12);border-radius:14px;font-size:16px;line-height:1.6;color:#374151;}
@@ -2743,6 +2746,7 @@
   .hero-attorney-wrap::after{left:10px;bottom:38px;font-size:10px;padding:6px 9px;}
   .case-checklist,.evidence-grid,.case-value-grid{grid-template-columns:1fr;}
   .comp-damage-grid{grid-template-columns:1fr;}
+  .comp-damage-gallery{grid-template-columns:1fr;}
   .serious-banner{padding:24px 18px;}
   .serious-banner__content,.investigation-feature{grid-template-columns:1fr;}
   .injury-signal-pill{font-size:13px;}
@@ -3196,7 +3200,7 @@
                 <h2 style="text-align: center;">Construction Accident Attorneys</h2>
                 <p class="lead-text subtext-muted" style="text-align: center; max-width: 720px; margin: 0 auto 24px;">When a serious construction accident happens, identifying who controlled the hazard and who may be legally responsible can be critical to the recovery path.</p>
                 <figure style="max-width: 800px; margin: 24px auto 0;">
-                    <img src="/images/premises-lp/attorney-contruction-site.png" alt="Attorney reviewing a serious construction injury case near a jobsite" width="1024" height="682" loading="lazy" decoding="async" style="width: 100%; height: auto; border-radius: var(--card-radius); object-fit: cover;">
+                    <img src="/images/premises-lp/construction-hat-materials-on-table.png" alt="Construction safety gear and incident paperwork tied to a serious jobsite injury claim" width="1024" height="682" loading="lazy" decoding="async" style="width: 100%; height: auto; border-radius: var(--card-radius); object-fit: cover;">
                     <figcaption style="text-align:center;margin-top:12px;font-size:15px;color:var(--brand-gray-600);">Potentially responsible parties can include contractors, subcontractors, owners, equipment companies, and vendors.</figcaption>
                 </figure>
                 <figure style="max-width: 800px; margin: 32px auto 0;">
@@ -3308,8 +3312,25 @@
                 <h2 style="text-align: center;">Compensation In Construction Injury Cases</h2>
                 <p class="lead-text subtext-muted" style="text-align: center; margin-bottom: 28px; max-width: 820px; margin-left: auto; margin-right: auto;">The value of a construction accident case depends on the facts, injuries, insurance coverage, and whether a third party may be legally responsible.</p>
                 <figure class="comp-damage-hero-figure" style="max-width: 720px; margin: 0 auto 32px;">
-                    <img src="/images/premises-lp/cell-phone-capture-equipment-on-floor.png" alt="Documenting construction accident evidence including hard hat and safety vest on a jobsite floor" width="960" height="540" loading="lazy" decoding="async" style="width:100%;height:auto;border-radius: var(--card-radius); object-fit: cover; aspect-ratio: 16/9;">
+                    <img src="/images/premises-lp/construction-worker-rehab.png" alt="Injured construction worker in physical rehabilitation after a serious jobsite injury" width="960" height="540" loading="lazy" decoding="async" style="width:100%;height:auto;border-radius: var(--card-radius); object-fit: cover; aspect-ratio: 16/9;">
                 </figure>
+                                <div class="comp-damage-gallery">
+                    <figure class="comp-damage-gallery__item">
+                        <img src="/images/premises-lp/construction-man-stresses-over-bills.png" alt="Injured construction worker reviewing medical and household bills at home" loading="lazy" decoding="async" width="640" height="360">
+                    </figure>
+                    <figure class="comp-damage-gallery__item">
+                        <img src="/images/premises-lp/construction-hat-materials-on-table.png" alt="Construction safety gear and paperwork related to an injury claim" loading="lazy" decoding="async" width="640" height="360">
+                    </figure>
+                    <figure class="comp-damage-gallery__item">
+                        <img src="/images/premises-lp/laid-off-construction-worker-crutches.png" alt="Construction worker on crutches recovering at home after an accident" loading="lazy" decoding="async" width="640" height="360">
+                    </figure>
+                    <figure class="comp-damage-gallery__item">
+                        <img src="/images/premises-lp/doctor-with-construction-worker.png" alt="Doctor reviewing imaging with an injured construction worker" loading="lazy" decoding="async" width="640" height="360">
+                    </figure>
+                    <figure class="comp-damage-gallery__item">
+                        <img src="/images/premises-lp/injured-construction-worker-looking-out-window.png" alt="Injured construction worker at home with arm sling and knee brace" loading="lazy" decoding="async" width="640" height="360">
+                    </figure>
+                </div>
                 <div class="comp-damage-grid">
                     <div class="comp-damage-card">
                         <h3 class="comp-damage-card__h">Medical Bills & Future Treatment</h3>

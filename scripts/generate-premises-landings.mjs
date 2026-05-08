@@ -194,6 +194,15 @@ function accidentGridFromCasesCards(cards) {
 function buildCompensationDamagesSection(p) {
   const img = p.compHeroImage;
   const items = p.compDamageItems;
+  const gallery = Array.isArray(p.compGalleryImages)
+    ? p.compGalleryImages
+        .map(
+          (g) => `                    <figure class="comp-damage-gallery__item">
+                        <img src="${g.src}" alt="${escAttr(g.alt)}" loading="lazy" decoding="async" width="640" height="360">
+                    </figure>`
+        )
+        .join("\n")
+    : "";
   return `    <section class="section-with-bg">
         <div class="container">
             <div class="section-content comp-damage-lead-section">
@@ -202,6 +211,9 @@ function buildCompensationDamagesSection(p) {
                 <figure class="comp-damage-hero-figure" style="max-width: 720px; margin: 0 auto 32px;">
                     <img src="${img.src}" alt="${escAttr(img.alt)}" width="960" height="540" loading="lazy" decoding="async" style="width:100%;height:auto;border-radius: var(--card-radius); object-fit: cover; aspect-ratio: 16/9;">
                 </figure>
+                ${gallery ? `                <div class="comp-damage-gallery">
+${gallery}
+                </div>` : ""}
                 <div class="comp-damage-grid">
 ${items
   .map(
@@ -1102,8 +1114,8 @@ function buildPages() {
       hazardsLead:
         "When a serious construction accident happens, identifying who controlled the hazard and who may be legally responsible can be critical to the recovery path.",
       hazardsFigure: {
-        src: getImage("attorney-contruction-site.png", getImage("background-construction-site.png", IMG.attorney)),
-        alt: "Attorney reviewing a serious construction injury case near a jobsite",
+        src: getImage("construction-hat-materials-on-table.png", getImage("background-construction-site.png", IMG.attorney)),
+        alt: "Construction safety gear and incident paperwork tied to a serious jobsite injury claim",
         caption: "Potentially responsible parties can include contractors, subcontractors, owners, equipment companies, and vendors.",
       },
       hazardsSecondFigure: {
@@ -1224,9 +1236,31 @@ function buildPages() {
       compDisclaimer:
         "Every case is different. Past results do not guarantee a similar outcome. The available recovery depends on liability, damages, insurance coverage, and the facts of the accident.",
       compHeroImage: {
-        src: getImage("cell-phone-capture-equipment-on-floor.png", getImage("attorney-contruction-site.png", IMG.attorney)),
-        alt: "Documenting construction accident evidence including hard hat and safety vest on a jobsite floor",
+        src: getImage("construction-worker-rehab.png", getImage("hero-injured-construction-worker.png", IMG.attorney)),
+        alt: "Injured construction worker in physical rehabilitation after a serious jobsite injury",
       },
+      compGalleryImages: [
+        {
+          src: getImage("construction-man-stresses-over-bills.png", IMG.attorney),
+          alt: "Injured construction worker reviewing medical and household bills at home",
+        },
+        {
+          src: getImage("construction-hat-materials-on-table.png", IMG.attorney),
+          alt: "Construction safety gear and paperwork related to an injury claim",
+        },
+        {
+          src: getImage("laid-off-construction-worker-crutches.png", IMG.attorney),
+          alt: "Construction worker on crutches recovering at home after an accident",
+        },
+        {
+          src: getImage("doctor-with-construction-worker.png", IMG.attorney),
+          alt: "Doctor reviewing imaging with an injured construction worker",
+        },
+        {
+          src: getImage("injured-construction-worker-looking-out-window.png", IMG.attorney),
+          alt: "Injured construction worker at home with arm sling and knee brace",
+        },
+      ],
       compDamageItems: [
         [
           "Medical Bills & Future Treatment",
@@ -2031,6 +2065,9 @@ function applyPage(html, p) {
 .comp-damage-card{background:#fff;border:1px solid rgba(1,54,108,.1);border-radius:14px;padding:20px 22px;box-shadow:0 8px 20px rgba(12,35,52,.06);}
 .comp-damage-card__h{font-size:18px;color:#0c2334;margin:0 0 10px;font-weight:800;}
 .comp-damage-card__p{font-size:15px;color:#4b5563;margin:0;line-height:1.55;}
+.comp-damage-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;max-width:1000px;margin:0 auto 24px;}
+.comp-damage-gallery__item{margin:0;border-radius:12px;overflow:hidden;background:#e8eef5;box-shadow:0 8px 20px rgba(12,35,52,.08);}
+.comp-damage-gallery__item img{display:block;width:100%;height:100%;object-fit:cover;aspect-ratio:16/9;}
 .case-checklist--signs-six{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;}
 @media(max-width:1024px){.case-checklist--signs-six{grid-template-columns:repeat(2,minmax(0,1fr));}}
 .signs-callout-note{max-width:760px;margin:28px auto 0;padding:18px 20px;background:#f8fbff;border:1px solid rgba(1,54,108,.12);border-radius:14px;font-size:16px;line-height:1.6;color:#374151;}
@@ -2115,6 +2152,7 @@ function applyPage(html, p) {
   .hero-attorney-wrap::after{left:10px;bottom:38px;font-size:10px;padding:6px 9px;}
   .case-checklist,.evidence-grid,.case-value-grid{grid-template-columns:1fr;}
   .comp-damage-grid{grid-template-columns:1fr;}
+  .comp-damage-gallery{grid-template-columns:1fr;}
   .serious-banner{padding:24px 18px;}
   .serious-banner__content,.investigation-feature{grid-template-columns:1fr;}
   .injury-signal-pill{font-size:13px;}
