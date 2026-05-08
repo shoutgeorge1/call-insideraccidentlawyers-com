@@ -2655,13 +2655,30 @@
 .accident-item-title-row{display:flex;align-items:flex-start;gap:14px;}
 .accident-item-text--title{font-size:17px;line-height:1.35;flex:1;min-width:0;}
 .accident-item-desc{font-size:15px;line-height:1.55;color:#4b5563;margin:0;}
-.comp-damage-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;max-width:1000px;margin:0 auto;text-align:left;}
-.comp-damage-card{background:#fff;border:1px solid rgba(1,54,108,.1);border-radius:14px;padding:20px 22px;box-shadow:0 8px 20px rgba(12,35,52,.06);}
-.comp-damage-card__h{font-size:18px;color:#0c2334;margin:0 0 10px;font-weight:800;}
-.comp-damage-card__p{font-size:15px;color:#4b5563;margin:0;line-height:1.55;}
-.comp-damage-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;max-width:1000px;margin:0 auto 24px;}
-.comp-damage-gallery__item{margin:0;border-radius:12px;overflow:hidden;background:#e8eef5;box-shadow:0 8px 20px rgba(12,35,52,.08);}
-.comp-damage-gallery__item img{display:block;width:100%;height:100%;object-fit:cover;aspect-ratio:16/9;}
+.section-eyebrow{text-align:center;margin:0 auto 10px;color:#01468a;font-size:13px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;}
+.comp-damage-section{background:linear-gradient(180deg,#f8fbff 0%,#fff 58%,#f3f6fa 100%);}
+.comp-damage-title{text-align:center;max-width:860px;margin-left:auto;margin-right:auto;}
+.comp-damage-lead{max-width:850px;margin:0 auto 30px!important;text-align:center;}
+.comp-damage-showcase{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(320px,.92fr);gap:22px;align-items:stretch;max-width:1050px;margin:0 auto 24px;}
+.comp-damage-hero-figure{margin:0;border-radius:22px;overflow:hidden;background:#e8eef5;box-shadow:0 18px 38px rgba(12,35,52,.16);}
+.comp-damage-hero-figure img{display:block;width:100%;height:100%;min-height:360px;object-fit:cover;aspect-ratio:16/10;}
+.comp-damage-review-card{background:linear-gradient(135deg,#0c2334,#01366c 68%,#01468a);border-radius:22px;padding:30px;box-shadow:0 18px 38px rgba(12,35,52,.18);color:#fff;text-align:left;display:flex;flex-direction:column;justify-content:center;}
+.comp-damage-review-kicker{margin:0 0 10px;color:#fbba00;font-size:13px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;}
+.comp-damage-review-card h3{color:#fff;font-size:28px;line-height:1.15;margin:0 0 16px;}
+.comp-damage-review-card ul{list-style:none;margin:0 0 8px;padding:0;display:grid;gap:12px;}
+.comp-damage-review-card li{position:relative;padding-left:28px;color:rgba(255,255,255,.92);font-weight:700;line-height:1.45;}
+.comp-damage-review-card li::before{content:"";position:absolute;left:0;top:.35em;width:16px;height:16px;border-radius:50%;background:#fbba00;box-shadow:inset 0 0 0 5px #fff;}
+.comp-damage-review-card .compact-cta-row{justify-content:flex-start;margin-top:22px;}
+.comp-damage-review-card .btn-secondary{background:rgba(255,255,255,.1)!important;color:#fff!important;border-color:rgba(255,255,255,.35)!important;}
+.comp-damage-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;max-width:1050px;margin:0 auto;text-align:left;}
+.comp-damage-card{background:#fff;border:1px solid rgba(1,54,108,.12);border-radius:16px;padding:22px;box-shadow:0 10px 24px rgba(12,35,52,.07);position:relative;overflow:hidden;}
+.comp-damage-card::before{content:"";position:absolute;left:0;top:0;width:100%;height:4px;background:linear-gradient(90deg,#fbba00,#01468a);}
+.comp-damage-card__h{font-size:18px;color:#0c2334;margin:0 0 10px;font-weight:900;}
+.comp-damage-card__p{font-size:15px;color:#4b5563;margin:0;line-height:1.6;}
+.comp-damage-gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;max-width:1050px;margin:0 auto 24px;}
+.comp-damage-gallery__item{margin:0;border-radius:14px;overflow:hidden;background:#e8eef5;box-shadow:0 8px 20px rgba(12,35,52,.08);}
+.comp-damage-gallery__item img{display:block;width:100%;height:100%;object-fit:cover;aspect-ratio:16/10;}
+.comp-damage-cards-intro{max-width:780px;margin:4px auto 20px;text-align:center;color:#374151;font-size:17px;font-weight:700;line-height:1.55;}
 .case-checklist--signs-six{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;}
 @media(max-width:1024px){.case-checklist--signs-six{grid-template-columns:repeat(2,minmax(0,1fr));}}
 .signs-callout-note{max-width:760px;margin:28px auto 0;padding:18px 20px;background:#f8fbff;border:1px solid rgba(1,54,108,.12);border-radius:14px;font-size:16px;line-height:1.6;color:#374151;}
@@ -2746,6 +2763,10 @@
   .hero-attorney-wrap::after{left:10px;bottom:38px;font-size:10px;padding:6px 9px;}
   .case-checklist,.evidence-grid,.case-value-grid{grid-template-columns:1fr;}
   .comp-damage-grid{grid-template-columns:1fr;}
+  .comp-damage-showcase{grid-template-columns:1fr;gap:16px;}
+  .comp-damage-hero-figure img{min-height:auto;}
+  .comp-damage-review-card{padding:22px;}
+  .comp-damage-review-card h3{font-size:24px;}
   .comp-damage-gallery{grid-template-columns:1fr;}
   .serious-banner{padding:24px 18px;}
   .serious-banner__content,.investigation-feature{grid-template-columns:1fr;}

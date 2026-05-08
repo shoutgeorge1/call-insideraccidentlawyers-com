@@ -194,6 +194,12 @@ function accidentGridFromCasesCards(cards) {
 function buildCompensationDamagesSection(p) {
   const img = p.compHeroImage;
   const items = p.compDamageItems;
+  const reviewItems = p.compReviewItems || [
+    "How the jobsite accident happened",
+    "Who controlled the hazard or equipment",
+    "Your treatment, work restrictions, and future care",
+    "Available insurance and possible third-party liability",
+  ];
   const gallery = Array.isArray(p.compGalleryImages)
     ? p.compGalleryImages
         .map(
@@ -203,17 +209,29 @@ function buildCompensationDamagesSection(p) {
         )
         .join("\n")
     : "";
-  return `    <section class="section-with-bg">
+  return `    <section class="section-with-bg comp-damage-section">
         <div class="container">
             <div class="section-content comp-damage-lead-section">
-                <h2 style="text-align: center;">${p.compH2}</h2>
-                <p class="lead-text subtext-muted" style="text-align: center; margin-bottom: 28px; max-width: 820px; margin-left: auto; margin-right: auto;">${p.compLead}</p>
-                <figure class="comp-damage-hero-figure" style="max-width: 720px; margin: 0 auto 32px;">
-                    <img src="${img.src}" alt="${escAttr(img.alt)}" width="960" height="540" loading="lazy" decoding="async" style="width:100%;height:auto;border-radius: var(--card-radius); object-fit: cover; aspect-ratio: 16/9;">
-                </figure>
-                ${gallery ? `                <div class="comp-damage-gallery">
+                ${p.compEyebrow ? `<p class="section-eyebrow">${p.compEyebrow}</p>` : ""}
+                <h2 class="comp-damage-title">${p.compH2}</h2>
+                <p class="lead-text subtext-muted comp-damage-lead">${p.compLead}</p>
+                <div class="comp-damage-showcase">
+                    <figure class="comp-damage-hero-figure">
+                        <img src="${img.src}" alt="${escAttr(img.alt)}" width="960" height="540" loading="lazy" decoding="async">
+                    </figure>
+                    <div class="comp-damage-review-card">
+                        <p class="comp-damage-review-kicker">${p.compReviewKicker || "Free case value review"}</p>
+                        <h3>${p.compReviewTitle || "What We Review Before Talking Numbers"}</h3>
+                        <ul>
+${reviewItems.map((item) => `                            <li>${item}</li>`).join("\n")}
+                        </ul>
+                        ${compactCta(p)}
+                    </div>
+                </div>
+                ${gallery ? `                <div class="comp-damage-gallery" aria-label="Real-life effects of construction injuries">
 ${gallery}
                 </div>` : ""}
+                ${p.compCardsIntro ? `<p class="comp-damage-cards-intro">${p.compCardsIntro}</p>` : ""}
                 <div class="comp-damage-grid">
 ${items
   .map(
@@ -225,7 +243,6 @@ ${items
   .join("\n")}
                 </div>
                 <p class="comp-damage-disclaimer" style="text-align:center;font-size:14px;color:var(--brand-gray-600);max-width:800px;margin:24px auto 0;line-height:1.6;">${p.compDisclaimer}</p>
-                ${compactCta(p)}
             </div>
         </div>
     </section>`;
@@ -992,9 +1009,9 @@ function buildPages() {
       canonical: "https://call.insideraccidentlawyers.com/construction-injury-lawyer-california",
       h1: "Injured On A Construction Site?",
       heroSub:
-        '<span class="hero-tagline">Free Case Review • No Fee Unless We Win.</span> <span class="hero-highlight">You may have a claim beyond workers’ comp.</span> Free Construction Injury Case Review • Serious Jobsite Injuries Reviewed • Falls, Equipment Accidents, Falling Objects &amp; Unsafe Sites • Hablamos Espa\u00f1ol',
+        '<span class="hero-tagline">Free Case Review • No Fee Unless We Win.</span> <span class="hero-highlight">You may have a claim beyond workers’ comp.</span> Serious falls, equipment accidents, falling objects, unsafe jobsites, and third-party liability reviewed statewide.',
       heroReframe:
-        "We review serious construction injury cases across California and identify potential third-party liability paths.",
+        "Tell us what happened. We review whether another contractor, owner, vendor, driver, or equipment company may be responsible.",
       heroImg: getImage("hero-injured-construction-worker.png", IMG.attorney),
       heroImgAlt: "Injured construction worker being helped by coworkers on a construction site",
       heroPlannedImage: "hero-injured-construction-worker.png",
@@ -1007,7 +1024,7 @@ function buildPages() {
       formSubject: "New Construction Injury Lead (CA)",
       formH2: "Free Case Review — Construction Injury",
       formIntro:
-        "Tell us what happened, where it happened, and what treatment you received. We review serious construction injury cases statewide.",
+        "Tell us where the accident happened, what caused it, and what treatment you received. We review serious construction injury cases statewide.",
       situationOptions: [
         ["Fall from scaffold, ladder, roof, or height", "Fall from scaffold, ladder, roof, or height"],
         ["Falling object injury", "Falling object injury"],
@@ -1231,8 +1248,19 @@ function buildPages() {
         },
       ],
       compH2: "Compensation In Construction Injury Cases",
+      compEyebrow: "What your case may include",
       compLead:
-        "The value of a construction accident case depends on the facts, injuries, insurance coverage, and whether a third party may be legally responsible.",
+        "A serious construction injury can affect your medical care, paycheck, trade, and family. We review whether the facts point to workers’ comp only, a third-party injury claim, or both.",
+      compReviewKicker: "Free construction injury review",
+      compReviewTitle: "What We Look At Before Talking Case Value",
+      compReviewItems: [
+        "Whether another contractor, owner, vendor, driver, or equipment company may share fault",
+        "Emergency care, imaging, surgery, therapy, work restrictions, and future treatment",
+        "Lost wages, missed projects, and whether you can return to the same trade",
+        "Photos, incident reports, witnesses, OSHA records where applicable, and insurance coverage",
+      ],
+      compCardsIntro:
+        "If a third party contributed to the accident, your claim may involve damages beyond basic workers’ compensation benefits.",
       compDisclaimer:
         "Every case is different. Past results do not guarantee a similar outcome. The available recovery depends on liability, damages, insurance coverage, and the facts of the accident.",
       compHeroImage: {
@@ -1243,10 +1271,6 @@ function buildPages() {
         {
           src: getImage("construction-man-stresses-over-bills.png", IMG.attorney),
           alt: "Injured construction worker reviewing medical and household bills at home",
-        },
-        {
-          src: getImage("forklift-injury-construction.png", getImage("hero-injured-construction-worker.png", IMG.attorney)),
-          alt: "Forklift and equipment hazard on an active construction site",
         },
         {
           src: getImage("laid-off-construction-worker-crutches.png", IMG.attorney),
@@ -1264,24 +1288,24 @@ function buildPages() {
       compDamageItems: [
         [
           "Medical Bills & Future Treatment",
-          "Construction injuries may require emergency care, imaging, surgery, therapy, specialist visits, medication, or long-term treatment.",
+          "Emergency care, imaging, surgery, therapy, medication, specialist visits, and future treatment needs can all matter.",
         ],
-        ["Lost Income", "A serious jobsite injury can keep you from working temporarily or permanently."],
+        ["Lost Income", "Missed shifts, delayed projects, reduced hours, and time away from your trade can affect the value review."],
         [
           "Pain & Suffering",
-          "A third-party injury claim may include damages beyond workers’ compensation benefits, depending on the facts.",
+          "When a third-party claim exists, damages may include the human impact of pain, disruption, and loss of normal life.",
         ],
         [
           "Loss Of Earning Capacity",
-          "Severe injuries may affect your ability to return to your trade or perform the same type of work.",
+          "Severe injuries can limit heavy labor, climbing, lifting, equipment work, or your ability to return to the same role.",
         ],
         [
           "Long-Term Impairment",
-          "Spine injuries, brain injuries, crush injuries, burns, amputations, and permanent limitations can change the value of a case.",
+          "Spine injuries, brain injuries, crush injuries, burns, amputations, and permanent restrictions can change the case analysis.",
         ],
         [
           "Wrongful Death",
-          "When a construction accident causes a death, surviving family members may have legal rights that should be reviewed quickly.",
+          "If a jobsite accident is fatal, surviving family members may have rights that should be reviewed quickly.",
         ],
       ],
       compCards: [
@@ -1291,7 +1315,7 @@ function buildPages() {
         ["Long-term impairment", "/images/premises-lp/hero-injured-construction-worker.png", "Placeholder"],
       ],
       whyH2: "Why Choose Insider Accident Lawyers",
-      whyIntro: "Serious construction injury cases deserve a focused review—not generic intake.",
+      whyIntro: "Construction injury PPC leads need fast answers: Is there serious treatment? Is there a third party? Is there evidence to preserve?",
       whyCards: [
         ["Serious injury case review", "We prioritize major jobsite injuries with documented treatment and clear fact patterns to evaluate."],
         ["Third-party liability analysis", "We review whether another contractor, vendor, owner, or equipment party may share responsibility—not only your employer."],
@@ -1306,7 +1330,7 @@ function buildPages() {
         "Workers’ compensation may apply after many jobsite injuries, but some construction accidents also involve third-party liability. A third-party claim may exist when someone other than your employer contributed to the injury, such as another contractor, a negligent driver, a property owner, an equipment manufacturer, or a maintenance company. This is a case-by-case review, not legal advice.",
       finalH2: "See If You Have A Construction Injury Case",
       finalP:
-        "If you were seriously injured on a construction site, request a free case review. We can review whether the facts suggest a personal injury claim, a workers’ compensation issue, or another recovery path.",
+        "If you were seriously injured on a construction site, request a free case review now. We can review whether the facts suggest a third-party personal injury claim, workers’ compensation issue, or another recovery path.",
       footerBlurb:
         "California attorneys for serious construction accident and injury cases. Attorney advertising.",
       attorneyBioConstruction: [
@@ -2061,13 +2085,30 @@ function applyPage(html, p) {
 .accident-item-title-row{display:flex;align-items:flex-start;gap:14px;}
 .accident-item-text--title{font-size:17px;line-height:1.35;flex:1;min-width:0;}
 .accident-item-desc{font-size:15px;line-height:1.55;color:#4b5563;margin:0;}
-.comp-damage-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;max-width:1000px;margin:0 auto;text-align:left;}
-.comp-damage-card{background:#fff;border:1px solid rgba(1,54,108,.1);border-radius:14px;padding:20px 22px;box-shadow:0 8px 20px rgba(12,35,52,.06);}
-.comp-damage-card__h{font-size:18px;color:#0c2334;margin:0 0 10px;font-weight:800;}
-.comp-damage-card__p{font-size:15px;color:#4b5563;margin:0;line-height:1.55;}
-.comp-damage-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;max-width:1000px;margin:0 auto 24px;}
-.comp-damage-gallery__item{margin:0;border-radius:12px;overflow:hidden;background:#e8eef5;box-shadow:0 8px 20px rgba(12,35,52,.08);}
-.comp-damage-gallery__item img{display:block;width:100%;height:100%;object-fit:cover;aspect-ratio:16/9;}
+.section-eyebrow{text-align:center;margin:0 auto 10px;color:#01468a;font-size:13px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;}
+.comp-damage-section{background:linear-gradient(180deg,#f8fbff 0%,#fff 58%,#f3f6fa 100%);}
+.comp-damage-title{text-align:center;max-width:860px;margin-left:auto;margin-right:auto;}
+.comp-damage-lead{max-width:850px;margin:0 auto 30px!important;text-align:center;}
+.comp-damage-showcase{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(320px,.92fr);gap:22px;align-items:stretch;max-width:1050px;margin:0 auto 24px;}
+.comp-damage-hero-figure{margin:0;border-radius:22px;overflow:hidden;background:#e8eef5;box-shadow:0 18px 38px rgba(12,35,52,.16);}
+.comp-damage-hero-figure img{display:block;width:100%;height:100%;min-height:360px;object-fit:cover;aspect-ratio:16/10;}
+.comp-damage-review-card{background:linear-gradient(135deg,#0c2334,#01366c 68%,#01468a);border-radius:22px;padding:30px;box-shadow:0 18px 38px rgba(12,35,52,.18);color:#fff;text-align:left;display:flex;flex-direction:column;justify-content:center;}
+.comp-damage-review-kicker{margin:0 0 10px;color:#fbba00;font-size:13px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;}
+.comp-damage-review-card h3{color:#fff;font-size:28px;line-height:1.15;margin:0 0 16px;}
+.comp-damage-review-card ul{list-style:none;margin:0 0 8px;padding:0;display:grid;gap:12px;}
+.comp-damage-review-card li{position:relative;padding-left:28px;color:rgba(255,255,255,.92);font-weight:700;line-height:1.45;}
+.comp-damage-review-card li::before{content:"";position:absolute;left:0;top:.35em;width:16px;height:16px;border-radius:50%;background:#fbba00;box-shadow:inset 0 0 0 5px #fff;}
+.comp-damage-review-card .compact-cta-row{justify-content:flex-start;margin-top:22px;}
+.comp-damage-review-card .btn-secondary{background:rgba(255,255,255,.1)!important;color:#fff!important;border-color:rgba(255,255,255,.35)!important;}
+.comp-damage-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;max-width:1050px;margin:0 auto;text-align:left;}
+.comp-damage-card{background:#fff;border:1px solid rgba(1,54,108,.12);border-radius:16px;padding:22px;box-shadow:0 10px 24px rgba(12,35,52,.07);position:relative;overflow:hidden;}
+.comp-damage-card::before{content:"";position:absolute;left:0;top:0;width:100%;height:4px;background:linear-gradient(90deg,#fbba00,#01468a);}
+.comp-damage-card__h{font-size:18px;color:#0c2334;margin:0 0 10px;font-weight:900;}
+.comp-damage-card__p{font-size:15px;color:#4b5563;margin:0;line-height:1.6;}
+.comp-damage-gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;max-width:1050px;margin:0 auto 24px;}
+.comp-damage-gallery__item{margin:0;border-radius:14px;overflow:hidden;background:#e8eef5;box-shadow:0 8px 20px rgba(12,35,52,.08);}
+.comp-damage-gallery__item img{display:block;width:100%;height:100%;object-fit:cover;aspect-ratio:16/10;}
+.comp-damage-cards-intro{max-width:780px;margin:4px auto 20px;text-align:center;color:#374151;font-size:17px;font-weight:700;line-height:1.55;}
 .case-checklist--signs-six{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;}
 @media(max-width:1024px){.case-checklist--signs-six{grid-template-columns:repeat(2,minmax(0,1fr));}}
 .signs-callout-note{max-width:760px;margin:28px auto 0;padding:18px 20px;background:#f8fbff;border:1px solid rgba(1,54,108,.12);border-radius:14px;font-size:16px;line-height:1.6;color:#374151;}
@@ -2152,6 +2193,10 @@ function applyPage(html, p) {
   .hero-attorney-wrap::after{left:10px;bottom:38px;font-size:10px;padding:6px 9px;}
   .case-checklist,.evidence-grid,.case-value-grid{grid-template-columns:1fr;}
   .comp-damage-grid{grid-template-columns:1fr;}
+  .comp-damage-showcase{grid-template-columns:1fr;gap:16px;}
+  .comp-damage-hero-figure img{min-height:auto;}
+  .comp-damage-review-card{padding:22px;}
+  .comp-damage-review-card h3{font-size:24px;}
   .comp-damage-gallery{grid-template-columns:1fr;}
   .serious-banner{padding:24px 18px;}
   .serious-banner__content,.investigation-feature{grid-template-columns:1fr;}
