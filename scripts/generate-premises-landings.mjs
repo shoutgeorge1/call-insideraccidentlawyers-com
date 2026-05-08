@@ -1599,8 +1599,8 @@ function buildPages() {
       hazardsLead:
         "When a serious construction accident happens, identifying who controlled the hazard and who may be legally responsible can be critical to the recovery path.",
       hazardsFigure: {
-        src: getImage("attorney-contruction-site.png", IMG.attorney),
-        alt: "Personal injury attorney standing near a construction site",
+        src: getImage("construction-hat-materials-on-table.png", IMG.attorney),
+        alt: "Construction safety gear and paperwork related to a serious jobsite injury",
         caption: "Potentially responsible parties can include contractors, subcontractors, owners, equipment companies, and vendors.",
       },
       hazardsSecondFigure: {
@@ -1763,8 +1763,8 @@ function buildPages() {
       hazardsLead:
         "When a serious construction accident happens, identifying who controlled the hazard and who may be legally responsible can be critical to the recovery path.",
       hazardsFigure: {
-        src: getImage("attorney-contruction-site.png", IMG.attorney),
-        alt: "Personal injury attorney standing near a construction site",
+        src: getImage("construction-hat-materials-on-table.png", IMG.attorney),
+        alt: "Construction safety gear and paperwork related to a serious jobsite injury",
         caption: "Potentially responsible parties can include contractors, subcontractors, owners, equipment companies, and vendors.",
       },
       hazardsSecondFigure: {
