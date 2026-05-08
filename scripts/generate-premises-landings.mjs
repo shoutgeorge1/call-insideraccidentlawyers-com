@@ -1114,8 +1114,8 @@ function buildPages() {
       hazardsLead:
         "When a serious construction accident happens, identifying who controlled the hazard and who may be legally responsible can be critical to the recovery path.",
       hazardsFigure: {
-        src: getImage("construction-hat-materials-on-table.png", getImage("background-construction-site.png", IMG.attorney)),
-        alt: "Construction safety gear and incident paperwork tied to a serious jobsite injury claim",
+        src: getImage("cell-phone-capture-equipment-on-floor.png", getImage("background-construction-site.png", IMG.attorney)),
+        alt: "Documenting construction accident evidence including hard hat and safety vest on a jobsite floor",
         caption: "Potentially responsible parties can include contractors, subcontractors, owners, equipment companies, and vendors.",
       },
       hazardsSecondFigure: {
@@ -1245,8 +1245,8 @@ function buildPages() {
           alt: "Injured construction worker reviewing medical and household bills at home",
         },
         {
-          src: getImage("construction-hat-materials-on-table.png", IMG.attorney),
-          alt: "Construction safety gear and paperwork related to an injury claim",
+          src: getImage("forklift-injury-construction.png", getImage("hero-injured-construction-worker.png", IMG.attorney)),
+          alt: "Forklift and equipment hazard on an active construction site",
         },
         {
           src: getImage("laid-off-construction-worker-crutches.png", IMG.attorney),
@@ -1599,8 +1599,8 @@ function buildPages() {
       hazardsLead:
         "When a serious construction accident happens, identifying who controlled the hazard and who may be legally responsible can be critical to the recovery path.",
       hazardsFigure: {
-        src: getImage("construction-hat-materials-on-table.png", IMG.attorney),
-        alt: "Construction safety gear and paperwork related to a serious jobsite injury",
+        src: getImage("cell-phone-capture-equipment-on-floor.png", getImage("background-construction-site.png", IMG.attorney)),
+        alt: "Documenting construction accident evidence including hard hat and safety vest on a jobsite floor",
         caption: "Potentially responsible parties can include contractors, subcontractors, owners, equipment companies, and vendors.",
       },
       hazardsSecondFigure: {
@@ -1763,8 +1763,8 @@ function buildPages() {
       hazardsLead:
         "When a serious construction accident happens, identifying who controlled the hazard and who may be legally responsible can be critical to the recovery path.",
       hazardsFigure: {
-        src: getImage("construction-hat-materials-on-table.png", IMG.attorney),
-        alt: "Construction safety gear and paperwork related to a serious jobsite injury",
+        src: getImage("cell-phone-capture-equipment-on-floor.png", getImage("background-construction-site.png", IMG.attorney)),
+        alt: "Documenting construction accident evidence including hard hat and safety vest on a jobsite floor",
         caption: "Potentially responsible parties can include contractors, subcontractors, owners, equipment companies, and vendors.",
       },
       hazardsSecondFigure: {
