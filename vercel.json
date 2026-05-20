@@ -126,6 +126,16 @@
     ,{ "source": "/construction-site-injury-lawyer-california/", "destination": "/construction-site-injury-lawyer-california/index.html" }
     ,{ "source": "/scaffold-accident-lawyer-california", "destination": "/scaffold-accident-lawyer-california/index.html" }
     ,{ "source": "/scaffold-accident-lawyer-california/", "destination": "/scaffold-accident-lawyer-california/index.html" }
+    ,{ "source": "/custody-death-lawyer-california", "destination": "/custody-death-lawyer-california/index.html" }
+    ,{ "source": "/custody-death-lawyer-california/", "destination": "/custody-death-lawyer-california/index.html" }
+    ,{ "source": "/police-shooting-wrongful-death-lawyer-california", "destination": "/police-shooting-wrongful-death-lawyer-california/index.html" }
+    ,{ "source": "/police-shooting-wrongful-death-lawyer-california/", "destination": "/police-shooting-wrongful-death-lawyer-california/index.html" }
+    ,{ "source": "/jail-prison-death-lawyer-california", "destination": "/jail-prison-death-lawyer-california/index.html" }
+    ,{ "source": "/jail-prison-death-lawyer-california/", "destination": "/jail-prison-death-lawyer-california/index.html" }
+    ,{ "source": "/inmate-death-lawyer-california", "destination": "/custody-death-lawyer-california/index.html" }
+    ,{ "source": "/inmate-death-lawyer-california/", "destination": "/custody-death-lawyer-california/index.html" }
+    ,{ "source": "/police-jail-wrongful-death-lawyer-california", "destination": "/custody-death-lawyer-california/index.html" }
+    ,{ "source": "/police-jail-wrongful-death-lawyer-california/", "destination": "/custody-death-lawyer-california/index.html" }
   ],
   "redirects": [
     {
