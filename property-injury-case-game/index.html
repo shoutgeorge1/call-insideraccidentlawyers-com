@@ -664,13 +664,13 @@
         </div>
       </div>
       <div class="ppc-top__right">
-        <a class="ppc-top__phone" href="tel:844-467-4335" data-callrail-phone="844-467-4335" data-tel-context="header">844-467-4335</a>
+        <a class="ppc-top__phone" href="tel:844-467-4335" data-callrail-phone="844-467-4335" data-click-location="header">844-467-4335</a>
         <p class="ppc-top__call-sub">Free consultation · 24/7 · Español</p>
       </div>
     </div>
   </header>
 
-  <a href="tel:844-467-4335" class="tap-to-call-bar" data-callrail-phone="844-467-4335" data-tel-context="tap_bar" aria-label="Call 844-467-4335 for a free consultation">
+  <a href="tel:844-467-4335" class="tap-to-call-bar" data-callrail-phone="844-467-4335" data-click-location="tap_to_call_bar" aria-label="Call 844-467-4335 for a free consultation">
     Call 844-467-4335 <span>Free consultation · 24/7 · Español</span>
   </a>
 
@@ -682,7 +682,7 @@
         <p class="sub">Answer a few quick questions to see if your fall or property injury may be worth a free review.</p>
         <div class="cta-row">
           <a class="btn btn-call" href="#evidence-check" id="start-cta">Start the Evidence Check</a>
-          <a class="btn btn-ghost" href="tel:844-467-4335" data-callrail-phone="844-467-4335" data-tel-context="hero">Call 844-467-4335</a>
+          <a class="btn btn-ghost" href="tel:844-467-4335" data-callrail-phone="844-467-4335" data-click-location="hero">Call 844-467-4335</a>
         </div>
         <p class="trust-copy">Free consultation. No fee unless we win. California injury lawyers.</p>
       </div>
@@ -842,7 +842,7 @@
               <p class="sub">Call now, or share your details and we'll reach out quickly.</p>
 
               <div class="cta-row" style="max-width:none;margin-bottom:14px;">
-                <a class="btn btn-call" href="tel:844-467-4335" data-callrail-phone="844-467-4335" data-tel-context="result_primary" id="result-call-btn">Call 844-467-4335</a>
+                <a class="btn btn-call" href="tel:844-467-4335" data-callrail-phone="844-467-4335" data-click-location="result_primary" id="result-call-btn">Call 844-467-4335</a>
               </div>
 
               <div class="form-divider">or send your details</div>
@@ -1028,7 +1028,7 @@
         <div>
           <h3>Insider Accident Lawyers</h3>
           <p class="footer-trust"><a href="https://www.insiderlawyers.com/#case-results" style="color:rgba(255,255,255,0.92);font-weight:700;text-decoration:none;">Over $100 million recovered*</a> — see case results on our main site.</p>
-          <p class="footer-phone"><a href="tel:844-467-4335" data-callrail-phone="844-467-4335" data-tel-context="footer">844-467-4335</a></p>
+          <p class="footer-phone"><a href="tel:844-467-4335" data-callrail-phone="844-467-4335" data-click-location="footer">844-467-4335</a></p>
           <p style="margin-top:8px;">Available 24/7 · Hablamos Español · Attorney advertising</p>
           <p style="margin-top:6px;">3435 Wilshire Blvd., Suite 1620, Los Angeles, CA 90010</p>
         </div>
@@ -1063,7 +1063,7 @@
   </footer>
 
   <div class="sticky-call">
-    <a href="tel:844-467-4335" data-callrail-phone="844-467-4335" data-tel-context="sticky" aria-label="Call now at 844-467-4335">Call Now · 844-467-4335</a>
+    <a href="tel:844-467-4335" data-callrail-phone="844-467-4335" data-click-location="sticky_call_bar" aria-label="Call now at 844-467-4335">Call Now · 844-467-4335</a>
   </div>
 
   <script>
@@ -1129,6 +1129,7 @@
     var quizCompleted = false;
     var answers = {};
     var stepLocked = false;
+    var pendingAdvance = null;
 
     /* ---------------- DOM refs ---------------- */
     var meterFill = document.getElementById('meter-fill');
@@ -1267,8 +1268,13 @@
 
       stepLocked = true;
       var isLast = currentStep === TOTAL - 1;
-      setTimeout(function () {
+      var lockedStep = currentStep;
+      if (pendingAdvance) clearTimeout(pendingAdvance);
+      pendingAdvance = setTimeout(function () {
+        pendingAdvance = null;
         stepLocked = false;
+        // If the user navigated back during the lock, don't auto-advance.
+        if (currentStep !== lockedStep) return;
         if (isLast) {
           finishGame();
         } else {
@@ -1470,6 +1476,8 @@
 
     /* ---------------- Restart ---------------- */
     function restart() {
+      if (pendingAdvance) { clearTimeout(pendingAdvance); pendingAdvance = null; }
+      stepLocked = false;
       answers = {};
       currentStep = 0;
       quizStarted = false;
@@ -1532,9 +1540,9 @@
     });
 
     backBtn.addEventListener('click', function () {
-      if (currentStep > 0) {
-        showStep(currentStep - 1);
-      }
+      if (currentStep <= 0) return;
+      if (pendingAdvance) { clearTimeout(pendingAdvance); pendingAdvance = null; stepLocked = false; }
+      showStep(currentStep - 1);
     });
 
     restartBtn.addEventListener('click', function () {
@@ -1585,10 +1593,11 @@
     // Phone click tracking
     document.querySelectorAll('a[href^="tel:"]').forEach(function (link) {
       link.addEventListener('click', function () {
+        var leadTierField = document.getElementById('hf-lead-tier');
         logEvent('phone_click', {
           phone_number: PHONE,
-          tel_context: this.getAttribute('data-tel-context') || '',
-          lead_tier: document.getElementById('hf-lead-tier') ? document.getElementById('hf-lead-tier').value : ''
+          click_location: this.getAttribute('data-click-location') || 'unknown',
+          lead_tier: leadTierField ? (leadTierField.value || '') : ''
         });
       });
     });
