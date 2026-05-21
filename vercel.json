@@ -142,6 +142,8 @@
     ,{ "source": "/premises-liability/", "destination": "/premises-liability/index.html" }
     ,{ "source": "/car-accident-case-review", "destination": "/car-accident-case-review/index.html" }
     ,{ "source": "/car-accident-case-review/", "destination": "/car-accident-case-review/index.html" }
+    ,{ "source": "/truck-accident-case-review", "destination": "/truck-accident-case-review/index.html" }
+    ,{ "source": "/truck-accident-case-review/", "destination": "/truck-accident-case-review/index.html" }
   ],
   "redirects": [
     {
