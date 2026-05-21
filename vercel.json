@@ -146,6 +146,8 @@
     ,{ "source": "/truck-accident-case-review/", "destination": "/truck-accident-case-review/index.html" }
     ,{ "source": "/property-injury-case-game", "destination": "/property-injury-case-game/index.html" }
     ,{ "source": "/property-injury-case-game/", "destination": "/property-injury-case-game/index.html" }
+    ,{ "source": "/car-accident-case-game", "destination": "/car-accident-case-game/index.html" }
+    ,{ "source": "/car-accident-case-game/", "destination": "/car-accident-case-game/index.html" }
   ],
   "redirects": [
     {
