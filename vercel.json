@@ -148,6 +148,8 @@
     ,{ "source": "/property-injury-case-game/", "destination": "/property-injury-case-game/index.html" }
     ,{ "source": "/car-accident-case-game", "destination": "/car-accident-case-game/index.html" }
     ,{ "source": "/car-accident-case-game/", "destination": "/car-accident-case-game/index.html" }
+    ,{ "source": "/abogado-lesiones-tienda-california", "destination": "/abogado-lesiones-tienda-california/index.html" }
+    ,{ "source": "/abogado-lesiones-tienda-california/", "destination": "/abogado-lesiones-tienda-california/index.html" }
   ],
   "redirects": [
     {
