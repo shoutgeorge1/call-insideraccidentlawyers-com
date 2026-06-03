@@ -150,6 +150,8 @@
     ,{ "source": "/car-accident-case-game/", "destination": "/car-accident-case-game/index.html" }
     ,{ "source": "/abogado-lesiones-tienda-california", "destination": "/abogado-lesiones-tienda-california/index.html" }
     ,{ "source": "/abogado-lesiones-tienda-california/", "destination": "/abogado-lesiones-tienda-california/index.html" }
+    ,{ "source": "/carbon-monoxide-poisoning-lawyer", "destination": "/carbon-monoxide-poisoning-lawyer/index.html" }
+    ,{ "source": "/carbon-monoxide-poisoning-lawyer/", "destination": "/carbon-monoxide-poisoning-lawyer/index.html" }
   ],
   "redirects": [
     {
