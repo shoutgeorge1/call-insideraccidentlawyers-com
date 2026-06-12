@@ -47,9 +47,20 @@ for (const p of pages) {
   assert(/844-467-4335/.test(h), 'has 844-467-4335 in markup');
   assert(/tel:\+18444674335/.test(h), 'tel:+18444674335 anchors used');
   assert(/data-callrail-phone="844-467-4335"/.test(h), 'data-callrail-phone marker present');
-  assert(/\/js\/slip-fall-funnel\.js/.test(h), 'loads shared assessment JS');
   assert(/\/js\/utm-gclid-tracking\.js/.test(h), 'loads shared utm/gclid script');
-  assert(/\/css\/slip-fall-funnel\.css/.test(h), 'loads shared CSS');
+  if (/slip-and-fall-case-check-california/.test(p.path)) {
+    assert(!/\/js\/slip-fall-funnel\.js/.test(h), 'short Variant A does NOT load old shared assessment JS');
+    assert(!/\/css\/slip-fall-funnel\.css/.test(h), 'short Variant A uses page-local CSS');
+    assert(/Where did the injury happen\?/.test(h), 'Variant A first question is in source');
+    assert(/INJ_SERIOUS/.test(h), 'Variant A uses INJ_SERIOUS');
+    assert(!/INJ_SURGERY|INJ_FRACTURE|INJ_HEAD/.test(h), 'Variant A does not assign combined specific serious-injury tags');
+    assert(/WARN_PRESENT/.test(h), 'Variant A uses WARN_PRESENT');
+    assert(!/WARN_CLEAR/.test(h), 'Variant A does not use WARN_CLEAR for warning-involved answer');
+    assert(/Trusted by injured Californians\./.test(h), 'Variant A trust copy is final');
+  } else {
+    assert(/\/js\/slip-fall-funnel\.js/.test(h), 'loads shared assessment JS');
+    assert(/\/css\/slip-fall-funnel\.css/.test(h), 'loads shared CSS');
+  }
   assert(/Insider Accident Lawyers/.test(h), 'firm name present');
   assert(/3435 Wilshire Blvd/.test(h), 'firm address present in footer');
   assert(/Attorney advertising|attorney advertising/.test(h), 'attorney advertising disclaimer present');
@@ -58,6 +69,7 @@ for (const p of pages) {
   assert(!/Lorem ipsum/i.test(h), 'no Lorem ipsum');
   assert(!/TODO/.test(h), 'no TODO markers');
   assert(!/maximum compensation/i.test(h), 'no "maximum compensation" promises');
+  assert(!/https:\/\/www\.insiderlawyers\.com\//.test(h), 'no old insiderlawyers.com firm-home links');
 
   // Results page should be noindex; the two ad pages should be indexable
   if (/case-guide-results/.test(p.path)) {

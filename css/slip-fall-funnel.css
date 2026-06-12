@@ -63,7 +63,7 @@ a:hover { color: var(--sf-navy); }
 .sf-section--alt { background: var(--sf-soft); }
 .sf-section--navy { background: var(--sf-blue-deep); color: #fff; }
 .sf-section--navy h2, .sf-section--navy h3 { color: #fff; }
-.sf-section--navy a { color: var(--sf-yellow); }
+.sf-section--navy a:not(.sf-btn) { color: var(--sf-yellow); }
 
 /* Header (reused style — slim brand bar) */
 .sf-top {
@@ -151,26 +151,60 @@ a:hover { color: var(--sf-navy); }
   border-radius: 12px;
   text-decoration: none; border: none;
   cursor: pointer; transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+  text-align: center;
+  -webkit-text-fill-color: currentColor;
 }
 .sf-btn--primary {
   background: linear-gradient(180deg, #ffd54f 0%, #fbba00 55%, #f5a623 100%);
   color: var(--sf-navy);
+  -webkit-text-fill-color: var(--sf-navy);
   box-shadow: 0 4px 0 var(--sf-yellow-deep), 0 8px 22px rgba(251, 186, 0, 0.32);
+}
+.sf-btn--primary:hover,
+.sf-btn--primary:focus,
+.sf-btn--primary:active,
+.sf-btn--primary:visited {
+  color: var(--sf-navy);
+  -webkit-text-fill-color: var(--sf-navy);
 }
 .sf-btn--primary:hover { transform: translateY(-1px); }
 .sf-btn--ghost {
   background: transparent; color: #fff; font-weight: 700;
+  -webkit-text-fill-color: #fff;
   border: 2px solid rgba(255, 255, 255, 0.75);
+}
+.sf-btn--ghost:hover,
+.sf-btn--ghost:focus,
+.sf-btn--ghost:active,
+.sf-btn--ghost:visited {
+  color: #fff;
+  -webkit-text-fill-color: #fff;
 }
 .sf-btn--ghost:hover { background: rgba(255, 255, 255, 0.08); }
 .sf-btn--dark {
   background: var(--sf-navy); color: #fff;
+  -webkit-text-fill-color: #fff;
   box-shadow: 0 6px 16px rgba(1, 54, 108, 0.25);
+}
+.sf-btn--dark:hover,
+.sf-btn--dark:focus,
+.sf-btn--dark:active,
+.sf-btn--dark:visited {
+  color: #fff;
+  -webkit-text-fill-color: #fff;
 }
 .sf-btn--dark:hover { background: var(--sf-blue); }
 .sf-btn--light {
   background: #eef2f7; color: var(--sf-navy);
+  -webkit-text-fill-color: var(--sf-navy);
   border: 1px solid var(--sf-line);
+}
+.sf-btn--light:hover,
+.sf-btn--light:focus,
+.sf-btn--light:active,
+.sf-btn--light:visited {
+  color: var(--sf-navy);
+  -webkit-text-fill-color: var(--sf-navy);
 }
 .sf-btn--light:hover { background: #dde4ee; }
 .sf-btn:disabled { opacity: 0.5; cursor: not-allowed; }
