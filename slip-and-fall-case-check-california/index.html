@@ -120,7 +120,24 @@
       min-height: 68px;
       padding: 8px 0;
     }
+    .logo {
+      position: relative;
+      display: inline-flex;
+      align-items: flex-start;
+      text-decoration: none;
+    }
     .logo img { width: 148px; height: auto; filter: brightness(0); }
+    .logo-reg {
+      display: inline-block;
+      margin-left: 2px;
+      margin-top: 3px;
+      color: var(--navy);
+      font-size: .72rem;
+      font-weight: 900;
+      line-height: 1;
+      opacity: .85;
+      -webkit-text-fill-color: var(--navy);
+    }
     .top__phone {
       display: inline-flex;
       align-items: center;
@@ -573,6 +590,7 @@
     <div class="wrap top__inner">
       <a class="logo" href="https://www.insideraccidentlawyers.com/" aria-label="Insider Accident Lawyers home">
         <img src="/images/la/logo.webp" alt="Insider Accident Lawyers" width="180" height="48" decoding="async">
+        <span class="logo-reg" aria-hidden="true">&reg;</span>
       </a>
       <a class="top__phone" href="tel:+18444674335" data-callrail-phone="844-467-4335" data-cta-location="header" data-placement="header">844-467-4335</a>
     </div>
@@ -584,7 +602,7 @@
         <div>
           <span class="eyebrow">Free California case check</span>
           <h1 id="hero-h1">Hurt in a Store, Apartment, Hotel or Business?</h1>
-          <p class="hero-sub">Where you fell, how badly you were injured, and what caused it can determine whether the situation is worth reviewing. Check your situation in about 60 seconds.</p>
+          <p class="hero-sub">For falls at stores, businesses, apartments, hotels, parking areas, sidewalks, workplaces, or someone else&rsquo;s property. Location, injury severity, treatment, and evidence can determine whether the situation is worth reviewing. Check yours in about 60 seconds.</p>
           <p class="hero-call">Prefer to talk now? <a href="tel:+18444674335" data-callrail-phone="844-467-4335" data-cta-location="hero_prefer_call" data-placement="hero">Call 844-467-4335</a></p>
           <div class="trust-row" aria-label="Firm trust signals">
             <span class="trust-pill">No fee unless we win</span>
@@ -593,7 +611,7 @@
           </div>
           <div class="trust-photo">
             <img src="/images/la/attorney-hero-300.webp" alt="Insider Accident Lawyers attorney" width="300" height="300" decoding="async">
-            <p><strong>Insider Accident Lawyers</strong><br>Free review for serious California property injuries.</p>
+            <p><strong>Insider Accident Lawyers&reg;</strong><br>Free review for serious California property injuries.</p>
           </div>
         </div>
 
@@ -688,6 +706,7 @@
           <div class="step" data-step="contact" hidden>
             <h2>Request your free review</h2>
             <div class="review-note">Based on your answers, there may be facts worth reviewing.</div>
+            <p class="step-sub">After submitting, you&rsquo;ll receive your case guide and immediate access to the slip-and-fall video.</p>
             <div class="field-grid">
               <label class="field"><span>First name <em>*</em></span><input class="field-input" name="first_name" autocomplete="given-name" maxlength="60" required></label>
               <label class="field"><span>Last name <em>*</em></span><input class="field-input" name="last_name" autocomplete="family-name" maxlength="60" required></label>
