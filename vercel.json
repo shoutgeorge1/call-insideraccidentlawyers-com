@@ -152,6 +152,12 @@
     ,{ "source": "/abogado-lesiones-tienda-california/", "destination": "/abogado-lesiones-tienda-california/index.html" }
     ,{ "source": "/carbon-monoxide-poisoning-lawyer", "destination": "/carbon-monoxide-poisoning-lawyer/index.html" }
     ,{ "source": "/carbon-monoxide-poisoning-lawyer/", "destination": "/carbon-monoxide-poisoning-lawyer/index.html" }
+    ,{ "source": "/slip-and-fall-case-check-california", "destination": "/slip-and-fall-case-check-california/index.html" }
+    ,{ "source": "/slip-and-fall-case-check-california/", "destination": "/slip-and-fall-case-check-california/index.html" }
+    ,{ "source": "/california-slip-and-fall-case-guide", "destination": "/california-slip-and-fall-case-guide/index.html" }
+    ,{ "source": "/california-slip-and-fall-case-guide/", "destination": "/california-slip-and-fall-case-guide/index.html" }
+    ,{ "source": "/slip-and-fall-case-guide-results", "destination": "/slip-and-fall-case-guide-results/index.html" }
+    ,{ "source": "/slip-and-fall-case-guide-results/", "destination": "/slip-and-fall-case-guide-results/index.html" }
   ],
   "redirects": [
     {
